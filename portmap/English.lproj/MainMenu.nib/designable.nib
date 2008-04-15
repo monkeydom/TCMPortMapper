@@ -8,10 +8,9 @@
 		<string key="IBDocument.HIToolboxVersion">352.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="29"/>
 			<integer value="372"/>
 			<integer value="563"/>
-			<integer value="622"/>
+			<integer value="29"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -2032,7 +2031,7 @@ ciBoZWxwLg</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<object class="NSView" key="NSWindowView" id="123003789">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -2281,7 +2280,6 @@ ciBoZWxwLg</string>
 														</object>
 														<string key="NSFrame">{{1, 17}, {598, 307}}</string>
 														<reference key="NSSuperview" ref="157820779"/>
-														<reference key="NSNextKeyView" ref="235614765"/>
 														<reference key="NSDocView" ref="235614765"/>
 														<reference key="NSBGColor" ref="989937749"/>
 														<int key="NScvFlags">4</int>
@@ -2314,7 +2312,6 @@ ciBoZWxwLg</string>
 														</object>
 														<string key="NSFrame">{{1, 0}, {598, 17}}</string>
 														<reference key="NSSuperview" ref="157820779"/>
-														<reference key="NSNextKeyView" ref="419071259"/>
 														<reference key="NSDocView" ref="419071259"/>
 														<reference key="NSBGColor" ref="989937749"/>
 														<int key="NScvFlags">4</int>
@@ -2323,7 +2320,6 @@ ciBoZWxwLg</string>
 												</object>
 												<string key="NSFrame">{{20, 0}, {600, 325}}</string>
 												<reference key="NSSuperview" ref="101608798"/>
-												<reference key="NSNextKeyView" ref="508991272"/>
 												<int key="NSsFlags">562</int>
 												<reference key="NSVScroller" ref="874776118"/>
 												<reference key="NSHScroller" ref="33226627"/>
@@ -2439,7 +2435,6 @@ ciBoZWxwLg</string>
 						</object>
 					</object>
 					<string key="NSFrameSize">{640, 402}</string>
-					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMaxSize">{3.40282e+38, 3.40282e+38}</string>
@@ -3525,6 +3520,22 @@ dXBucGMuCk9wZW4gYXBwbGljYXRpb24gYnVuZGxlIGZvciBkZXRhaWxzLg</string>
 						<reference key="destination" ref="905799129"/>
 					</object>
 					<int key="connectionID">643</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: canRemove</string>
+						<reference key="source" ref="263265848"/>
+						<reference key="destination" ref="746638330"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="263265848"/>
+							<reference key="NSDestination" ref="746638330"/>
+							<string key="NSLabel">enabled: canRemove</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">canRemove</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">644</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -5744,7 +5755,7 @@ dXBucGMuCk9wZW4gYXBwbGljYXRpb24gYnVuZGxlIGZvciBkZXRhaWxzLg</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">643</int>
+			<int key="maxID">644</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
