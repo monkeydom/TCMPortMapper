@@ -34,13 +34,22 @@
 		F214E6170D5F660100A06962 /* TCMPortMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */; };
 		F214E6200D5F661400A06962 /* TCMPortMapper.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */; };
 		F217EF220D6082B40028E112 /* TCPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = F217EF210D6082B40028E112 /* TCPServer.m */; };
+		F21B769B0DB73D2C00942BC0 /* miniwget.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B180D685C1B00728699 /* miniwget.c */; };
+		F21B769C0DB73D2C00942BC0 /* minixml.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B1B0D685C1B00728699 /* minixml.c */; };
+		F21B769D0DB73D2C00942BC0 /* upnpcommands.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B2A0D685C1B00728699 /* upnpcommands.c */; };
+		F21B769E0DB73D2C00942BC0 /* upnperrors.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B2D0D685C1B00728699 /* upnperrors.c */; };
+		F21B769F0DB73D2C00942BC0 /* upnpreplyparse.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B300D685C1B00728699 /* upnpreplyparse.c */; };
+		F21B76A00DB73D2C00942BC0 /* miniupnpc.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B140D685C1B00728699 /* miniupnpc.c */; };
+		F21B76A10DB73D2C00942BC0 /* minissdpc.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B110D685C1B00728699 /* minissdpc.c */; };
+		F21B76A30DB73D2C00942BC0 /* minisoap.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B0E0D685C1B00728699 /* minisoap.c */; };
+		F21B76A40DB73D2C00942BC0 /* igd_desc_parse.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B040D685C1B00728699 /* igd_desc_parse.c */; };
+		F21B76B20DB73D6700942BC0 /* upnpc.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B280D685C1B00728699 /* upnpc.c */; };
 		F2301B5B0D685C2700728699 /* igd_desc_parse.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B040D685C1B00728699 /* igd_desc_parse.c */; };
 		F2301B5C0D685C2A00728699 /* minisoap.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B0E0D685C1B00728699 /* minisoap.c */; };
 		F2301B5D0D685C3300728699 /* minissdpc.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B110D685C1B00728699 /* minissdpc.c */; };
 		F2301B5F0D685C3B00728699 /* miniupnpc.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B140D685C1B00728699 /* miniupnpc.c */; };
 		F2301B600D685C3F00728699 /* miniwget.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B180D685C1B00728699 /* miniwget.c */; };
 		F2301B610D685C4200728699 /* minixml.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B1B0D685C1B00728699 /* minixml.c */; };
-		F2301B620D685C4600728699 /* minixmlvalid.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B1F0D685C1B00728699 /* minixmlvalid.c */; };
 		F2301B630D685C4B00728699 /* upnpcommands.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B2A0D685C1B00728699 /* upnpcommands.c */; };
 		F2301B640D685C4F00728699 /* upnperrors.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B2D0D685C1B00728699 /* upnperrors.c */; };
 		F2301B650D685C5300728699 /* upnpreplyparse.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B300D685C1B00728699 /* upnpreplyparse.c */; };
@@ -172,6 +181,7 @@
 		F214E60B0D5F64BF00A06962 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppController.m; path = natecho/AppController.m; sourceTree = "<group>"; };
 		F217EF200D6082B40028E112 /* TCPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCPServer.h; path = natecho/TCPServer.h; sourceTree = "<group>"; };
 		F217EF210D6082B40028E112 /* TCPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCPServer.m; path = natecho/TCPServer.m; sourceTree = "<group>"; };
+		F21B76970DB73CFC00942BC0 /* upnpc-static */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "upnpc-static"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2301B010D685C1B00728699 /* bsdqueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bsdqueue.h; sourceTree = "<group>"; };
 		F2301B020D685C1B00728699 /* Changelog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Changelog.txt; sourceTree = "<group>"; };
 		F2301B030D685C1B00728699 /* declspec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = declspec.h; sourceTree = "<group>"; };
@@ -274,6 +284,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F21B76950DB73CFC00942BC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F2C65FFD0D50C2D100820CAE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -310,6 +327,7 @@
 				3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */,
 				F2C65FFF0D50C2D100820CAE /* Port Map.app */,
 				F214E5DB0D5F5FE600A06962 /* NATEcho.app */,
+				F21B76970DB73CFC00942BC0 /* upnpc-static */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -624,6 +642,22 @@
 			productReference = F214E5DB0D5F5FE600A06962 /* NATEcho.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F21B76960DB73CFC00942BC0 /* UPnP Command Line Debug Tool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F21B76B00DB73D4700942BC0 /* Build configuration list for PBXNativeTarget "UPnP Command Line Debug Tool" */;
+			buildPhases = (
+				F21B76940DB73CFC00942BC0 /* Sources */,
+				F21B76950DB73CFC00942BC0 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UPnP Command Line Debug Tool";
+			productName = "UPnP Command Line Debug Tool";
+			productReference = F21B76970DB73CFC00942BC0 /* upnpc-static */;
+			productType = "com.apple.product-type.tool";
+		};
 		F2C65FFE0D50C2D100820CAE /* Port Map */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2C660060D50C2D200820CAE /* Build configuration list for PBXNativeTarget "Port Map" */;
@@ -662,6 +696,7 @@
 				F24603510DB4B19100C509E9 /* Create Port Map Release Zip */,
 				F246036A0DB4B45900C509E9 /* Create TCMPortMapper Release Zip */,
 				F24603720DB4B4B600C509E9 /* Create Release Zips */,
+				F21B76960DB73CFC00942BC0 /* UPnP Command Line Debug Tool */,
 			);
 		};
 /* End PBXProject section */
@@ -761,7 +796,6 @@
 				F2301B5F0D685C3B00728699 /* miniupnpc.c in Sources */,
 				F2301B600D685C3F00728699 /* miniwget.c in Sources */,
 				F2301B610D685C4200728699 /* minixml.c in Sources */,
-				F2301B620D685C4600728699 /* minixmlvalid.c in Sources */,
 				F2301B630D685C4B00728699 /* upnpcommands.c in Sources */,
 				F2301B640D685C4F00728699 /* upnperrors.c in Sources */,
 				F2301B650D685C5300728699 /* upnpreplyparse.c in Sources */,
@@ -775,6 +809,23 @@
 				F214E6080D5F646E00A06962 /* main.m in Sources */,
 				F214E60C0D5F64BF00A06962 /* AppController.m in Sources */,
 				F217EF220D6082B40028E112 /* TCPServer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F21B76940DB73CFC00942BC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F21B76B20DB73D6700942BC0 /* upnpc.c in Sources */,
+				F21B769B0DB73D2C00942BC0 /* miniwget.c in Sources */,
+				F21B769C0DB73D2C00942BC0 /* minixml.c in Sources */,
+				F21B769D0DB73D2C00942BC0 /* upnpcommands.c in Sources */,
+				F21B769E0DB73D2C00942BC0 /* upnperrors.c in Sources */,
+				F21B769F0DB73D2C00942BC0 /* upnpreplyparse.c in Sources */,
+				F21B76A00DB73D2C00942BC0 /* miniupnpc.c in Sources */,
+				F21B76A10DB73D2C00942BC0 /* minissdpc.c in Sources */,
+				F21B76A30DB73D2C00942BC0 /* minisoap.c in Sources */,
+				F21B76A40DB73D2C00942BC0 /* igd_desc_parse.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1005,6 +1056,40 @@
 			};
 			name = Release;
 		};
+		F21B76990DB73CFD00942BC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/bin;
+				PREBINDING = NO;
+				PRODUCT_NAME = "upnpc-static";
+			};
+			name = Debug;
+		};
+		F21B769A0DB73CFD00942BC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PREBINDING = NO;
+				PRODUCT_NAME = "upnpc-static";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		F24603520DB4B19100C509E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1147,6 +1232,15 @@
 			buildConfigurations = (
 				F214E5DE0D5F5FE800A06962 /* Debug */,
 				F214E5DF0D5F5FE800A06962 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F21B76B00DB73D4700942BC0 /* Build configuration list for PBXNativeTarget "UPnP Command Line Debug Tool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F21B76990DB73CFD00942BC0 /* Debug */,
+				F21B769A0DB73CFD00942BC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
