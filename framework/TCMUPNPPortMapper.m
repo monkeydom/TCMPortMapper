@@ -84,7 +84,7 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
         if (component) [descriptionComponents addObject:component];
         NSString *userID = [[TCMPortMapper sharedInstance] userID];
         if (userID) [descriptionComponents addObject:userID];
-        description = [[descriptionComponents componentsJoinedByString:@"/"] retain];
+        description = [[descriptionComponents componentsJoinedByString:@"."] retain];
     }
     return description;
 }
