@@ -1,4 +1,4 @@
-/* $Id: testupnpreplyparse.c,v 1.1 2007/05/15 16:33:53 nanard Exp $ */
+/* $Id: testupnpreplyparse.c,v 1.2 2008/02/21 13:05:27 nanard Exp $ */
 /* MiniUPnP project
  * http://miniupnp.free.fr/ or http://miniupnp.tuxfamily.org/
  * (c) 2006-2007 Thomas Bernard
@@ -35,7 +35,9 @@ int main(int argc, char * * argv)
 	l = fread(buffer, 1, sizeof(buffer)-1, f);
 	fclose(f);
 	buffer[l] = '\0';
+#ifdef DEBUG
 	DisplayNameValueList(buffer, l);
+#endif
 	test_parsing(buffer, l);
 	return 0;
 }

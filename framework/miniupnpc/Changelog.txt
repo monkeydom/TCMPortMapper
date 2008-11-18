@@ -1,5 +1,52 @@
-$Id: Changelog.txt,v 1.58 2008/02/16 23:30:19 nanard Exp $
+$Id: Changelog.txt,v 1.73 2008/10/07 13:51:50 nanard Exp $
 miniUPnP client Changelog.
+
+2008/10/07:
+  Update docs
+
+2008/09/25:
+  Integrated sameport patch from Dario Meloni : Added a "sameport"
+  argument to upnpDiscover().
+
+2008/07/18:
+  small modif to make Clang happy :)
+
+2008/07/17:
+  #define SOAPPREFIX "s" in miniupnpc.c in order to remove SOAP-ENV... 
+
+2008/07/14:
+  include declspec.h in installation (to /usr/include/miniupnpc)
+
+VERSION 1.1 :
+
+2008/07/04:
+  standard options for install/ln instead of gnu-specific stuff.
+
+2008/07/03:
+  now builds a .dll and .lib with win32. (mingw32)
+
+2008/04/28:
+  make install now install the binary of the upnpc tool
+
+2008/04/27:
+  added testupnpigd.py
+  added error strings for miniupnpc "internal" errors
+  improved python module error/exception reporting.
+
+2008/04/23:
+  Completely rewrite igd_desc_parse.c in order to be compatible with 
+  Linksys WAG200G
+  Added testigddescparse
+  updated python module
+
+VERSION 1.0 :
+
+2008/02/21:
+  put some #ifdef DEBUG around DisplayNameValueList()
+
+2008/02/18:
+  Improved error reporting in upnpcommands.c
+  UPNP_GetStatusInfo() returns LastConnectionError
 
 2008/02/16:
   better error handling in minisoap.c

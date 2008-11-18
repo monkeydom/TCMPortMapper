@@ -1,17 +1,28 @@
-/* $Id: upnperrors.c,v 1.2 2008/02/05 12:50:22 nanard Exp $ */
+/* $Id: upnperrors.c,v 1.3 2008/04/27 17:21:51 nanard Exp $ */
 /* Project : miniupnp
  * Author : Thomas BERNARD
  * copyright (c) 2007 Thomas Bernard
  * All Right reserved.
+ * http://miniupnp.free.fr/ or http://miniupnp.tuxfamily.org/
  * This software is subjet to the conditions detailed in the
  * provided LICENCE file. */
 #include <string.h>
 #include "upnperrors.h"
+#include "upnpcommands.h"
 
 const char * strupnperror(int err)
 {
 	const char * s = NULL;
 	switch(err) {
+	case UPNPCOMMAND_SUCCESS:
+		s = "Success";
+		break;
+	case UPNPCOMMAND_UNKNOWN_ERROR:
+		s = "Miniupnpc Unknown Error";
+		break;
+	case UPNPCOMMAND_INVALID_ARGS:
+		s = "Miniupnpc Invalid Arguments";
+		break;
 	case 401:
 		s = "Invalid Action";
 		break;

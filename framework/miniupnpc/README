@@ -1,7 +1,7 @@
 Project: miniupnp
-Project web page: http://miniupnp.free.fr/
+Project web page: http://miniupnp.free.fr/ or http://miniupnp.tuxfamily.org/
 Author: Thomas Bernard
-Copyright (c) 2005-2007 Thomas Bernard
+Copyright (c) 2005-2008 Thomas Bernard
 This software is subject to the conditions detailed in the
 LICENCE file provided within this distribution.
 
@@ -36,11 +36,13 @@ upnpcommands.h and miniwget.h :
 Note : use #include <miniupnpc/miniupnpc.h> etc... for the includes
 and -lminiupnpc for the link
 
+Discovery process is speeded up when MiniSSDPd is running on the machine.
+
 * Python module *
 
 you can build a python module with 'make pythonmodule' 
 and install it with 'make installpythonmodule'.
-setup.py (and setpmingw32.py) are included in the distribution.
+setup.py (and setupmingw32.py) are included in the distribution.
 
 
 Feel free to contact me if you have any problem :

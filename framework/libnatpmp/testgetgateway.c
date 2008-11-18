@@ -1,4 +1,4 @@
-/* $Id: testgetgateway.c,v 1.3 2007/11/22 18:01:38 nanard Exp $ */
+/* $Id: testgetgateway.c,v 1.4 2008/07/02 22:33:06 nanard Exp $ */
 /* libnatpmp
  * Copyright (c) 2007, Thomas BERNARD <miniupnp@free.fr>
  *
@@ -14,15 +14,25 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. */
 #include <stdio.h>
+#ifdef WIN32
+#include <winsock2.h>
+#else
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#endif
 #include "getgateway.h"
 
 int main(int argc, char * * argv)
 {
 	struct in_addr gatewayaddr;
 	int r;
+#ifdef WIN32
+	uint32_t temp = 0;
+	r = getdefaultgateway(&temp);
+	gatewayaddr.S_un.S_addr = temp;
+#else
 	r = getdefaultgateway(&(gatewayaddr.s_addr));
+#endif
 	if(r>=0)
 		printf("default gateway : %s\n", inet_ntoa(gatewayaddr));
 	else

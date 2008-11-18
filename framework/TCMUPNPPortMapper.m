@@ -112,7 +112,7 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
     char externalIPAddress[16];
     BOOL didFail=NO;
     NSString *errorString = nil;
-    if (( devlist = upnpDiscover(2000, multicastif, minissdpdpath) )) {
+    if (( devlist = upnpDiscover(2000, multicastif, minissdpdpath, 0) )) {
         if(devlist) {
         
             // let us check all of the devices for reachability

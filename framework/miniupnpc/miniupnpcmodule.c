@@ -1,4 +1,4 @@
-/* $Id: miniupnpcmodule.c,v 1.7 2007/12/19 15:00:47 nanard Exp $*/
+/* $Id: miniupnpcmodule.c,v 1.10 2008/09/25 18:02:50 nanard Exp $*/
 /* Project : miniupnp
  * Author : Thomas BERNARD
  * website : http://miniupnp.tuxfamily.org/
@@ -10,6 +10,7 @@
 #include "structmember.h"
 #include "miniupnpc.h"
 #include "upnpcommands.h"
+#include "upnperrors.h"
 
 /* for compatibility with Python < 2.4 */
 #ifndef Py_RETURN_NONE
@@ -74,7 +75,8 @@ UPnP_discover(UPnPObject *self)
 	}
 	self->devlist = upnpDiscover((int)self->discoverdelay/*timeout in ms*/,
 	                             0/* multicast if*/,
-	                             0/*minissdpd socket*/);
+	                             0/*minissdpd socket*/,
+								 0/*sameport flag*/);
 	/* Py_RETURN_NONE ??? */
 	for(dev = self->devlist, i = 0; dev; dev = dev->pNext)
 		i++;
@@ -134,33 +136,56 @@ static PyObject *
 UPnP_statusinfo(UPnPObject *self)
 {
 	char status[64];
+	char lastconnerror[64];
 	unsigned int uptime = 0;
+	int r;
 	status[0] = '\0';
-	UPNP_GetStatusInfo(self->urls.controlURL, self->data.servicetype,
-	                   status, &uptime);
-	return Py_BuildValue("(s,I)", status, uptime);
+	lastconnerror[0] = '\0';
+	r = UPNP_GetStatusInfo(self->urls.controlURL, self->data.servicetype,
+	                   status, &uptime, lastconnerror);
+	if(r==UPNPCOMMAND_SUCCESS) {
+		return Py_BuildValue("(s,I,s)", status, uptime, lastconnerror);
+	} else {
+		/* TODO: have our own exception type ! */
+		PyErr_SetString(PyExc_Exception, strupnperror(r));
+		return NULL;
+	}
 }
 
 static PyObject *
 UPnP_connectiontype(UPnPObject *self)
 {
 	char connectionType[64];
+	int r;
 	connectionType[0] = '\0';
-	UPNP_GetConnectionTypeInfo(self->urls.controlURL,
-	                           self->data.servicetype,
-							   connectionType);
-	return Py_BuildValue("s", connectionType);
+	r = UPNP_GetConnectionTypeInfo(self->urls.controlURL,
+	                               self->data.servicetype,
+	                               connectionType);
+	if(r==UPNPCOMMAND_SUCCESS) {
+		return Py_BuildValue("s", connectionType);
+	} else {
+		/* TODO: have our own exception type ! */
+		PyErr_SetString(PyExc_Exception, strupnperror(r));
+		return NULL;
+	}
 }
 
 static PyObject *
 UPnP_externalipaddress(UPnPObject *self)
 {
 	char externalIPAddress[16];
+	int r;
 	externalIPAddress[0] = '\0';
-	UPNP_GetExternalIPAddress(self->urls.controlURL,
-	                          self->data.servicetype,
-							  externalIPAddress);
-	return Py_BuildValue("s", externalIPAddress);
+	r = UPNP_GetExternalIPAddress(self->urls.controlURL,
+	                              self->data.servicetype,
+	                              externalIPAddress);
+	if(r==UPNPCOMMAND_SUCCESS) {
+		return Py_BuildValue("s", externalIPAddress);
+	} else {
+		/* TODO: have our own exception type ! */
+		PyErr_SetString(PyExc_Exception, strupnperror(r));
+		return NULL;
+	}
 }
 
 /* AddPortMapping(externalPort, protocol, internalHost, internalPort, desc) 
@@ -183,13 +208,18 @@ UPnP_addportmapping(UPnPObject *self, PyObject *args)
 	sprintf(inPort, "%hu", iPort);
 	r = UPNP_AddPortMapping(self->urls.controlURL, self->data.servicetype,
 	                        extPort, inPort, host, desc, proto);
-	if(r)
+	if(r==UPNPCOMMAND_SUCCESS)
 	{
 		Py_RETURN_TRUE;
 	}
 	else
 	{
-		Py_RETURN_FALSE;
+		// TODO: RAISE an Exception. See upnpcommands.h for errors codes.
+		// upnperrors.c
+		//Py_RETURN_FALSE;
+		/* TODO: have our own exception type ! */
+		PyErr_SetString(PyExc_Exception, strupnperror(r));
+		return NULL;
 	}
 }
 
@@ -201,22 +231,36 @@ UPnP_deleteportmapping(UPnPObject *self, PyObject *args)
 	char extPort[6];
 	unsigned short ePort;
 	const char * proto;
+	int r;
 	if(!PyArg_ParseTuple(args, "Hs", &ePort, &proto))
 		return NULL;
 	sprintf(extPort, "%hu", ePort);
-	UPNP_DeletePortMapping(self->urls.controlURL, self->data.servicetype,
-	                       extPort, proto);
-	Py_RETURN_TRUE;
+	r = UPNP_DeletePortMapping(self->urls.controlURL, self->data.servicetype,
+	                           extPort, proto);
+	if(r==UPNPCOMMAND_SUCCESS) {
+		Py_RETURN_TRUE;
+	} else {
+		/* TODO: have our own exception type ! */
+		PyErr_SetString(PyExc_Exception, strupnperror(r));
+		return NULL;
+	}
 }
 
 static PyObject *
 UPnP_getportmappingnumberofentries(UPnPObject *self)
 {
 	unsigned int n = 0;
-	UPNP_GetPortMappingNumberOfEntries(self->urls.controlURL,
+	int r;
+	r = UPNP_GetPortMappingNumberOfEntries(self->urls.controlURL,
 	                                   self->data.servicetype,
 									   &n);
-	return Py_BuildValue("I", n);
+	if(r==UPNPCOMMAND_SUCCESS) {
+		return Py_BuildValue("I", n);
+	} else {
+		/* TODO: have our own exception type ! */
+		PyErr_SetString(PyExc_Exception, strupnperror(r));
+		return NULL;
+	}
 }
 
 /* GetSpecificPortMapping(ePort, proto) 
@@ -277,11 +321,7 @@ UPnP_getgenericportmapping(UPnPObject *self, PyObject *args)
 										extPort, intClient, intPort,
 										protocol, desc, enabled, rHost,
 										duration);
-	if(r)
-	{
-		Py_RETURN_NONE;
-	}
-	else
+	if(r==UPNPCOMMAND_SUCCESS)
 	{
 		ePort = (unsigned short)atoi(extPort);
 		iPort = (unsigned short)atoi(intPort);
@@ -289,6 +329,10 @@ UPnP_getgenericportmapping(UPnPObject *self, PyObject *args)
 		return Py_BuildValue("(H,s,(s,H),s,s,s,I)",
 		                     ePort, protocol, intClient, iPort,
 		                     desc, enabled, rHost, dur);
+	}
+	else
+	{
+		Py_RETURN_NONE;
 	}
 }
 

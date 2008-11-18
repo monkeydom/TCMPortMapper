@@ -1,6 +1,7 @@
 
 #import "TCMNATPMPPortMapper.h"
 #import "NSNotificationCenterThreadingAdditions.h"
+#import "natpmp.h"
 
 #import <netinet/in.h>
 #import <netinet6/in6.h>
@@ -269,12 +270,12 @@ Standardablauf:
     if (shouldRemove) {
        [aPortMapping setMappingStatus:TCMPortMappingStatusUnmapped];
     } else {
-       _updateInterval = MIN(_updateInterval,response.newportmapping.lifetime/2.);
+       _updateInterval = MIN(_updateInterval,response.pnu.newportmapping.lifetime/2.);
        if (_updateInterval < 60.) {
-           NSLog(@"%s caution - new port mapping had a lifetime < 120. : %u - %@",__FUNCTION__,response.newportmapping.lifetime, aPortMapping);
+           NSLog(@"%s caution - new port mapping had a lifetime < 120. : %u - %@",__FUNCTION__,response.pnu.newportmapping.lifetime, aPortMapping);
            _updateInterval = 60.;
        }
-       [aPortMapping setExternalPort:response.newportmapping.mappedpublicport];
+       [aPortMapping setExternalPort:response.pnu.newportmapping.mappedpublicport];
        [aPortMapping setMappingStatus:TCMPortMappingStatusMapped];
     }
     
@@ -433,7 +434,7 @@ Standardablauf:
             } else {
                 /* TODO : check that response.type == 0 */
             
-                NSString *ipString = [NSString stringWithFormat:@"%s", inet_ntoa(response.publicaddress.addr)];
+                NSString *ipString = [NSString stringWithFormat:@"%s", inet_ntoa(response.pnu.publicaddress.addr)];
 #ifndef NDEBUG
                 NSLog(@"NAT-PMP:  found IP:%@",ipString);
 #endif

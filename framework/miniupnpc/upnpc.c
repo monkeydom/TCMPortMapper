@@ -1,4 +1,4 @@
-/* $Id: upnpc.c,v 1.60 2008/02/16 22:36:45 nanard Exp $ */
+/* $Id: upnpc.c,v 1.63 2008/09/25 18:02:50 nanard Exp $ */
 /* Project : miniupnp
  * Author : Thomas Bernard
  * Copyright (c) 2005-2008 Thomas Bernard
@@ -43,6 +43,7 @@ static void DisplayInfos(struct UPNPUrls * urls,
 	char externalIPAddress[16];
 	char connectionType[64];
 	char status[64];
+	char lastconnerr[64];
 	unsigned int uptime;
 	unsigned int brUp, brDown;
 	int r;
@@ -53,8 +54,10 @@ static void DisplayInfos(struct UPNPUrls * urls,
 		printf("Connection Type : %s\n", connectionType);
 	else
 		printf("GetConnectionTypeInfo failed.\n");
-	UPNP_GetStatusInfo(urls->controlURL, data->servicetype, status, &uptime);
-	printf("Status : %s, uptime=%u\n", status, uptime);
+	UPNP_GetStatusInfo(urls->controlURL, data->servicetype,
+	                   status, &uptime, lastconnerr);
+	printf("Status : %s, uptime=%u, LastConnectionError : %s\n",
+	       status, uptime, lastconnerr);
 	UPNP_GetLinkLayerMaxBitRates(urls->controlURL_CIF, data->servicetype_CIF,
 			&brDown, &brUp);
 	printf("MaxBitRateDown : %u bps   MaxBitRateUp %u bps\n", brDown, brUp);
@@ -177,13 +180,11 @@ static void SetRedirectAndTest(struct UPNPUrls * urls,
 	if(r!=UPNPCOMMAND_SUCCESS)
 		printf("GetSpecificPortMappingEntry() failed with code %d\n", r);
 	
-	if(intClient[0])
+	if(intClient[0]) {
 		printf("InternalIP:Port = %s:%s\n", intClient, intPort);
-	else
-		printf("GetSpecificPortMappingEntry failed.\n");
-
-	printf("external %s:%s is redirected to internal %s:%s\n",
-	       externalIPAddress, eport, intClient, intPort);
+		printf("external %s:%s %s is redirected to internal %s:%s\n",
+		       externalIPAddress, eport, proto, intClient, intPort);
+	}
 }
 
 static void
@@ -278,7 +279,7 @@ int main(int argc, char ** argv)
 	}
 
 	if( rootdescurl
-	  || (devlist = upnpDiscover(2000, multicastif, minissdpdpath)))
+	  || (devlist = upnpDiscover(2000, multicastif, minissdpdpath, 0)))
 	{
 		struct UPNPDev * device;
 		struct UPNPUrls urls;

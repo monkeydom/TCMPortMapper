@@ -137,7 +137,7 @@ miniwget2(const char * url, const char * host,
 			}
 		}
 		*size = allreadyread;
-#ifdef DEBUG
+#ifndef NDEBUG
 		printf("%d bytes read\n", *size);
 #endif
 		closesocket(s);
