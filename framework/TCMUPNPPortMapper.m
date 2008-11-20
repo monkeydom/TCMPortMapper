@@ -79,9 +79,18 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
 - (NSString *)portMappingDescription {
     static NSString *description = nil;
     if (!description) {
-        NSMutableArray *descriptionComponents=[NSMutableArray arrayWithObject:@"TCMPM"];
+        NSMutableArray *descriptionComponents=[NSMutableArray arrayWithObject:@"tcmPM"];
         NSString *component = [[[[NSBundle mainBundle] bundlePath] lastPathComponent] stringByDeletingPathExtension];
-        if (component) [descriptionComponents addObject:component];
+        if (component) {
+        	// make sure _ and . are the only non alphanumeric characters in the name so we don't run into problems with routers which change the description (eg. avm routers)
+        	NSCharacterSet *saveSet = [NSCharacterSet characterSetWithCharactersInString:@"abcdefhijklmnopqrstuvwxyzABCDEFHIJKLMNOPQRSTUVWXYZ1234567890"];
+        	NSScanner *scanner = [NSScanner scannerWithString:component];
+        	[scanner setCharactersToBeSkipped:[saveSet invertedSet]];
+        	NSString *scannedString = nil;
+        	while ([scanner scanCharactersFromSet:saveSet intoString:&scannedString]) {
+        		[descriptionComponents addObject:scannedString];
+        	}
+        }
         NSString *userID = [[TCMPortMapper sharedInstance] userID];
         if (userID) [descriptionComponents addObject:userID];
         description = [[descriptionComponents componentsJoinedByString:@"."] retain];
