@@ -183,7 +183,14 @@
     [O_globalProgressIndicator stopAnimation:self];
     [O_UPNPTabItemProgressIndicator stopAnimation:self];
     [O_showUPNPMappingTableButton setEnabled:[[TCMPortMapper sharedInstance] mappingProtocol] == TCMUPNPPortMapProtocol];
-    [O_localIPAddressTextField setStringValue:[[TCMPortMapper sharedInstance] localIPAddress]];
+    NSString *localIPAddress = [[TCMPortMapper sharedInstance] localIPAddress];
+ 	if (!localIPAddress) {
+		[[O_currentIPTextField window] setTitle:@"Port Map"];
+	    [O_localIPAddressTextField setStringValue:@""];
+ 	} else {
+	    [O_localIPAddressTextField setStringValue:localIPAddress];
+	    [[O_currentIPTextField window] setTitle:[NSString stringWithFormat:NSLocalizedString(@"Port Map on %@",@""), localIPAddress]];
+ 	}
 }
 
 #pragma mark -

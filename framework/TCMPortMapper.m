@@ -14,6 +14,8 @@
 #import <net/if_dl.h>
 #import <openssl/md5.h>
 
+// update port mappings all 30 minutes as a default
+#define UPNP_REFRESH_INTERVAL (30.*60.)
 
 NSString * const TCMPortMapperExternalIPAddressDidChange             = @"TCMPortMapperExternalIPAddressDidChange";
 NSString * const TCMPortMapperWillStartSearchForRouterNotification   = @"TCMPortMapperWillStartSearchForRouterNotification";
@@ -143,7 +145,7 @@ enum {
 @end
 
 @interface TCMPortMapper (Private) 
-
+- (void)cleanupUPNPPortMapperTimer;
 - (void)setExternalIPAddress:(NSString *)anAddress;
 - (void)setLocalIPAddress:(NSString *)anAddress;
 - (void)increaseWorkCount:(NSNotification *)aNotification;
@@ -197,6 +199,7 @@ enum {
 }
 
 - (void)dealloc {
+	[self cleanupUPNPPortMapperTimer];
     [_systemConfigNotificationManager release];
     [_NATPMPPortMapper release];
     [_UPNPPortMapper release];
@@ -591,6 +594,9 @@ enum {
     if (shouldNotify) {
         [[NSNotificationCenter defaultCenter] postNotificationName:TCMPortMapperDidFinishSearchForRouterNotification object:self];
     }
+    if (!_upnpPortMapperTimer) {
+    	_upnpPortMapperTimer = [[NSTimer scheduledTimerWithTimeInterval:UPNP_REFRESH_INTERVAL target:self selector:@selector(refresh) userInfo:nil repeats:YES] retain];
+    }
 }
 
 - (void)UPNPPortMapperDidFail:(NSNotification *)aNotification {
@@ -599,6 +605,7 @@ enum {
     } else if (_UPNPStatus==TCMPortMapProtocolWorks) {
         [self setExternalIPAddress:nil];
     }
+    [self cleanupUPNPPortMapperTimer];
     // also mark all port mappings as unmapped if NATPMP failed too
     if (_NATPMPStatus == TCMPortMapProtocolFailed) {
         [[NSNotificationCenter defaultCenter] postNotificationName:TCMPortMapperDidFinishSearchForRouterNotification object:self];
@@ -607,6 +614,14 @@ enum {
 
 - (void)printNotification:(NSNotification *)aNotification {
     NSLog(@"TCMPortMapper received notification: %@", aNotification);
+}
+
+- (void)cleanupUPNPPortMapperTimer {
+	if (_upnpPortMapperTimer) {
+		[_upnpPortMapperTimer invalidate];
+		[_upnpPortMapperTimer release];
+		_upnpPortMapperTimer = nil;
+	}
 }
 
 - (void)internalStop {
@@ -618,6 +633,9 @@ enum {
     
     [center removeObserver:self name:TCMUPNPPortMapperDidGetExternalIPAddressNotification object:_UPNPPortMapper];
     [center removeObserver:self name:TCMUPNPPortMapperDidFailNotification object:_UPNPPortMapper];
+    
+    [self cleanupUPNPPortMapperTimer];
+
 }
 
 - (void)stop {

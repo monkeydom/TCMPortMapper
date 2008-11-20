@@ -85,6 +85,7 @@ typedef enum {
     BOOL _sendUPNPMappingTableNotification;
     NSString *_userID;
     NSMutableSet *_upnpPortMappingsToRemove;
+    NSTimer *_upnpPortMapperTimer;
 }
 
 + (TCMPortMapper *)sharedInstance;
