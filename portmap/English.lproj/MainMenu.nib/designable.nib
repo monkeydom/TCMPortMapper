@@ -8,11 +8,11 @@
 		<string key="IBDocument.HIToolboxVersion">352.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="563"/>
+			<integer value="581"/>
+			<integer value="29"/>
 			<integer value="372"/>
 			<integer value="545"/>
-			<integer value="563"/>
-			<integer value="29"/>
-			<integer value="581"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -957,8 +957,8 @@ uRG7veIPuYOeKmPqSoIHvqWBvXvVunuTv7uRuQIJvhvnwGJQIGI6IEiWqpsXwBvjwIJ0ICAAAA8BAAAD
 AAAAAQAqAAABAQADAAAAAQAqAAABAgADAAAABAAAEvwBAwADAAAAAQAFAAABBgADAAAAAQACAAABEQAE
 AAAAAQAAAAgBEgADAAAAAQABAAABFQADAAAAAQAEAAABFgADAAAAAQMMAAABFwAEAAAAAQAAEjkBHAAD
 AAAAAQABAAABPQADAAAAAQACAAABUgADAAAAAQABAAABUwADAAAABAAAEwSHcwAHAAARHAAAEwwAAAAA
-AAgACAAIAAgAAQABAAEAAQAAERxhcHBsAgAAAG1udHJSR0IgWFlaIAfYAAsACwAAADgABWFjc3BBUFBM
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD21gABAAAAANMtYXBwbJkIsnN0omC0TKqMp2EtAvwAAAAA
+AAgACAAIAAgAAQABAAEAAQAAERxhcHBsAgAAAG1udHJSR0IgWFlaIAfYAAsAFAAOAAYAN2Fjc3BBUFBM
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD21gABAAAAANMtYXBwbP5NAnhHplP720s6sKu43/kAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADnJYWVoAAAEsAAAAFGdYWVoAAAFAAAAAFGJYWVoAAAFU
 AAAAFHd0cHQAAAFoAAAAFGNoYWQAAAF8AAAALHJUUkMAAAGoAAAADmdUUkMAAAG4AAAADmJUUkMAAAHI
 AAAADnZjZ3QAAAHYAAAGEm5kaW4AAAfsAAAGPmRlc2MAAA4sAAAAZGRzY20AAA6QAAACPm1tb2QAABDQ
@@ -1378,6 +1378,7 @@ cGxlLCBJbmMuLCAyMDA4AA</bytes>
 					<string>localPort</string>
 					<string>Description</string>
 					<string>description</string>
+					<string>@count</string>
 				</object>
 				<object class="_NSManagedProxy" key="_NSManagedProxy"/>
 				<bool key="NSPreservesSelection">YES</bool>
@@ -3558,23 +3559,19 @@ dXBucGMuCk9wZW4gYXBwbGljYXRpb24gYnVuZGxlIGZvciBkZXRhaWxzLg</string>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: selection.protocol</string>
+						<string key="label">enabled: selectedObjects.@count</string>
 						<reference key="source" ref="94031528"/>
 						<reference key="destination" ref="231284841"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="94031528"/>
 							<reference key="NSDestination" ref="231284841"/>
-							<string key="NSLabel">enabled: selection.protocol</string>
+							<string key="NSLabel">enabled: selectedObjects.@count</string>
 							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">selection.protocol</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSIsNotNil</string>
-							</object>
+							<string key="NSKeyPath">selectedObjects.@count</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">648</int>
+					<int key="connectionID">652</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -5818,7 +5815,7 @@ dXBucGMuCk9wZW4gYXBwbGljYXRpb24gYnVuZGxlIGZvciBkZXRhaWxzLg</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">648</int>
+			<int key="maxID">652</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
