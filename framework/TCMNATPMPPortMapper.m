@@ -371,7 +371,7 @@ Standardablauf:
         NSLog(@"%s scheduled refresh",__FUNCTION__);
         [self performSelectorOnMainThread:@selector(refresh) withObject:nil waitUntilDone:NO];
     } else if (UpdatePortMappingsThreadShouldRestart) {
-        [self performSelectorOnMainThread:@selector(updatePortMapping) withObject:nil waitUntilDone:NO];
+        [self performSelectorOnMainThread:@selector(updatePortMappings) withObject:nil waitUntilDone:NO];
     } else {
         if ([pm isRunning]) {
             [self performSelectorOnMainThread:@selector(adjustUpdateTimer) withObject:nil waitUntilDone:NO];
