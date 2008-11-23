@@ -169,6 +169,8 @@ enum {
     }
     if ((self=[super init])) {
         _systemConfigNotificationManager = [IXSCNotificationManager new];
+        // since we are only interested in this specific key, let us configure it so.
+        [_systemConfigNotificationManager setObservedKeys:[NSArray arrayWithObject:@"State:/Network/Global/IPv4"] regExes:nil];
         _isRunning = NO;
         _NATPMPPortMapper = [[TCMNATPMPPortMapper alloc] init];
         _UPNPPortMapper = [[TCMUPNPPortMapper alloc] init];

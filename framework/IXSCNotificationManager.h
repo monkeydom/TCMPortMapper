@@ -1,6 +1,7 @@
 /*
  * Written by Theo Hultberg (theo@iconara.net) 2004-03-09 with help from Boaz Stuller.
  * This code is in the public domain, provided that this notice remains.
+ * Fixes and additions in Nov 2008 by Dominik Wagner
  */
 
 #import <Foundation/Foundation.h>
@@ -25,12 +26,14 @@
 	CFRunLoopSourceRef rlSrc;
 }
 
-@end
-
 
 /*!
- * @function       _IXSCNotificationCallback
- * @abstract       Callback for the dynamic store, just calls keysChanged: on 
- *                 the notification center.
+ * @method         setObservedKeys:regExes:
+ * @abstract       An optimisation method that restricts the keys that are observed 
+                   and for which Notification are posted to the Notification Center
+ * @discussion     Default Value is inKeys:nil inRegExArray:[@".*"] which is in fact a 
+                   observe all
  */
-void _IXSCNotificationCallback(SCDynamicStoreRef store, CFArrayRef changedKeys, void *info);
+- (void)setObservedKeys:(NSArray *)inKeyArray regExes:(NSArray *)inRegExeArray;
+
+@end
