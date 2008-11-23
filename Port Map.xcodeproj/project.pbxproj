@@ -58,6 +58,7 @@
 		F2482BA90D58A15F002DF811 /* TCMStatusImageFromMappingStatusValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F2482BA80D58A15F002DF811 /* TCMStatusImageFromMappingStatusValueTransformer.m */; };
 		F2482BAC0D58A415002DF811 /* GenericQuestionMarkIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = F2482BAB0D58A415002DF811 /* GenericQuestionMarkIcon.icns */; };
 		F2482BBB0D58ABFA002DF811 /* TCMPortStringFromPublicPortValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F2482BBA0D58ABFA002DF811 /* TCMPortStringFromPublicPortValueTransformer.m */; };
+		F27B83B60ED94616008E1983 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F27B83B40ED94616008E1983 /* Localizable.strings */; };
 		F29472930ED3091500DEBA97 /* getgateway.c in Sources */ = {isa = PBXBuildFile; fileRef = F29472890ED3091000DEBA97 /* getgateway.c */; };
 		F29472940ED3091800DEBA97 /* natpmp.c in Sources */ = {isa = PBXBuildFile; fileRef = F294728D0ED3091000DEBA97 /* natpmp.c */; };
 		F2C65C2D0D50B2D800820CAE /* IXSCNotificationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F2C65BE70D50B17B00820CAE /* IXSCNotificationManager.h */; };
@@ -225,6 +226,7 @@
 		F2482BAB0D58A415002DF811 /* GenericQuestionMarkIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = GenericQuestionMarkIcon.icns; path = portmap/artwork/GenericQuestionMarkIcon.icns; sourceTree = "<group>"; };
 		F2482BB90D58ABFA002DF811 /* TCMPortStringFromPublicPortValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCMPortStringFromPublicPortValueTransformer.h; path = portmap/TCMPortStringFromPublicPortValueTransformer.h; sourceTree = "<group>"; };
 		F2482BBA0D58ABFA002DF811 /* TCMPortStringFromPublicPortValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCMPortStringFromPublicPortValueTransformer.m; path = portmap/TCMPortStringFromPublicPortValueTransformer.m; sourceTree = "<group>"; };
+		F27B83B50ED94616008E1983 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = portmap/English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F29472860ED3091000DEBA97 /* build.bat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = build.bat; sourceTree = "<group>"; };
 		F29472870ED3091000DEBA97 /* Changelog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Changelog.txt; sourceTree = "<group>"; };
 		F29472880ED3091000DEBA97 /* declspec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = declspec.h; sourceTree = "<group>"; };
@@ -540,6 +542,7 @@
 		F2C660130D50C36700820CAE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F27B83B40ED94616008E1983 /* Localizable.strings */,
 				F24603880DB4B63A00C509E9 /* Artwork */,
 				F24603850DB4B61E00C509E9 /* Info.plist */,
 				F2C6603B0D50C62F00820CAE /* MainMenu.nib */,
@@ -753,6 +756,7 @@
 				F2CDB8D00D65C0B000B6A4E7 /* NSRefreshTemplate.tiff in Resources */,
 				F2CDB8D10D65C0B100B6A4E7 /* NSAddTemplate.tiff in Resources */,
 				31FAE7D40D672D410085867F /* miniupnpc-LICENSE.txt in Resources */,
+				F27B83B60ED94616008E1983 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -894,6 +898,14 @@
 				F214E5FC0D5F62F700A06962 /* English */,
 			);
 			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+		F27B83B40ED94616008E1983 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F27B83B50ED94616008E1983 /* English */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		F2C6603B0D50C62F00820CAE /* MainMenu.nib */ = {

@@ -105,10 +105,10 @@
         if ([pm externalIPAddress]) {
             [O_taglineTextField setStringValue:[NSString stringWithFormat:@"%@ - %@ - %@",[pm mappingProtocol],[pm routerName],[pm routerIPAddress]]];
         } else {
-            [O_taglineTextField setStringValue:[NSString stringWithFormat:@"%@ - %@ - %@",[pm mappingProtocol],[pm routerName],[pm routerIPAddress]?[pm routerIPAddress]:@"No Router"]];
+            [O_taglineTextField setStringValue:[NSString stringWithFormat:@"%@ - %@ - %@",[pm mappingProtocol],[pm routerName],[pm routerIPAddress]?[pm routerIPAddress]:NSLocalizedString(@"No Router",@"")]];
         }
     } else {
-        [O_taglineTextField setStringValue:@"Stopped"];
+        [O_taglineTextField setStringValue:NSLocalizedString(@"Stopped",@"")];
     }
 
 }
@@ -120,7 +120,7 @@
             [O_currentIPTextField setObjectValue:[pm externalIPAddress]];
         }
     } else {
-        [O_currentIPTextField setStringValue:@"Stopped"];
+        [O_currentIPTextField setStringValue:NSLocalizedString(@"Stopped",@"")];
     }
     [self updateTagLine];
 }
@@ -136,7 +136,7 @@
 
 - (void)portMapperWillSearchForRouter:(NSNotification *)aNotification {
     [O_refreshButton setEnabled:NO];
-    [O_currentIPTextField setStringValue:@"Searching..."];
+    [O_currentIPTextField setStringValue:NSLocalizedString(@"Searching...",@"")];
 }
 
 - (void)portMapperDidFindRouter:(NSNotification *)aNotification {
@@ -146,10 +146,10 @@
         [O_currentIPTextField setObjectValue:[pm externalIPAddress]];
     } else {
 		if ([pm routerIPAddress]) {
-			[O_currentIPTextField setStringValue:@"Router incompatible."];
+			[O_currentIPTextField setStringValue:NSLocalizedString(@"Router incompatible.",@"")];
 			[self showInstructionalPanel:self];
 		} else {
-			[O_currentIPTextField setStringValue:@"Can't find router."];
+			[O_currentIPTextField setStringValue:NSLocalizedString(@"Can't find router.",@"")];
 		}
     }
     [self updateTagLine];
@@ -223,7 +223,7 @@
 
 - (IBAction)endInstructionalSheet:(id)aSender {
 	if ([aSender tag] == 42) {
-		[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://docs.info.apple.com/article.html?artnum=302510"]];
+		[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:NSLocalizedString(@"NAT-PMP Howto URL",@"")]];
 	}
 	
 	if ([O_dontShowInstructionsAgainButton state] == NSOnState) {
@@ -262,14 +262,14 @@
 }
 
 - (IBAction)gotoPortMapHomepage:(id)aSender {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.codingmonkeys.de/portmap/"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:NSLocalizedString(@"Port Map URL",@"")]];
 }
 - (IBAction)gotoTCMPortMapperSources:(id)aSender {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://code.google.com/p/tcmportmapper/"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:NSLocalizedString(@"TCMPortMapper URL",@"")]];
 }
 
 - (IBAction)reportABug:(id)aSender {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://code.google.com/p/tcmportmapper/issues/entry"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:NSLocalizedString(@"Bugtracker URL",@"")]];
 }
 
 - (IBAction)showAbout:(id)aSender {
