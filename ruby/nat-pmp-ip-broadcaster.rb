@@ -2,7 +2,7 @@
 require 'socket'
 require 'ipaddr'
 
-port  = 5351
+port  = 5350
 #   A compatible NAT gateway MUST generate a response with the following
 #   format:
 #

@@ -113,12 +113,20 @@
 
 }
 
+- (NSString *)externalIPAddressString {
+	NSString *externalIPAddress = [[TCMPortMapper sharedInstance] externalIPAddress];
+	if (!externalIPAddress || [externalIPAddress isEqualToString:@"0.0.0.0"]) {
+		externalIPAddress = NSLocalizedString(@"No external Address.",@"");
+	}
+	return externalIPAddress;
+}
+
 - (void)portMapperExternalIPAddressDidChange:(NSNotification *)aNotification {
     TCMPortMapper *pm=[TCMPortMapper sharedInstance];
     if ([pm isRunning]) {
-        if ([pm externalIPAddress]) {
-            [O_currentIPTextField setObjectValue:[pm externalIPAddress]];
-        }
+    	if ([pm externalIPAddress]) {
+			[O_currentIPTextField setObjectValue:[self externalIPAddressString]];
+		}
     } else {
         [O_currentIPTextField setStringValue:NSLocalizedString(@"Stopped",@"")];
     }
@@ -143,7 +151,7 @@
     [O_refreshButton setEnabled:YES];
     TCMPortMapper *pm=[TCMPortMapper sharedInstance];
     if ([pm externalIPAddress]) {
-        [O_currentIPTextField setObjectValue:[pm externalIPAddress]];
+		[O_currentIPTextField setObjectValue:[self externalIPAddressString]];
     } else {
 		if ([pm routerIPAddress]) {
 			[O_currentIPTextField setStringValue:NSLocalizedString(@"Router incompatible.",@"")];

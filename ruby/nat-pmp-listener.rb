@@ -2,14 +2,14 @@
 require 'socket'
 require 'ipaddr'
 
-port  = 5351
+port  = 5350
 
 print "Listening for NAT-PMP public IP changes:\n"
 
 socket = UDPSocket.new
 socket.setsockopt(Socket::SOL_SOCKET, Socket::SO_REUSEADDR, true)
 socket.setsockopt(Socket::SOL_SOCKET, Socket::SO_REUSEPORT, true)
-socket.bind("224.0.0.1",5351)
+socket.bind("224.0.0.1",port)
 addr  = '0.0.0.0'
 host  = Socket.gethostname
 # socket.setsockopt(Socket::IPPROTO_IP, Socket::IP_ADD_MEMBERSHIP, mreq)

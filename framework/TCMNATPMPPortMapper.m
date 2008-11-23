@@ -129,7 +129,7 @@ static void readData (
             bzero(&socketAddress, sizeof(struct sockaddr_in));
             socketAddress.sin_len = sizeof(struct sockaddr_in);
             socketAddress.sin_family = PF_INET;
-            socketAddress.sin_port = htons(5351);
+            socketAddress.sin_port = htons(5350);
             socketAddress.sin_addr.s_addr = inet_addr("224.0.0.1");
             
             addressData = CFDataCreate(kCFAllocatorDefault, (UInt8 *)&socketAddress, sizeof(struct sockaddr_in));
@@ -426,15 +426,23 @@ Standardablauf:
                 }
             } while(r==NATPMP_TRYAGAIN);
         
-            if(r<0) {
+            if(r<0 && r != NATPMP_ERR_NETWORKFAILURE) {
                didFail = YES;
 #ifndef NDEBUG
-               NSLog(@"NAT-PMP: IP refresh did time out");
+               NSLog(@"%s NAT-PMP: IP refresh did fail: %d",__FUNCTION__,r);
 #endif
             } else {
+                NSString *ipString = [NSString stringWithFormat:@"%s", inet_ntoa(response.pnu.publicaddress.addr)];
+            	if (r == NATPMP_ERR_NETWORKFAILURE) {
+            		ipString = @"0.0.0.0"; // citing the RFC:
+//   If the result code is non-zero, the value of External IP
+//   Address is undefined (MUST be set to zero on transmission, and MUST
+//   be ignored on reception).
+					// so we use 0.0.0.0 at this stage. also because that is what the airport is broadcasting.
+					// we externally can savely display 0.0.0.0 as not having an external ip
+            	}
                 /* TODO : check that response.type == 0 */
             
-                NSString *ipString = [NSString stringWithFormat:@"%s", inet_ntoa(response.pnu.publicaddress.addr)];
 #ifndef NDEBUG
                 NSLog(@"NAT-PMP:  found IP:%@",ipString);
 #endif
