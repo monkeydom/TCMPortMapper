@@ -222,7 +222,9 @@ enum {
 }
 
 - (void)networkDidChange:(NSNotification *)aNotification {
+#ifndef NDEBUG
     NSLog(@"%s %@",__FUNCTION__,aNotification);
+#endif
     [self refresh];
 }
 
