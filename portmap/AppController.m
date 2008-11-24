@@ -272,6 +272,7 @@
 - (IBAction)gotoPortMapHomepage:(id)aSender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:NSLocalizedString(@"Port Map URL",@"")]];
 }
+
 - (IBAction)gotoTCMPortMapperSources:(id)aSender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:NSLocalizedString(@"TCMPortMapper URL",@"")]];
 }
@@ -279,6 +280,12 @@
 - (IBAction)reportABug:(id)aSender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:NSLocalizedString(@"Bugtracker URL",@"")]];
 }
+
+- (IBAction)showReleaseNotes:(id)aSender {
+	NSURL *releaseNotesURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"portmap_releasenotes" ofType:@"html"]];
+    [[NSWorkspace sharedWorkspace] openURL:releaseNotesURL];
+}
+
 
 - (IBAction)showAbout:(id)aSender {
     [O_aboutWindow center];

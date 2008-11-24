@@ -1,0 +1,38 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<title>Port Map Changelog</title>
+		<meta name="robots" content="anchors">
+		<link href="portmap_releasenotes.css" type="text/css" rel="stylesheet" media="all">
+	</head>
+
+	<body>
+		<br />
+			<table class="dots" width="100%" border="0" cellspacing="0" cellpadding="0" summary="Two column table with heading">
+				<tr>
+					<td class="blue" colspan="2">
+						<h3>Version 1.1: Update of underlying libraries and bugfixes</h3>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top">
+						<ul>
+						  <li>updated of miniupnpc library to version 1.2 - should increase compatibility with more router/gateways, e.g. the Arcor EasyBox A300.</li>
+						  <li>update of libnatpmp to libnatpmp-20081006</li>
+						  <li>fixed an issue with AVM routers that caused generation of too many and stale UPNP mappings</li>
+						  <li>fixed an issue with NAT-PMP and the current Airport Extreme Base stations that caused external IP changes not to be noticed</li>
+						  <li>fixed an issue that caused TCMPortMapper to not recognize global network changes if it was started while no network was connected</li>
+						  <li>fixed a crashing issue appearing with certain setups where UPNP devices have been discovered that inevitably lead to miniwget crashes due to missing content</li>
+						  <li>fixed too eager error reporting in case of system wake up by increasing the interval of the refresh after wake up from 1.0 to 2.0 seconds</li>
+						  <li>fixed reporting of "Router incompatible." in the case of an Apple Airport and not DSL or other network connection. Now correctly "No external Address." is displayed but mappings still can be setup to be active when the device goes online again.</li>
+						  <li>fixed an issue where quickly turning NAT-PMP port mappings on and off raised an exception instead of updating the mapping.</li>
+						  <li>fixed an issue where choosing multiple UPNP port mappings for deletion did sometimes disable the remove button.</li>
+						  <li>improved long time running UPNP setups by decreasing the regular refresh interval</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+	</body>
+
+</html>

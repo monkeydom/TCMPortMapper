@@ -58,6 +58,7 @@
 - (IBAction)gotoPortMapHomepage:(id)aSender;
 - (IBAction)gotoTCMPortMapperSources:(id)aSender;
 - (IBAction)reportABug:(id)aSender;
+- (IBAction)showReleaseNotes:(id)aSender;
 
 - (IBAction)showAbout:(id)aSender;
 

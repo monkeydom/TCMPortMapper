@@ -59,6 +59,11 @@
 		F2482BAC0D58A415002DF811 /* GenericQuestionMarkIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = F2482BAB0D58A415002DF811 /* GenericQuestionMarkIcon.icns */; };
 		F2482BBB0D58ABFA002DF811 /* TCMPortStringFromPublicPortValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F2482BBA0D58ABFA002DF811 /* TCMPortStringFromPublicPortValueTransformer.m */; };
 		F27B83B60ED94616008E1983 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F27B83B40ED94616008E1983 /* Localizable.strings */; };
+		F290D6160EDAC1B200E643C0 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F290D6150EDAC1B200E643C0 /* Sparkle.framework */; };
+		F290D6210EDAC1C800E643C0 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = F290D6150EDAC1B200E643C0 /* Sparkle.framework */; };
+		F290D6340EDAC44000E643C0 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = F290D6330EDAC44000E643C0 /* dsa_pub.pem */; };
+		F290D63E0EDAEBFB00E643C0 /* portmap_releasenotes.css in Resources */ = {isa = PBXBuildFile; fileRef = F290D63C0EDAEBFB00E643C0 /* portmap_releasenotes.css */; };
+		F290D63F0EDAEBFB00E643C0 /* portmap_releasenotes.html in Resources */ = {isa = PBXBuildFile; fileRef = F290D63D0EDAEBFB00E643C0 /* portmap_releasenotes.html */; };
 		F29472930ED3091500DEBA97 /* getgateway.c in Sources */ = {isa = PBXBuildFile; fileRef = F29472890ED3091000DEBA97 /* getgateway.c */; };
 		F29472940ED3091800DEBA97 /* natpmp.c in Sources */ = {isa = PBXBuildFile; fileRef = F294728D0ED3091000DEBA97 /* natpmp.c */; };
 		F2C65C2D0D50B2D800820CAE /* IXSCNotificationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F2C65BE70D50B17B00820CAE /* IXSCNotificationManager.h */; };
@@ -154,6 +159,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				F290D6210EDAC1C800E643C0 /* Sparkle.framework in Copy Frameworks */,
 				F2C660510D50C69A00820CAE /* TCMPortMapper.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
@@ -226,7 +232,11 @@
 		F2482BAB0D58A415002DF811 /* GenericQuestionMarkIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = GenericQuestionMarkIcon.icns; path = portmap/artwork/GenericQuestionMarkIcon.icns; sourceTree = "<group>"; };
 		F2482BB90D58ABFA002DF811 /* TCMPortStringFromPublicPortValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCMPortStringFromPublicPortValueTransformer.h; path = portmap/TCMPortStringFromPublicPortValueTransformer.h; sourceTree = "<group>"; };
 		F2482BBA0D58ABFA002DF811 /* TCMPortStringFromPublicPortValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCMPortStringFromPublicPortValueTransformer.m; path = portmap/TCMPortStringFromPublicPortValueTransformer.m; sourceTree = "<group>"; };
-		F27B83B50ED94616008E1983 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = portmap/English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F27B83B50ED94616008E1983 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = portmap/English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F290D6150EDAC1B200E643C0 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = frameworks/Sparkle.framework; sourceTree = "<group>"; };
+		F290D6330EDAC44000E643C0 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dsa_pub.pem; path = portmap/dsa_pub.pem; sourceTree = "<group>"; };
+		F290D63C0EDAEBFB00E643C0 /* portmap_releasenotes.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = portmap_releasenotes.css; path = portmap/htdocs/portmap_releasenotes.css; sourceTree = "<group>"; };
+		F290D63D0EDAEBFB00E643C0 /* portmap_releasenotes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = portmap_releasenotes.html; path = portmap/htdocs/portmap_releasenotes.html; sourceTree = "<group>"; };
 		F29472860ED3091000DEBA97 /* build.bat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = build.bat; sourceTree = "<group>"; };
 		F29472870ED3091000DEBA97 /* Changelog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Changelog.txt; sourceTree = "<group>"; };
 		F29472880ED3091000DEBA97 /* declspec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = declspec.h; sourceTree = "<group>"; };
@@ -303,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2C660480D50C68400820CAE /* TCMPortMapper.framework in Frameworks */,
+				F290D6160EDAC1B200E643C0 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +323,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F290D6150EDAC1B200E643C0 /* Sparkle.framework */,
 				3180154D0D4E08D900BE3B28 /* SystemConfiguration.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
@@ -542,8 +554,11 @@
 		F2C660130D50C36700820CAE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F290D63C0EDAEBFB00E643C0 /* portmap_releasenotes.css */,
+				F290D63D0EDAEBFB00E643C0 /* portmap_releasenotes.html */,
 				F27B83B40ED94616008E1983 /* Localizable.strings */,
 				F24603880DB4B63A00C509E9 /* Artwork */,
+				F290D6330EDAC44000E643C0 /* dsa_pub.pem */,
 				F24603850DB4B61E00C509E9 /* Info.plist */,
 				F2C6603B0D50C62F00820CAE /* MainMenu.nib */,
 				F2C6603D0D50C62F00820CAE /* InfoPlist.strings */,
@@ -757,6 +772,9 @@
 				F2CDB8D10D65C0B100B6A4E7 /* NSAddTemplate.tiff in Resources */,
 				31FAE7D40D672D410085867F /* miniupnpc-LICENSE.txt in Resources */,
 				F27B83B60ED94616008E1983 /* Localizable.strings in Resources */,
+				F290D6340EDAC44000E643C0 /* dsa_pub.pem in Resources */,
+				F290D63E0EDAEBFB00E643C0 /* portmap_releasenotes.css in Resources */,
+				F290D63F0EDAEBFB00E643C0 /* portmap_releasenotes.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1185,6 +1203,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/frameworks\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -1211,6 +1233,10 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/frameworks\"",
+				);
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
