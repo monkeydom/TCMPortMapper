@@ -24,7 +24,7 @@ zip -9 -r -y "${ZipName}.zip" "${ZipProduct}"
 echo "...done"
 
 echo "Adding Revision Number to Zip file ${zipBasePath}.zip ..."
-REV=`/usr/local/bin/svnversion -n "${SRCROOT}"`
+REV=`/usr/bin/env svnversion -n "${SRCROOT}"`
 cd "${BUILT_PRODUCTS_DIR}"
 cp "${ZipName}.zip" "${ZipName}-${REV}.zip"
 echo "...done"
