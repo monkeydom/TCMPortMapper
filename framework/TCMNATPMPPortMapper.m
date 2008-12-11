@@ -93,6 +93,17 @@ static void readData (
         natPMPThreadIsRunningLock = [NSLock new];
         if ([natPMPThreadIsRunningLock respondsToSelector:@selector(setName:)]) 
             [(id)natPMPThreadIsRunningLock performSelector:@selector(setName:) withObject:@"NATPMPThreadRunningLock"];
+    }
+    return self;
+}
+
+- (void)dealloc {
+    [natPMPThreadIsRunningLock release];
+    [super dealloc];
+}
+
+- (void)ensureListeningToExternalIPAddressChanges {
+	if (!_externalAddressChangeListeningSocket) {
         // add UDP listener for public ip update packets
         //    0                   1                   2                   3
         //    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
@@ -106,21 +117,15 @@ static void readData (
         CFSocketContext socketContext;
         bzero(&socketContext, sizeof(CFSocketContext));
         socketContext.info = self;
-        CFSocketRef listeningSocket = NULL;
-        listeningSocket = CFSocketCreate(kCFAllocatorDefault, PF_INET, SOCK_DGRAM, IPPROTO_UDP, 
+        _externalAddressChangeListeningSocket = CFSocketCreate(kCFAllocatorDefault, PF_INET, SOCK_DGRAM, IPPROTO_UDP, 
                                            kCFSocketDataCallBack, readData, &socketContext);
-        if (listeningSocket) {
+        if (_externalAddressChangeListeningSocket) {
+        	// SO_REUSEPORT is enough for allowing multiple clients to listen to the same address/port combination
             int yes = 1;
-            int result = setsockopt(CFSocketGetNative(listeningSocket), SOL_SOCKET, 
-                                    SO_REUSEADDR, &yes, sizeof(int));
+            int result = setsockopt(CFSocketGetNative(_externalAddressChangeListeningSocket), SOL_SOCKET, 
+                                    SO_REUSEPORT, &yes, sizeof(yes));
             if (result == -1) {
-                NSLog(@"Could not setsockopt to reuseaddr: %@ / %s", errno, strerror(errno));
-            }
-            
-            result = setsockopt(CFSocketGetNative(listeningSocket), SOL_SOCKET, 
-                                    SO_REUSEPORT, &yes, sizeof(int));
-            if (result == -1) {
-                NSLog(@"Could not setsockopt to reuseport: %@ / %s", errno, strerror(errno));
+                NSLog(@"Could not setsockopt to SO_REUSEPORT: %d / %s", errno, strerror(errno));
             }
             
             CFDataRef addressData = NULL;
@@ -134,18 +139,20 @@ static void readData (
             
             addressData = CFDataCreate(kCFAllocatorDefault, (UInt8 *)&socketAddress, sizeof(struct sockaddr_in));
             if (addressData == NULL) {
-                NSLog(@"Could not create addressData");
+                NSLog(@"Could not create addressData for NAT-PMP external ip address change notification listening");
             } else {
                     
-                CFSocketError err = CFSocketSetAddress(listeningSocket, addressData);
+                CFSocketError err = CFSocketSetAddress(_externalAddressChangeListeningSocket, addressData);
                 if (err != kCFSocketSuccess) {
                     NSLog(@"%s could not set address on socket",__FUNCTION__);
                 } else {
                     CFRunLoopRef currentRunLoop = [[NSRunLoop currentRunLoop] getCFRunLoop];
     
-                    CFRunLoopSourceRef runLoopSource = CFSocketCreateRunLoopSource(kCFAllocatorDefault, listeningSocket, 0);
-                    CFRunLoopAddSource(currentRunLoop, runLoopSource, kCFRunLoopCommonModes);
-                    CFRelease(runLoopSource);
+                    CFRunLoopSourceRef runLoopSource = CFSocketCreateRunLoopSource(kCFAllocatorDefault, _externalAddressChangeListeningSocket, 0);
+                    if (runLoopSource) {
+	                    CFRunLoopAddSource(currentRunLoop, runLoopSource, kCFRunLoopCommonModes);
+                    	CFRelease(runLoopSource);
+                    }
                 }
                 
                 CFRelease(addressData);
@@ -153,23 +160,31 @@ static void readData (
             addressData = NULL;
 
         } else {
-            NSLog(@"Could not create listening socket for IPv4");
+            NSLog(@"Could not create listening socket for NAT-PMP external ip address change notifications (UDP 224.0.0.1:5350)");
         }
-    }
-    return self;
+	}
 }
 
-- (void)dealloc {
-    [natPMPThreadIsRunningLock release];
-    [super dealloc];
+- (void)stopListeningToExternalIPAddressChanges {
+	if (_externalAddressChangeListeningSocket) {
+		NSLog(@"%s tearing down socket",__FUNCTION__);
+		CFSocketInvalidate(_externalAddressChangeListeningSocket);
+		CFRelease(_externalAddressChangeListeningSocket);
+		_externalAddressChangeListeningSocket = NULL;
+	}
 }
+
 
 - (void)stop {
+	NSLog(@"%s",__FUNCTION__);
     if ([_updateTimer isValid]) {
         [_updateTimer invalidate];
         [_updateTimer release];
         _updateTimer = nil;
     }
+
+	[self stopListeningToExternalIPAddressChanges];
+
     if (![natPMPThreadIsRunningLock tryLock] && (runningThreadID == TCMExternalIPThreadID)) {
         // stop that one
         IPAddressThreadShouldQuitAndRestart = PORTMAPREFRESHSHOULDNOTRESTART;
@@ -181,6 +196,10 @@ static void readData (
 }
 
 - (void)refresh {
+	NSLog(@"%s",__FUNCTION__);
+	// ensure running of external ip address change listener
+	[self ensureListeningToExternalIPAddressChanges];
+
     // Run externalipAddress in Thread
     if ([natPMPThreadIsRunningLock tryLock]) {
         _updateInterval = 3600 / 2.;
@@ -461,6 +480,7 @@ Standardablauf:
         }
     } else {
         if (didFail) {
+            [self stopListeningToExternalIPAddressChanges];
             [[NSNotificationCenter defaultCenter] postNotificationOnMainThread:[NSNotification notificationWithName:TCMNATPMPPortMapperDidFailNotification object:self]];
         } else {
             [self performSelectorOnMainThread:@selector(updatePortMappings) withObject:nil waitUntilDone:0];
@@ -488,6 +508,7 @@ Standardablauf:
         }
     }
     [natPMPThreadIsRunningLock unlock];
+	[self stopListeningToExternalIPAddressChanges];
 }
 
 - (void)didReceiveExternalIP:(NSString *)anExternalIPAddress fromSenderAddress:(NSString *)aSenderAddressString secondsSinceEpoch:(int)aSecondsSinceEpoch {

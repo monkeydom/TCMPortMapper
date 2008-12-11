@@ -11,7 +11,7 @@
 							http://www.codingmonkeys.de/portmap/version_1_1.html
 						</sparkle:releaseNotesLink>
             <pubDate>Wed, 28 Sep 2008 19:20:11 +0000</pubDate>
-            <enclosure url="http://www.codingmonkeys.de/portmap/download" sparkle:version="25" sparkle:shortVersionString="1.1" length="1000" type="application/octet-stream" sparkle:dsaSignature="" />
+            <enclosure url="http://www.codingmonkeys.de/portmap/download" sparkle:version="30" sparkle:shortVersionString="1.1" length="1234756" type="application/octet-stream" sparkle:dsaSignature="MC0CFDRe3io50muZ0VbLVUoGtQNpiRW6AhUA4m/F/mCJTxUv7lvqdxDD0NLso9g=" />
          </item>
    </channel>
 </rss>

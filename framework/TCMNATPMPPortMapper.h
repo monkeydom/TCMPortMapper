@@ -32,11 +32,15 @@ typedef enum {
     NSTimeInterval _updateInterval;
     NSString *_lastExternalIPSenderAddress;
     NSString *_lastBroadcastedExternalIP;
+    CFSocketRef _externalAddressChangeListeningSocket;
 }
 
 - (void)refresh;
 - (void)stop;
 - (void)updatePortMappings;
 - (void)stopBlocking;
+
+- (void)ensureListeningToExternalIPAddressChanges;
+- (void)stopListeningToExternalIPAddressChanges;
 
 @end

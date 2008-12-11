@@ -168,6 +168,9 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
 #ifndef NDEBUG
                 NSLog(@"UPnP: trying URL:%@",descURL);
 #endif
+				// freeing the url still seems like a good idea - why isn't it?
+				if (_urls.controlURL) FreeUPNPUrls(&_urls);
+				// get the new control URLs - this call mallocs the control URLs
                 if (UPNP_GetIGDFromUrl([[descURL absoluteString] UTF8String],&_urls,&_igddata,lanaddr,sizeof(lanaddr))) {
                     int r = UPNP_GetExternalIPAddress(_urls.controlURL,
                                               _igddata.servicetype,
@@ -262,9 +265,11 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
             if ([aPortMapping transportProtocol] & protocol) {
                 int r = 0;
                 do {
+                	NSLog(@"%s trying to map port: %d",__FUNCTION__,mappedPort);
                     while ([aExternalPortSet containsIndex:mappedPort] && mappedPort<[aPortMapping desiredExternalPort]+40) {
                         mappedPort++;
                     }
+                	NSLog(@"%s actually trying to map port: %d",__FUNCTION__,mappedPort);
                     r = UPNP_AddPortMapping(aURLs->controlURL, aIGDData->servicetype,[[NSString stringWithFormat:@"%d",mappedPort] UTF8String],[[NSString stringWithFormat:@"%d",[aPortMapping localPort]] UTF8String], [[[TCMPortMapper sharedInstance] localIPAddress] UTF8String], [[self portMappingDescription] UTF8String], protocol==TCMPortMappingTransportProtocolUDP?"UDP":"TCP");
                     if (r!=UPNPCOMMAND_SUCCESS) {
                         NSString *errorString = [NSString stringWithFormat:@"%d",r];
@@ -383,8 +388,8 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
                             if ([mapping mappingStatus]!=TCMPortMappingStatusMapped &&
                                 [mapping transportProtocol]!=TCMPortMappingTransportProtocolBoth) {
                                 [mapping setMappingStatus:TCMPortMappingStatusMapped];
+								[reservedPortNumbers addIndex:publicPort];
                             }
-                            [reservedPortNumbers addIndex:publicPort];
                             break;
                         }
                     }
@@ -504,10 +509,15 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
         TCMPortMapping *mapping = nil;
         while ((mapping = [mappings nextObject])) {
             if ([mapping mappingStatus] == TCMPortMappingStatusMapped) {
-                UPNP_DeletePortMapping(_urls.controlURL, _igddata.servicetype, 
-                                       [[NSString stringWithFormat:@"%d",[mapping externalPort]] UTF8String], 
-                                       ([mapping transportProtocol]==TCMPortMappingTransportProtocolUDP)?"UDP":"TCP");
-                [mapping setMappingStatus:TCMPortMappingStatusUnmapped];
+            	int protocol = TCMPortMappingTransportProtocolUDP;
+		        for (protocol = TCMPortMappingTransportProtocolUDP; protocol <= TCMPortMappingTransportProtocolTCP; protocol++) {
+		        	if (protocol & [mapping transportProtocol]) {
+						UPNP_DeletePortMapping(_urls.controlURL, _igddata.servicetype, 
+											   [[NSString stringWithFormat:@"%d",[mapping externalPort]] UTF8String], 
+											   (protocol==TCMPortMappingTransportProtocolUDP)?"UDP":"TCP");
+					}
+				}
+				[mapping setMappingStatus:TCMPortMappingStatusUnmapped];
             }
         }
     }
