@@ -167,7 +167,6 @@ static void readData (
 
 - (void)stopListeningToExternalIPAddressChanges {
 	if (_externalAddressChangeListeningSocket) {
-		NSLog(@"%s tearing down socket",__FUNCTION__);
 		CFSocketInvalidate(_externalAddressChangeListeningSocket);
 		CFRelease(_externalAddressChangeListeningSocket);
 		_externalAddressChangeListeningSocket = NULL;
@@ -176,7 +175,6 @@ static void readData (
 
 
 - (void)stop {
-	NSLog(@"%s",__FUNCTION__);
     if ([_updateTimer isValid]) {
         [_updateTimer invalidate];
         [_updateTimer release];
@@ -196,7 +194,6 @@ static void readData (
 }
 
 - (void)refresh {
-	NSLog(@"%s",__FUNCTION__);
 	// ensure running of external ip address change listener
 	[self ensureListeningToExternalIPAddressChanges];
 
@@ -387,7 +384,6 @@ Standardablauf:
 
     [natPMPThreadIsRunningLock unlock];
     if (UpdatePortMappingsThreadShouldQuit) {
-        NSLog(@"%s scheduled refresh",__FUNCTION__);
         [self performSelectorOnMainThread:@selector(refresh) withObject:nil waitUntilDone:NO];
     } else if (UpdatePortMappingsThreadShouldRestart) {
         [self performSelectorOnMainThread:@selector(updatePortMappings) withObject:nil waitUntilDone:NO];

@@ -420,6 +420,7 @@ enum {
             [[NSNotificationCenter defaultCenter] postNotificationName:TCMPortMapperDidFinishSearchForRouterNotification object:self];
         }
     } else {
+    	[_NATPMPPortMapper stopListeningToExternalIPAddressChanges];
         [[NSNotificationCenter defaultCenter] postNotificationName:TCMPortMapperDidFinishSearchForRouterNotification object:self];
     }
 
