@@ -6,12 +6,12 @@
       <description>Most recent changes with links to updates.</description>
       <language>en</language>
          <item>
-            <title>Version 1.1 - update of underlying libraries and bugfixes</title>
+            <title>Version 1.2: Small bugfixes</title>
 						<sparkle:releaseNotesLink>
-							http://www.codingmonkeys.de/portmap/version_1_1.html
+							http://www.codingmonkeys.de/portmap/version_1_2.html
 						</sparkle:releaseNotesLink>
-            <pubDate>Wed, 28 Sep 2008 19:20:11 +0000</pubDate>
-            <enclosure url="http://www.codingmonkeys.de/portmap/download" sparkle:version="30" sparkle:shortVersionString="1.1" length="1234756" type="application/octet-stream" sparkle:dsaSignature="MC0CFDRe3io50muZ0VbLVUoGtQNpiRW6AhUA4m/F/mCJTxUv7lvqdxDD0NLso9g=" />
+            <pubDate>Fri, 12 Dec 19:20:11 +0000</pubDate>
+            <enclosure url="http://www.codingmonkeys.de/portmap/download" sparkle:version="34" sparkle:shortVersionString="1.2" length="" type="application/octet-stream" sparkle:dsaSignature="" />
          </item>
    </channel>
 </rss>

@@ -1,0 +1,31 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<title>Port Map Changelog</title>
+		<meta name="robots" content="anchors">
+		<link href="portmap_releasenotes.css" type="text/css" rel="stylesheet" media="all">
+	</head>
+
+	<body>
+		<br />
+			<table class="dots" width="100%" border="0" cellspacing="0" cellpadding="0" summary="Two column table with heading">
+				<tr>
+					<td class="blue" colspan="2">
+						<h3>Version 1.2: small bugfixes</h3>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top">
+						<ul>
+						  <li>fixed an issue with TCMPortMappingTransportProtocolBoth and UPNP where port mappings would increase their public port on refresh</li>
+						  <li>fixed an issue with TCMPortMappingTransportProtocolBoth and UPNP where port mapping would leave their UDP part mapped</li>
+						  <li>fixed a small memory leak with UPNP (32 bytes per refresh complete refresh)</li>
+						  <li>improved compatibility with a bug in mDNSResponder by not continuously listening to 5350 - but only if we discovered a NAT-PMP compatible gateway. If you encounter a massive logging of mDNSResponder you now can switch Port Map off and on again to resolve this issue, until mDNSResponder is fixed by Apple.</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+	</body>
+
+</html>
