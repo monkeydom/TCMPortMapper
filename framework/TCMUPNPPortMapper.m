@@ -113,7 +113,7 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
 
 		if (!description) {
 	        description = [[descriptionComponents componentsJoinedByString:@"."] retain];
-			NSLog(@"%s description: %@",__FUNCTION__,description);
+//			NSLog(@"%s description: %@",__FUNCTION__,description);
 		}
     }
     return description;
