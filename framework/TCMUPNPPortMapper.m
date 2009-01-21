@@ -79,11 +79,13 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
 - (NSString *)portMappingDescription {
     static NSString *description = nil;
     if (!description) {
-        NSMutableArray *descriptionComponents=[NSMutableArray arrayWithObject:@"tcmPM"];
+    	NSString *prefix = @"cPM";
+        NSMutableArray *descriptionComponents=[NSMutableArray array];
         NSString *component = [[[[NSBundle mainBundle] bundlePath] lastPathComponent] stringByDeletingPathExtension];
+        NSString *userID = [[TCMPortMapper sharedInstance] userID];
         if (component) {
         	// make sure _ and . are the only non alphanumeric characters in the name so we don't run into problems with routers which change the description (eg. avm routers)
-        	NSCharacterSet *saveSet = [NSCharacterSet characterSetWithCharactersInString:@"abcdefhijklmnopqrstuvwxyzABCDEFHIJKLMNOPQRSTUVWXYZ1234567890"];
+        	NSCharacterSet *saveSet = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"];
         	NSScanner *scanner = [NSScanner scannerWithString:component];
         	[scanner setCharactersToBeSkipped:[saveSet invertedSet]];
         	NSString *scannedString = nil;
@@ -91,9 +93,28 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
         		[descriptionComponents addObject:scannedString];
         	}
         }
-        NSString *userID = [[TCMPortMapper sharedInstance] userID];
-        if (userID) [descriptionComponents addObject:userID];
-        description = [[descriptionComponents componentsJoinedByString:@"."] retain];
+
+		NSString *appComponent = [descriptionComponents componentsJoinedByString:@"."];
+		[descriptionComponents removeAllObjects];
+		// there seems to be a hard limit of 40 characters at in the vigor routers - so length is of essence
+		int maxLength = 40;
+		maxLength -= [prefix length];
+		maxLength -= [userID length];
+		maxLength -= 2;
+		if ([appComponent length] > maxLength) {
+			appComponent = [appComponent substringToIndex:maxLength];
+		}
+		
+		[descriptionComponents addObject:prefix];
+		if (appComponent) [descriptionComponents addObject:appComponent];
+        if (userID) {
+        	[descriptionComponents addObject:userID];
+        }
+
+		if (!description) {
+	        description = [[descriptionComponents componentsJoinedByString:@"."] retain];
+			NSLog(@"%s description: %@",__FUNCTION__,description);
+		}
     }
     return description;
 }
