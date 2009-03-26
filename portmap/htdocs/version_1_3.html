@@ -1,0 +1,30 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<title>Port Map Changelog</title>
+		<meta name="robots" content="anchors">
+		<link href="portmap_releasenotes.css" type="text/css" rel="stylesheet" media="all">
+	</head>
+
+	<body>
+		<br />
+			<table class="dots" width="100%" border="0" cellspacing="0" cellpadding="0" summary="Two column table with heading">
+				<tr>
+					<td class="blue" colspan="2">
+						<h3>Version 1.3: Airport Extreme Base Station and mDNSResponder havoc relief</h3>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top">
+						<ul>
+						  <li>fixed an issue where Port Map would trigger a bug in the mDNSResponder after machine wake if the computer is in a Network that supports NAT-PMP (e.g. Apple Airport Extreme Base Stations). </li>
+						  <li>fixed an issue where Port Map would trigger a bug in the mDNSResponder after network change to a  Network which supports NAT-PMP (e.g. Apple Airport Extreme Base Stations). </li>
+						  <li>If you still encounter a massive logging of mDNSResponder you now can switch Port Map off and on again to resolve this issue, until mDNSResponder is fixed by Apple.</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+	</body>
+
+</html>

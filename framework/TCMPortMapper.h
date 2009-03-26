@@ -87,6 +87,7 @@ typedef enum {
     NSMutableSet *_upnpPortMappingsToRemove;
     NSTimer *_upnpPortMapperTimer;
     BOOL _ignoreNetworkChanges;
+    BOOL _refreshIsScheduled;
 }
 
 + (TCMPortMapper *)sharedInstance;

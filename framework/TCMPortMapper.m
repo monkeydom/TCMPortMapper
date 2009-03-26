@@ -150,6 +150,7 @@ enum {
 - (void)setLocalIPAddress:(NSString *)anAddress;
 - (void)increaseWorkCount:(NSNotification *)aNotification;
 - (void)decreaseWorkCount:(NSNotification *)aNotification;
+- (void)scheduleRefresh;
 @end
 
 @implementation TCMPortMapper
@@ -173,6 +174,7 @@ enum {
         [_systemConfigNotificationManager setObservedKeys:[NSArray arrayWithObject:@"State:/Network/Global/IPv4"] regExes:nil];
         _isRunning = NO;
         _ignoreNetworkChanges = NO;
+        _refreshIsScheduled = NO;
         _NATPMPPortMapper = [[TCMNATPMPPortMapper alloc] init];
         _UPNPPortMapper = [[TCMUPNPPortMapper alloc] init];
         _portMappings = [NSMutableSet new];
@@ -226,7 +228,9 @@ enum {
 #ifndef NDEBUG
     NSLog(@"%s %@",__FUNCTION__,aNotification);
 #endif
-    if (!_ignoreNetworkChanges) [self refresh];
+    if (!_ignoreNetworkChanges) {
+    	[self scheduleRefresh];
+    }
 }
 
 - (NSString *)externalIPAddress {
@@ -366,6 +370,13 @@ enum {
     }
 }
 
+// add some delay to the refresh caused by network changes so mDNSResponer has a little time to grab its port before us
+- (void)scheduleRefresh {
+	if (!_refreshIsScheduled) {
+		[self performSelector:@selector(refresh) withObject:nil afterDelay:0.5];
+	}
+}
+
 - (void)refresh {
 
     [self increaseWorkCount:nil];
@@ -427,7 +438,8 @@ enum {
 
     // add the delay to bridge the gap between the thread starting and this method returning
     [self performSelector:@selector(decreaseWorkCount:) withObject:nil afterDelay:1.0];
-
+	// make way for further refresh schedulings
+	_refreshIsScheduled = NO;
 }
 
 - (void)setExternalIPAddress:(NSString *)anIPAddress {
