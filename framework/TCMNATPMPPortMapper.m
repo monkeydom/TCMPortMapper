@@ -166,6 +166,9 @@ static void readData (
 }
 
 - (void)stopListeningToExternalIPAddressChanges {
+#ifdef DEBUG
+	NSLog(@"%s, socket:%p",__FUNCTION__,_externalAddressChangeListeningSocket);
+#endif
 	if (_externalAddressChangeListeningSocket) {
 		CFSocketInvalidate(_externalAddressChangeListeningSocket);
 		CFRelease(_externalAddressChangeListeningSocket);
@@ -489,6 +492,7 @@ Standardablauf:
 - (void)stopBlocking {
     UpdatePortMappingsThreadShouldQuit = YES;
     IPAddressThreadShouldQuitAndRestart = YES;
+	[self stopListeningToExternalIPAddressChanges];
     [natPMPThreadIsRunningLock lock];
     NSSet *mappingsToStop = [[TCMPortMapper sharedInstance] portMappings];
     natpmp_t natpmp;
@@ -504,7 +508,6 @@ Standardablauf:
         }
     }
     [natPMPThreadIsRunningLock unlock];
-	[self stopListeningToExternalIPAddressChanges];
 }
 
 - (void)didReceiveExternalIP:(NSString *)anExternalIPAddress fromSenderAddress:(NSString *)aSenderAddressString secondsSinceEpoch:(int)aSecondsSinceEpoch {

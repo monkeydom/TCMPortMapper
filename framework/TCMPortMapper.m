@@ -172,6 +172,7 @@ enum {
         // since we are only interested in this specific key, let us configure it so.
         [_systemConfigNotificationManager setObservedKeys:[NSArray arrayWithObject:@"State:/Network/Global/IPv4"] regExes:nil];
         _isRunning = NO;
+        _ignoreNetworkChanges = NO;
         _NATPMPPortMapper = [[TCMNATPMPPortMapper alloc] init];
         _UPNPPortMapper = [[TCMUPNPPortMapper alloc] init];
         _portMappings = [NSMutableSet new];
@@ -225,7 +226,7 @@ enum {
 #ifndef NDEBUG
     NSLog(@"%s %@",__FUNCTION__,aNotification);
 #endif
-    [self refresh];
+    if (!_ignoreNetworkChanges) [self refresh];
 }
 
 - (NSString *)externalIPAddress {
@@ -760,14 +761,25 @@ enum {
     }
 }
 
-- (void)didWake:(NSNotification *)aNotification {
+- (void)postWakeAction {
+	_ignoreNetworkChanges = NO;
     if (_isRunning) {
         // take some time because on the moment of awakening e.g. airport isn't yet connected
-        [self performSelector:@selector(refresh) withObject:nil afterDelay:2.];
-    }
+        [self refresh];
+	}
 }
 
-- (void)willSleep:(NSNotification *)aNotificaiton {
+
+- (void)didWake:(NSNotification *)aNotification {
+	// postpone the action because we need to wait for some delay until stuff is up. moreover we need to give the buggy mdnsresponder a chance to grab his nat-pmp port so we can do so later
+	[self performSelector:@selector(postWakeAction) withObject:nil afterDelay:2.];
+}
+
+- (void)willSleep:(NSNotification *)aNotification {
+#ifdef DEBUG
+	NSLog(@"%s, pmp:%d, upnp:%d",__FUNCTION__,_NATPMPStatus,_UPNPStatus);
+#endif
+	_ignoreNetworkChanges = YES;
     if (_isRunning) {
         if (_NATPMPStatus == TCMPortMapProtocolWorks) {
             [_NATPMPPortMapper stopBlocking];
