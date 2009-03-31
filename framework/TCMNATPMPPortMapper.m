@@ -479,7 +479,7 @@ Standardablauf:
         }
     } else {
         if (didFail) {
-            [self stopListeningToExternalIPAddressChanges];
+            [self performSelectorOnMainThread:@selector(stopListeningToExternalIPAddressChanges) withObject:nil waitUntilDone:NO];
             [[NSNotificationCenter defaultCenter] postNotificationOnMainThread:[NSNotification notificationWithName:TCMNATPMPPortMapperDidFailNotification object:self]];
         } else {
             [self performSelectorOnMainThread:@selector(updatePortMappings) withObject:nil waitUntilDone:0];
