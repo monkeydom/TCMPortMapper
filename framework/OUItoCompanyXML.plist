@@ -69,7 +69,7 @@
 	<key>00:00:20</key>
 	<string>DATAINDUSTRIER DIAB AB</string>
 	<key>00:00:21</key>
-	<string>SUREMAN COMP.&amp; COMMUN. CORP.</string>
+	<string>SUREMAN COMP. &amp; COMMUN. CORP.</string>
 	<key>00:00:22</key>
 	<string>VISUAL TECHNOLOGY INC.</string>
 	<key>00:00:23</key>
@@ -405,7 +405,7 @@
 	<key>00:00:C8</key>
 	<string>ALTOS COMPUTER SYSTEMS</string>
 	<key>00:00:C9</key>
-	<string>EMULEX CORPORATION</string>
+	<string>Emulex Corporation</string>
 	<key>00:00:CA</key>
 	<string>ARRIS International</string>
 	<key>00:00:CB</key>
@@ -525,7 +525,7 @@
 	<key>00:01:04</key>
 	<string>DVICO Co., Ltd.</string>
 	<key>00:01:05</key>
-	<string>BECKHOFF GmbH</string>
+	<string>Beckhoff Automation GmbH</string>
 	<key>00:01:06</key>
 	<string>Tews Datentechnik GmbH</string>
 	<key>00:01:07</key>
@@ -619,7 +619,7 @@
 	<key>00:01:33</key>
 	<string>KYOWA Electronic Instruments C</string>
 	<key>00:01:34</key>
-	<string>SIG Positec Systems AG</string>
+	<string>Selectron Systems AG</string>
 	<key>00:01:35</key>
 	<string>KDC Corp.</string>
 	<key>00:01:36</key>
@@ -737,7 +737,7 @@
 	<key>00:01:6E</key>
 	<string>Conklin Corporation</string>
 	<key>00:01:6F</key>
-	<string>HAITAI ELECTRONICS CO., LTD.</string>
+	<string>Inkel Corp.</string>
 	<key>00:01:70</key>
 	<string>ESE Embedded System Engineer&apos;g</string>
 	<key>00:01:71</key>
@@ -865,7 +865,7 @@
 	<key>00:01:AE</key>
 	<string>Trex Enterprises</string>
 	<key>00:01:AF</key>
-	<string>Motorola Computer Group</string>
+	<string>Emerson Network Power</string>
 	<key>00:01:B0</key>
 	<string>Fulltek Technology Co., Ltd.</string>
 	<key>00:01:B1</key>
@@ -943,7 +943,7 @@
 	<key>00:01:D5</key>
 	<string>HAEDONG INFO &amp; COMM CO., LTD</string>
 	<key>00:01:D6</key>
-	<string>MAN Roland Druckmaschinen AG</string>
+	<string>manroland AG</string>
 	<key>00:01:D7</key>
 	<string>F5 Networks, Inc.</string>
 	<key>00:01:D8</key>
@@ -1357,7 +1357,7 @@
 	<key>00:02:A4</key>
 	<string>AddPac Technology Co., Ltd.</string>
 	<key>00:02:A5</key>
-	<string>Compaq Computer Corporation</string>
+	<string>Hewlett Packard</string>
 	<key>00:02:A6</key>
 	<string>Effinet Systems Co., Ltd.</string>
 	<key>00:02:A7</key>
@@ -1373,7 +1373,7 @@
 	<key>00:02:AC</key>
 	<string>3PAR data</string>
 	<key>00:02:AD</key>
-	<string>Pentax Corpotation</string>
+	<string>HOYA Corporation</string>
 	<key>00:02:AE</key>
 	<string>Scannex Electronics Ltd.</string>
 	<key>00:02:AF</key>
@@ -1771,7 +1771,7 @@
 	<key>00:03:73</key>
 	<string>Aselsan A.S</string>
 	<key>00:03:74</key>
-	<string>Hunter Watertech</string>
+	<string>Control Microsystems</string>
 	<key>00:03:75</key>
 	<string>NetMedia, Inc.</string>
 	<key>00:03:76</key>
@@ -1833,7 +1833,7 @@
 	<key>00:03:92</key>
 	<string>Hyundai Teletek Co., Ltd.</string>
 	<key>00:03:93</key>
-	<string>Apple Computer, Inc.</string>
+	<string>Apple, Inc.</string>
 	<key>00:03:94</key>
 	<string>Connect One</string>
 	<key>00:03:95</key>
@@ -1867,7 +1867,7 @@
 	<key>00:03:A3</key>
 	<string>MAVIX, Ltd.</string>
 	<key>00:03:A4</key>
-	<string>Data Storage and Information Management</string>
+	<string>Imation Corp.</string>
 	<key>00:03:A5</key>
 	<string>Medea Corporation</string>
 	<key>00:03:A6</key>
@@ -1999,7 +1999,7 @@
 	<key>00:03:E5</key>
 	<string>Hermstedt SG</string>
 	<key>00:03:E6</key>
-	<string>Entone Technologies, Inc.</string>
+	<string>Entone, Inc.</string>
 	<key>00:03:E7</key>
 	<string>Logostek Co. Ltd.</string>
 	<key>00:03:E8</key>
@@ -2041,7 +2041,7 @@
 	<key>00:03:FA</key>
 	<string>TiMetra Networks</string>
 	<key>00:03:FB</key>
-	<string>Toko Seiki Company, Ltd.</string>
+	<string>ENEGATE Co.,Ltd.</string>
 	<key>00:03:FC</key>
 	<string>Intertex Data AB</string>
 	<key>00:03:FD</key>
@@ -2105,7 +2105,7 @@
 	<key>00:04:1A</key>
 	<string>Ines Test and Measurement GmbH &amp; CoKG</string>
 	<key>00:04:1B</key>
-	<string>Digital Interfaces Ltd.</string>
+	<string>Bridgeworks Ltd.</string>
 	<key>00:04:1C</key>
 	<string>ipDialog, Inc.</string>
 	<key>00:04:1D</key>
@@ -2195,7 +2195,7 @@
 	<key>00:04:47</key>
 	<string>Acrowave Systems Co., Ltd.</string>
 	<key>00:04:48</key>
-	<string>Polaroid Professional Imaging</string>
+	<string>Polaroid Corporation</string>
 	<key>00:04:49</key>
 	<string>Mapletree Networks</string>
 	<key>00:04:4A</key>
@@ -2477,7 +2477,7 @@
 	<key>00:04:D4</key>
 	<string>Proview Electronics Co., Ltd.</string>
 	<key>00:04:D5</key>
-	<string>Hitachi Communication Systems, Inc.</string>
+	<string>Hitachi Information &amp; Communication Engineering, Ltd.</string>
 	<key>00:04:D6</key>
 	<string>Takagi Industrial Co., Ltd.</string>
 	<key>00:04:D7</key>
@@ -2567,7 +2567,7 @@
 	<key>00:05:01</key>
 	<string>Cisco Systems, Inc.</string>
 	<key>00:05:02</key>
-	<string>APPLE COMPUTER</string>
+	<string>APPLE</string>
 	<key>00:05:03</key>
 	<string>ICONAG</string>
 	<key>00:05:04</key>
@@ -2657,7 +2657,7 @@
 	<key>00:05:2E</key>
 	<string>Cinta Networks</string>
 	<key>00:05:2F</key>
-	<string>Leviton Voice and Data</string>
+	<string>Leviton Network Solutions</string>
 	<key>00:05:30</key>
 	<string>Andiamo Systems, Inc.</string>
 	<key>00:05:31</key>
@@ -2719,7 +2719,7 @@
 	<key>00:05:4D</key>
 	<string>Brans Technologies, Inc.</string>
 	<key>00:05:4E</key>
-	<string>Philips Components</string>
+	<string>Philips</string>
 	<key>00:05:4F</key>
 	<string>PRIVATE</string>
 	<key>00:05:50</key>
@@ -2773,7 +2773,7 @@
 	<key>00:05:68</key>
 	<string>Piltofish Networks AB</string>
 	<key>00:05:69</key>
-	<string>VMWARE, Inc.</string>
+	<string>VMware, Inc.</string>
 	<key>00:05:6A</key>
 	<string>Heuft Systemtechnik GmbH</string>
 	<key>00:05:6B</key>
@@ -3163,7 +3163,7 @@
 	<key>00:06:2B</key>
 	<string>INTRASERVER TECHNOLOGY</string>
 	<key>00:06:2C</key>
-	<string>Network Robots, Inc.</string>
+	<string>Bivio Networks</string>
 	<key>00:06:2D</key>
 	<string>TouchStar Technologies, L.L.C.</string>
 	<key>00:06:2E</key>
@@ -3243,7 +3243,7 @@
 	<key>00:06:53</key>
 	<string>Cisco Systems, Inc.</string>
 	<key>00:06:54</key>
-	<string>Maxxio Technologies</string>
+	<string>Winpresa Building Automation Technologies GmbH</string>
 	<key>00:06:55</key>
 	<string>Yipee, Inc.</string>
 	<key>00:06:56</key>
@@ -3251,7 +3251,7 @@
 	<key>00:06:57</key>
 	<string>Market Central, Inc.</string>
 	<key>00:06:58</key>
-	<string>Helmut Fischer GmbH &amp; Co. KG</string>
+	<string>Helmut Fischer GmbH Institut f¸r Elektronik und Messtechnik</string>
 	<key>00:06:59</key>
 	<string>EAL (Apeldoorn) B.V.</string>
 	<key>00:06:5A</key>
@@ -3425,7 +3425,7 @@
 	<key>00:06:AE</key>
 	<string>Himachal Futuristic Communications Ltd</string>
 	<key>00:06:AF</key>
-	<string>PRIVATE</string>
+	<string>Xalted Networks</string>
 	<key>00:06:B0</key>
 	<string>Comtech EF Data Corp.</string>
 	<key>00:06:B1</key>
@@ -3825,7 +3825,7 @@
 	<key>00:07:7B</key>
 	<string>Millimetrix Broadband Networks</string>
 	<key>00:07:7C</key>
-	<string>OnTime Networks</string>
+	<string>Westermo Teleindustri AB</string>
 	<key>00:07:7E</key>
 	<string>Elrest GmbH</string>
 	<key>00:07:7F</key>
@@ -4089,7 +4089,7 @@
 	<key>00:08:01</key>
 	<string>HighSpeed Surfing Inc.</string>
 	<key>00:08:02</key>
-	<string>Compaq Computer Corporation</string>
+	<string>Hewlett Packard</string>
 	<key>00:08:03</key>
 	<string>Cos Tron</string>
 	<key>00:08:04</key>
@@ -4251,7 +4251,7 @@
 	<key>00:08:71</key>
 	<string>NORTHDATA Co., Ltd.</string>
 	<key>00:08:72</key>
-	<string>Sorenson Technologies, Inc.</string>
+	<string>Sorenson Communications</string>
 	<key>00:08:73</key>
 	<string>DAP Design B.V.</string>
 	<key>00:08:74</key>
@@ -4367,7 +4367,7 @@
 	<key>00:08:AB</key>
 	<string>EnerLinx.com, Inc.</string>
 	<key>00:08:AC</key>
-	<string>PRIVATE</string>
+	<string>Eltromat GmbH</string>
 	<key>00:08:AD</key>
 	<string>Toyo-Linx Co., Ltd.</string>
 	<key>00:08:AE</key>
@@ -4449,7 +4449,7 @@
 	<key>00:08:D4</key>
 	<string>IneoQuest Technologies, Inc</string>
 	<key>00:08:D5</key>
-	<string>Vanguard Managed Solutions</string>
+	<string>Vanguard Networks Solutions, LLC</string>
 	<key>00:08:D6</key>
 	<string>HASSNET Inc.</string>
 	<key>00:08:D7</key>
@@ -4603,7 +4603,7 @@
 	<key>00:09:21</key>
 	<string>Planmeca Oy</string>
 	<key>00:09:22</key>
-	<string>TST Biometrics Holding AG</string>
+	<string>TST Biometrics GmbH</string>
 	<key>00:09:23</key>
 	<string>Heaman System Co., Ltd</string>
 	<key>00:09:24</key>
@@ -4615,7 +4615,7 @@
 	<key>00:09:27</key>
 	<string>TOYOKEIKI CO.,LTD.</string>
 	<key>00:09:28</key>
-	<string>Telecore Inc</string>
+	<string>Telecore</string>
 	<key>00:09:29</key>
 	<string>Sanyo Industries (UK) Limited</string>
 	<key>00:09:2A</key>
@@ -4625,7 +4625,7 @@
 	<key>00:09:2C</key>
 	<string>Hitpoint Inc.</string>
 	<key>00:09:2D</key>
-	<string>High Tech Computer, Corp.</string>
+	<string>HTC Corporation</string>
 	<key>00:09:2E</key>
 	<string>B&amp;Tech System Inc.</string>
 	<key>00:09:2F</key>
@@ -4737,7 +4737,7 @@
 	<key>00:09:64</key>
 	<string>Hi-Techniques, Inc.</string>
 	<key>00:09:65</key>
-	<string>PRIVATE</string>
+	<string>HyunJu Computer Co., Ltd.</string>
 	<key>00:09:66</key>
 	<string>Thales Navigation</string>
 	<key>00:09:67</key>
@@ -4923,7 +4923,7 @@
 	<key>00:09:C1</key>
 	<string>PROCES-DATA A/S</string>
 	<key>00:09:C2</key>
-	<string>PRIVATE</string>
+	<string>Onity, Inc.</string>
 	<key>00:09:C3</key>
 	<string>NETAS</string>
 	<key>00:09:C4</key>
@@ -4951,7 +4951,7 @@
 	<key>00:09:CF</key>
 	<string>iAd GmbH</string>
 	<key>00:09:D0</key>
-	<string>Versatel Networks</string>
+	<string>Solacom Technologies Inc.</string>
 	<key>00:09:D1</key>
 	<string>SERANOA NETWORKS INC</string>
 	<key>00:09:D2</key>
@@ -4967,7 +4967,7 @@
 	<key>00:09:D7</key>
 	<string>DC Security Products</string>
 	<key>00:09:D8</key>
-	<string>PRIVATE</string>
+	<string>F‰lt Communications AB</string>
 	<key>00:09:D9</key>
 	<string>Neoscale Systems, Inc</string>
 	<key>00:09:DA</key>
@@ -5035,7 +5035,7 @@
 	<key>00:09:F9</key>
 	<string>ART JAPAN CO., LTD.</string>
 	<key>00:09:FB</key>
-	<string>Philips Medizinsysteme Boeblingen GmbH</string>
+	<string>Philips Patient Monitoring</string>
 	<key>00:09:FC</key>
 	<string>IPFLEX Inc.</string>
 	<key>00:09:FD</key>
@@ -5123,7 +5123,7 @@
 	<key>00:0A:26</key>
 	<string>CEIA S.p.A.</string>
 	<key>00:0A:27</key>
-	<string>Apple Computer, Inc.</string>
+	<string>Apple, Inc.</string>
 	<key>00:0A:28</key>
 	<string>Motorola</string>
 	<key>00:0A:29</key>
@@ -5135,7 +5135,7 @@
 	<key>00:0A:2C</key>
 	<string>Active Tchnology Corporation</string>
 	<key>00:0A:2D</key>
-	<string>PRIVATE</string>
+	<string>Cabot Communications Limited</string>
 	<key>00:0A:2E</key>
 	<string>MAPLE NETWORKS CO., LTD</string>
 	<key>00:0A:2F</key>
@@ -5173,7 +5173,7 @@
 	<key>00:0A:3F</key>
 	<string>Data East Corporation</string>
 	<key>00:0A:40</key>
-	<string>Crown Audio</string>
+	<string>Crown Audio -- Harmanm International</string>
 	<key>00:0A:41</key>
 	<string>Cisco Systems</string>
 	<key>00:0A:42</key>
@@ -5273,7 +5273,7 @@
 	<key>00:0A:71</key>
 	<string>Avrio Technologies, Inc</string>
 	<key>00:0A:72</key>
-	<string>SimpleTech, Inc.</string>
+	<string>STEC, INC.</string>
 	<key>00:0A:73</key>
 	<string>Scientific Atlanta</string>
 	<key>00:0A:74</key>
@@ -5343,7 +5343,7 @@
 	<key>00:0A:94</key>
 	<string>ShangHai cellink CO., LTD</string>
 	<key>00:0A:95</key>
-	<string>Apple Computer, Inc.</string>
+	<string>Apple, Inc.</string>
 	<key>00:0A:96</key>
 	<string>MEWTEL TECHNOLOGY INC.</string>
 	<key>00:0A:97</key>
@@ -5537,7 +5537,7 @@
 	<key>00:0A:F5</key>
 	<string>Airgo Networks, Inc.</string>
 	<key>00:0A:F6</key>
-	<string>Computer Process Controls</string>
+	<string>Emerson Climate Technologies Retail Solutions, Inc.</string>
 	<key>00:0A:F7</key>
 	<string>Broadcom Corp.</string>
 	<key>00:0A:F8</key>
@@ -5609,7 +5609,7 @@
 	<key>00:0B:19</key>
 	<string>Vernier Networks, Inc.</string>
 	<key>00:0B:1A</key>
-	<string>Teltone Corporation</string>
+	<string>Industrial Defender, Inc.</string>
 	<key>00:0B:1B</key>
 	<string>Systronix, Inc.</string>
 	<key>00:0B:1C</key>
@@ -5639,7 +5639,7 @@
 	<key>00:0B:28</key>
 	<string>Quatech Inc.</string>
 	<key>00:0B:29</key>
-	<string>LG Industrial Systems Co.,Ltd.</string>
+	<string>LS(LG) Industrial Systems co.,Ltd</string>
 	<key>00:0B:2A</key>
 	<string>HOWTEL Co., Ltd.</string>
 	<key>00:0B:2B</key>
@@ -5967,7 +5967,7 @@
 	<key>00:0B:CC</key>
 	<string>JUSAN, S.A.</string>
 	<key>00:0B:CD</key>
-	<string>Compaq (HP)</string>
+	<string>Hewlett Packard</string>
 	<key>00:0B:CE</key>
 	<string>Free2move AB</string>
 	<key>00:0B:CF</key>
@@ -6287,7 +6287,7 @@
 	<key>00:0C:6C</key>
 	<string>Elgato Systems LLC</string>
 	<key>00:0C:6D</key>
-	<string>BOC Edwards</string>
+	<string>Edwards Ltd.</string>
 	<key>00:0C:6E</key>
 	<string>ASUSTEK COMPUTER INC.</string>
 	<key>00:0C:6F</key>
@@ -6425,7 +6425,7 @@
 	<key>00:0C:B1</key>
 	<string>Salland Engineering (Europe) BV</string>
 	<key>00:0C:B2</key>
-	<string>safei Co., Ltd.</string>
+	<string>Comstar Co., Ltd.</string>
 	<key>00:0C:B3</key>
 	<string>ROUND Co.,Ltd.</string>
 	<key>00:0C:B4</key>
@@ -6449,7 +6449,7 @@
 	<key>00:0C:BD</key>
 	<string>Interface Masters, Inc</string>
 	<key>00:0C:BE</key>
-	<string>PRIVATE</string>
+	<string>Innominate Security Technologies AG</string>
 	<key>00:0C:BF</key>
 	<string>Holy Stone Ent. Co., Ltd.</string>
 	<key>00:0C:C0</key>
@@ -6575,7 +6575,7 @@
 	<key>00:0C:FC</key>
 	<string>S2io Technologies Corp</string>
 	<key>00:0C:FD</key>
-	<string>PRIVATE</string>
+	<string>Hyundai ImageQuest Co.,Ltd.</string>
 	<key>00:0C:FE</key>
 	<string>Grand Electronic Co., Ltd</string>
 	<key>00:0C:FF</key>
@@ -6649,7 +6649,7 @@
 	<key>00:0D:21</key>
 	<string>WISCORE Inc.</string>
 	<key>00:0D:22</key>
-	<string>Unitronics</string>
+	<string>Unitronics LTD</string>
 	<key>00:0D:23</key>
 	<string>Smart Solution, Inc</string>
 	<key>00:0D:24</key>
@@ -6707,7 +6707,7 @@
 	<key>00:0D:3E</key>
 	<string>APLUX Communications Ltd.</string>
 	<key>00:0D:3F</key>
-	<string>VXI Technology</string>
+	<string>VTI Instruments Corporation</string>
 	<key>00:0D:40</key>
 	<string>Verint Loronix Video Solutions</string>
 	<key>00:0D:41</key>
@@ -6717,7 +6717,7 @@
 	<key>00:0D:43</key>
 	<string>DRS Tactical Systems Inc.</string>
 	<key>00:0D:44</key>
-	<string>PRIVATE</string>
+	<string>Audio BU - Logitech</string>
 	<key>00:0D:45</key>
 	<string>Tottori SANYO Electric Co., Ltd.</string>
 	<key>00:0D:46</key>
@@ -6769,7 +6769,7 @@
 	<key>00:0D:5D</key>
 	<string>Raritan Computer, Inc</string>
 	<key>00:0D:5E</key>
-	<string>NEC CustomTechnica, Ltd.</string>
+	<string>NEC Personal Products</string>
 	<key>00:0D:5F</key>
 	<string>Minds Inc</string>
 	<key>00:0D:60</key>
@@ -6875,7 +6875,7 @@
 	<key>00:0D:92</key>
 	<string>Arima Communication Corporation</string>
 	<key>00:0D:93</key>
-	<string>Apple Computer</string>
+	<string>Apple</string>
 	<key>00:0D:94</key>
 	<string>AFAR Communications,Inc</string>
 	<key>00:0D:95</key>
@@ -7125,7 +7125,7 @@
 	<key>00:0E:0F</key>
 	<string>ERMME</string>
 	<key>00:0E:10</key>
-	<string>PRIVATE</string>
+	<string>C-guys, Inc.</string>
 	<key>00:0E:11</key>
 	<string>BDT B¸ro- und Datentechnik GmbH &amp; Co. KG</string>
 	<key>00:0E:12</key>
@@ -7153,7 +7153,7 @@
 	<key>00:0E:1D</key>
 	<string>ARION Technology Inc.</string>
 	<key>00:0E:1E</key>
-	<string>PRIVATE</string>
+	<string>NetXen, Inc.</string>
 	<key>00:0E:1F</key>
 	<string>TCL Networks Equipment Co., Ltd.</string>
 	<key>00:0E:20</key>
@@ -7265,7 +7265,7 @@
 	<key>00:0E:55</key>
 	<string>AUVITRAN</string>
 	<key>00:0E:56</key>
-	<string>4G Systems GmbH</string>
+	<string>4G Systems GmbH &amp; Co. KG</string>
 	<key>00:0E:57</key>
 	<string>Iworld Networking, Inc.</string>
 	<key>00:0E:58</key>
@@ -7345,7 +7345,7 @@
 	<key>00:0E:7D</key>
 	<string>Electronics Line 3000 Ltd.</string>
 	<key>00:0E:7E</key>
-	<string>Comprog Oy</string>
+	<string>ionSign Oy</string>
 	<key>00:0E:7F</key>
 	<string>Hewlett Packard</string>
 	<key>00:0E:80</key>
@@ -7383,7 +7383,7 @@
 	<key>00:0E:90</key>
 	<string>PONICO CORP.</string>
 	<key>00:0E:91</key>
-	<string>Navico</string>
+	<string>Navico Auckland Ltd</string>
 	<key>00:0E:92</key>
 	<string>Millinet Co., Ltd.</string>
 	<key>00:0E:93</key>
@@ -7407,7 +7407,7 @@
 	<key>00:0E:9C</key>
 	<string>Pemstar</string>
 	<key>00:0E:9D</key>
-	<string>Video Networks Ltd</string>
+	<string>Tiscali UK Ltd</string>
 	<key>00:0E:9E</key>
 	<string>Topfield Co., Ltd</string>
 	<key>00:0E:9F</key>
@@ -7417,7 +7417,7 @@
 	<key>00:0E:A1</key>
 	<string>Formosa Teletek Corporation</string>
 	<key>00:0E:A2</key>
-	<string>CyberGuard Corporation</string>
+	<string>Secure Computing Corporation</string>
 	<key>00:0E:A3</key>
 	<string>CNCR-IT CO.,LTD,HangZhou P.R.CHINA</string>
 	<key>00:0E:A4</key>
@@ -7451,7 +7451,7 @@
 	<key>00:0E:B2</key>
 	<string>Micro-Research Finland Oy</string>
 	<key>00:0E:B3</key>
-	<string>LeftHand Networks</string>
+	<string>Hewlett-Packard</string>
 	<key>00:0E:B4</key>
 	<string>GUANGZHOU GAOKE COMMUNICATIONS TECHNOLOGY CO.LTD.</string>
 	<key>00:0E:B5</key>
@@ -7581,7 +7581,7 @@
 	<key>00:0E:F3</key>
 	<string>Smarthome</string>
 	<key>00:0E:F4</key>
-	<string>Shenzhen Kasda Digital Technology Co.,Ltd</string>
+	<string>Kasda Digital Technology Co.,Ltd</string>
 	<key>00:0E:F5</key>
 	<string>iPAC Technology Co., Ltd.</string>
 	<key>00:0E:F6</key>
@@ -7799,7 +7799,7 @@
 	<key>00:0F:60</key>
 	<string>Lifetron Co.,Ltd</string>
 	<key>00:0F:61</key>
-	<string>Kiwi Networks</string>
+	<string>Hewlett Packard</string>
 	<key>00:0F:62</key>
 	<string>Alcatel Bell Space N.V.</string>
 	<key>00:0F:63</key>
@@ -8119,7 +8119,7 @@
 	<key>00:10:00</key>
 	<string>CABLE TELEVISION LABORATORIES, INC.</string>
 	<key>00:10:01</key>
-	<string>Citel plc</string>
+	<string>Citel</string>
 	<key>00:10:02</key>
 	<string>ACTIA</string>
 	<key>00:10:03</key>
@@ -8155,7 +8155,7 @@
 	<key>00:10:12</key>
 	<string>PROCESSOR SYSTEMS (I) PVT LTD</string>
 	<key>00:10:13</key>
-	<string>Kontron</string>
+	<string>Kontron America, Inc.</string>
 	<key>00:10:14</key>
 	<string>CISCO SYSTEMS, INC.</string>
 	<key>00:10:15</key>
@@ -8265,7 +8265,7 @@
 	<key>00:10:49</key>
 	<string>ShoreTel, Inc</string>
 	<key>00:10:4A</key>
-	<string>THE PARVUC CORPORATION</string>
+	<string>The Parvus Corporation</string>
 	<key>00:10:4B</key>
 	<string>3COM CORPORATION</string>
 	<key>00:10:4C</key>
@@ -8385,7 +8385,7 @@
 	<key>00:10:85</key>
 	<string>POLARIS COMMUNICATIONS, INC.</string>
 	<key>00:10:86</key>
-	<string>ATTO TECHNOLOGY, INC.</string>
+	<string>ATTO Technology, Inc.</string>
 	<key>00:10:87</key>
 	<string>Xstreamis PLC</string>
 	<key>00:10:88</key>
@@ -8501,7 +8501,7 @@
 	<key>00:10:BF</key>
 	<string>InterAir Wireless</string>
 	<key>00:10:C0</key>
-	<string>ARMA, INC.</string>
+	<string>ARMA, Inc.</string>
 	<key>00:10:C1</key>
 	<string>OI ELECTRIC CO., LTD.</string>
 	<key>00:10:C2</key>
@@ -8571,7 +8571,7 @@
 	<key>00:10:E2</key>
 	<string>ArrayComm, Inc.</string>
 	<key>00:10:E3</key>
-	<string>COMPAQ COMPUTER CORPORATION</string>
+	<string>Hewlett Packard</string>
 	<key>00:10:E4</key>
 	<string>NSI CORPORATION</string>
 	<key>00:10:E5</key>
@@ -8615,7 +8615,7 @@
 	<key>00:10:F9</key>
 	<string>UNIQUE SYSTEMS, INC.</string>
 	<key>00:10:FA</key>
-	<string>ZAYANTE, INC.</string>
+	<string>Apple Inc</string>
 	<key>00:10:FB</key>
 	<string>ZIDA TECHNOLOGIES LIMITED</string>
 	<key>00:10:FC</key>
@@ -8627,7 +8627,7 @@
 	<key>00:10:FF</key>
 	<string>CISCO SYSTEMS, INC.</string>
 	<key>00:11:00</key>
-	<string>RAM Industries, LLC</string>
+	<string>Schneider Electric</string>
 	<key>00:11:01</key>
 	<string>CET Technologies Pte Ltd</string>
 	<key>00:11:02</key>
@@ -8699,7 +8699,7 @@
 	<key>00:11:23</key>
 	<string>Appointech, Inc.</string>
 	<key>00:11:24</key>
-	<string>Apple Computer</string>
+	<string>Apple</string>
 	<key>00:11:25</key>
 	<string>IBM Corporation</string>
 	<key>00:11:26</key>
@@ -8717,7 +8717,7 @@
 	<key>00:11:2C</key>
 	<string>IZT GmbH</string>
 	<key>00:11:2D</key>
-	<string>Guys Without Ties</string>
+	<string>iPulse Systems</string>
 	<key>00:11:2E</key>
 	<string>CEICOM</string>
 	<key>00:11:2F</key>
@@ -8817,7 +8817,7 @@
 	<key>00:11:5E</key>
 	<string>ProMinent Dosiertechnik GmbH</string>
 	<key>00:11:5F</key>
-	<string>Intellix Co., Ltd.</string>
+	<string>ITX Security Co., Ltd.</string>
 	<key>00:11:60</key>
 	<string>ARTDIO Company Co., LTD</string>
 	<key>00:11:61</key>
@@ -8865,7 +8865,7 @@
 	<key>00:11:76</key>
 	<string>Intellambda Systems, Inc.</string>
 	<key>00:11:77</key>
-	<string>COAXIAL NETWORKS, INC.</string>
+	<string>Coaxial Networks, Inc.</string>
 	<key>00:11:78</key>
 	<string>Chiron Technology Ltd</string>
 	<key>00:11:79</key>
@@ -8889,7 +8889,7 @@
 	<key>00:11:82</key>
 	<string>IMI Norgren Ltd</string>
 	<key>00:11:83</key>
-	<string>PSC Scanning, Inc</string>
+	<string>Datalogic Mobile, Inc.</string>
 	<key>00:11:84</key>
 	<string>Humo Laboratory,Ltd.</string>
 	<key>00:11:85</key>
@@ -9025,7 +9025,7 @@
 	<key>00:11:C6</key>
 	<string>Seagate Technology LLC</string>
 	<key>00:11:C7</key>
-	<string>RAYMARINE Group Ltd.</string>
+	<string>Raymarine UK Ltd</string>
 	<key>00:11:C8</key>
 	<string>Powercom Co., Ltd.</string>
 	<key>00:11:C9</key>
@@ -9533,7 +9533,7 @@
 	<key>00:12:C4</key>
 	<string>Viseon, Inc.</string>
 	<key>00:12:C5</key>
-	<string>V-Show Technology Co.Ltd</string>
+	<string>V-Show  Technology (China) Co.,Ltd</string>
 	<key>00:12:C6</key>
 	<string>TGC America, Inc</string>
 	<key>00:12:C7</key>
@@ -9735,7 +9735,7 @@
 	<key>00:13:29</key>
 	<string>VSST Co., LTD</string>
 	<key>00:13:2A</key>
-	<string>STROM telecom, s. r. o.</string>
+	<string>Sitronics Telecom Solutions</string>
 	<key>00:13:2B</key>
 	<string>Phoenix Digital</string>
 	<key>00:13:2C</key>
@@ -9999,7 +9999,7 @@
 	<key>00:13:AD</key>
 	<string>Sendo Ltd</string>
 	<key>00:13:AE</key>
-	<string>Radiance Technologies</string>
+	<string>Radiance Technologies, Inc.</string>
 	<key>00:13:AF</key>
 	<string>NUMA Technology,Inc.</string>
 	<key>00:13:B0</key>
@@ -10095,7 +10095,7 @@
 	<key>00:13:DD</key>
 	<string>Abbott Diagnostics</string>
 	<key>00:13:DE</key>
-	<string>Adapt4</string>
+	<string>Adapt4, LLC</string>
 	<key>00:13:DF</key>
 	<string>Ryvor Corp.</string>
 	<key>00:13:E0</key>
@@ -10113,7 +10113,7 @@
 	<key>00:13:E6</key>
 	<string>Technolution</string>
 	<key>00:13:E7</key>
-	<string>Minelab Electronics Pty Limited</string>
+	<string>Halcro</string>
 	<key>00:13:E8</key>
 	<string>Intel Corporate</string>
 	<key>00:13:E9</key>
@@ -10325,7 +10325,7 @@
 	<key>00:14:50</key>
 	<string>Heim Systems GmbH</string>
 	<key>00:14:51</key>
-	<string>Apple Computer Inc.</string>
+	<string>Apple, Inc.</string>
 	<key>00:14:52</key>
 	<string>CALCULEX,INC.</string>
 	<key>00:14:53</key>
@@ -10343,7 +10343,7 @@
 	<key>00:14:59</key>
 	<string>Moram Co., Ltd.</string>
 	<key>00:14:5A</key>
-	<string>Elektrobit AG</string>
+	<string>Neratec AG</string>
 	<key>00:14:5B</key>
 	<string>SeekerNet Inc.</string>
 	<key>00:14:5C</key>
@@ -10579,7 +10579,7 @@
 	<key>00:14:CF</key>
 	<string>Nextlink.to A/S</string>
 	<key>00:14:D0</key>
-	<string>BTI Photonics</string>
+	<string>BTI Systems Inc.</string>
 	<key>00:14:D1</key>
 	<string>TRENDware International, Inc.</string>
 	<key>00:14:D2</key>
@@ -10749,7 +10749,7 @@
 	<key>00:15:24</key>
 	<string>Numatics, Inc.</string>
 	<key>00:15:25</key>
-	<string>PTI Integrated Systems, Inc.</string>
+	<string>Chamberlain Access Solutions</string>
 	<key>00:15:26</key>
 	<string>Remote Technologies Inc</string>
 	<key>00:15:27</key>
@@ -10831,7 +10831,7 @@
 	<key>00:15:4D</key>
 	<string>Netronome Systems, Inc.</string>
 	<key>00:15:4E</key>
-	<string>Hirschmann Automation and Control GmbH</string>
+	<string>IEC</string>
 	<key>00:15:4F</key>
 	<string>one RF Technology</string>
 	<key>00:15:50</key>
@@ -10865,7 +10865,7 @@
 	<key>00:15:5E</key>
 	<string>Morgan Stanley</string>
 	<key>00:15:5F</key>
-	<string>GreenPeak</string>
+	<string>GreenPeak Technologies</string>
 	<key>00:15:60</key>
 	<string>Hewlett Packard</string>
 	<key>00:15:61</key>
@@ -10899,7 +10899,7 @@
 	<key>00:15:6F</key>
 	<string>Xiranet Communications GmbH</string>
 	<key>00:15:70</key>
-	<string>Symbol Technologies</string>
+	<string>Symbol TechnologiesWholly owned Subsidiary of Motorola</string>
 	<key>00:15:71</key>
 	<string>Nolan Systems</string>
 	<key>00:15:72</key>
@@ -10991,13 +10991,13 @@
 	<key>00:15:9D</key>
 	<string>Minicom Advanced Systems ltd</string>
 	<key>00:15:9E</key>
-	<string>Saitek plc</string>
+	<string>Mad Catz Interactive Inc</string>
 	<key>00:15:9F</key>
 	<string>Terascala, Inc.</string>
 	<key>00:15:A0</key>
 	<string>Nokia Danmark A/S</string>
 	<key>00:15:A1</key>
-	<string>SINTERS SAS</string>
+	<string>ECA-SINTERS</string>
 	<key>00:15:A2</key>
 	<string>ARRIS International</string>
 	<key>00:15:A3</key>
@@ -11049,7 +11049,7 @@
 	<key>00:15:BA</key>
 	<string>iba AG</string>
 	<key>00:15:BB</key>
-	<string>SMA Technologie AG</string>
+	<string>SMA Solar Technology AG</string>
 	<key>00:15:BC</key>
 	<string>Develco</string>
 	<key>00:15:BD</key>
@@ -11127,7 +11127,7 @@
 	<key>00:15:E1</key>
 	<string>picoChip Designs Ltd</string>
 	<key>00:15:E2</key>
-	<string>Wissenschaftliche Geraetebau Dr. Ing. H. Knauer GmbH</string>
+	<string>Dr.Ing. Herbert Knauer GmbH</string>
 	<key>00:15:E3</key>
 	<string>Dream Technologies Corporation</string>
 	<key>00:15:E4</key>
@@ -11321,7 +11321,7 @@
 	<key>00:16:42</key>
 	<string>Pangolin</string>
 	<key>00:16:43</key>
-	<string>Sunhillo Corproation</string>
+	<string>Sunhillo Corporation</string>
 	<key>00:16:44</key>
 	<string>LITE-ON Technology Corp.</string>
 	<key>00:16:45</key>
@@ -11349,7 +11349,7 @@
 	<key>00:16:50</key>
 	<string>EYAL MICROWAVE</string>
 	<key>00:16:51</key>
-	<string>PRIVATE</string>
+	<string>Exeo Systems</string>
 	<key>00:16:52</key>
 	<string>Hoatech Technologies, Inc.</string>
 	<key>00:16:53</key>
@@ -11513,7 +11513,7 @@
 	<key>00:16:A2</key>
 	<string>CentraLite Systems, Inc.</string>
 	<key>00:16:A3</key>
-	<string>TEAM ARTECHE, S.A.</string>
+	<string>Ingeteam Transmission&amp;Distribution, S.A.</string>
 	<key>00:16:A4</key>
 	<string>Ezurio Ltd</string>
 	<key>00:16:A5</key>
@@ -11593,7 +11593,7 @@
 	<key>00:16:CA</key>
 	<string>Nortel</string>
 	<key>00:16:CB</key>
-	<string>Apple Computer</string>
+	<string>Apple</string>
 	<key>00:16:CC</key>
 	<string>Xcute Mobile Corp.</string>
 	<key>00:16:CD</key>
@@ -11667,7 +11667,7 @@
 	<key>00:16:EF</key>
 	<string>Koko Fitness, Inc.</string>
 	<key>00:16:F0</key>
-	<string>Zermatt Systems, Inc</string>
+	<string>Dell</string>
 	<key>00:16:F1</key>
 	<string>OmniSense, LLC</string>
 	<key>00:16:F2</key>
@@ -11811,11 +11811,11 @@
 	<key>00:17:37</key>
 	<string>Industrie Dial Face S.p.A.</string>
 	<key>00:17:38</key>
-	<string>XIV</string>
+	<string>International Business Machines</string>
 	<key>00:17:39</key>
 	<string>Bright Headphone Electronics Company</string>
 	<key>00:17:3A</key>
-	<string>Edge Integration Systems Inc.</string>
+	<string>Reach Systems Inc.</string>
 	<key>00:17:3B</key>
 	<string>Arched Rock Corporation</string>
 	<key>00:17:3C</key>
@@ -11887,7 +11887,7 @@
 	<key>00:17:5D</key>
 	<string>Dongseo system.</string>
 	<key>00:17:5E</key>
-	<string>Anta Systems, Inc.</string>
+	<string>Zed-3</string>
 	<key>00:17:5F</key>
 	<string>XENOLINK Communications Co., Ltd.</string>
 	<key>00:17:60</key>
@@ -12027,7 +12027,7 @@
 	<key>00:17:A3</key>
 	<string>MIX s.r.l.</string>
 	<key>00:17:A4</key>
-	<string>Global Data Services</string>
+	<string>Hewlett Packard</string>
 	<key>00:17:A5</key>
 	<string>TrendChip Technologies Corp.</string>
 	<key>00:17:A6</key>
@@ -12095,7 +12095,7 @@
 	<key>00:17:C5</key>
 	<string>SonicWALL</string>
 	<key>00:17:C6</key>
-	<string>Labcal Technologies</string>
+	<string>Cross Match Technologies Inc</string>
 	<key>00:17:C7</key>
 	<string>MARA Systems Consulting AB</string>
 	<key>00:17:C8</key>
@@ -12183,7 +12183,7 @@
 	<key>00:17:F1</key>
 	<string>Renu Electronics Pvt Ltd</string>
 	<key>00:17:F2</key>
-	<string>Apple Computer</string>
+	<string>Apple</string>
 	<key>00:17:F3</key>
 	<string>M/A-COM Wireless Systems</string>
 	<key>00:17:F4</key>
@@ -12231,7 +12231,7 @@
 	<key>00:18:09</key>
 	<string>CRESYN</string>
 	<key>00:18:0A</key>
-	<string>Meraki Networks, Inc.</string>
+	<string>Meraki, Inc.</string>
 	<key>00:18:0B</key>
 	<string>Brilliant Telecommunications</string>
 	<key>00:18:0C</key>
@@ -12263,7 +12263,7 @@
 	<key>00:18:19</key>
 	<string>Cisco Systems</string>
 	<key>00:18:1A</key>
-	<string>AVerMedia Technologies Inc.</string>
+	<string>AVerMedia Information Inc.</string>
 	<key>00:18:1B</key>
 	<string>TaiJin Metal Co., Ltd.</string>
 	<key>00:18:1C</key>
@@ -12413,7 +12413,7 @@
 	<key>00:18:64</key>
 	<string>Cybectec Inc.</string>
 	<key>00:18:65</key>
-	<string>Siemens Medical Solutions Diagnostics Manufacturing Ltd</string>
+	<string>Siemens Healthcare Diagnostics Manufacturing Ltd</string>
 	<key>00:18:66</key>
 	<string>Leutron Vision</string>
 	<key>00:18:67</key>
@@ -12437,7 +12437,7 @@
 	<key>00:18:70</key>
 	<string>E28 Shanghai Limited</string>
 	<key>00:18:71</key>
-	<string>Global Data Services</string>
+	<string>Hewlett Packard</string>
 	<key>00:18:72</key>
 	<string>Expertise Engineering</string>
 	<key>00:18:73</key>
@@ -12467,7 +12467,7 @@
 	<key>00:18:7F</key>
 	<string>ZODIANET</string>
 	<key>00:18:80</key>
-	<string>Mobilygen</string>
+	<string>Maxim Integrated Circuits</string>
 	<key>00:18:81</key>
 	<string>Buyang Electronics Industrial Co., Ltd</string>
 	<key>00:18:82</key>
@@ -12809,7 +12809,7 @@
 	<key>00:19:2A</key>
 	<string>Antiope Associates</string>
 	<key>00:19:2B</key>
-	<string>Hexagram, Inc.</string>
+	<string>Aclara RF Systems Inc.</string>
 	<key>00:19:2C</key>
 	<string>Motorola Mobile Devices</string>
 	<key>00:19:2D</key>
@@ -12841,7 +12841,7 @@
 	<key>00:19:3A</key>
 	<string>OESOLUTIONS</string>
 	<key>00:19:3B</key>
-	<string>Deliberant LLC</string>
+	<string>Wilibox Deliberant Group LLC</string>
 	<key>00:19:3C</key>
 	<string>HighPoint Technologies Incorporated</string>
 	<key>00:19:3D</key>
@@ -13029,7 +13029,7 @@
 	<key>00:19:98</key>
 	<string>SATO CORPORATION</string>
 	<key>00:19:99</key>
-	<string>Fujitsu Siemens Computers</string>
+	<string>Fujitsu Technology Solutions</string>
 	<key>00:19:9A</key>
 	<string>EDO-EVI</string>
 	<key>00:19:9B</key>
@@ -13037,7 +13037,7 @@
 	<key>00:19:9C</key>
 	<string>CTRING</string>
 	<key>00:19:9D</key>
-	<string>V, Inc.</string>
+	<string>VIZIO, Inc.</string>
 	<key>00:19:9E</key>
 	<string>SHOWADENSHI ELECTRONICS,INC.</string>
 	<key>00:19:9F</key>
@@ -13177,7 +13177,7 @@
 	<key>00:19:E2</key>
 	<string>Juniper Networks</string>
 	<key>00:19:E3</key>
-	<string>Apple Computers</string>
+	<string>Apple, Inc.</string>
 	<key>00:19:E4</key>
 	<string>2Wire, Inc</string>
 	<key>00:19:E5</key>
@@ -13221,7 +13221,7 @@
 	<key>00:19:F8</key>
 	<string>Embedded Systems Design, Inc.</string>
 	<key>00:19:F9</key>
-	<string>Lambda</string>
+	<string>TDK-Lambda</string>
 	<key>00:19:FA</key>
 	<string>Cable Vision Electronics CO., LTD.</string>
 	<key>00:19:FB</key>
@@ -13411,7 +13411,7 @@
 	<key>00:1A:57</key>
 	<string>Matrix Design Group, LLC</string>
 	<key>00:1A:58</key>
-	<string>Celectronic GmbH</string>
+	<string>CCV Deutschland GmbH - Celectronic eHealth Div.</string>
 	<key>00:1A:59</key>
 	<string>Ircona</string>
 	<key>00:1A:5A</key>
@@ -13651,7 +13651,7 @@
 	<key>00:1A:CF</key>
 	<string>C.T. ELETTRONICA</string>
 	<key>00:1A:D0</key>
-	<string>Siemens Schweiz AG</string>
+	<string>Albis Technologies AG</string>
 	<key>00:1A:D1</key>
 	<string>FARGO CO., LTD.</string>
 	<key>00:1A:D2</key>
@@ -13801,7 +13801,7 @@
 	<key>00:1B:1A</key>
 	<string>e-trees Japan, Inc.</string>
 	<key>00:1B:1B</key>
-	<string>Siemens AG, A&amp;D AS EWK PU1</string>
+	<string>Siemens AG,</string>
 	<key>00:1B:1C</key>
 	<string>Coherent</string>
 	<key>00:1B:1D</key>
@@ -13837,7 +13837,7 @@
 	<key>00:1B:2C</key>
 	<string>ATRON electronic GmbH</string>
 	<key>00:1B:2D</key>
-	<string>PRIVATE</string>
+	<string>Med-Eng Systems Inc.</string>
 	<key>00:1B:2E</key>
 	<string>Sinkyo Electron Inc</string>
 	<key>00:1B:2F</key>
@@ -13945,7 +13945,7 @@
 	<key>00:1B:62</key>
 	<string>JHT Optoelectronics Co.,Ltd.</string>
 	<key>00:1B:63</key>
-	<string>Apple Inc.</string>
+	<string>Apple, Inc.</string>
 	<key>00:1B:64</key>
 	<string>IsaacLandKorea Co., Ltd,</string>
 	<key>00:1B:65</key>
@@ -13959,7 +13959,7 @@
 	<key>00:1B:69</key>
 	<string>Equaline Corporation</string>
 	<key>00:1B:6A</key>
-	<string>Powerwave UK Ltd</string>
+	<string>Powerwave Technologies Sweden AB</string>
 	<key>00:1B:6B</key>
 	<string>Swyx Solutions AG</string>
 	<key>00:1B:6C</key>
@@ -14013,7 +14013,7 @@
 	<key>00:1B:84</key>
 	<string>Scan Engineering Telecom</string>
 	<key>00:1B:85</key>
-	<string>MAN Diesel A/S</string>
+	<string>MAN Diesel SE</string>
 	<key>00:1B:86</key>
 	<string>Bosch Access Systems GmbH</string>
 	<key>00:1B:87</key>
@@ -14109,7 +14109,7 @@
 	<key>00:1B:B4</key>
 	<string>Airvod Limited</string>
 	<key>00:1B:B5</key>
-	<string>Cherry GmbH</string>
+	<string>ZF Electronics GmbH</string>
 	<key>00:1B:B6</key>
 	<string>Bird Electronic Corp.</string>
 	<key>00:1B:B7</key>
@@ -14179,7 +14179,7 @@
 	<key>00:1B:D7</key>
 	<string>Scientific Atlanta, A Cisco Company</string>
 	<key>00:1B:D8</key>
-	<string>DVTel, Inc.</string>
+	<string>DVTel LTD</string>
 	<key>00:1B:D9</key>
 	<string>Edgewater Computer Systems</string>
 	<key>00:1B:DA</key>
@@ -14203,7 +14203,7 @@
 	<key>00:1B:E3</key>
 	<string>Health Hero Network, Inc.</string>
 	<key>00:1B:E4</key>
-	<string>RETEMATICA SNC</string>
+	<string>TOWNET SRL</string>
 	<key>00:1B:E5</key>
 	<string>802automation Limited</string>
 	<key>00:1B:E6</key>
@@ -14489,7 +14489,7 @@
 	<key>00:1C:72</key>
 	<string>Mayer &amp; Cie GmbH &amp; Co KG</string>
 	<key>00:1C:73</key>
-	<string>Arastra, Inc.</string>
+	<string>Arista Networks, Inc.</string>
 	<key>00:1C:74</key>
 	<string>Syswan Technologies Inc.</string>
 	<key>00:1C:75</key>
@@ -14581,7 +14581,7 @@
 	<key>00:1C:A0</key>
 	<string>Production Resource Group, LLC</string>
 	<key>00:1C:A1</key>
-	<string>PRIVATE</string>
+	<string>AKAMAI TECHNOLOGIES, INC.</string>
 	<key>00:1C:A2</key>
 	<string>PIRELLI BROADBAND SOLUTIONS</string>
 	<key>00:1C:A3</key>
@@ -14619,7 +14619,7 @@
 	<key>00:1C:B3</key>
 	<string>APPLE, INC</string>
 	<key>00:1C:B4</key>
-	<string>PRIVATE</string>
+	<string>Iridium Satellite LLC</string>
 	<key>00:1C:B5</key>
 	<string>Neihua Network Technology Co.,LTD.(NHN)</string>
 	<key>00:1C:B6</key>
@@ -14685,7 +14685,7 @@
 	<key>00:1C:D4</key>
 	<string>Nokia Danmark A/S</string>
 	<key>00:1C:D5</key>
-	<string>Zazzle Technologies, Inc.</string>
+	<string>ZeeVee, Inc.</string>
 	<key>00:1C:D6</key>
 	<string>Nokia Danmark A/S</string>
 	<key>00:1C:D7</key>
@@ -14759,7 +14759,7 @@
 	<key>00:1C:F9</key>
 	<string>Cisco Systems</string>
 	<key>00:1C:FA</key>
-	<string>PRIVATE</string>
+	<string>Alarm.com</string>
 	<key>00:1C:FB</key>
 	<string>Motorola CHS</string>
 	<key>00:1C:FC</key>
@@ -14769,7 +14769,7 @@
 	<key>00:1C:FE</key>
 	<string>Quartics Inc</string>
 	<key>00:1C:FF</key>
-	<string>Altus Networks</string>
+	<string>Napera Networks Inc</string>
 	<key>00:1D:00</key>
 	<string>Brivo Systems, LLC</string>
 	<key>00:1D:01</key>
@@ -14837,13 +14837,13 @@
 	<key>00:1D:20</key>
 	<string>COMTREND CO.</string>
 	<key>00:1D:21</key>
-	<string>Alcad S.A.</string>
+	<string>Alcad SL</string>
 	<key>00:1D:22</key>
 	<string>Foss Analytical A/S</string>
 	<key>00:1D:23</key>
 	<string>SENSUS METERING SYSTEMS</string>
 	<key>00:1D:24</key>
-	<string>DCSI</string>
+	<string>Aclara Power-Line Systems Inc.</string>
 	<key>00:1D:25</key>
 	<string>Samsung Electronics Co.,Ltd</string>
 	<key>00:1D:26</key>
@@ -14929,7 +14929,7 @@
 	<key>00:1D:4E</key>
 	<string>TCM Mobile LLC</string>
 	<key>00:1D:4F</key>
-	<string>Apple Inc</string>
+	<string>Apple, Inc.</string>
 	<key>00:1D:50</key>
 	<string>SPINETIX SA</string>
 	<key>00:1D:51</key>
@@ -14937,7 +14937,7 @@
 	<key>00:1D:52</key>
 	<string>Defzone B.V.</string>
 	<key>00:1D:53</key>
-	<string>SHARP-ROXY CORP.(M) SDN. BHD.</string>
+	<string>S&amp;O Electronics (Malaysia) Sdn. Bhd.</string>
 	<key>00:1D:54</key>
 	<string>Sunnic Technology &amp; Merchandise INC.</string>
 	<key>00:1D:55</key>
@@ -14949,7 +14949,7 @@
 	<key>00:1D:58</key>
 	<string>CQ Inc</string>
 	<key>00:1D:59</key>
-	<string>CHEROKEE INTERNATIONAL</string>
+	<string>Mitra Energy &amp; Infrastructure</string>
 	<key>00:1D:5A</key>
 	<string>2Wire Inc.</string>
 	<key>00:1D:5B</key>
@@ -15113,7 +15113,7 @@
 	<key>00:1D:AA</key>
 	<string>DrayTek Corp.</string>
 	<key>00:1D:AB</key>
-	<string>SwissQual</string>
+	<string>SwissQual License AG</string>
 	<key>00:1D:AC</key>
 	<string>Gigamon Systems LLC</string>
 	<key>00:1D:AD</key>
@@ -15447,7 +15447,7 @@
 	<key>00:1E:51</key>
 	<string>Converter Industry Srl</string>
 	<key>00:1E:52</key>
-	<string>Apple Inc</string>
+	<string>Apple, Inc</string>
 	<key>00:1E:53</key>
 	<string>Further Tech Co., LTD</string>
 	<key>00:1E:54</key>
@@ -15499,7 +15499,7 @@
 	<key>00:1E:6B</key>
 	<string>Scientific Atlanta, A Cisco Company</string>
 	<key>00:1E:6C</key>
-	<string>Spliced Networks LLC</string>
+	<string>Carbon Mountain LLC</string>
 	<key>00:1E:6D</key>
 	<string>IT R&amp;D Center</string>
 	<key>00:1E:6E</key>
@@ -15561,7 +15561,7 @@
 	<key>00:1E:8A</key>
 	<string>eCopy, Inc</string>
 	<key>00:1E:8B</key>
-	<string>Hannet Telecom Co., Ltd.</string>
+	<string>Infra Access Korea Co., Ltd.</string>
 	<key>00:1E:8C</key>
 	<string>ASUSTek COMPUTER INC.</string>
 	<key>00:1E:8D</key>
@@ -15667,7 +15667,7 @@
 	<key>00:1E:BF</key>
 	<string>Haas Automation Inc.</string>
 	<key>00:1E:C0</key>
-	<string>PRIVATE</string>
+	<string>ZeroG Wireless Inc.</string>
 	<key>00:1E:C1</key>
 	<string>3COM EUROPE LTD</string>
 	<key>00:1E:C2</key>
@@ -16031,7 +16031,7 @@
 	<key>00:1F:75</key>
 	<string>GiBahn Media</string>
 	<key>00:1F:76</key>
-	<string>AirLogic Systems</string>
+	<string>AirLogic Systems Inc.</string>
 	<key>00:1F:77</key>
 	<string>HEOL DESIGN</string>
 	<key>00:1F:78</key>
@@ -16286,6 +16286,26 @@
 	<string>Power Monitors, Inc.</string>
 	<key>00:1F:F5</key>
 	<string>Kongsberg Defence &amp; Aerospace</string>
+	<key>00:1F:F6</key>
+	<string>PS Audio International</string>
+	<key>00:1F:F7</key>
+	<string>Nakajima All Precision Co., Ltd.</string>
+	<key>00:1F:F8</key>
+	<string>Siemens AG, Sector Industry, Drive Technologies, Motion Control Systems</string>
+	<key>00:1F:F9</key>
+	<string>Advanced Knowledge Associates</string>
+	<key>00:1F:FA</key>
+	<string>Coretree, Co, Ltd</string>
+	<key>00:1F:FB</key>
+	<string>Green Packet Bhd</string>
+	<key>00:1F:FC</key>
+	<string>Riccius+Sohn GmbH</string>
+	<key>00:1F:FD</key>
+	<string>Indigo Mobile Technologies Corp.</string>
+	<key>00:1F:FE</key>
+	<string>ProCurve Networking by HP</string>
+	<key>00:1F:FF</key>
+	<string>Respironics, Inc.</string>
 	<key>00:20:00</key>
 	<string>LEXMARK INTERNATIONAL, INC.</string>
 	<key>00:20:01</key>
@@ -16409,7 +16429,7 @@
 	<key>00:20:3C</key>
 	<string>EUROTIME AB</string>
 	<key>00:20:3D</key>
-	<string>NOVAR ELECTRONICS CORPORATION</string>
+	<string>Honeywell ECC</string>
 	<key>00:20:3E</key>
 	<string>LogiCan Technologies, Inc.</string>
 	<key>00:20:3F</key>
@@ -16798,8 +16818,2926 @@
 	<string>TOPWARE INC. / GRAND COMPUTER</string>
 	<key>00:20:FF</key>
 	<string>SYMMETRICAL TECHNOLOGIES</string>
+	<key>00:21:00</key>
+	<string>GemTek Technology Co., Ltd.</string>
+	<key>00:21:01</key>
+	<string>Aplicaciones Electronicas Quasar (AEQ)</string>
+	<key>00:21:02</key>
+	<string>UpdateLogic Inc.</string>
+	<key>00:21:03</key>
+	<string>GHI Electronics, LLC</string>
+	<key>00:21:04</key>
+	<string>Gigaset Communications GmbH</string>
+	<key>00:21:05</key>
+	<string>Alcatel-Lucent</string>
+	<key>00:21:06</key>
+	<string>RIM Testing Services</string>
+	<key>00:21:07</key>
+	<string>Seowonintech Co Ltd.</string>
+	<key>00:21:08</key>
+	<string>Nokia Danmark A/S</string>
+	<key>00:21:09</key>
+	<string>Nokia Danmark A/S</string>
+	<key>00:21:0A</key>
+	<string>byd:sign Corporation</string>
+	<key>00:21:0B</key>
+	<string>GEMINI TRAZE RFID PVT. LTD.</string>
+	<key>00:21:0C</key>
+	<string>Cymtec Systems, Inc.</string>
+	<key>00:21:0D</key>
+	<string>SAMSIN INNOTEC</string>
+	<key>00:21:0E</key>
+	<string>Orpak Systems L.T.D.</string>
+	<key>00:21:0F</key>
+	<string>Cernium Corp</string>
+	<key>00:21:10</key>
+	<string>Clearbox Systems</string>
+	<key>00:21:11</key>
+	<string>Uniphone Inc.</string>
+	<key>00:21:12</key>
+	<string>WISCOM SYSTEM CO.,LTD</string>
+	<key>00:21:13</key>
+	<string>Padtec S/A</string>
+	<key>00:21:14</key>
+	<string>Hylab Technology Inc.</string>
+	<key>00:21:15</key>
+	<string>PHYWE Systeme GmbH &amp; Co. KG</string>
+	<key>00:21:16</key>
+	<string>Transcon Electronic Systems, spol. s r. o.</string>
+	<key>00:21:17</key>
+	<string>Tellord</string>
+	<key>00:21:18</key>
+	<string>Athena Tech, Inc.</string>
+	<key>00:21:19</key>
+	<string>Samsung Electro-Mechanics</string>
+	<key>00:21:1A</key>
+	<string>LInTech Corporation</string>
+	<key>00:21:1B</key>
+	<string>Cisco Systems</string>
+	<key>00:21:1C</key>
+	<string>Cisco Systems</string>
+	<key>00:21:1D</key>
+	<string>Dataline AB</string>
+	<key>00:21:1E</key>
+	<string>Motorola CHS</string>
+	<key>00:21:1F</key>
+	<string>SHINSUNG DELTATECH CO.,LTD.</string>
+	<key>00:21:20</key>
+	<string>Sequel Technologies, LLC</string>
+	<key>00:21:21</key>
+	<string>VRmagic GmbH</string>
+	<key>00:21:22</key>
+	<string>Chip-pro Ltd.</string>
+	<key>00:21:23</key>
+	<string>Aerosat Avionics</string>
+	<key>00:21:24</key>
+	<string>Optos Plc</string>
+	<key>00:21:25</key>
+	<string>KUK JE TONG SHIN Co.,LTD</string>
+	<key>00:21:26</key>
+	<string>Shenzhen Torch Equipment Co., Ltd.</string>
+	<key>00:21:27</key>
+	<string>TP-LINK Technology Co., Ltd.</string>
+	<key>00:21:28</key>
+	<string>Sun Microsystems Inc</string>
+	<key>00:21:29</key>
+	<string>Cisco-Linksys, LLC</string>
+	<key>00:21:2A</key>
+	<string>Audiovox Corporation</string>
+	<key>00:21:2B</key>
+	<string>MSA Auer</string>
+	<key>00:21:2C</key>
+	<string>SemIndia System Private Limited</string>
+	<key>00:21:2D</key>
+	<string>SCIMOLEX CORPORATION</string>
+	<key>00:21:2E</key>
+	<string>dresden-elektronik</string>
+	<key>00:21:2F</key>
+	<string>Phoebe Micro Inc.</string>
+	<key>00:21:30</key>
+	<string>Keico Hightech Inc.</string>
+	<key>00:21:31</key>
+	<string>Blynke Inc.</string>
+	<key>00:21:32</key>
+	<string>Masterclock, Inc.</string>
+	<key>00:21:33</key>
+	<string>Building B, Inc</string>
+	<key>00:21:34</key>
+	<string>Brandywine Communications</string>
+	<key>00:21:35</key>
+	<string>ALCATEL-LUCENT</string>
+	<key>00:21:36</key>
+	<string>Motorola Mobile Devices business (MDb)</string>
+	<key>00:21:37</key>
+	<string>Bay Controls, LLC</string>
+	<key>00:21:38</key>
+	<string>Cepheid</string>
+	<key>00:21:39</key>
+	<string>Escherlogic Inc.</string>
+	<key>00:21:3A</key>
+	<string>Winchester Systems Inc.</string>
+	<key>00:21:3B</key>
+	<string>Berkshire Products, Inc</string>
+	<key>00:21:3C</key>
+	<string>AliphCom</string>
+	<key>00:21:3D</key>
+	<string>Cermetek Microelectronics, Inc.</string>
+	<key>00:21:3E</key>
+	<string>TomTom</string>
+	<key>00:21:3F</key>
+	<string>A-Team Technology Ltd.</string>
+	<key>00:21:40</key>
+	<string>EN Technologies Inc.</string>
+	<key>00:21:41</key>
+	<string>RADLIVE</string>
+	<key>00:21:42</key>
+	<string>ABS Control Systems doo</string>
+	<key>00:21:43</key>
+	<string>Motorola CHS</string>
+	<key>00:21:44</key>
+	<string>SS Telecoms</string>
+	<key>00:21:45</key>
+	<string>Semptian Technologies Ltd.</string>
+	<key>00:21:46</key>
+	<string>SCI Technology</string>
+	<key>00:21:47</key>
+	<string>Nintendo Co., Ltd.</string>
+	<key>00:21:48</key>
+	<string>Kaco Solar Korea</string>
+	<key>00:21:49</key>
+	<string>China Daheng Group ,Inc.</string>
+	<key>00:21:4A</key>
+	<string>Pixel Velocity, Inc</string>
+	<key>00:21:4B</key>
+	<string>Shenzhen HAMP Science &amp; Technology Co.,Ltd</string>
+	<key>00:21:4C</key>
+	<string>SAMSUNG ELECTRONICS CO., LTD.</string>
+	<key>00:21:4D</key>
+	<string>Guangzhou Skytone Transmission Technology Com. Ltd.</string>
+	<key>00:21:4E</key>
+	<string>GS Yuasa Power Supply Ltd.</string>
+	<key>00:21:4F</key>
+	<string>ALPS Electric Co., Ltd</string>
+	<key>00:21:50</key>
+	<string>EYEVIEW ELECTRONICS</string>
+	<key>00:21:51</key>
+	<string>Millinet Co., Ltd.</string>
+	<key>00:21:52</key>
+	<string>General Satellite Trading Limited</string>
+	<key>00:21:53</key>
+	<string>SeaMicro Inc.</string>
+	<key>00:21:54</key>
+	<string>D-TACQ Solutions Ltd</string>
+	<key>00:21:55</key>
+	<string>Cisco Systems</string>
+	<key>00:21:56</key>
+	<string>Cisco Systems</string>
+	<key>00:21:57</key>
+	<string>National Datacast, Inc.</string>
+	<key>00:21:58</key>
+	<string>Style Flying Technology Co.</string>
+	<key>00:21:59</key>
+	<string>Juniper Networks</string>
+	<key>00:21:5A</key>
+	<string>Hewlett Packard</string>
+	<key>00:21:5B</key>
+	<string>Inotive</string>
+	<key>00:21:5C</key>
+	<string>Intel Corporate</string>
+	<key>00:21:5D</key>
+	<string>Intel Corporate</string>
+	<key>00:21:5E</key>
+	<string>IBM</string>
+	<key>00:21:5F</key>
+	<string>IHSE GmbH</string>
+	<key>00:21:60</key>
+	<string>Hidea Solutions Co. Ltd.</string>
+	<key>00:21:61</key>
+	<string>Yournet Inc.</string>
+	<key>00:21:62</key>
+	<string>Nortel</string>
+	<key>00:21:63</key>
+	<string>ASKEY COMPUTER CORP</string>
+	<key>00:21:64</key>
+	<string>Special Design Bureau for Seismic Instrumentation</string>
+	<key>00:21:65</key>
+	<string>Presstek Inc.</string>
+	<key>00:21:66</key>
+	<string>NovAtel Inc.</string>
+	<key>00:21:67</key>
+	<string>HWA JIN T&amp;I Corp.</string>
+	<key>00:21:68</key>
+	<string>iVeia, LLC</string>
+	<key>00:21:69</key>
+	<string>Prologix, LLC.</string>
+	<key>00:21:6A</key>
+	<string>Intel Corporate</string>
+	<key>00:21:6B</key>
+	<string>Intel Corporate</string>
+	<key>00:21:6C</key>
+	<string>ODVA</string>
+	<key>00:21:6D</key>
+	<string>Soltech Co., Ltd.</string>
+	<key>00:21:6E</key>
+	<string>Function ATI (Huizhou) Telecommunications Co., Ltd.</string>
+	<key>00:21:6F</key>
+	<string>SymCom, Inc.</string>
+	<key>00:21:70</key>
+	<string>Dell Inc</string>
+	<key>00:21:71</key>
+	<string>Wesung TNC Co., Ltd.</string>
+	<key>00:21:72</key>
+	<string>Seoultek Valley</string>
+	<key>00:21:73</key>
+	<string>Ion Torrent Systems, Inc.</string>
+	<key>00:21:74</key>
+	<string>AvaLAN Wireless</string>
+	<key>00:21:75</key>
+	<string>Pacific Satellite International Ltd.</string>
+	<key>00:21:76</key>
+	<string>YMax Telecom Ltd.</string>
+	<key>00:21:77</key>
+	<string>W. L. Gore &amp; Associates</string>
+	<key>00:21:78</key>
+	<string>Matuschek Messtechnik GmbH</string>
+	<key>00:21:79</key>
+	<string>IOGEAR, Inc.</string>
+	<key>00:21:7A</key>
+	<string>Sejin Electron, Inc.</string>
+	<key>00:21:7B</key>
+	<string>Bastec AB</string>
+	<key>00:21:7C</key>
+	<string>2Wire</string>
+	<key>00:21:7D</key>
+	<string>PYXIS S.R.L.</string>
+	<key>00:21:7E</key>
+	<string>Telit Communication s.p.a</string>
+	<key>00:21:7F</key>
+	<string>Intraco Technology Pte Ltd</string>
+	<key>00:21:80</key>
+	<string>Motorola CHS</string>
+	<key>00:21:81</key>
+	<string>Si2 Microsystems Limited</string>
+	<key>00:21:82</key>
+	<string>SandLinks Systems, Ltd.</string>
+	<key>00:21:83</key>
+	<string>VATECH HYDRO</string>
+	<key>00:21:84</key>
+	<string>POWERSOFT SRL</string>
+	<key>00:21:85</key>
+	<string>MICRO-STAR INT&apos;L CO.,LTD.</string>
+	<key>00:21:86</key>
+	<string>USI</string>
+	<key>00:21:87</key>
+	<string>Imacs GmbH</string>
+	<key>00:21:88</key>
+	<string>Data Domain, Inc.</string>
+	<key>00:21:89</key>
+	<string>AppTech, Inc.</string>
+	<key>00:21:8A</key>
+	<string>Electronic Design and Manufacturing Company</string>
+	<key>00:21:8B</key>
+	<string>Wescon Technology, Inc.</string>
+	<key>00:21:8C</key>
+	<string>TopControl GMBH</string>
+	<key>00:21:8D</key>
+	<string>AP Router Ind. Eletronica LTDA</string>
+	<key>00:21:8E</key>
+	<string>MEKICS CO., LTD.</string>
+	<key>00:21:8F</key>
+	<string>Avantgarde Acoustic Lautsprechersysteme GmbH</string>
+	<key>00:21:90</key>
+	<string>Goliath Solutions</string>
+	<key>00:21:91</key>
+	<string>D-Link Corporation</string>
+	<key>00:21:92</key>
+	<string>Baoding Galaxy Electronic Technology  Co.,Ltd</string>
+	<key>00:21:93</key>
+	<string>Videofon MV</string>
+	<key>00:21:94</key>
+	<string>Ping Communication</string>
+	<key>00:21:95</key>
+	<string>GWD Media Limited</string>
+	<key>00:21:96</key>
+	<string>Telsey  S.p.A.</string>
+	<key>00:21:97</key>
+	<string>ELITEGROUP COMPUTER SYSTEM</string>
+	<key>00:21:98</key>
+	<string>Thai Radio Co, LTD</string>
+	<key>00:21:99</key>
+	<string>Vacon Plc</string>
+	<key>00:21:9A</key>
+	<string>Cambridge Visual Networks Ltd</string>
+	<key>00:21:9B</key>
+	<string>Dell Inc</string>
+	<key>00:21:9C</key>
+	<string>Honeywld Technology Corp.</string>
+	<key>00:21:9D</key>
+	<string>Adesys BV</string>
+	<key>00:21:9E</key>
+	<string>Sony Ericsson Mobile Communications</string>
+	<key>00:21:9F</key>
+	<string>SATEL OY</string>
+	<key>00:21:A0</key>
+	<string>Cisco Systems</string>
+	<key>00:21:A1</key>
+	<string>Cisco Systems</string>
+	<key>00:21:A2</key>
+	<string>EKE-Electronics Ltd.</string>
+	<key>00:21:A3</key>
+	<string>Micromint</string>
+	<key>00:21:A4</key>
+	<string>Dbii Networks</string>
+	<key>00:21:A5</key>
+	<string>ERLPhase Power Technologies Ltd.</string>
+	<key>00:21:A6</key>
+	<string>Videotec Spa</string>
+	<key>00:21:A7</key>
+	<string>Hantle System Co., Ltd.</string>
+	<key>00:21:A8</key>
+	<string>Telephonics Corporation</string>
+	<key>00:21:A9</key>
+	<string>Mobilink Telecom Co.,Ltd</string>
+	<key>00:21:AA</key>
+	<string>Nokia Danmark A/S</string>
+	<key>00:21:AB</key>
+	<string>Nokia Danmark A/S</string>
+	<key>00:21:AC</key>
+	<string>Infrared Integrated Systems Ltd</string>
+	<key>00:21:AD</key>
+	<string>Nordic ID Oy</string>
+	<key>00:21:AE</key>
+	<string>ALCATEL-LUCENT FRANCE - WTD</string>
+	<key>00:21:AF</key>
+	<string>Radio Frequency Systems</string>
+	<key>00:21:B0</key>
+	<string>Tyco Telecommunications</string>
+	<key>00:21:B1</key>
+	<string>DIGITAL SOLUTIONS LTD</string>
+	<key>00:21:B2</key>
+	<string>Fiberblaze A/S</string>
+	<key>00:21:B3</key>
+	<string>Ross Controls</string>
+	<key>00:21:B4</key>
+	<string>APRO MEDIA CO., LTD</string>
+	<key>00:21:B5</key>
+	<string>Vyro Games Limited</string>
+	<key>00:21:B6</key>
+	<string>Triacta Power Technologies Inc.</string>
+	<key>00:21:B7</key>
+	<string>Lexmark International Inc.</string>
+	<key>00:21:B8</key>
+	<string>Inphi Corporation</string>
+	<key>00:21:B9</key>
+	<string>Universal Devices Inc.</string>
+	<key>00:21:BA</key>
+	<string>Texas Instruments</string>
+	<key>00:21:BB</key>
+	<string>Riken Keiki Co., Ltd.</string>
+	<key>00:21:BC</key>
+	<string>ZALA COMPUTER</string>
+	<key>00:21:BD</key>
+	<string>Nintendo Co., Ltd.</string>
+	<key>00:21:BE</key>
+	<string>Cisco, Service Provider Video Technology Group</string>
+	<key>00:21:BF</key>
+	<string>Hitachi High-Tech Control Systems Corporation</string>
+	<key>00:21:C0</key>
+	<string>Mobile Appliance, Inc.</string>
+	<key>00:21:C1</key>
+	<string>ABB Oy / Distribution Automation</string>
+	<key>00:21:C2</key>
+	<string>GL Communications Inc</string>
+	<key>00:21:C3</key>
+	<string>CORNELL Communications, Inc.</string>
+	<key>00:21:C4</key>
+	<string>Consilium AB</string>
+	<key>00:21:C5</key>
+	<string>3DSP Corp</string>
+	<key>00:21:C6</key>
+	<string>CSJ Global, Inc.</string>
+	<key>00:21:C7</key>
+	<string>Russound</string>
+	<key>00:21:C8</key>
+	<string>LOHUIS Networks</string>
+	<key>00:21:C9</key>
+	<string>Wavecom Asia Pacific Limited</string>
+	<key>00:21:CA</key>
+	<string>ART System Co., Ltd.</string>
+	<key>00:21:CB</key>
+	<string>SMS TECNOLOGIA ELETRONICA LTDA</string>
+	<key>00:21:CC</key>
+	<string>Flextronics International</string>
+	<key>00:21:CD</key>
+	<string>LiveTV</string>
+	<key>00:21:CE</key>
+	<string>NTC-Metrotek</string>
+	<key>00:21:CF</key>
+	<string>The Crypto Group</string>
+	<key>00:21:D0</key>
+	<string>Global Display Solutions Spa</string>
+	<key>00:21:D1</key>
+	<string>Samsung Electronics Co.,Ltd</string>
+	<key>00:21:D2</key>
+	<string>Samsung Electronics Co.,Ltd</string>
+	<key>00:21:D3</key>
+	<string>BOCOM SECURITY(ASIA PACIFIC) LIMITED</string>
+	<key>00:21:D4</key>
+	<string>Vollmer Werke GmbH</string>
+	<key>00:21:D5</key>
+	<string>X2E GmbH</string>
+	<key>00:21:D6</key>
+	<string>LXI Consortium</string>
+	<key>00:21:D7</key>
+	<string>Cisco Systems</string>
+	<key>00:21:D8</key>
+	<string>Cisco Systems</string>
+	<key>00:21:D9</key>
+	<string>SEKONIC CORPORATION</string>
+	<key>00:21:DA</key>
+	<string>Automation Products Group Inc.</string>
+	<key>00:21:DB</key>
+	<string>Santachi Video Technology (Shenzhen) Co., Ltd.</string>
+	<key>00:21:DC</key>
+	<string>TECNOALARM S.r.l.</string>
+	<key>00:21:DD</key>
+	<string>Northstar Systems Corp</string>
+	<key>00:21:DE</key>
+	<string>Firepro Wireless</string>
+	<key>00:21:DF</key>
+	<string>Martin Christ GmbH</string>
+	<key>00:21:E0</key>
+	<string>CommAgility Ltd</string>
+	<key>00:21:E1</key>
+	<string>Nortel Networks</string>
+	<key>00:21:E2</key>
+	<string>Creative Electronic GmbH</string>
+	<key>00:21:E3</key>
+	<string>SerialTek LLC</string>
+	<key>00:21:E4</key>
+	<string>I-WIN</string>
+	<key>00:21:E5</key>
+	<string>Display Solution AG</string>
+	<key>00:21:E6</key>
+	<string>Starlight Video Limited</string>
+	<key>00:21:E7</key>
+	<string>Informatics Services Corporation</string>
+	<key>00:21:E8</key>
+	<string>Murata Manufacturing Co., Ltd.</string>
+	<key>00:21:E9</key>
+	<string>Apple, Inc</string>
+	<key>00:21:EA</key>
+	<string>Bystronic Laser AG</string>
+	<key>00:21:EB</key>
+	<string>ESP SYSTEMS, LLC</string>
+	<key>00:21:EC</key>
+	<string>Solutronic GmbH</string>
+	<key>00:21:ED</key>
+	<string>Telegesis</string>
+	<key>00:21:EE</key>
+	<string>Full Spectrum Inc.</string>
+	<key>00:21:EF</key>
+	<string>Kapsys</string>
+	<key>00:21:F0</key>
+	<string>EW3 Technologies LLC</string>
+	<key>00:21:F1</key>
+	<string>Tutus Data AB</string>
+	<key>00:21:F2</key>
+	<string>EASY3CALL Technology Limited</string>
+	<key>00:21:F3</key>
+	<string>Si14 SpA</string>
+	<key>00:21:F4</key>
+	<string>INRange Systems, Inc</string>
+	<key>00:21:F5</key>
+	<string>Western Engravers Supply, Inc.</string>
+	<key>00:21:F6</key>
+	<string>Virtual Iron Software</string>
+	<key>00:21:F7</key>
+	<string>ProCurve Networking by HP</string>
+	<key>00:21:F8</key>
+	<string>Enseo, Inc.</string>
+	<key>00:21:F9</key>
+	<string>WIRECOM Technologies</string>
+	<key>00:21:FA</key>
+	<string>A4SP Technologies Ltd.</string>
+	<key>00:21:FB</key>
+	<string>LG Electronics</string>
+	<key>00:21:FC</key>
+	<string>Nokia Danmark A/S</string>
+	<key>00:21:FD</key>
+	<string>DSTA S.L.</string>
+	<key>00:21:FE</key>
+	<string>Nokia Danmark A/S</string>
+	<key>00:21:FF</key>
+	<string>Cyfrowy Polsat SA</string>
+	<key>00:22:00</key>
+	<string>BLADE Network Technology</string>
+	<key>00:22:01</key>
+	<string>Aksys Networks Inc</string>
+	<key>00:22:02</key>
+	<string>Excito Elektronik i SkÂne AB</string>
+	<key>00:22:03</key>
+	<string>Glensound Electronics Ltd</string>
+	<key>00:22:04</key>
+	<string>KORATEK</string>
+	<key>00:22:05</key>
+	<string>WeLink Solutions, Inc.</string>
+	<key>00:22:06</key>
+	<string>Cyberdyne Inc.</string>
+	<key>00:22:07</key>
+	<string>Inteno Broadband Technology AB</string>
+	<key>00:22:08</key>
+	<string>Certicom Corp</string>
+	<key>00:22:09</key>
+	<string>Omron Healthcare Co., Ltd</string>
+	<key>00:22:0A</key>
+	<string>Rearden Labs</string>
+	<key>00:22:0B</key>
+	<string>National Source Coding Center</string>
+	<key>00:22:0C</key>
+	<string>Cisco Systems</string>
+	<key>00:22:0D</key>
+	<string>Cisco Systems</string>
+	<key>00:22:0E</key>
+	<string>Indigo Security Co., Ltd.</string>
+	<key>00:22:0F</key>
+	<string>MoCA (Multimedia over Coax Alliance)</string>
+	<key>00:22:10</key>
+	<string>Motorola CHS</string>
+	<key>00:22:11</key>
+	<string>Rohati Systems</string>
+	<key>00:22:12</key>
+	<string>CAI Networks, Inc.</string>
+	<key>00:22:13</key>
+	<string>PCI CORPORATION</string>
+	<key>00:22:14</key>
+	<string>RINNAI KOREA</string>
+	<key>00:22:15</key>
+	<string>ASUSTek COMPUTER INC.</string>
+	<key>00:22:16</key>
+	<string>SHIBAURA VENDING MACHINE CORPORATION</string>
+	<key>00:22:17</key>
+	<string>Neat Electronics</string>
+	<key>00:22:18</key>
+	<string>Verivue Inc.</string>
+	<key>00:22:19</key>
+	<string>Dell Inc</string>
+	<key>00:22:1A</key>
+	<string>Audio Precision</string>
+	<key>00:22:1B</key>
+	<string>Morega Systems</string>
+	<key>00:22:1C</key>
+	<string>PRIVATE</string>
+	<key>00:22:1D</key>
+	<string>Freegene Technology LTD</string>
+	<key>00:22:1E</key>
+	<string>Media Devices Co., Ltd.</string>
+	<key>00:22:1F</key>
+	<string>eSang Technologies Co., Ltd.</string>
+	<key>00:22:20</key>
+	<string>Mitac Technology Corp</string>
+	<key>00:22:21</key>
+	<string>ITOH DENKI CO,LTD.</string>
+	<key>00:22:22</key>
+	<string>Betec Engineering GmbH</string>
+	<key>00:22:23</key>
+	<string>TimeKeeping Systems, Inc.</string>
+	<key>00:22:24</key>
+	<string>Good Will Instrument Co., Ltd.</string>
+	<key>00:22:25</key>
+	<string>Thales Avionics Ltd</string>
+	<key>00:22:26</key>
+	<string>Avaak, Inc.</string>
+	<key>00:22:27</key>
+	<string>uv-electronic GmbH</string>
+	<key>00:22:28</key>
+	<string>Breeze Innovations Ltd.</string>
+	<key>00:22:29</key>
+	<string>Compumedics Ltd</string>
+	<key>00:22:2A</key>
+	<string>SoundEar A/S</string>
+	<key>00:22:2B</key>
+	<string>Nucomm, Inc.</string>
+	<key>00:22:2C</key>
+	<string>Ceton Corp</string>
+	<key>00:22:2D</key>
+	<string>SMC Networks Inc.</string>
+	<key>00:22:2E</key>
+	<string>maintech GmbH</string>
+	<key>00:22:2F</key>
+	<string>Open Grid Computing, Inc.</string>
+	<key>00:22:30</key>
+	<string>FutureLogic Inc.</string>
+	<key>00:22:31</key>
+	<string>SMT&amp;C Co., Ltd.</string>
+	<key>00:22:32</key>
+	<string>Design Design Technology Ltd</string>
+	<key>00:22:33</key>
+	<string>Pirelli Broadband Solutions</string>
+	<key>00:22:34</key>
+	<string>Corventis Inc.</string>
+	<key>00:22:35</key>
+	<string>Strukton Systems bv</string>
+	<key>00:22:36</key>
+	<string>VECTOR SP. Z O.O.</string>
+	<key>00:22:37</key>
+	<string>Shinhint Group</string>
+	<key>00:22:38</key>
+	<string>LOGIPLUS</string>
+	<key>00:22:39</key>
+	<string>Indiana Life Sciences Incorporated</string>
+	<key>00:22:3A</key>
+	<string>Scientific Atlanta, Cisco SPVT Group</string>
+	<key>00:22:3B</key>
+	<string>Communication Networks, LLC</string>
+	<key>00:22:3C</key>
+	<string>RATIO Entwicklungen GmbH</string>
+	<key>00:22:3D</key>
+	<string>JumpGen Systems, LLC</string>
+	<key>00:22:3E</key>
+	<string>IRTrans GmbH</string>
+	<key>00:22:3F</key>
+	<string>Netgear Inc.</string>
+	<key>00:22:40</key>
+	<string>Universal Telecom S/A</string>
+	<key>00:22:41</key>
+	<string>Apple, Inc</string>
+	<key>00:22:42</key>
+	<string>Alacron Inc.</string>
+	<key>00:22:43</key>
+	<string>AzureWave Technologies, Inc.</string>
+	<key>00:22:44</key>
+	<string>Chengdu Linkon Communications Device Co., Ltd</string>
+	<key>00:22:45</key>
+	<string>Leine &amp; Linde AB</string>
+	<key>00:22:46</key>
+	<string>Evoc Intelligent Technology Co.,Ltd.</string>
+	<key>00:22:47</key>
+	<string>DAC ENGINEERING CO., LTD.</string>
+	<key>00:22:48</key>
+	<string>Microsoft Corporation</string>
+	<key>00:22:49</key>
+	<string>HOME MULTIENERGY SL</string>
+	<key>00:22:4A</key>
+	<string>RAYLASE AG</string>
+	<key>00:22:4B</key>
+	<string>AIRTECH TECHNOLOGIES, INC.</string>
+	<key>00:22:4C</key>
+	<string>Nintendo Co., Ltd.</string>
+	<key>00:22:4D</key>
+	<string>MITAC INTERNATIONAL CORP.</string>
+	<key>00:22:4E</key>
+	<string>SEEnergy Corp.</string>
+	<key>00:22:4F</key>
+	<string>Byzoro Networks Ltd.</string>
+	<key>00:22:50</key>
+	<string>Point Six Wireless, LLC</string>
+	<key>00:22:51</key>
+	<string>Lumasense Technologies</string>
+	<key>00:22:52</key>
+	<string>ZOLL Lifecor Corporation</string>
+	<key>00:22:53</key>
+	<string>Entorian Technologies</string>
+	<key>00:22:54</key>
+	<string>Bigelow Aerospace</string>
+	<key>00:22:55</key>
+	<string>Cisco Systems</string>
+	<key>00:22:56</key>
+	<string>Cisco Systems</string>
+	<key>00:22:57</key>
+	<string>3Com Europe Ltd</string>
+	<key>00:22:58</key>
+	<string>Taiyo Yuden Co., Ltd.</string>
+	<key>00:22:59</key>
+	<string>Guangzhou New Postcom Equipment Co.,Ltd.</string>
+	<key>00:22:5A</key>
+	<string>Garde Security AB</string>
+	<key>00:22:5B</key>
+	<string>Teradici Corporation</string>
+	<key>00:22:5C</key>
+	<string>Multimedia &amp; Communication Technology</string>
+	<key>00:22:5D</key>
+	<string>Digicable Network India Pvt. Ltd.</string>
+	<key>00:22:5E</key>
+	<string>Uwin Technologies Co.,LTD</string>
+	<key>00:22:5F</key>
+	<string>Liteon Technology Corporation</string>
+	<key>00:22:60</key>
+	<string>AFREEY Inc.</string>
+	<key>00:22:61</key>
+	<string>Frontier Silicon Ltd</string>
+	<key>00:22:62</key>
+	<string>BEP Marine</string>
+	<key>00:22:63</key>
+	<string>Koos Technical Services, Inc.</string>
+	<key>00:22:64</key>
+	<string>Hewlett Packard</string>
+	<key>00:22:65</key>
+	<string>Nokia Danmark A/S</string>
+	<key>00:22:66</key>
+	<string>Nokia Danmark A/S</string>
+	<key>00:22:67</key>
+	<string>Nortel Networks</string>
+	<key>00:22:68</key>
+	<string>Hon Hai Precision Ind. Co., Ltd.</string>
+	<key>00:22:69</key>
+	<string>Hon Hai Precision Ind. Co., Ltd.</string>
+	<key>00:22:6A</key>
+	<string>Honeywell</string>
+	<key>00:22:6B</key>
+	<string>Cisco-Linksys, LLC</string>
+	<key>00:22:6C</key>
+	<string>LinkSprite Technologies, Inc.</string>
+	<key>00:22:6D</key>
+	<string>Shenzhen GIEC Electronics Co., Ltd.</string>
+	<key>00:22:6E</key>
+	<string>Gowell Electronic Limited</string>
+	<key>00:22:6F</key>
+	<string>3onedata Technology Co. Ltd.</string>
+	<key>00:22:70</key>
+	<string>ABK North America, LLC</string>
+	<key>00:22:71</key>
+	<string>J‰ger Computergesteuerte Messtechnik GmbH</string>
+	<key>00:22:72</key>
+	<string>American Micro-Fuel Device Corp.</string>
+	<key>00:22:73</key>
+	<string>Techway</string>
+	<key>00:22:74</key>
+	<string>FamilyPhone AB</string>
+	<key>00:22:75</key>
+	<string>Belkin International, Inc.</string>
+	<key>00:22:76</key>
+	<string>Triple EYE B.V.</string>
+	<key>00:22:77</key>
+	<string>NEC Australia Pty Ltd</string>
+	<key>00:22:78</key>
+	<string>Shenzhen  Tongfang Multimedia  Technology Co.,Ltd.</string>
+	<key>00:22:79</key>
+	<string>Nippon Conlux Co., Ltd.</string>
+	<key>00:22:7A</key>
+	<string>Telecom Design</string>
+	<key>00:22:7B</key>
+	<string>Apogee Labs, Inc.</string>
+	<key>00:22:7C</key>
+	<string>Woori SMT Co.,ltd</string>
+	<key>00:22:7D</key>
+	<string>YE DATA INC.</string>
+	<key>00:22:7E</key>
+	<string>Chengdu 30Kaitian Communication Industry Co.Ltd</string>
+	<key>00:22:7F</key>
+	<string>Ruckus Wireless</string>
+	<key>00:22:80</key>
+	<string>A2B Electronics AB</string>
+	<key>00:22:81</key>
+	<string>Daintree Networks Inc</string>
+	<key>00:22:82</key>
+	<string>8086 Limited</string>
+	<key>00:22:83</key>
+	<string>Juniper Networks</string>
+	<key>00:22:84</key>
+	<string>DESAY A&amp;V SCIENCE AND TECHNOLOGY CO.,LTD</string>
+	<key>00:22:85</key>
+	<string>NOMUS COMM SYSTEMS</string>
+	<key>00:22:86</key>
+	<string>ASTRON</string>
+	<key>00:22:87</key>
+	<string>Titan Wireless LLC</string>
+	<key>00:22:88</key>
+	<string>Sagrad, Inc.</string>
+	<key>00:22:89</key>
+	<string>Optosecurity Inc.</string>
+	<key>00:22:8A</key>
+	<string>Teratronik elektronische systeme gmbh</string>
+	<key>00:22:8B</key>
+	<string>Kensington Computer Products Group</string>
+	<key>00:22:8C</key>
+	<string>Photon Europe GmbH</string>
+	<key>00:22:8D</key>
+	<string>GBS Laboratories LLC</string>
+	<key>00:22:8E</key>
+	<string>TV-NUMERIC</string>
+	<key>00:22:8F</key>
+	<string>CNRS</string>
+	<key>00:22:90</key>
+	<string>Cisco Systems</string>
+	<key>00:22:91</key>
+	<string>Cisco Systems</string>
+	<key>00:22:92</key>
+	<string>Cinetal</string>
+	<key>00:22:93</key>
+	<string>ZTE Corporation</string>
+	<key>00:22:94</key>
+	<string>Kyocera Corporation</string>
+	<key>00:22:95</key>
+	<string>SGM Technology for lighting spa</string>
+	<key>00:22:96</key>
+	<string>LinoWave Corporation</string>
+	<key>00:22:97</key>
+	<string>XMOS Semiconductor</string>
+	<key>00:22:98</key>
+	<string>Sony Ericsson Mobile Communications</string>
+	<key>00:22:99</key>
+	<string>SeaMicro Inc.</string>
+	<key>00:22:9A</key>
+	<string>Lastar, Inc.</string>
+	<key>00:22:9B</key>
+	<string>AverLogic Technologies, Inc.</string>
+	<key>00:22:9C</key>
+	<string>Verismo Networks Inc</string>
+	<key>00:22:9D</key>
+	<string>PYUNG-HWA IND.CO.,LTD</string>
+	<key>00:22:9E</key>
+	<string>Social Aid Research Co., Ltd.</string>
+	<key>00:22:9F</key>
+	<string>Sensys Traffic AB</string>
+	<key>00:22:A0</key>
+	<string>Delphi Corporation</string>
+	<key>00:22:A1</key>
+	<string>Huawei Symantec Technologies Co.,Ltd.</string>
+	<key>00:22:A2</key>
+	<string>Xtramus Technologies</string>
+	<key>00:22:A3</key>
+	<string>California Eastern Laboratories</string>
+	<key>00:22:A4</key>
+	<string>2Wire</string>
+	<key>00:22:A5</key>
+	<string>Texas Instruments</string>
+	<key>00:22:A6</key>
+	<string>Sony Computer Entertainment America</string>
+	<key>00:22:A7</key>
+	<string>Tyco Electronics AMP GmbH</string>
+	<key>00:22:A8</key>
+	<string>Ouman Finland Oy</string>
+	<key>00:22:A9</key>
+	<string>LG Electronics Inc</string>
+	<key>00:22:AA</key>
+	<string>Nintendo Co., Ltd.</string>
+	<key>00:22:AB</key>
+	<string>Shenzhen Turbosight Technology Ltd</string>
+	<key>00:22:AC</key>
+	<string>Hangzhou Siyuan Tech. Co., Ltd</string>
+	<key>00:22:AD</key>
+	<string>TELESIS TECHNOLOGIES, INC.</string>
+	<key>00:22:AE</key>
+	<string>Mattel Inc.</string>
+	<key>00:22:AF</key>
+	<string>Safety Vision</string>
+	<key>00:22:B0</key>
+	<string>D-Link Corporation</string>
+	<key>00:22:B1</key>
+	<string>Elbit Systems</string>
+	<key>00:22:B2</key>
+	<string>4RF Communications Ltd</string>
+	<key>00:22:B3</key>
+	<string>Sei S.p.A.</string>
+	<key>00:22:B4</key>
+	<string>Motorola Mobile Devices</string>
+	<key>00:22:B5</key>
+	<string>NOVITA</string>
+	<key>00:22:B6</key>
+	<string>Superflow Technologies Group</string>
+	<key>00:22:B7</key>
+	<string>GSS Grundig SAT-Systems GmbH</string>
+	<key>00:22:B8</key>
+	<string>Norcott</string>
+	<key>00:22:B9</key>
+	<string>Analogix Seminconductor, Inc</string>
+	<key>00:22:BA</key>
+	<string>HUTH Elektronik Systeme GmbH</string>
+	<key>00:22:BB</key>
+	<string>beyerdynamic GmbH &amp; Co. KG</string>
+	<key>00:22:BC</key>
+	<string>JDSU France SAS</string>
+	<key>00:22:BD</key>
+	<string>Cisco Systems</string>
+	<key>00:22:BE</key>
+	<string>Cisco Systems</string>
+	<key>00:22:BF</key>
+	<string>SieAmp Group of Companies</string>
+	<key>00:22:C0</key>
+	<string>Shenzhen Forcelink Electronic Co, Ltd</string>
+	<key>00:22:C1</key>
+	<string>Active Storage Inc.</string>
+	<key>00:22:C2</key>
+	<string>Proview Eletronica do Brasil LTDA</string>
+	<key>00:22:C3</key>
+	<string>Zeeport Technology Inc.</string>
+	<key>00:22:C4</key>
+	<string>epro GmbH</string>
+	<key>00:22:C5</key>
+	<string>INFORSON Co,Ltd.</string>
+	<key>00:22:C6</key>
+	<string>Sutus Inc</string>
+	<key>00:22:C7</key>
+	<string>SEGGER Microcontroller GmbH &amp; Co. KG</string>
+	<key>00:22:C8</key>
+	<string>Applied Instruments</string>
+	<key>00:22:C9</key>
+	<string>Lenord, Bauer &amp; Co GmbH</string>
+	<key>00:22:CA</key>
+	<string>Anviz Biometric Tech. Co., Ltd.</string>
+	<key>00:22:CB</key>
+	<string>IONODES Inc.</string>
+	<key>00:22:CC</key>
+	<string>SciLog, Inc.</string>
+	<key>00:22:CD</key>
+	<string>Ared Technology Co., Ltd.</string>
+	<key>00:22:CE</key>
+	<string>Cisco, Service Provider Video Technology Group</string>
+	<key>00:22:CF</key>
+	<string>PLANEX Communications INC</string>
+	<key>00:22:D0</key>
+	<string>Polar Electro Oy</string>
+	<key>00:22:D1</key>
+	<string>Albrecht Jung GmbH &amp; Co. KG</string>
+	<key>00:22:D2</key>
+	<string>All Earth ComÈrcio de EletrÙnicos LTDA.</string>
+	<key>00:22:D3</key>
+	<string>Hub-Tech</string>
+	<key>00:22:D4</key>
+	<string>ComWorth Co., Ltd.</string>
+	<key>00:22:D5</key>
+	<string>Eaton Corp. Electrical Group Data Center Solutions - Pulizzi</string>
+	<key>00:22:D6</key>
+	<string>Cypak AB</string>
+	<key>00:22:D7</key>
+	<string>Nintendo Co., Ltd.</string>
+	<key>00:22:D8</key>
+	<string>Shenzhen GST Security and Safety Technology Limited</string>
+	<key>00:22:D9</key>
+	<string>Fortex Industrial Ltd.</string>
+	<key>00:22:DA</key>
+	<string>ANATEK, LLC</string>
+	<key>00:22:DB</key>
+	<string>Translogic Corporation</string>
+	<key>00:22:DC</key>
+	<string>Vigil Health Solutions Inc.</string>
+	<key>00:22:DD</key>
+	<string>Protecta Electronics Ltd</string>
+	<key>00:22:DE</key>
+	<string>OPPO Digital, Inc.</string>
+	<key>00:22:DF</key>
+	<string>TAMUZ Monitors</string>
+	<key>00:22:E0</key>
+	<string>Atlantic Software Technologies S.r.L.</string>
+	<key>00:22:E1</key>
+	<string>ZORT Labs, LLC.</string>
+	<key>00:22:E2</key>
+	<string>WABTEC Transit Division</string>
+	<key>00:22:E3</key>
+	<string>Amerigon</string>
+	<key>00:22:E4</key>
+	<string>APASS TECHNOLOGY CO., LTD.</string>
+	<key>00:22:E5</key>
+	<string>Fisher-Rosemount Systems Inc.</string>
+	<key>00:22:E6</key>
+	<string>Intelligent Data</string>
+	<key>00:22:E7</key>
+	<string>WPS Parking Systems</string>
+	<key>00:22:E8</key>
+	<string>Applition Co., Ltd.</string>
+	<key>00:22:E9</key>
+	<string>ProVision Communications</string>
+	<key>00:22:EA</key>
+	<string>Rustelcom Inc.</string>
+	<key>00:22:EB</key>
+	<string>Data Respons A/S</string>
+	<key>00:22:EC</key>
+	<string>IDEALBT TECHNOLOGY CORPORATION</string>
+	<key>00:22:ED</key>
+	<string>TSI Power Corporation</string>
+	<key>00:22:EE</key>
+	<string>Algo Communication Products Ltd</string>
+	<key>00:22:EF</key>
+	<string>Ibis Tek, LLC</string>
+	<key>00:22:F0</key>
+	<string>3 Greens Aviation Limited</string>
+	<key>00:22:F1</key>
+	<string>PRIVATE</string>
+	<key>00:22:F2</key>
+	<string>SunPower Corp</string>
+	<key>00:22:F3</key>
+	<string>SHARP CORPORATION</string>
+	<key>00:22:F4</key>
+	<string>AMPAK Technology, Inc.</string>
+	<key>00:22:F5</key>
+	<string>Advanced Realtime Tracking GmbH</string>
+	<key>00:22:F6</key>
+	<string>Syracuse Research Corporation</string>
+	<key>00:22:F7</key>
+	<string>Conceptronic</string>
+	<key>00:22:F8</key>
+	<string>PIMA Electronic Systems Ltd.</string>
+	<key>00:22:F9</key>
+	<string>Pollin Electronic GmbH</string>
+	<key>00:22:FA</key>
+	<string>Intel Corporate</string>
+	<key>00:22:FB</key>
+	<string>Intel Corporate</string>
+	<key>00:22:FC</key>
+	<string>Nokia Danmark A/S</string>
+	<key>00:22:FD</key>
+	<string>Nokia Danmark A/S</string>
+	<key>00:22:FE</key>
+	<string>Microprocessor Designs Inc</string>
+	<key>00:22:FF</key>
+	<string>NIVIS LLC</string>
+	<key>00:23:00</key>
+	<string>Cayee Computer Ltd.</string>
+	<key>00:23:01</key>
+	<string>Witron Technology Limited</string>
+	<key>00:23:02</key>
+	<string>Cobalt Digital, Inc.</string>
+	<key>00:23:03</key>
+	<string>LITE-ON IT Corporation</string>
+	<key>00:23:04</key>
+	<string>Cisco Systems</string>
+	<key>00:23:05</key>
+	<string>Cisco Systems</string>
+	<key>00:23:06</key>
+	<string>ALPS Electric Co., Ltd</string>
+	<key>00:23:07</key>
+	<string>FUTURE INNOVATION TECH CO.,LTD</string>
+	<key>00:23:08</key>
+	<string>Arcadyan Technology Corporation</string>
+	<key>00:23:09</key>
+	<string>Janam Technologies LLC</string>
+	<key>00:23:0A</key>
+	<string>ARBURG GmbH &amp; Co KG</string>
+	<key>00:23:0B</key>
+	<string>Motorola CHS</string>
+	<key>00:23:0C</key>
+	<string>CLOVER ELECTRONICS CO.,LTD.</string>
+	<key>00:23:0D</key>
+	<string>Nortel Networks</string>
+	<key>00:23:0E</key>
+	<string>Gorba AG</string>
+	<key>00:23:0F</key>
+	<string>Hirsch Electronics Corporation</string>
+	<key>00:23:10</key>
+	<string>LNC Technology Co., Ltd.</string>
+	<key>00:23:11</key>
+	<string>Gloscom Co., Ltd.</string>
+	<key>00:23:12</key>
+	<string>Apple, Inc</string>
+	<key>00:23:13</key>
+	<string>Qool Technologies Ltd.</string>
+	<key>00:23:14</key>
+	<string>Intel Corporate</string>
+	<key>00:23:15</key>
+	<string>Intel Corporate</string>
+	<key>00:23:16</key>
+	<string>KISAN ELECTRONICS CO</string>
+	<key>00:23:17</key>
+	<string>Lasercraft Inc</string>
+	<key>00:23:18</key>
+	<string>Toshiba</string>
+	<key>00:23:19</key>
+	<string>Sielox LLC</string>
+	<key>00:23:1A</key>
+	<string>ITF Co., Ltd.</string>
+	<key>00:23:1B</key>
+	<string>Danaher Motion - Kollmorgen</string>
+	<key>00:23:1C</key>
+	<string>Fourier Systems Ltd.</string>
+	<key>00:23:1D</key>
+	<string>Deltacom Electronics Ltd</string>
+	<key>00:23:1E</key>
+	<string>Cezzer Multimedia Technologies</string>
+	<key>00:23:1F</key>
+	<string>Guangda Electronic &amp; Telecommunication Technology Development Co., Ltd.</string>
+	<key>00:23:20</key>
+	<string>Nicira Network</string>
+	<key>00:23:21</key>
+	<string>Avitech International Corp</string>
+	<key>00:23:22</key>
+	<string>KISS Teknical Solutions, Inc.</string>
+	<key>00:23:23</key>
+	<string>Zylin AS</string>
+	<key>00:23:24</key>
+	<string>G-PRO COMPUTER</string>
+	<key>00:23:25</key>
+	<string>IOLAN Holding</string>
+	<key>00:23:26</key>
+	<string>Fujitsu Limited</string>
+	<key>00:23:27</key>
+	<string>Shouyo Electronics CO., LTD</string>
+	<key>00:23:28</key>
+	<string>ALCON TELECOMMUNICATIONS CO., LTD.</string>
+	<key>00:23:29</key>
+	<string>DDRdrive LLC</string>
+	<key>00:23:2A</key>
+	<string>eonas IT-Beratung und -Entwicklung GmbH</string>
+	<key>00:23:2B</key>
+	<string>IRD A/S</string>
+	<key>00:23:2C</key>
+	<string>Senticare</string>
+	<key>00:23:2D</key>
+	<string>SandForce</string>
+	<key>00:23:2E</key>
+	<string>Kedah Electronics Engineering, LLC</string>
+	<key>00:23:2F</key>
+	<string>Advanced Card Systems Ltd.</string>
+	<key>00:23:30</key>
+	<string>DIZIPIA, INC.</string>
+	<key>00:23:31</key>
+	<string>Nintendo Co., Ltd.</string>
+	<key>00:23:32</key>
+	<string>Apple, Inc</string>
+	<key>00:23:33</key>
+	<string>Cisco Systems</string>
+	<key>00:23:34</key>
+	<string>Cisco Systems</string>
+	<key>00:23:35</key>
+	<string>Linkflex Co.,Ltd</string>
+	<key>00:23:36</key>
+	<string>METEL s.r.o.</string>
+	<key>00:23:37</key>
+	<string>Global Star Solutions ULC</string>
+	<key>00:23:38</key>
+	<string>OJ-Electronics A/S</string>
+	<key>00:23:39</key>
+	<string>Samsung Electronics</string>
+	<key>00:23:3A</key>
+	<string>Samsung Electronics Co.,Ltd</string>
+	<key>00:23:3B</key>
+	<string>C-Matic Systems Ltd</string>
+	<key>00:23:3C</key>
+	<string>Alflex</string>
+	<key>00:23:3D</key>
+	<string>novero GmbH</string>
+	<key>00:23:3E</key>
+	<string>Alcatel-Lucent-IPD</string>
+	<key>00:23:3F</key>
+	<string>Purechoice Inc</string>
+	<key>00:23:40</key>
+	<string>MiX Telematics</string>
+	<key>00:23:41</key>
+	<string>Siemens Building Technologies Fire &amp; Security Products GmbH &amp; Co. oHG</string>
+	<key>00:23:42</key>
+	<string>Coffee Equipment Company</string>
+	<key>00:23:43</key>
+	<string>TEM AG</string>
+	<key>00:23:44</key>
+	<string>Objective Interface Systems</string>
+	<key>00:23:45</key>
+	<string>Sony Ericsson Mobile Communications</string>
+	<key>00:23:46</key>
+	<string>Vestac</string>
+	<key>00:23:47</key>
+	<string>ProCurve Networking by HP</string>
+	<key>00:23:48</key>
+	<string>SAGEM COMMUNICATION</string>
+	<key>00:23:49</key>
+	<string>Helmholtz Centre Berlin for Material and Energy</string>
+	<key>00:23:4A</key>
+	<string>PRIVATE</string>
+	<key>00:23:4B</key>
+	<string>Inyuan Technology Inc.</string>
+	<key>00:23:4C</key>
+	<string>KTC AB</string>
+	<key>00:23:4D</key>
+	<string>Hon Hai Precision Ind. Co., Ltd.</string>
+	<key>00:23:4E</key>
+	<string>Hon Hai Precision Ind. Co., Ltd.</string>
+	<key>00:23:4F</key>
+	<string>Luminous Power Technologies Pvt. Ltd.</string>
+	<key>00:23:50</key>
+	<string>LynTec</string>
+	<key>00:23:51</key>
+	<string>2Wire</string>
+	<key>00:23:52</key>
+	<string>DATASENSOR S.p.A.</string>
+	<key>00:23:53</key>
+	<string>F E T Elettronica snc</string>
+	<key>00:23:54</key>
+	<string>ASUSTek COMPUTER INC.</string>
+	<key>00:23:55</key>
+	<string>Kinco Electric (Shanghai) Ltd.</string>
+	<key>00:23:56</key>
+	<string>Packet Forensics LLC</string>
+	<key>00:23:57</key>
+	<string>Pitronot Technologies and Engineering P.T.E. Ltd.</string>
+	<key>00:23:58</key>
+	<string>SYSTEL SA</string>
+	<key>00:23:59</key>
+	<string>Benchmark Electronics ( Thailand ) Public Company Limited</string>
+	<key>00:23:5A</key>
+	<string>COMPAL INFORMATION (KUNSHAN) CO., Ltd.</string>
+	<key>00:23:5B</key>
+	<string>Gulfstream</string>
+	<key>00:23:5C</key>
+	<string>Aprius, Inc.</string>
+	<key>00:23:5D</key>
+	<string>Cisco Systems</string>
+	<key>00:23:5E</key>
+	<string>Cisco Systems</string>
+	<key>00:23:5F</key>
+	<string>Silicon Micro Sensors GmbH</string>
+	<key>00:23:60</key>
+	<string>Lookit Technology Co., Ltd</string>
+	<key>00:23:61</key>
+	<string>Unigen Corporation</string>
+	<key>00:23:62</key>
+	<string>Goldline Controls</string>
+	<key>00:23:63</key>
+	<string>Zhuhai RaySharp Technology Co., Ltd.</string>
+	<key>00:23:64</key>
+	<string>Power Instruments Pte Ltd</string>
+	<key>00:23:65</key>
+	<string>ELKA-Elektronik GmbH</string>
+	<key>00:23:66</key>
+	<string>Beijing Siasun Electronic System Co.,Ltd.</string>
+	<key>00:23:67</key>
+	<string>UniControls a.s.</string>
+	<key>00:23:68</key>
+	<string>Motorola</string>
+	<key>00:23:69</key>
+	<string>Cisco-Linksys, LLC</string>
+	<key>00:23:6A</key>
+	<string>ClearAccess, Inc.</string>
+	<key>00:23:6B</key>
+	<string>Xembedded, Inc.</string>
+	<key>00:23:6C</key>
+	<string>Apple, Inc</string>
+	<key>00:23:6D</key>
+	<string>ResMed Ltd</string>
+	<key>00:23:6E</key>
+	<string>Burster GmbH &amp; Co KG</string>
+	<key>00:23:6F</key>
+	<string>DAQ System</string>
+	<key>00:23:70</key>
+	<string>PRO-BEL LIMITED</string>
+	<key>00:23:71</key>
+	<string>SOAM Systel</string>
+	<key>00:23:72</key>
+	<string>MORE STAR INDUSTRIAL GROUP LIMITED</string>
+	<key>00:23:73</key>
+	<string>GridIron Systems, Inc.</string>
+	<key>00:23:74</key>
+	<string>Motorola CHS</string>
+	<key>00:23:75</key>
+	<string>Motorola CHS</string>
+	<key>00:23:76</key>
+	<string>HTC Corporation</string>
+	<key>00:23:77</key>
+	<string>Isotek Electronics Ltd</string>
+	<key>00:23:78</key>
+	<string>GN Netcom A/S</string>
+	<key>00:23:79</key>
+	<string>Union Business Machines Co. Ltd.</string>
+	<key>00:23:7A</key>
+	<string>RIM</string>
+	<key>00:23:7B</key>
+	<string>WHDI LLC</string>
+	<key>00:23:7C</key>
+	<string>NEOTION</string>
+	<key>00:23:7D</key>
+	<string>Hewlett Packard</string>
+	<key>00:23:7E</key>
+	<string>ELSTER GMBH</string>
+	<key>00:23:7F</key>
+	<string>PLANTRONICS</string>
+	<key>00:23:80</key>
+	<string>Nanoteq</string>
+	<key>00:23:81</key>
+	<string>Lengda Technology(Xiamen) Co.,Ltd.</string>
+	<key>00:23:82</key>
+	<string>Lih Rong Electronic Enterprise Co., Ltd.</string>
+	<key>00:23:83</key>
+	<string>InMage Systems Inc</string>
+	<key>00:23:84</key>
+	<string>GGH Engineering s.r.l.</string>
+	<key>00:23:85</key>
+	<string>ANTIPODE</string>
+	<key>00:23:86</key>
+	<string>Tour &amp; Andersson AB</string>
+	<key>00:23:87</key>
+	<string>ThinkFlood, Inc.</string>
+	<key>00:23:88</key>
+	<string>V.T. Telematica S.p.a.</string>
+	<key>00:23:89</key>
+	<string>HANGZHOU H3C Technologies Co., Ltd.</string>
+	<key>00:23:8A</key>
+	<string>Ciena Corporation</string>
+	<key>00:23:8B</key>
+	<string>Quanta Computer Inc.</string>
+	<key>00:23:8C</key>
+	<string>PRIVATE</string>
+	<key>00:23:8D</key>
+	<string>Techno Design Co., Ltd.</string>
+	<key>00:23:8E</key>
+	<string>PIRELLI BROADBAND SOLUTIONS</string>
+	<key>00:23:8F</key>
+	<string>NIDEC COPAL CORPORATION</string>
+	<key>00:23:90</key>
+	<string>Algolware Corporation</string>
+	<key>00:23:91</key>
+	<string>Maxian</string>
+	<key>00:23:92</key>
+	<string>Proteus Industries Inc.</string>
+	<key>00:23:93</key>
+	<string>AJINEXTEK</string>
+	<key>00:23:94</key>
+	<string>Samjeon</string>
+	<key>00:23:95</key>
+	<string>Motorola CHS</string>
+	<key>00:23:96</key>
+	<string>ANDES TECHNOLOGY CORPORATION</string>
+	<key>00:23:97</key>
+	<string>Westell Technologies Inc.</string>
+	<key>00:23:98</key>
+	<string>Sky Control</string>
+	<key>00:23:99</key>
+	<string>VD Division, Samsung Electronics Co.</string>
+	<key>00:23:9A</key>
+	<string>EasyData Software GmbH</string>
+	<key>00:23:9B</key>
+	<string>Elster Integrated Solutions</string>
+	<key>00:23:9C</key>
+	<string>Juniper Networks</string>
+	<key>00:23:9D</key>
+	<string>Mapower Electronics Co., Ltd</string>
+	<key>00:23:9E</key>
+	<string>Jiangsu Lemote Technology Corporation Limited</string>
+	<key>00:23:9F</key>
+	<string>Institut f¸r Pr¸ftechnik</string>
+	<key>00:23:A0</key>
+	<string>Hana CNS Co., LTD.</string>
+	<key>00:23:A1</key>
+	<string>Trend Electronics Ltd</string>
+	<key>00:23:A2</key>
+	<string>Motorola CHS</string>
+	<key>00:23:A3</key>
+	<string>Motorola CHS</string>
+	<key>00:23:A4</key>
+	<string>New Concepts Development Corp.</string>
+	<key>00:23:A5</key>
+	<string>SageTV, LLC</string>
+	<key>00:23:A6</key>
+	<string>E-Mon</string>
+	<key>00:23:A7</key>
+	<string>Redpine Signals, Inc.</string>
+	<key>00:23:A8</key>
+	<string>Marshall Electronics</string>
+	<key>00:23:A9</key>
+	<string>Beijing Detianquan Electromechanical Equipment Co., Ltd</string>
+	<key>00:23:AA</key>
+	<string>HFR, Inc.</string>
+	<key>00:23:AB</key>
+	<string>Cisco Systems</string>
+	<key>00:23:AC</key>
+	<string>Cisco Systems</string>
+	<key>00:23:AD</key>
+	<string>Xmark Corporation</string>
+	<key>00:23:AE</key>
+	<string>Dell Inc.</string>
+	<key>00:23:AF</key>
+	<string>Motorola Mobile Devices</string>
+	<key>00:23:B0</key>
+	<string>COMXION Technology Inc.</string>
+	<key>00:23:B1</key>
+	<string>Longcheer Technology (Singapore) Pte Ltd</string>
+	<key>00:23:B2</key>
+	<string>Intelligent Mechatronic Systems Inc</string>
+	<key>00:23:B3</key>
+	<string>Lyyn AB</string>
+	<key>00:23:B4</key>
+	<string>Nokia Danmark A/S</string>
+	<key>00:23:B5</key>
+	<string>ORTANA LTD</string>
+	<key>00:23:B6</key>
+	<string>SECURITE COMMUNICATIONS / HONEYWELL</string>
+	<key>00:23:B7</key>
+	<string>Q-Light Co., Ltd.</string>
+	<key>00:23:B8</key>
+	<string>Sichuan Jiuzhou Electronic Technology Co.,Ltd</string>
+	<key>00:23:B9</key>
+	<string>EADS Deutschland GmbH</string>
+	<key>00:23:BA</key>
+	<string>Chroma</string>
+	<key>00:23:BB</key>
+	<string>Schmitt Industries</string>
+	<key>00:23:BC</key>
+	<string>EQ-SYS GmbH</string>
+	<key>00:23:BD</key>
+	<string>Digital Ally, Inc.</string>
+	<key>00:23:BE</key>
+	<string>Cisco SPVTG</string>
+	<key>00:23:BF</key>
+	<string>Mainpine, Inc.</string>
+	<key>00:23:C0</key>
+	<string>Broadway Networks</string>
+	<key>00:23:C1</key>
+	<string>Securitas Direct AB</string>
+	<key>00:23:C2</key>
+	<string>SAMSUNG Electronics. Co. LTD</string>
+	<key>00:23:C3</key>
+	<string>LogMeIn, Inc.</string>
+	<key>00:23:C4</key>
+	<string>Lux Lumen</string>
+	<key>00:23:C5</key>
+	<string>Radiation Safety and Control Services Inc</string>
+	<key>00:23:C6</key>
+	<string>SMC Corporation</string>
+	<key>00:23:C7</key>
+	<string>AVSystem</string>
+	<key>00:23:C8</key>
+	<string>TEAM-R</string>
+	<key>00:23:C9</key>
+	<string>Sichuan Tianyi Information Science &amp; Technology Stock CO.,LTD</string>
+	<key>00:23:CA</key>
+	<string>Behind The Set, LLC</string>
+	<key>00:23:CB</key>
+	<string>Shenzhen Full-join Technology Co.,Ltd</string>
+	<key>00:23:CC</key>
+	<string>Nintendo Co., Ltd.</string>
+	<key>00:23:CD</key>
+	<string>TP-LINK TECHNOLOGIES CO., LTD.</string>
+	<key>00:23:CE</key>
+	<string>KITA DENSHI CORPORATION</string>
+	<key>00:23:CF</key>
+	<string>CUMMINS-ALLISON CORP.</string>
+	<key>00:23:D0</key>
+	<string>Uniloc USA Inc.</string>
+	<key>00:23:D1</key>
+	<string>TRG</string>
+	<key>00:23:D2</key>
+	<string>Inhand Electronics, Inc.</string>
+	<key>00:23:D3</key>
+	<string>AirLink WiFi Networking Corp.</string>
+	<key>00:23:D4</key>
+	<string>Texas Instruments</string>
+	<key>00:23:D5</key>
+	<string>WAREMA electronic GmbH</string>
+	<key>00:23:D6</key>
+	<string>Samsung Electronics Co.,LTD</string>
+	<key>00:23:D7</key>
+	<string>Samsung Electronics</string>
+	<key>00:23:D8</key>
+	<string>Ball-It Oy</string>
+	<key>00:23:D9</key>
+	<string>Banner Engineering</string>
+	<key>00:23:DA</key>
+	<string>Industrial Computer Source (Deutschland)GmbH</string>
+	<key>00:23:DB</key>
+	<string>saxnet gmbh</string>
+	<key>00:23:DC</key>
+	<string>Benein, Inc</string>
+	<key>00:23:DD</key>
+	<string>ELGIN S.A.</string>
+	<key>00:23:DE</key>
+	<string>Ansync Inc.</string>
+	<key>00:23:DF</key>
+	<string>Apple, Inc</string>
+	<key>00:23:E0</key>
+	<string>INO Therapeutics LLC</string>
+	<key>00:23:E1</key>
+	<string>Cavena Image Products AB</string>
+	<key>00:23:E2</key>
+	<string>SEA Signalisation</string>
+	<key>00:23:E3</key>
+	<string>Microtronic AG</string>
+	<key>00:23:E4</key>
+	<string>IPnect co. ltd.</string>
+	<key>00:23:E5</key>
+	<string>IPaXiom Networks</string>
+	<key>00:23:E6</key>
+	<string>Pirkus, Inc.</string>
+	<key>00:23:E7</key>
+	<string>Hinke A/S</string>
+	<key>00:23:E8</key>
+	<string>Demco Corp.</string>
+	<key>00:23:E9</key>
+	<string>F5 Networks, Inc.</string>
+	<key>00:23:EA</key>
+	<string>Cisco Systems</string>
+	<key>00:23:EB</key>
+	<string>Cisco Systems</string>
+	<key>00:23:EC</key>
+	<string>Algorithmix GmbH</string>
+	<key>00:23:ED</key>
+	<string>Motorola CHS</string>
+	<key>00:23:EE</key>
+	<string>Motorola CHS</string>
+	<key>00:23:EF</key>
+	<string>Zuend Systemtechnik AG</string>
+	<key>00:23:F0</key>
+	<string>Shanghai Jinghan Weighing Apparatus Co. Ltd.</string>
+	<key>00:23:F1</key>
+	<string>Sony Ericsson Mobile Communications</string>
+	<key>00:23:F2</key>
+	<string>TVLogic</string>
+	<key>00:23:F3</key>
+	<string>Glocom, Inc.</string>
+	<key>00:23:F4</key>
+	<string>Masternaut</string>
+	<key>00:23:F5</key>
+	<string>WILO SE</string>
+	<key>00:23:F6</key>
+	<string>Softwell Technology Co., Ltd.</string>
+	<key>00:23:F7</key>
+	<string>PRIVATE</string>
+	<key>00:23:F8</key>
+	<string>ZyXEL Communications Corporation</string>
+	<key>00:23:F9</key>
+	<string>Double-Take Software, INC.</string>
+	<key>00:23:FA</key>
+	<string>RG Nets, Inc.</string>
+	<key>00:23:FB</key>
+	<string>IP Datatel, Inc.</string>
+	<key>00:23:FC</key>
+	<string>Ultra Stereo Labs, Inc</string>
+	<key>00:23:FD</key>
+	<string>AFT Atlas Fahrzeugtechnik GmbH</string>
+	<key>00:23:FE</key>
+	<string>Biodevices, SA</string>
+	<key>00:23:FF</key>
+	<string>Beijing HTTC Technology Ltd.</string>
+	<key>00:24:00</key>
+	<string>Nortel Networks</string>
+	<key>00:24:01</key>
+	<string>D-Link Corporation</string>
+	<key>00:24:02</key>
+	<string>Op-Tection GmbH</string>
+	<key>00:24:03</key>
+	<string>Nokia Danmark A/S</string>
+	<key>00:24:04</key>
+	<string>Nokia Danmark A/S</string>
+	<key>00:24:05</key>
+	<string>Dilog Nordic AB</string>
+	<key>00:24:06</key>
+	<string>Pointmobile</string>
+	<key>00:24:07</key>
+	<string>TELEM SAS</string>
+	<key>00:24:08</key>
+	<string>Pacific Biosciences</string>
+	<key>00:24:09</key>
+	<string>The Toro Company</string>
+	<key>00:24:0A</key>
+	<string>US Beverage Net</string>
+	<key>00:24:0B</key>
+	<string>Virtual Computer Inc.</string>
+	<key>00:24:0C</key>
+	<string>DELEC GmbH</string>
+	<key>00:24:0D</key>
+	<string>OnePath Networks LTD.</string>
+	<key>00:24:0E</key>
+	<string>Inventec Besta Co., Ltd.</string>
+	<key>00:24:0F</key>
+	<string>Ishii Tool &amp; Engineering Corporation</string>
+	<key>00:24:10</key>
+	<string>NUETEQ Technology,Inc.</string>
+	<key>00:24:11</key>
+	<string>PharmaSmart LLC</string>
+	<key>00:24:12</key>
+	<string>Benign Technologies Co, Ltd.</string>
+	<key>00:24:13</key>
+	<string>Cisco Systems</string>
+	<key>00:24:14</key>
+	<string>Cisco Systems</string>
+	<key>00:24:15</key>
+	<string>Magnetic Autocontrol GmbH</string>
+	<key>00:24:16</key>
+	<string>Any Use</string>
+	<key>00:24:17</key>
+	<string>Thomson Telecom Belgium</string>
+	<key>00:24:18</key>
+	<string>Nextwave Semiconductor</string>
+	<key>00:24:19</key>
+	<string>PRIVATE</string>
+	<key>00:24:1A</key>
+	<string>Red Beetle Inc.</string>
+	<key>00:24:1B</key>
+	<string>iWOW Communications Pte Ltd</string>
+	<key>00:24:1C</key>
+	<string>FuGang Electronic (DG) Co.,Ltd</string>
+	<key>00:24:1D</key>
+	<string>GIGA-BYTE TECHNOLOGY CO.,LTD.</string>
+	<key>00:24:1E</key>
+	<string>Nintendo Co., Ltd.</string>
+	<key>00:24:1F</key>
+	<string>DCT-Delta GmbH</string>
+	<key>00:24:20</key>
+	<string>NetUP Inc.</string>
+	<key>00:24:21</key>
+	<string>MICRO-STAR INT&apos;L CO., LTD.</string>
+	<key>00:24:22</key>
+	<string>Knapp Logistik Automation GmbH</string>
+	<key>00:24:23</key>
+	<string>AzureWave Technologies (Shanghai) Inc.</string>
+	<key>00:24:24</key>
+	<string>Axis Network Technology</string>
+	<key>00:24:25</key>
+	<string>Shenzhenshi chuangzhicheng Technology Co.,Ltd</string>
+	<key>00:24:26</key>
+	<string>NOHMI BOSAI LTD.</string>
+	<key>00:24:27</key>
+	<string>SSI COMPUTER CORP</string>
+	<key>00:24:28</key>
+	<string>EnergyICT</string>
+	<key>00:24:29</key>
+	<string>MK MASTER INC.</string>
+	<key>00:24:2A</key>
+	<string>Hittite Microwave Corporation</string>
+	<key>00:24:2B</key>
+	<string>Hon Hai Precision Ind.Co.,Ltd.</string>
+	<key>00:24:2C</key>
+	<string>Hon Hai Precision Ind. Co., Ltd.</string>
+	<key>00:24:2D</key>
+	<string>Ronan Engineering</string>
+	<key>00:24:2E</key>
+	<string>Datastrip Inc.</string>
+	<key>00:24:2F</key>
+	<string>VirtenSys Inc</string>
+	<key>00:24:30</key>
+	<string>Ruby Tech Corp.</string>
+	<key>00:24:31</key>
+	<string>Uni-v co.,ltd</string>
+	<key>00:24:32</key>
+	<string>Neostar Technology Co.,LTD</string>
+	<key>00:24:33</key>
+	<string>Alps Electric Co., Ltd</string>
+	<key>00:24:34</key>
+	<string>Lectrosonics, Inc.</string>
+	<key>00:24:35</key>
+	<string>WIDE CORPORATION</string>
+	<key>00:24:36</key>
+	<string>Apple, Inc</string>
+	<key>00:24:37</key>
+	<string>Motorola - BSG</string>
+	<key>00:24:38</key>
+	<string>Foundry Networks</string>
+	<key>00:24:39</key>
+	<string>Essential Viewing Systems Limited</string>
+	<key>00:24:3A</key>
+	<string>Ludl Electronic Products</string>
+	<key>00:24:3B</key>
+	<string>CSSI (S) Pte Ltd</string>
+	<key>00:24:3C</key>
+	<string>S.A.A.A.</string>
+	<key>00:24:3D</key>
+	<string>Emerson Appliance Motors and Controls</string>
+	<key>00:24:3E</key>
+	<string>PRIVATE</string>
+	<key>00:24:3F</key>
+	<string>Storwize, Inc.</string>
+	<key>00:24:40</key>
+	<string>Halo Monitoring, Inc.</string>
+	<key>00:24:41</key>
+	<string>Wanzl Metallwarenfabrik GmbH</string>
+	<key>00:24:42</key>
+	<string>Axona Limited</string>
+	<key>00:24:43</key>
+	<string>Nortel Networks</string>
+	<key>00:24:44</key>
+	<string>Nintendo Co., Ltd.</string>
+	<key>00:24:45</key>
+	<string>LiquidxStream Systems Inc.</string>
+	<key>00:24:46</key>
+	<string>MMB Research Inc.</string>
+	<key>00:24:47</key>
+	<string>Kaztek Systems</string>
+	<key>00:24:48</key>
+	<string>SpiderCloud Wireless, Inc</string>
+	<key>00:24:49</key>
+	<string>Shen Zhen Lite Star Electronics Technology Co., Ltd</string>
+	<key>00:24:4A</key>
+	<string>Voyant International</string>
+	<key>00:24:4B</key>
+	<string>PERCEPTRON INC</string>
+	<key>00:24:4C</key>
+	<string>Solartron Metrology Ltd</string>
+	<key>00:24:4D</key>
+	<string>Hokkaido Electronics Corporation</string>
+	<key>00:24:4E</key>
+	<string>RadChips, Inc.</string>
+	<key>00:24:4F</key>
+	<string>Asantron Technologies Ltd.</string>
+	<key>00:24:50</key>
+	<string>Cisco Systems</string>
+	<key>00:24:51</key>
+	<string>Cisco Systems</string>
+	<key>00:24:52</key>
+	<string>Silicon Software GmbH</string>
+	<key>00:24:53</key>
+	<string>Initra d.o.o.</string>
+	<key>00:24:54</key>
+	<string>Samsung Electronics Co., LTD</string>
+	<key>00:24:55</key>
+	<string>MuLogic BV</string>
+	<key>00:24:56</key>
+	<string>2Wire</string>
+	<key>00:24:57</key>
+	<string>Hammock Coporation</string>
+	<key>00:24:58</key>
+	<string>PA Bastion CC</string>
+	<key>00:24:59</key>
+	<string>ABB STOTZ-KONTAKT GmbH</string>
+	<key>00:24:5A</key>
+	<string>Nanjing Panda Electronics Company Limited</string>
+	<key>00:24:5B</key>
+	<string>RAIDON TECHNOLOGY, INC.</string>
+	<key>00:24:5C</key>
+	<string>Design-Com Technologies Pty. Ltd.</string>
+	<key>00:24:5D</key>
+	<string>Terberg besturingstechniek B.V.</string>
+	<key>00:24:5E</key>
+	<string>Hivision Co.,ltd</string>
+	<key>00:24:5F</key>
+	<string>Vine Telecom CO.,Ltd.</string>
+	<key>00:24:60</key>
+	<string>Giaval Science Development Co. Ltd.</string>
+	<key>00:24:61</key>
+	<string>Shin Wang Tech.</string>
+	<key>00:24:62</key>
+	<string>Rayzone Corporation</string>
+	<key>00:24:63</key>
+	<string>Phybridge Inc</string>
+	<key>00:24:64</key>
+	<string>Bridge Technologies Co AS</string>
+	<key>00:24:65</key>
+	<string>Elentec</string>
+	<key>00:24:66</key>
+	<string>Unitron nv</string>
+	<key>00:24:67</key>
+	<string>AOC International (Europe) GmbH</string>
+	<key>00:24:68</key>
+	<string>Sumavision Technologies Co.,Ltd</string>
+	<key>00:24:69</key>
+	<string>Smart Doorphones</string>
+	<key>00:24:6A</key>
+	<string>Solid Year Co., Ltd.</string>
+	<key>00:24:6B</key>
+	<string>Coventive</string>
+	<key>00:24:6C</key>
+	<string>ARUBA NETWORKS, INC.</string>
+	<key>00:24:6D</key>
+	<string>Weinzierl Engineering GmbH</string>
+	<key>00:24:6E</key>
+	<string>Phihong USA Corp.</string>
+	<key>00:24:6F</key>
+	<string>Onda Communication spa</string>
+	<key>00:24:70</key>
+	<string>AUROTECH ultrasound AS.</string>
+	<key>00:24:71</key>
+	<string>Fusion MultiSystems dba Fusion-io</string>
+	<key>00:24:72</key>
+	<string>ReDriven Power Inc.</string>
+	<key>00:24:73</key>
+	<string>3Com Europe Ltd</string>
+	<key>00:24:74</key>
+	<string>Autronica Fire And Securirty</string>
+	<key>00:24:75</key>
+	<string>Compass System(Embedded Dept.)</string>
+	<key>00:24:76</key>
+	<string>TAP.tv</string>
+	<key>00:24:77</key>
+	<string>Tibbo Technology</string>
+	<key>00:24:78</key>
+	<string>Mag Tech Electronics Co Limited</string>
+	<key>00:24:79</key>
+	<string>Optec Displays, Inc.</string>
+	<key>00:24:7A</key>
+	<string>FU YI CHENG Technology Co., Ltd.</string>
+	<key>00:24:7B</key>
+	<string>Actiontec Electronics, Inc</string>
+	<key>00:24:7C</key>
+	<string>Nokia Danmark A/S</string>
+	<key>00:24:7D</key>
+	<string>Nokia Danmark A/S</string>
+	<key>00:24:7E</key>
+	<string>USI</string>
+	<key>00:24:7F</key>
+	<string>Nortel Networks</string>
+	<key>00:24:80</key>
+	<string>Meteocontrol GmbH</string>
+	<key>00:24:81</key>
+	<string>Hewlett Packard</string>
+	<key>00:24:82</key>
+	<string>Ruckus Wireless</string>
+	<key>00:24:83</key>
+	<string>LG Electronics</string>
+	<key>00:24:84</key>
+	<string>Bang and Olufsen Medicom a/s</string>
+	<key>00:24:85</key>
+	<string>ConteXtream Ltd</string>
+	<key>00:24:86</key>
+	<string>DesignArt Networks</string>
+	<key>00:24:87</key>
+	<string>Blackboard Inc.</string>
+	<key>00:24:88</key>
+	<string>Centre For Development Of Telematics</string>
+	<key>00:24:89</key>
+	<string>Vodafone Omnitel N.V.</string>
+	<key>00:24:8A</key>
+	<string>Kaga Electronics Co., Ltd.</string>
+	<key>00:24:8B</key>
+	<string>HYBUS CO., LTD.</string>
+	<key>00:24:8C</key>
+	<string>ASUSTek COMPUTER INC.</string>
+	<key>00:24:8D</key>
+	<string>Sony Computer Entertainment Inc.</string>
+	<key>00:24:8E</key>
+	<string>Infoware ZRt.</string>
+	<key>00:24:8F</key>
+	<string>DO-MONIX</string>
+	<key>00:24:90</key>
+	<string>Samsung Electronics Co.,LTD</string>
+	<key>00:24:91</key>
+	<string>Samsung Electronics</string>
+	<key>00:24:92</key>
+	<string>Motorola, Broadband Solutions Group</string>
+	<key>00:24:93</key>
+	<string>Motorola, Inc</string>
+	<key>00:24:94</key>
+	<string>Shenzhen Baoxin Tech CO., Ltd.</string>
+	<key>00:24:95</key>
+	<string>Motorola Mobile Devices</string>
+	<key>00:24:96</key>
+	<string>Ginzinger electronic systems</string>
+	<key>00:24:97</key>
+	<string>Cisco Systems</string>
+	<key>00:24:98</key>
+	<string>Cisco Systems</string>
+	<key>00:24:99</key>
+	<string>Aquila Technologies</string>
+	<key>00:24:9A</key>
+	<string>Beijing Zhongchuang Telecommunication Test Co., Ltd.</string>
+	<key>00:24:9B</key>
+	<string>Action Star Enterprise Co., Ltd.</string>
+	<key>00:24:9C</key>
+	<string>Bimeng Comunication System Co. Ltd</string>
+	<key>00:24:9D</key>
+	<string>NES Technology Inc.</string>
+	<key>00:24:9E</key>
+	<string>ADC-Elektronik GmbH</string>
+	<key>00:24:9F</key>
+	<string>RIM Testing Services</string>
+	<key>00:24:A0</key>
+	<string>Motorola CHS</string>
+	<key>00:24:A1</key>
+	<string>Motorola CHS</string>
+	<key>00:24:A2</key>
+	<string>Hong Kong Middleware Technology Limited</string>
+	<key>00:24:A3</key>
+	<string>Sonim Technologies Inc</string>
+	<key>00:24:A4</key>
+	<string>Siklu Communication</string>
+	<key>00:24:A5</key>
+	<string>Buffalo Inc.</string>
+	<key>00:24:A6</key>
+	<string>TELESTAR DIGITAL GmbH</string>
+	<key>00:24:A7</key>
+	<string>Advanced Video Communications Inc.</string>
+	<key>00:24:A8</key>
+	<string>ProCurve Networking by HP</string>
+	<key>00:24:A9</key>
+	<string>Ag Leader Technology</string>
+	<key>00:24:AA</key>
+	<string>Dycor Technologies Ltd.</string>
+	<key>00:24:AB</key>
+	<string>A7 Engineering, Inc.</string>
+	<key>00:24:AC</key>
+	<string>Hangzhou DPtech Technologies Co., Ltd.</string>
+	<key>00:24:AD</key>
+	<string>Adolf Thies Gmbh &amp; Co. KG</string>
+	<key>00:24:AE</key>
+	<string>SAGEM SECURITE</string>
+	<key>00:24:AF</key>
+	<string>EchoStar Technologies</string>
+	<key>00:24:B0</key>
+	<string>ESAB AB</string>
+	<key>00:24:B1</key>
+	<string>Coulomb Technologies</string>
+	<key>00:24:B2</key>
+	<string>Netgear</string>
+	<key>00:24:B3</key>
+	<string>Graf-Syteco GmbH &amp; Co. KG</string>
+	<key>00:24:B4</key>
+	<string>ESCATRONIC GmbH</string>
+	<key>00:24:B5</key>
+	<string>Nortel Networks</string>
+	<key>00:24:B6</key>
+	<string>Seagate Technology</string>
+	<key>00:24:B7</key>
+	<string>GridPoint, Inc.</string>
+	<key>00:24:B8</key>
+	<string>free alliance sdn bhd</string>
+	<key>00:24:B9</key>
+	<string>Wuhan Higheasy Electronic Technology Development Co.Ltd</string>
+	<key>00:24:BA</key>
+	<string>Texas Instruments</string>
+	<key>00:24:BB</key>
+	<string>CENTRAL Corporation</string>
+	<key>00:24:BC</key>
+	<string>HuRob Co.,Ltd</string>
+	<key>00:24:BD</key>
+	<string>Hainzl Industriesysteme GmbH</string>
+	<key>00:24:BE</key>
+	<string>Sony Corporation</string>
+	<key>00:24:BF</key>
+	<string>CIAT</string>
+	<key>00:24:C0</key>
+	<string>NTI COMODO INC</string>
+	<key>00:24:C1</key>
+	<string>Hangzhou Motorola Technologies LTD.</string>
+	<key>00:24:C2</key>
+	<string>Asumo Co.,Ltd.</string>
+	<key>00:24:C3</key>
+	<string>Cisco Systems</string>
+	<key>00:24:C4</key>
+	<string>Cisco Systems</string>
+	<key>00:24:C5</key>
+	<string>Meridian Audio Limited</string>
+	<key>00:24:C6</key>
+	<string>Hager Electro SAS</string>
+	<key>00:24:C7</key>
+	<string>Mobilarm Ltd</string>
+	<key>00:24:C8</key>
+	<string>Broadband Solutions Group</string>
+	<key>00:24:C9</key>
+	<string>Broadband Solutions Group</string>
+	<key>00:24:CA</key>
+	<string>Tobii Technology AB</string>
+	<key>00:24:CB</key>
+	<string>Autonet Mobile</string>
+	<key>00:24:CC</key>
+	<string>Fascinations Toys and Gifts, Inc.</string>
+	<key>00:24:CD</key>
+	<string>Willow Garage, Inc.</string>
+	<key>00:24:CE</key>
+	<string>Exeltech Inc</string>
+	<key>00:24:CF</key>
+	<string>Inscape Data Corporation</string>
+	<key>00:24:D0</key>
+	<string>Shenzhen SOGOOD Industry CO.,LTD.</string>
+	<key>00:24:D1</key>
+	<string>Thomson Inc.</string>
+	<key>00:24:D2</key>
+	<string>Askey Computer</string>
+	<key>00:24:D3</key>
+	<string>QUALICA Inc.</string>
+	<key>00:24:D4</key>
+	<string>FREEBOX SA</string>
+	<key>00:24:D5</key>
+	<string>Winward Industrial Limited</string>
+	<key>00:24:D6</key>
+	<string>Intel Corporate</string>
+	<key>00:24:D7</key>
+	<string>Intel Corporate</string>
+	<key>00:24:D8</key>
+	<string>IlSung Precision</string>
+	<key>00:24:D9</key>
+	<string>BICOM, Inc.</string>
+	<key>00:24:DA</key>
+	<string>Innovar Systems Limited</string>
+	<key>00:24:DB</key>
+	<string>Alcohol Monitoring Systems</string>
+	<key>00:24:DC</key>
+	<string>Juniper Networks</string>
+	<key>00:24:DD</key>
+	<string>Centrak, Inc.</string>
+	<key>00:24:DE</key>
+	<string>GLOBAL Technology Inc.</string>
+	<key>00:24:DF</key>
+	<string>Digitalbox Europe GmbH</string>
+	<key>00:24:E0</key>
+	<string>DS Tech, LLC</string>
+	<key>00:24:E1</key>
+	<string>Convey Computer Corp.</string>
+	<key>00:24:E2</key>
+	<string>HASEGAWA ELECTRIC CO.,LTD.</string>
+	<key>00:24:E3</key>
+	<string>CAO Group</string>
+	<key>00:24:E4</key>
+	<string>Withings</string>
+	<key>00:24:E5</key>
+	<string>Seer Technology, Inc</string>
+	<key>00:24:E6</key>
+	<string>In Motion Technology Inc.</string>
+	<key>00:24:E7</key>
+	<string>Plaster Networks</string>
+	<key>00:24:E8</key>
+	<string>Dell Inc.</string>
+	<key>00:24:E9</key>
+	<string>Samsung Electronics Co., Ltd., Storage System Division</string>
+	<key>00:24:EA</key>
+	<string>iris-GmbH infrared &amp; intelligent sensors</string>
+	<key>00:24:EB</key>
+	<string>ClearPath Networks, Inc.</string>
+	<key>00:24:EC</key>
+	<string>United Information Technology Co.,Ltd.</string>
+	<key>00:24:ED</key>
+	<string>YT Elec. Co,.Ltd.</string>
+	<key>00:24:EE</key>
+	<string>AICTEK Co.,Ltd.</string>
+	<key>00:24:EF</key>
+	<string>Sony Ericsson Mobile Communications</string>
+	<key>00:24:F0</key>
+	<string>Seanodes</string>
+	<key>00:24:F1</key>
+	<string>Shenzhen Fanhai Sanjiang Electronics Co., Ltd.</string>
+	<key>00:24:F2</key>
+	<string>Uniphone Telecommunication Co., Ltd.</string>
+	<key>00:24:F3</key>
+	<string>Nintendo Co., Ltd.</string>
+	<key>00:24:F4</key>
+	<string>Kaminario Technologies Ltd.</string>
+	<key>00:24:F5</key>
+	<string>NDS Surgical Imaging</string>
+	<key>00:24:F6</key>
+	<string>MIYOSHI ELECTRONICS CORPORATION</string>
+	<key>00:24:F7</key>
+	<string>Cisco Systems</string>
+	<key>00:24:F8</key>
+	<string>Technical Solutions Company Ltd.</string>
+	<key>00:24:F9</key>
+	<string>Cisco Systems</string>
+	<key>00:24:FA</key>
+	<string>Hilger u. Kern GMBH</string>
+	<key>00:24:FB</key>
+	<string>PRIVATE</string>
+	<key>00:24:FC</key>
+	<string>QuoPin Co., Ltd.</string>
+	<key>00:24:FD</key>
+	<string>Prosilient Technologies AB</string>
+	<key>00:24:FE</key>
+	<string>AVM GmbH</string>
+	<key>00:24:FF</key>
+	<string>QLogic Corporation</string>
+	<key>00:25:00</key>
+	<string>Apple, Inc</string>
+	<key>00:25:01</key>
+	<string>JSC &quot;Supertel&quot;</string>
+	<key>00:25:02</key>
+	<string>NaturalPoint</string>
+	<key>00:25:03</key>
+	<string>BLADE Network Technology</string>
+	<key>00:25:04</key>
+	<string>Valiant Communications Limited</string>
+	<key>00:25:05</key>
+	<string>eks Engel GmbH &amp; Co. KG</string>
+	<key>00:25:06</key>
+	<string>A.I. ANTITACCHEGGIO ITALIA SRL</string>
+	<key>00:25:07</key>
+	<string>ASTAK Inc.</string>
+	<key>00:25:08</key>
+	<string>Maquet Cardiopulmonary AG</string>
+	<key>00:25:09</key>
+	<string>SHARETRONIC Group LTD</string>
+	<key>00:25:0A</key>
+	<string>Security Expert Co. Ltd</string>
+	<key>00:25:0B</key>
+	<string>CENTROFACTOR  INC</string>
+	<key>00:25:0C</key>
+	<string>Enertrac</string>
+	<key>00:25:0D</key>
+	<string>GZT Telkom-Telmor sp. z o.o.</string>
+	<key>00:25:0E</key>
+	<string>gt german telematics gmbh</string>
+	<key>00:25:0F</key>
+	<string>On-Ramp Wireless, Inc.</string>
+	<key>00:25:10</key>
+	<string>Pico-Tesla Magnetic Therapies</string>
+	<key>00:25:11</key>
+	<string>ELITEGROUP COMPUTER SYSTEM CO., LTD.</string>
+	<key>00:25:12</key>
+	<string>ZTE Corporation</string>
+	<key>00:25:13</key>
+	<string>CXP DIGITAL BV</string>
+	<key>00:25:14</key>
+	<string>PC Worth Int&apos;l Co., Ltd.</string>
+	<key>00:25:15</key>
+	<string>Neuf Cegetel</string>
+	<key>00:25:16</key>
+	<string>Integrated Design Tools, Inc.</string>
+	<key>00:25:17</key>
+	<string>Venntis, LLC</string>
+	<key>00:25:18</key>
+	<string>Power PLUS Communications AG</string>
+	<key>00:25:19</key>
+	<string>Viaas Inc</string>
+	<key>00:25:1A</key>
+	<string>Psiber Data Systems Inc.</string>
+	<key>00:25:1B</key>
+	<string>Philips CareServant</string>
+	<key>00:25:1C</key>
+	<string>EDT</string>
+	<key>00:25:1D</key>
+	<string>DSA Encore, LLC</string>
+	<key>00:25:1E</key>
+	<string>ROTEL TECHNOLOGIES</string>
+	<key>00:25:1F</key>
+	<string>ZYNUS VISION INC.</string>
+	<key>00:25:20</key>
+	<string>SMA Railway Technology GmbH</string>
+	<key>00:25:21</key>
+	<string>Logitek Electronic Systems, Inc.</string>
+	<key>00:25:22</key>
+	<string>ASRock Incorporation</string>
+	<key>00:25:23</key>
+	<string>OCP Inc.</string>
+	<key>00:25:24</key>
+	<string>Lightcomm Technology Co., Ltd</string>
+	<key>00:25:25</key>
+	<string>CTERA Networks Ltd.</string>
+	<key>00:25:26</key>
+	<string>Genuine Technologies Co., Ltd.</string>
+	<key>00:25:27</key>
+	<string>Bitrode Corp.</string>
+	<key>00:25:28</key>
+	<string>Daido Signal Co., Ltd.</string>
+	<key>00:25:29</key>
+	<string>COMELIT GROUP S.P.A</string>
+	<key>00:25:2A</key>
+	<string>Chengdu GeeYa Technology Co.,LTD</string>
+	<key>00:25:2B</key>
+	<string>Stirling Energy Systems</string>
+	<key>00:25:2C</key>
+	<string>Entourage Systems, Inc.</string>
+	<key>00:25:2D</key>
+	<string>Kiryung Electronics</string>
+	<key>00:25:2E</key>
+	<string>Cisco SPVTG</string>
+	<key>00:25:2F</key>
+	<string>Energy, Inc.</string>
+	<key>00:25:30</key>
+	<string>Aetas Systems Inc.</string>
+	<key>00:25:31</key>
+	<string>Cloud Engines, Inc.</string>
+	<key>00:25:32</key>
+	<string>Digital Recorders</string>
+	<key>00:25:33</key>
+	<string>WITTENSTEIN AG</string>
+	<key>00:25:34</key>
+	<string>PRIVATE</string>
+	<key>00:25:35</key>
+	<string>Minimax GmbH &amp; Co KG</string>
+	<key>00:25:36</key>
+	<string>Oki Electric Industry Co., Ltd.</string>
+	<key>00:25:37</key>
+	<string>Runcom Technologies Ltd.</string>
+	<key>00:25:38</key>
+	<string>Samsung Electronics Co., Ltd., Memory Division</string>
+	<key>00:25:39</key>
+	<string>IfTA GmbH</string>
+	<key>00:25:3A</key>
+	<string>CEVA, Ltd.</string>
+	<key>00:25:3B</key>
+	<string>din Dietmar Nocker Facilitymanagement GmbH</string>
+	<key>00:25:3C</key>
+	<string>2Wire</string>
+	<key>00:25:3D</key>
+	<string>DRS Consolidated Controls</string>
+	<key>00:25:3E</key>
+	<string>Telemetric Corporation</string>
+	<key>00:25:3F</key>
+	<string>PRIVATE</string>
+	<key>00:25:40</key>
+	<string>Quasar Technologies, Inc.</string>
+	<key>00:25:41</key>
+	<string>Maquet Critical Care AB</string>
+	<key>00:25:42</key>
+	<string>Pittasoft</string>
+	<key>00:25:43</key>
+	<string>MONEYTECH</string>
+	<key>00:25:44</key>
+	<string>LoJack Corporation</string>
+	<key>00:25:45</key>
+	<string>Cisco Systems</string>
+	<key>00:25:46</key>
+	<string>Cisco Systems</string>
+	<key>00:25:47</key>
+	<string>Nokia Danmark A/S</string>
+	<key>00:25:48</key>
+	<string>Nokia Danmark A/S</string>
+	<key>00:25:49</key>
+	<string>Jeorich Tech. Co.,Ltd.</string>
+	<key>00:25:4A</key>
+	<string>RingCube Technologies, Inc.</string>
+	<key>00:25:4B</key>
+	<string>Apple, Inc</string>
+	<key>00:25:4C</key>
+	<string>Videon Central, Inc.</string>
+	<key>00:25:4D</key>
+	<string>Singapore Technologies Electronics Limited</string>
+	<key>00:25:4E</key>
+	<string>Vertex Wireless Co., Ltd.</string>
+	<key>00:25:4F</key>
+	<string>ELETTROLAB Srl</string>
+	<key>00:25:50</key>
+	<string>Mazu Networks</string>
+	<key>00:25:51</key>
+	<string>SE-Elektronic GmbH</string>
+	<key>00:25:52</key>
+	<string>VXI CORPORATION</string>
+	<key>00:25:53</key>
+	<string>PIRELLI BROADBAND SOLUTIONS</string>
+	<key>00:25:54</key>
+	<string>Pixel8 Networks</string>
+	<key>00:25:55</key>
+	<string>Visonic Technologies 1993 Ltd</string>
+	<key>00:25:56</key>
+	<string>Hon Hai Precision Ind. Co., Ltd.</string>
+	<key>00:25:57</key>
+	<string>Research In Motion</string>
+	<key>00:25:58</key>
+	<string>MPEDIA</string>
+	<key>00:25:59</key>
+	<string>Syphan Technologies Ltd</string>
+	<key>00:25:5A</key>
+	<string>Tantalus Systems Corp.</string>
+	<key>00:25:5B</key>
+	<string>CoachComm, LLC</string>
+	<key>00:25:5C</key>
+	<string>NEC Corporation</string>
+	<key>00:25:5D</key>
+	<string>Morningstar Corporation</string>
+	<key>00:25:5E</key>
+	<string>Shanghai Dare Technologies Co.,Ltd.</string>
+	<key>00:25:5F</key>
+	<string>SenTec AG</string>
+	<key>00:25:60</key>
+	<string>Ibridge Networks &amp; Communications Ltd.</string>
+	<key>00:25:61</key>
+	<string>ProCurve Networking by HP</string>
+	<key>00:25:62</key>
+	<string>interbro Co. Ltd.</string>
+	<key>00:25:63</key>
+	<string>Luxtera Inc</string>
+	<key>00:25:64</key>
+	<string>Dell Inc.</string>
+	<key>00:25:65</key>
+	<string>Vizimax Inc.</string>
+	<key>00:25:66</key>
+	<string>Samsung Electronics Co.,Ltd</string>
+	<key>00:25:67</key>
+	<string>Samsung Electronics</string>
+	<key>00:25:68</key>
+	<string>Shenzhen Huawei Communication Technologies Co., Ltd</string>
+	<key>00:25:69</key>
+	<string>SAGEM COMMUNICATION</string>
+	<key>00:25:6A</key>
+	<string>inIT - Institut Industrial IT</string>
+	<key>00:25:6B</key>
+	<string>ATENIX E.E. s.r.l.</string>
+	<key>00:25:6C</key>
+	<string>&quot;Azimut&quot; Production Association JSC</string>
+	<key>00:25:6D</key>
+	<string>Broadband Forum</string>
+	<key>00:25:6E</key>
+	<string>Van Breda B.V.</string>
+	<key>00:25:6F</key>
+	<string>Dantherm Power</string>
+	<key>00:25:70</key>
+	<string>Eastern Communications Company Limited</string>
+	<key>00:25:71</key>
+	<string>Zhejiang Tianle Digital Electric Co.,Ltd</string>
+	<key>00:25:72</key>
+	<string>Nemo-Q International AB</string>
+	<key>00:25:73</key>
+	<string>ST Electronics (Info-Security) Pte Ltd</string>
+	<key>00:25:74</key>
+	<string>KUNIMI MEDIA DEVICE Co., Ltd.</string>
+	<key>00:25:75</key>
+	<string>FiberPlex Inc</string>
+	<key>00:25:76</key>
+	<string>NELI TECHNOLOGIES</string>
+	<key>00:25:77</key>
+	<string>D-BOX Technologies</string>
+	<key>00:25:78</key>
+	<string>JSC &quot;Concern &quot;Sozvezdie&quot;</string>
+	<key>00:25:79</key>
+	<string>J &amp; F Labs</string>
+	<key>00:25:7A</key>
+	<string>CAMCO Produktions- und Vertriebs-GmbH f¸r Beschallungs- und Beleuchtungsanlagen</string>
+	<key>00:25:7B</key>
+	<string>STJ  ELECTRONICS  PVT  LTD</string>
+	<key>00:25:7C</key>
+	<string>Huachentel Technology Development Co., Ltd</string>
+	<key>00:25:7D</key>
+	<string>PointRed Telecom Private Ltd.</string>
+	<key>00:25:7E</key>
+	<string>NEW POS Technology Limited</string>
+	<key>00:25:7F</key>
+	<string>CallTechSolution Co.,Ltd</string>
+	<key>00:25:80</key>
+	<string>Equipson S.A.</string>
+	<key>00:25:81</key>
+	<string>x-star networks Inc.</string>
+	<key>00:25:82</key>
+	<string>Maksat Technologies (P) Ltd</string>
+	<key>00:25:83</key>
+	<string>Cisco Systems</string>
+	<key>00:25:84</key>
+	<string>Cisco Systems</string>
+	<key>00:25:85</key>
+	<string>KOKUYO S&amp;T Co., Ltd.</string>
+	<key>00:25:86</key>
+	<string>TP-LINK Technologies Co., Ltd.</string>
+	<key>00:25:87</key>
+	<string>Vitality, Inc.</string>
+	<key>00:25:88</key>
+	<string>Genie Industries, Inc.</string>
+	<key>00:25:89</key>
+	<string>Hills Industries Limited</string>
+	<key>00:25:8A</key>
+	<string>Pole/Zero Corporation</string>
+	<key>00:25:8B</key>
+	<string>Mellanox Technologies Ltd</string>
+	<key>00:25:8C</key>
+	<string>ESUS ELEKTRONIK SAN. VE DIS. TIC. LTD. STI.</string>
+	<key>00:25:8D</key>
+	<string>Haier</string>
+	<key>00:25:8E</key>
+	<string>The Weather Channel</string>
+	<key>00:25:8F</key>
+	<string>Trident Microsystems, Inc.</string>
+	<key>00:25:90</key>
+	<string>Super Micro Computer, Inc.</string>
+	<key>00:25:91</key>
+	<string>NEXTEK, Inc.</string>
+	<key>00:25:92</key>
+	<string>Guangzhou Shirui Electronic Co., Ltd</string>
+	<key>00:25:93</key>
+	<string>DatNet Informatikai Kft.</string>
+	<key>00:25:94</key>
+	<string>Eurodesign BG LTD</string>
+	<key>00:25:95</key>
+	<string>Northwest Signal Supply, Inc</string>
+	<key>00:25:96</key>
+	<string>GIGAVISION srl</string>
+	<key>00:25:97</key>
+	<string>Kalki Communication Technologies</string>
+	<key>00:25:98</key>
+	<string>Zhong Shan City Litai Electronic Industrial Co. Ltd</string>
+	<key>00:25:99</key>
+	<string>Hedon e.d. B.V.</string>
+	<key>00:25:9A</key>
+	<string>CEStronics GmbH</string>
+	<key>00:25:9B</key>
+	<string>Beijing PKUNITY Microsystems Technology Co., Ltd</string>
+	<key>00:25:9C</key>
+	<string>Cisco-Linksys, LLC</string>
+	<key>00:25:9D</key>
+	<string>PRIVATE</string>
+	<key>00:25:9E</key>
+	<string>Huawei Technologies Co., Ltd.</string>
+	<key>00:25:9F</key>
+	<string>TechnoDigital Technologies GmbH</string>
+	<key>00:25:A0</key>
+	<string>Nintendo Co., Ltd.</string>
+	<key>00:25:A1</key>
+	<string>Enalasys</string>
+	<key>00:25:A2</key>
+	<string>Alta Definicion LINCEO S.L.</string>
+	<key>00:25:A3</key>
+	<string>Trimax Wireless, Inc.</string>
+	<key>00:25:A4</key>
+	<string>EuroDesign embedded technologies GmbH</string>
+	<key>00:25:A5</key>
+	<string>Walnut Media Network</string>
+	<key>00:25:A6</key>
+	<string>Central Network Solution Co., Ltd.</string>
+	<key>00:25:A7</key>
+	<string>Comverge, Inc.</string>
+	<key>00:25:A8</key>
+	<string>Kontron (BeiJing) Technology Co.,Ltd</string>
+	<key>00:25:A9</key>
+	<string>Shanghai Embedway Information Technologies Co.,Ltd</string>
+	<key>00:25:AA</key>
+	<string>Beijing Soul Technology Co.,Ltd.</string>
+	<key>00:25:AB</key>
+	<string>AIO LCD PC BU / TPV</string>
+	<key>00:25:AC</key>
+	<string>I-Tech corporation</string>
+	<key>00:25:AD</key>
+	<string>Manufacturing Resources International</string>
+	<key>00:25:AE</key>
+	<string>Microsoft Corporation</string>
+	<key>00:25:AF</key>
+	<string>COMFILE Technology</string>
+	<key>00:25:B0</key>
+	<string>Schmartz Inc</string>
+	<key>00:25:B1</key>
+	<string>Maya-Creation Corporation</string>
+	<key>00:25:B2</key>
+	<string>LFK-Lenkflugkˆrpersysteme GmbH</string>
+	<key>00:25:B3</key>
+	<string>Hewlett Packard</string>
+	<key>00:25:B4</key>
+	<string>Cisco Systems</string>
+	<key>00:25:B5</key>
+	<string>Cisco Systems</string>
+	<key>00:25:B6</key>
+	<string>Telecom FM</string>
+	<key>00:25:B7</key>
+	<string>Costar  electronics, inc.,</string>
+	<key>00:25:B8</key>
+	<string>Agile Communications, Inc.</string>
+	<key>00:25:B9</key>
+	<string>Agilink Systems Corp.</string>
+	<key>00:25:BA</key>
+	<string>Alcatel-Lucent IPD</string>
+	<key>00:25:BB</key>
+	<string>INNERINT Co., Ltd.</string>
+	<key>00:25:BC</key>
+	<string>Apple, Inc</string>
+	<key>00:25:BD</key>
+	<string>Italdata Ingegneria dell&apos;Idea S.p.A.</string>
+	<key>00:25:BE</key>
+	<string>Tektrap Systems Inc.</string>
+	<key>00:25:BF</key>
+	<string>Wireless Cables Inc.</string>
+	<key>00:25:C0</key>
+	<string>ZillionTV Corporation</string>
+	<key>00:25:C1</key>
+	<string>Nawoo Korea Corp.</string>
+	<key>00:25:C2</key>
+	<string>RingBell Co.,Ltd.</string>
+	<key>00:25:C3</key>
+	<string>Nortel Networks</string>
+	<key>00:25:C4</key>
+	<string>Ruckus Wireless</string>
+	<key>00:25:C5</key>
+	<string>Star Link Communication Pvt. Ltd.</string>
+	<key>00:25:C6</key>
+	<string>kasercorp, ltd</string>
+	<key>00:25:C7</key>
+	<string>altek Corporation</string>
+	<key>00:25:C8</key>
+	<string>S-Access GmbH</string>
+	<key>00:25:C9</key>
+	<string>SHENZHEN HUAPU DIGITAL CO., LTD</string>
+	<key>00:25:CA</key>
+	<string>LS Research, LLC</string>
+	<key>00:25:CB</key>
+	<string>Reiner SCT</string>
+	<key>00:25:CC</key>
+	<string>Mobile Communications Korea Incorporated</string>
+	<key>00:25:CD</key>
+	<string>Skylane Optics</string>
+	<key>00:25:CE</key>
+	<string>InnerSpace</string>
+	<key>00:25:CF</key>
+	<string>Nokia Danmark A/S</string>
+	<key>00:25:D0</key>
+	<string>Nokia Danmark A/S</string>
+	<key>00:25:D1</key>
+	<string>Eastech Electronics (Taiwan) Inc.</string>
+	<key>00:25:D2</key>
+	<string>InpegVision Co., Ltd</string>
+	<key>00:25:D3</key>
+	<string>AzureWave Technologies, Inc</string>
+	<key>00:25:D4</key>
+	<string>Fortress Technologies</string>
+	<key>00:25:D5</key>
+	<string>Robonica (Pty) Ltd</string>
+	<key>00:25:D6</key>
+	<string>The Kroger Co.</string>
+	<key>00:25:D7</key>
+	<string>CEDO</string>
+	<key>00:25:D8</key>
+	<string>KOREA MAINTENANCE</string>
+	<key>00:25:D9</key>
+	<string>DataFab Systems Inc.</string>
+	<key>00:25:DA</key>
+	<string>Secura Key</string>
+	<key>00:25:DB</key>
+	<string>ATI Electronics(Shenzhen) Co., LTD</string>
+	<key>00:25:DC</key>
+	<string>Sumitomo Electric Networks, Inc</string>
+	<key>00:25:DD</key>
+	<string>SUNNYTEK INFORMATION CO., LTD.</string>
+	<key>00:25:DE</key>
+	<string>Probits Co., LTD.</string>
+	<key>00:25:DF</key>
+	<string>PRIVATE</string>
+	<key>00:25:E0</key>
+	<string>CeedTec Sdn Bhd</string>
+	<key>00:25:E1</key>
+	<string>SHANGHAI SEEYOO ELECTRONIC &amp; TECHNOLOGY CO., LTD</string>
+	<key>00:25:E2</key>
+	<string>Everspring Industry Co., Ltd.</string>
+	<key>00:25:E3</key>
+	<string>Hanshinit Inc.</string>
+	<key>00:25:E4</key>
+	<string>OMNI-WiFi, LLC</string>
+	<key>00:25:E5</key>
+	<string>LG Electronics Inc</string>
+	<key>00:25:E6</key>
+	<string>Belgian Monitoring Systems bvba</string>
+	<key>00:25:E7</key>
+	<string>Sony Ericsson Mobile Communications</string>
+	<key>00:25:E8</key>
+	<string>Idaho Technology</string>
+	<key>00:25:E9</key>
+	<string>i-mate Development, Inc.</string>
+	<key>00:25:EA</key>
+	<string>Iphion BV</string>
+	<key>00:25:EB</key>
+	<string>Reutech Radar Systems (PTY) Ltd</string>
+	<key>00:25:EC</key>
+	<string>Humanware</string>
+	<key>00:25:ED</key>
+	<string>NuVo Technologies LLC</string>
+	<key>00:25:EE</key>
+	<string>Avtex Ltd</string>
+	<key>00:25:EF</key>
+	<string>I-TEC Co., Ltd.</string>
+	<key>00:25:F0</key>
+	<string>Suga Electronics Limited</string>
+	<key>00:25:F1</key>
+	<string>Motorola CHS</string>
+	<key>00:25:F2</key>
+	<string>Motorola CHS</string>
+	<key>00:25:F3</key>
+	<string>Nordwestdeutsche Z‰hlerrevision</string>
+	<key>00:25:F4</key>
+	<string>KoCo Connector AG</string>
+	<key>00:25:F5</key>
+	<string>DVS Korea, Co., Ltd</string>
+	<key>00:25:F6</key>
+	<string>netTALK.com, Inc.</string>
+	<key>00:25:F7</key>
+	<string>Ansaldo STS USA</string>
+	<key>00:25:F8</key>
+	<string>Zamir Recognition Systems Ltd.</string>
+	<key>00:25:F9</key>
+	<string>GMK electronic design GmbH</string>
+	<key>00:25:FA</key>
+	<string>J&amp;M Analytik AG</string>
+	<key>00:25:FB</key>
+	<string>Tunstall Healthcare A/S</string>
+	<key>00:25:FC</key>
+	<string>ENDA ENDUSTRIYEL ELEKTRONIK LTD. STI.</string>
+	<key>00:25:FD</key>
+	<string>OBR Centrum Techniki Morskiej S.A.</string>
+	<key>00:25:FE</key>
+	<string>Pilot Electronics Corporation</string>
+	<key>00:25:FF</key>
+	<string>CreNova Technology GmbH</string>
+	<key>00:26:00</key>
+	<string>TEAC Australia Pty Ltd.</string>
+	<key>00:26:01</key>
+	<string>PRIVATE</string>
+	<key>00:26:02</key>
+	<string>SMART Temps LLC</string>
+	<key>00:26:03</key>
+	<string>Shenzhen Wistar Technology Co., Ltd</string>
+	<key>00:26:04</key>
+	<string>Audio Processing Technology Ltd</string>
+	<key>00:26:05</key>
+	<string>CC Systems AB</string>
+	<key>00:26:06</key>
+	<string>RAUMFELD GmbH</string>
+	<key>00:26:07</key>
+	<string>Enabling Technology Pty Ltd</string>
+	<key>00:26:08</key>
+	<string>Apple, Inc</string>
+	<key>00:26:09</key>
+	<string>Phyllis Co., Ltd.</string>
+	<key>00:26:0A</key>
+	<string>Cisco Systems</string>
+	<key>00:26:0B</key>
+	<string>Cisco Systems</string>
+	<key>00:26:0C</key>
+	<string>Dataram</string>
+	<key>00:26:0D</key>
+	<string>Micronetics, Inc.</string>
+	<key>00:26:0E</key>
+	<string>Ablaze Systems, LLC</string>
+	<key>00:26:0F</key>
+	<string>Linn Products Ltd</string>
+	<key>00:26:10</key>
+	<string>Apacewave Technologies</string>
+	<key>00:26:11</key>
+	<string>Licera AB</string>
+	<key>00:26:12</key>
+	<string>Space Exploration Technologies</string>
+	<key>00:26:13</key>
+	<string>Engel Axil S.L.</string>
+	<key>00:26:14</key>
+	<string>KTNF</string>
+	<key>00:26:15</key>
+	<string>Teracom Limited</string>
+	<key>00:26:16</key>
+	<string>Rosemount Inc.</string>
+	<key>00:26:17</key>
+	<string>OEM Worldwide</string>
+	<key>00:26:18</key>
+	<string>ASUSTek COMPUTER INC.</string>
+	<key>00:26:19</key>
+	<string>FRC</string>
+	<key>00:26:1A</key>
+	<string>Femtocomm System Technology Corp.</string>
+	<key>00:26:1B</key>
+	<string>LAUREL BANK MACHINES CO., LTD.</string>
+	<key>00:26:1C</key>
+	<string>NEOVIA INC.</string>
+	<key>00:26:1D</key>
+	<string>COP SECURITY SYSTEM CORP.</string>
+	<key>00:26:1E</key>
+	<string>QINGBANG ELEC(SZ) CO., LTD</string>
+	<key>00:26:1F</key>
+	<string>SAE Magnetics (H.K.) Ltd.</string>
+	<key>00:26:20</key>
+	<string>ISGUS GmbH</string>
+	<key>00:26:21</key>
+	<string>InteliCloud Technology Inc.</string>
+	<key>00:26:22</key>
+	<string>COMPAL INFORMATION (KUNSHAN) CO., LTD.</string>
+	<key>00:26:23</key>
+	<string>JRD Communication Inc</string>
+	<key>00:26:24</key>
+	<string>Thomson Inc.</string>
+	<key>00:26:25</key>
+	<string>MediaSputnik</string>
+	<key>00:26:26</key>
+	<string>Geophysical Survey Systems, Inc.</string>
+	<key>00:26:27</key>
+	<string>Truesell</string>
+	<key>00:26:28</key>
+	<string>companytec automaÁ„o e controle ltda</string>
+	<key>00:26:29</key>
+	<string>Juphoon System Software Inc.</string>
+	<key>00:26:2A</key>
+	<string>Proxense, LLC</string>
+	<key>00:26:2B</key>
+	<string>Wongs Electronics Co. Ltd.</string>
+	<key>00:26:2C</key>
+	<string>IKT Advanced Technologies s.r.o.</string>
+	<key>00:26:2D</key>
+	<string>Wistron Corporation</string>
+	<key>00:26:2E</key>
+	<string>Chengdu Jiuzhou Electronic Technology Inc</string>
+	<key>00:26:2F</key>
+	<string>HAMAMATSU TOA ELECTRONICS</string>
+	<key>00:26:30</key>
+	<string>ACOREL S.A.S</string>
+	<key>00:26:31</key>
+	<string>COMMTACT LTD</string>
+	<key>00:26:32</key>
+	<string>Instrumentation Technologies d.d.</string>
+	<key>00:26:33</key>
+	<string>MIR - Medical International Research</string>
+	<key>00:26:34</key>
+	<string>Infineta Systems, Inc</string>
+	<key>00:26:35</key>
+	<string>Bluetechnix GmbH</string>
+	<key>00:26:36</key>
+	<string>Motorola Mobile Devices</string>
+	<key>00:26:37</key>
+	<string>Samsung Electro-Mechanics</string>
+	<key>00:26:38</key>
+	<string>Xia Men Joyatech Co., Ltd.</string>
+	<key>00:26:39</key>
+	<string>T.M. Electronics, Inc.</string>
+	<key>00:26:3A</key>
+	<string>Digitec Systems</string>
+	<key>00:26:3B</key>
+	<string>Onbnetech</string>
+	<key>00:26:3C</key>
+	<string>Bachmann GmbH &amp; Co. KG</string>
+	<key>00:26:3D</key>
+	<string>MIA Corporation</string>
+	<key>00:26:3E</key>
+	<string>Trapeze Networks</string>
+	<key>00:26:3F</key>
+	<string>LIOS Technology GmbH</string>
+	<key>00:26:40</key>
+	<string>Baustem Broadband Technologies, Ltd.</string>
+	<key>00:26:41</key>
+	<string>Motorola, Inc</string>
+	<key>00:26:42</key>
+	<string>Motorola, Inc</string>
+	<key>00:26:43</key>
+	<string>Alps Electric Co., Ltd</string>
+	<key>00:26:44</key>
+	<string>Thomson Telecom Belgium</string>
+	<key>00:26:45</key>
+	<string>Circontrol S.A.</string>
+	<key>00:26:46</key>
+	<string>SHENYANG TONGFANG MULTIMEDIA TECHNOLOGY COMPANY LIMITED</string>
+	<key>00:26:47</key>
+	<string>WFE TECHNOLOGY CORP.</string>
+	<key>00:26:48</key>
+	<string>Emitech Corp.</string>
+	<key>00:26:49</key>
+	<string>PRIVATE</string>
+	<key>00:26:4A</key>
+	<string>Apple, Inc</string>
+	<key>00:26:4B</key>
+	<string>PRIVATE</string>
+	<key>00:26:4C</key>
+	<string>Shanghai DigiVision Technology Co., Ltd.</string>
+	<key>00:26:4D</key>
+	<string>Arcadyan Technology Corporation</string>
+	<key>00:26:4E</key>
+	<string>Rail &amp; Road Protec GmbH</string>
+	<key>00:26:4F</key>
+	<string>Kr¸ger&amp;Gothe GmbH</string>
+	<key>00:26:50</key>
+	<string>2Wire</string>
+	<key>00:26:51</key>
+	<string>Cisco Systems</string>
+	<key>00:26:52</key>
+	<string>Cisco Systems</string>
+	<key>00:26:53</key>
+	<string>DaySequerra Corporation</string>
 	<key>00:26:54</key>
 	<string>3Com Corporation</string>
+	<key>00:26:55</key>
+	<string>Hewlett Packard</string>
+	<key>00:26:56</key>
+	<string>Sansonic Electronics USA</string>
+	<key>00:26:57</key>
+	<string>OOO NPP EKRA</string>
+	<key>00:26:58</key>
+	<string>T-Platforms (Cyprus) Limited</string>
+	<key>00:26:59</key>
+	<string>Nintendo Co., Ltd.</string>
+	<key>00:26:5A</key>
+	<string>D-Link Corporation</string>
+	<key>00:26:5B</key>
+	<string>Hitron Technologies. Inc</string>
+	<key>00:26:5C</key>
+	<string>Hon Hai Precision Ind. Co.,Ltd.</string>
+	<key>00:26:5D</key>
+	<string>Samsung Electronics</string>
+	<key>00:26:5E</key>
+	<string>Hon Hai Precision Ind. Co.,Ltd.</string>
+	<key>00:26:5F</key>
+	<string>Samsung Electronics Co.,Ltd</string>
+	<key>00:26:60</key>
+	<string>Logiways</string>
+	<key>00:26:61</key>
+	<string>Irumtek Co., Ltd.</string>
+	<key>00:26:62</key>
+	<string>Actiontec Electronics, Inc</string>
+	<key>00:26:63</key>
+	<string>Shenzhen Huitaiwei Tech. Ltd, co.</string>
+	<key>00:26:64</key>
+	<string>Core System Japan</string>
+	<key>00:26:65</key>
+	<string>ProtectedLogic Corporation</string>
+	<key>00:26:66</key>
+	<string>EFM Networks</string>
+	<key>00:26:67</key>
+	<string>CARECOM CO.,LTD.</string>
+	<key>00:26:68</key>
+	<string>Nokia Danmark A/S</string>
+	<key>00:26:69</key>
+	<string>Nokia Danmark A/S</string>
+	<key>00:26:6A</key>
+	<string>ESSENSIUM NV</string>
+	<key>00:26:6B</key>
+	<string>SHINE UNION ENTERPRISE LIMITED</string>
+	<key>00:26:6C</key>
+	<string>Inventec</string>
+	<key>00:26:6D</key>
+	<string>MobileAccess Networks</string>
+	<key>00:26:6E</key>
+	<string>Nissho-denki Co.,LTD.</string>
+	<key>00:26:6F</key>
+	<string>Coordiwise Technology Corp.</string>
+	<key>00:26:70</key>
+	<string>Cinch Connectors</string>
+	<key>00:26:71</key>
+	<string>AUTOVISION Co., Ltd</string>
+	<key>00:26:72</key>
+	<string>AAMP of America</string>
+	<key>00:26:73</key>
+	<string>RICOH COMPANY LTD.</string>
+	<key>00:26:74</key>
+	<string>Electronic Solutions, Inc.</string>
+	<key>00:26:75</key>
+	<string>Aztech Electronics Pte Ltd</string>
+	<key>00:26:76</key>
+	<string>COMMidt AS</string>
+	<key>00:26:77</key>
+	<string>DEIF A/S</string>
+	<key>00:26:78</key>
+	<string>Logic Instrument SA</string>
+	<key>00:26:79</key>
+	<string>Euphonic Technologies, Inc.</string>
+	<key>00:26:7A</key>
+	<string>wuhan hongxin telecommunication technologies co.,ltd</string>
+	<key>00:26:7B</key>
+	<string>GSI Helmholtzzentrum f¸r Schwerionenforschung GmbH</string>
+	<key>00:26:7C</key>
+	<string>Metz-Werke GmbH &amp; Co KG</string>
+	<key>00:26:7D</key>
+	<string>A-Max Technology Macao Commercial Offshore Company Limited</string>
+	<key>00:26:7E</key>
+	<string>Parrot SA</string>
+	<key>00:26:7F</key>
+	<string>Zenterio AB</string>
+	<key>00:26:80</key>
+	<string>Lockie Innovation Pty Ltd</string>
+	<key>00:26:81</key>
+	<string>Interspiro AB</string>
+	<key>00:26:82</key>
+	<string>Gemtek Technology Co., Ltd.</string>
+	<key>00:26:83</key>
+	<string>Ajoho Enterprise Co., Ltd.</string>
+	<key>00:26:84</key>
+	<string>KISAN SYSTEM</string>
+	<key>00:26:85</key>
+	<string>Digital Innovation</string>
+	<key>00:26:86</key>
+	<string>Quantenna Communcations, Inc.</string>
+	<key>00:26:87</key>
+	<string>corega K.K.</string>
+	<key>00:26:88</key>
+	<string>Juniper Networks</string>
+	<key>00:26:89</key>
+	<string>General Dynamics Robotic Systems</string>
+	<key>00:26:8A</key>
+	<string>Terrier SC Ltd</string>
+	<key>00:26:8B</key>
+	<string>Guangzhou Escene Computer Technology Limited</string>
+	<key>00:26:8C</key>
+	<string>StarLeaf Ltd.</string>
+	<key>00:26:8D</key>
+	<string>CellTel S.p.A.</string>
+	<key>00:26:8E</key>
+	<string>Alta Solutions, Inc.</string>
+	<key>00:26:8F</key>
+	<string>MTA SpA</string>
+	<key>00:26:90</key>
+	<string>I DO IT</string>
+	<key>00:26:91</key>
+	<string>SAGEM COMMUNICATION</string>
+	<key>00:26:92</key>
+	<string>Mitsubishi Electric Co.</string>
+	<key>00:26:93</key>
+	<string>QVidium Technologies, Inc.</string>
+	<key>00:26:94</key>
+	<string>Senscient Ltd</string>
+	<key>00:26:95</key>
+	<string>ZT Group Int&apos;l Inc</string>
+	<key>00:26:96</key>
+	<string>NOOLIX Co., Ltd</string>
+	<key>00:26:97</key>
+	<string>Cheetah Technologies, L.P.</string>
+	<key>00:26:98</key>
+	<string>Cisco Systems</string>
+	<key>00:26:99</key>
+	<string>Cisco Systems</string>
+	<key>00:26:9A</key>
+	<string>carina system co., ltd.</string>
+	<key>00:26:9B</key>
+	<string>SOKRAT Ltd.</string>
+	<key>00:26:9C</key>
+	<string>ITUS JAPAN CO. LTD</string>
+	<key>00:26:9D</key>
+	<string>M2Mnet Co., Ltd.</string>
+	<key>00:26:9E</key>
+	<string>Quanta Computer Inc</string>
+	<key>00:26:9F</key>
+	<string>PRIVATE</string>
+	<key>00:26:A0</key>
+	<string>moblic</string>
+	<key>00:26:A1</key>
+	<string>Megger</string>
+	<key>00:26:A2</key>
+	<string>Instrumentation Technology Systems</string>
+	<key>00:26:A3</key>
+	<string>FQ Ingenieria Electronica S.A.</string>
+	<key>00:26:A4</key>
+	<string>Novus Produtos Eletronicos Ltda</string>
+	<key>00:26:A5</key>
+	<string>MICROROBOT.CO.,LTD</string>
+	<key>00:26:A6</key>
+	<string>TRIXELL</string>
+	<key>00:26:A7</key>
+	<string>CONNECT SRL</string>
+	<key>00:26:A8</key>
+	<string>DAEHAP HYPER-TECH</string>
+	<key>00:26:A9</key>
+	<string>Strong Technologies Pty Ltd</string>
+	<key>00:26:AA</key>
+	<string>Kenmec Mechanical Engineering Co., Ltd.</string>
+	<key>00:26:AB</key>
+	<string>SEIKO EPSON CORPORATION</string>
+	<key>00:26:AC</key>
+	<string>Shanghai LUSTER Teraband photonic Co., Ltd.</string>
+	<key>00:26:AD</key>
+	<string>Arada Systems, Inc.</string>
+	<key>00:26:AE</key>
+	<string>Wireless Measurement Ltd</string>
+	<key>00:26:AF</key>
+	<string>Duelco A/S</string>
+	<key>00:26:B0</key>
+	<string>Apple, Inc</string>
+	<key>00:26:B1</key>
+	<string>Harman/Navis</string>
+	<key>00:26:B2</key>
+	<string>Setrix AG</string>
+	<key>00:26:B3</key>
+	<string>Thales Communications Inc</string>
 	<key>00:30:00</key>
 	<string>ALLWELL TECHNOLOGY CORP.</string>
 	<key>00:30:01</key>
@@ -16821,7 +19759,7 @@
 	<key>00:30:09</key>
 	<string>Tachion Networks, Inc.</string>
 	<key>00:30:0A</key>
-	<string>AZTECH SYSTEMS LTD.</string>
+	<string>AZTECH Electronics Pte Ltd</string>
 	<key>00:30:0B</key>
 	<string>mPHASE Technologies, Inc.</string>
 	<key>00:30:0C</key>
@@ -16895,7 +19833,7 @@
 	<key>00:30:2E</key>
 	<string>Hoft &amp; Wessel AG</string>
 	<key>00:30:2F</key>
-	<string>Smiths Industries</string>
+	<string>GE Aviation System</string>
 	<key>00:30:30</key>
 	<string>HARMONIX CORPORATION</string>
 	<key>00:30:31</key>
@@ -17003,7 +19941,7 @@
 	<key>00:30:64</key>
 	<string>ADLINK TECHNOLOGY, INC.</string>
 	<key>00:30:65</key>
-	<string>APPLE COMPUTER, INC.</string>
+	<string>APPLE, INC.</string>
 	<key>00:30:66</key>
 	<string>Cirronet, Inc.</string>
 	<key>00:30:67</key>
@@ -17081,7 +20019,7 @@
 	<key>00:30:8B</key>
 	<string>Brix Networks</string>
 	<key>00:30:8C</key>
-	<string>ADVANCED DIGITAL INFORMATION</string>
+	<string>Quantum Corporation</string>
 	<key>00:30:8D</key>
 	<string>Pinnacle Systems, Inc.</string>
 	<key>00:30:8E</key>
@@ -17095,7 +20033,7 @@
 	<key>00:30:92</key>
 	<string>ModuNORM GmbH</string>
 	<key>00:30:93</key>
-	<string>SONNET TECHNOLOGIES, INC.</string>
+	<string>Sonnet Technologies, Inc</string>
 	<key>00:30:94</key>
 	<string>Cisco Systems, Inc.</string>
 	<key>00:30:95</key>
@@ -17193,7 +20131,7 @@
 	<key>00:30:C3</key>
 	<string>FLUECKIGER ELEKTRONIK AG</string>
 	<key>00:30:C4</key>
-	<string>Canon Imaging System Technologies, Inc.</string>
+	<string>Canon Imaging Systems Inc.</string>
 	<key>00:30:C5</key>
 	<string>CADENCE DESIGN SYSTEMS</string>
 	<key>00:30:C6</key>
@@ -17357,7 +20295,7 @@
 	<key>00:40:15</key>
 	<string>ASCOM INFRASYS AG</string>
 	<key>00:40:16</key>
-	<string>HADAX ELECTRONICS, INC.</string>
+	<string>ADC - Global Connectivity Solutions Division</string>
 	<key>00:40:17</key>
 	<string>Silex Technology America</string>
 	<key>00:40:18</key>
@@ -17577,7 +20515,7 @@
 	<key>00:40:83</key>
 	<string>TDA INDUSTRIA DE PRODUTOS</string>
 	<key>00:40:84</key>
-	<string>HONEYWELL INC.</string>
+	<string>HONEYWELL ACS</string>
 	<key>00:40:85</key>
 	<string>SAAB INSTRUMENTS AB</string>
 	<key>00:40:86</key>
@@ -17807,7 +20745,7 @@
 	<key>00:40:F6</key>
 	<string>KATRON COMPUTERS INC.</string>
 	<key>00:40:F7</key>
-	<string>POLAROID MEDICAL IMAGING SYS.</string>
+	<string>Polaroid Corporation</string>
 	<key>00:40:F8</key>
 	<string>SYSTEMHAUS DISCOM</string>
 	<key>00:40:F9</key>
@@ -17877,7 +20815,7 @@
 	<key>00:50:19</key>
 	<string>SPRING TIDE NETWORKS, INC.</string>
 	<key>00:50:1A</key>
-	<string>UISIQN</string>
+	<string>IQinVision</string>
 	<key>00:50:1B</key>
 	<string>ABL CANADA, INC.</string>
 	<key>00:50:1C</key>
@@ -17943,7 +20881,7 @@
 	<key>00:50:3F</key>
 	<string>ANCHOR GAMES</string>
 	<key>00:50:40</key>
-	<string>Matsushita Electric Works, Ltd.</string>
+	<string>Panasonic Electric Works Co., Ltd.</string>
 	<key>00:50:41</key>
 	<string>Coretronic Corporation</string>
 	<key>00:50:42</key>
@@ -17961,7 +20899,7 @@
 	<key>00:50:48</key>
 	<string>INFOLIBRIA</string>
 	<key>00:50:49</key>
-	<string>ELLACOYA NETWORKS, INC.</string>
+	<string>Arbor Networks Inc</string>
 	<key>00:50:4A</key>
 	<string>ELTECO A.S.</string>
 	<key>00:50:4B</key>
@@ -17987,7 +20925,7 @@
 	<key>00:50:55</key>
 	<string>DOMS A/S</string>
 	<key>00:50:56</key>
-	<string>VMWare, Inc.</string>
+	<string>VMware, Inc.</string>
 	<key>00:50:57</key>
 	<string>BROADBAND ACCESS SYSTEMS</string>
 	<key>00:50:58</key>
@@ -18013,7 +20951,7 @@
 	<key>00:50:64</key>
 	<string>CAE ELECTRONICS</string>
 	<key>00:50:65</key>
-	<string>DENSEI-LAMBAD Co., Ltd.</string>
+	<string>TDK-Lambda Corporation</string>
 	<key>00:50:66</key>
 	<string>AtecoM GmbH advanced telecomunication modules</string>
 	<key>00:50:67</key>
@@ -18027,7 +20965,7 @@
 	<key>00:50:6B</key>
 	<string>SPX-ATEG</string>
 	<key>00:50:6C</key>
-	<string>G &amp; L BEIJER ELECTRONICS AB</string>
+	<string>Beijer Electronics Products AB</string>
 	<key>00:50:6D</key>
 	<string>VIDEOJET SYSTEMS</string>
 	<key>00:50:6E</key>
@@ -18085,7 +21023,7 @@
 	<key>00:50:89</key>
 	<string>SAFETY MANAGEMENT SYSTEMS</string>
 	<key>00:50:8B</key>
-	<string>COMPAQ COMPUTER CORPORATION</string>
+	<string>Hewlett Packard</string>
 	<key>00:50:8C</key>
 	<string>RSI SYSTEMS</string>
 	<key>00:50:8D</key>
@@ -18257,7 +21195,7 @@
 	<key>00:50:E3</key>
 	<string>Motorola, Inc.</string>
 	<key>00:50:E4</key>
-	<string>APPLE COMPUTER, INC.</string>
+	<string>APPLE, INC.</string>
 	<key>00:50:E6</key>
 	<string>HAKUSAN CORPORATION</string>
 	<key>00:50:E7</key>
@@ -18441,7 +21379,7 @@
 	<key>00:60:42</key>
 	<string>TKS (USA), INC.</string>
 	<key>00:60:43</key>
-	<string>ComSoft Systems, Inc.</string>
+	<string>iDirect, INC.</string>
 	<key>00:60:44</key>
 	<string>LITTON/POLY-SCIENTIFIC</string>
 	<key>00:60:45</key>
@@ -18677,7 +21615,7 @@
 	<key>00:60:B8</key>
 	<string>CORELIS Inc.</string>
 	<key>00:60:B9</key>
-	<string>NITSUKO CORPORATION</string>
+	<string>NEC Infrontia Corporation</string>
 	<key>00:60:BA</key>
 	<string>SAHARA NETWORKS, INC.</string>
 	<key>00:60:BB</key>
@@ -18955,7 +21893,7 @@
 	<key>00:80:41</key>
 	<string>VEB KOMBINAT ROBOTRON</string>
 	<key>00:80:42</key>
-	<string>FORCE COMPUTERS</string>
+	<string>Emerson Network Power</string>
 	<key>00:80:43</key>
 	<string>NETWORLD, INC.</string>
 	<key>00:80:44</key>
@@ -19013,7 +21951,7 @@
 	<key>00:80:5E</key>
 	<string>LSI LOGIC CORPORATION</string>
 	<key>00:80:5F</key>
-	<string>COMPAQ COMPUTER CORPORATION</string>
+	<string>Hewlett Packard</string>
 	<key>00:80:60</key>
 	<string>NETWORK INTERFACE CORPORATION</string>
 	<key>00:80:61</key>
@@ -19115,7 +22053,7 @@
 	<key>00:80:91</key>
 	<string>TOKYO ELECTRIC CO.,LTD</string>
 	<key>00:80:92</key>
-	<string>JAPAN COMPUTER INDUSTRY, INC.</string>
+	<string>Silex Technology, Inc.</string>
 	<key>00:80:93</key>
 	<string>XYRON CORPORATION</string>
 	<key>00:80:94</key>
@@ -19257,7 +22195,7 @@
 	<key>00:80:D8</key>
 	<string>NETWORK PERIPHERALS INC.</string>
 	<key>00:80:D9</key>
-	<string>EMK ELEKTRONIK</string>
+	<string>EMK Elektronik GmbH &amp; Co. KG</string>
 	<key>00:80:DA</key>
 	<string>BRUEL &amp; KJAER</string>
 	<key>00:80:DB</key>
@@ -19313,7 +22251,7 @@
 	<key>00:80:F4</key>
 	<string>TELEMECANIQUE ELECTRIQUE</string>
 	<key>00:80:F5</key>
-	<string>QUANTEL LTD</string>
+	<string>Quantel Ltd</string>
 	<key>00:80:F6</key>
 	<string>SYNERGY MICROSYSTEMS</string>
 	<key>00:80:F7</key>
@@ -19409,7 +22347,7 @@
 	<key>00:90:24</key>
 	<string>PIPELINKS, INC.</string>
 	<key>00:90:25</key>
-	<string>VISION SYSTEMS LTD. PTY</string>
+	<string>BAE Systems Australia (Electronic Systems) Pty Ltd</string>
 	<key>00:90:26</key>
 	<string>ADVANCED SWITCHING COMMUNICATIONS, INC.</string>
 	<key>00:90:27</key>
@@ -19743,7 +22681,7 @@
 	<key>00:90:CB</key>
 	<string>Wireless OnLine, Inc.</string>
 	<key>00:90:CC</key>
-	<string>PLANET COMMUNICATIONS, INC.</string>
+	<string>Planex Communications</string>
 	<key>00:90:CD</key>
 	<string>ENT-EMPRESA NACIONAL DE TELECOMMUNICACOES, S.A.</string>
 	<key>00:90:CE</key>
@@ -19795,7 +22733,7 @@
 	<key>00:90:E5</key>
 	<string>TEKNEMA, INC.</string>
 	<key>00:90:E6</key>
-	<string>ACER LABORATORIES, INC.</string>
+	<string>ALi Corporation</string>
 	<key>00:90:E7</key>
 	<string>HORSCH ELEKTRONIK AG</string>
 	<key>00:90:E8</key>
@@ -19857,7 +22795,7 @@
 	<key>00:A0:02</key>
 	<string>LEEDS &amp; NORTHRUP AUSTRALIA PTY LTD</string>
 	<key>00:A0:03</key>
-	<string>STAEFA CONTROL SYSTEM</string>
+	<string>Siemens Switzerland Ltd., I B T HVP</string>
 	<key>00:A0:04</key>
 	<string>NETPOWER, INC.</string>
 	<key>00:A0:05</key>
@@ -19961,7 +22899,7 @@
 	<key>00:A0:36</key>
 	<string>APPLIED NETWORK TECHNOLOGY</string>
 	<key>00:A0:37</key>
-	<string>DATASCOPE CORPORATION</string>
+	<string>Mindray DS USA, Inc.</string>
 	<key>00:A0:38</key>
 	<string>EMAIL ELECTRONICS</string>
 	<key>00:A0:39</key>
@@ -19979,7 +22917,7 @@
 	<key>00:A0:3F</key>
 	<string>COMPUTER SOCIETY MICROPROCESSOR &amp; MICROPROCESSOR STANDARDS C</string>
 	<key>00:A0:40</key>
-	<string>APPLE COMPUTER</string>
+	<string>APPLE</string>
 	<key>00:A0:41</key>
 	<string>INFICON</string>
 	<key>00:A0:42</key>
@@ -20115,7 +23053,7 @@
 	<key>00:A0:83</key>
 	<string>ASIMMPHONY TURKEY</string>
 	<key>00:A0:84</key>
-	<string>DATAPLEX PTY. LTD.</string>
+	<string>Dataplex Pty Ltd</string>
 	<key>00:A0:85</key>
 	<string>PRIVATE</string>
 	<key>00:A0:86</key>
@@ -20155,7 +23093,7 @@
 	<key>00:A0:97</key>
 	<string>JC INFORMATION SYSTEMS</string>
 	<key>00:A0:98</key>
-	<string>NETWORK APPLIANCE CORP.</string>
+	<string>NetApp</string>
 	<key>00:A0:99</key>
 	<string>K-NET LTD.</string>
 	<key>00:A0:9A</key>
@@ -20321,7 +23259,7 @@
 	<key>00:A0:EA</key>
 	<string>ETHERCOM CORP.</string>
 	<key>00:A0:EB</key>
-	<string>Encore Networks</string>
+	<string>Encore Networks, Inc.</string>
 	<key>00:A0:EC</key>
 	<string>TRANSMITTON LTD.</string>
 	<key>00:A0:ED</key>
@@ -20529,7 +23467,7 @@
 	<key>00:C0:28</key>
 	<string>JASCO CORPORATION</string>
 	<key>00:C0:29</key>
-	<string>Nexans Deutschland AG - ANS</string>
+	<string>Nexans Deutschland GmbH - ANS</string>
 	<key>00:C0:2A</key>
 	<string>OHKURA ELECTRIC CO., LTD.</string>
 	<key>00:C0:2B</key>
@@ -20625,7 +23563,7 @@
 	<key>00:C0:58</key>
 	<string>DATAEXPERT CORP.</string>
 	<key>00:C0:59</key>
-	<string>NIPPON DENSO CO., LTD.</string>
+	<string>DENSO CORPORATION</string>
 	<key>00:C0:5A</key>
 	<string>SEMAPHORE COMMUNICATIONS CORP.</string>
 	<key>00:C0:5B</key>
@@ -20733,7 +23671,7 @@
 	<key>00:C0:8E</key>
 	<string>NETWORK INFORMATION TECHNOLOGY</string>
 	<key>00:C0:8F</key>
-	<string>Matsushita Electric Works, Ltd.</string>
+	<string>Panasonic Electric Works Co., Ltd.</string>
 	<key>00:C0:90</key>
 	<string>PRAIM S.R.L.</string>
 	<key>00:C0:91</key>
@@ -20811,7 +23749,7 @@
 	<key>00:C0:B5</key>
 	<string>CORPORATE NETWORK SYSTEMS,INC.</string>
 	<key>00:C0:B6</key>
-	<string>Adaptec, Inc.</string>
+	<string>Overland Storage, Inc.</string>
 	<key>00:C0:B7</key>
 	<string>AMERICAN POWER CONVERSION CORP</string>
 	<key>00:C0:B8</key>
@@ -20873,7 +23811,7 @@
 	<key>00:C0:D4</key>
 	<string>AXON NETWORKS, INC.</string>
 	<key>00:C0:D5</key>
-	<string>QUANCOM ELECTRONIC GMBH</string>
+	<string>Werbeagentur J¸rgen Siebert</string>
 	<key>00:C0:D6</key>
 	<string>J1 SYSTEMS, INC.</string>
 	<key>00:C0:D7</key>
@@ -21059,7 +23997,7 @@
 	<key>00:D0:2F</key>
 	<string>VLSI TECHNOLOGY INC.</string>
 	<key>00:D0:30</key>
-	<string>SAFETRAN SYSTEMS CORP.</string>
+	<string>Safetran Systems Corp</string>
 	<key>00:D0:31</key>
 	<string>INDUSTRIAL LOGIC CORPORATION</string>
 	<key>00:D0:32</key>
@@ -21073,7 +24011,7 @@
 	<key>00:D0:36</key>
 	<string>TECHNOLOGY ATLANTA CORP.</string>
 	<key>00:D0:37</key>
-	<string>PHILIPS-DVS-LO BDR</string>
+	<string>Pace France</string>
 	<key>00:D0:38</key>
 	<string>FIVEMERE, LTD.</string>
 	<key>00:D0:39</key>
@@ -21203,7 +24141,7 @@
 	<key>00:D0:77</key>
 	<string>LUCENT TECHNOLOGIES</string>
 	<key>00:D0:78</key>
-	<string>ELTEX OF SWEDEN AB</string>
+	<string>Eltex of Sweden AB</string>
 	<key>00:D0:79</key>
 	<string>CISCO SYSTEMS, INC.</string>
 	<key>00:D0:7A</key>
@@ -21341,7 +24279,7 @@
 	<key>00:D0:BC</key>
 	<string>CISCO SYSTEMS, INC.</string>
 	<key>00:D0:BD</key>
-	<string>SICAN GMBH</string>
+	<string>Silicon Image GmbH</string>
 	<key>00:D0:BE</key>
 	<string>EMUTEC INC.</string>
 	<key>00:D0:BF</key>
@@ -21363,11 +24301,11 @@
 	<key>00:D0:C7</key>
 	<string>PATHWAY, INC.</string>
 	<key>00:D0:C8</key>
-	<string>I/O CONSULTING A/S</string>
+	<string>Prevas A/S</string>
 	<key>00:D0:C9</key>
 	<string>ADVANTECH CO., LTD.</string>
 	<key>00:D0:CA</key>
-	<string>Intrinsyc Software int&apos;l, Inc.</string>
+	<string>Intrinsyc Software International Inc.</string>
 	<key>00:D0:CB</key>
 	<string>DASAN CO., LTD.</string>
 	<key>00:D0:CC</key>
@@ -21463,7 +24401,7 @@
 	<key>00:D0:F9</key>
 	<string>ACUTE COMMUNICATIONS CORP.</string>
 	<key>00:D0:FA</key>
-	<string>RACAL GUARDATA</string>
+	<string>Thales e-Security Ltd.</string>
 	<key>00:D0:FB</key>
 	<string>TEK MICROSYSTEMS, INCORPORATED</string>
 	<key>00:D0:FC</key>
@@ -21507,7 +24445,7 @@
 	<key>00:DD:0F</key>
 	<string>UNGERMANN-BASS INC.</string>
 	<key>00:E0:00</key>
-	<string>FUJITSU, LTD</string>
+	<string>Fujitsu Limited</string>
 	<key>00:E0:01</key>
 	<string>STRAND LIGHTING LIMITED</string>
 	<key>00:E0:02</key>
@@ -21521,7 +24459,7 @@
 	<key>00:E0:06</key>
 	<string>SILICON INTEGRATED SYS. CORP.</string>
 	<key>00:E0:07</key>
-	<string>NETWORK ALCHEMY LTD.</string>
+	<string>Avaya ECS Ltd</string>
 	<key>00:E0:08</key>
 	<string>AMAZING CONTROLS! INC.</string>
 	<key>00:E0:09</key>
@@ -21541,7 +24479,7 @@
 	<key>00:E0:10</key>
 	<string>HESS SB-AUTOMATENBAU GmbH</string>
 	<key>00:E0:11</key>
-	<string>UNIDEN SAN DIEGO R&amp;D CENTER, INC.</string>
+	<string>Uniden Corporation</string>
 	<key>00:E0:12</key>
 	<string>PLUTO TECHNOLOGIES INTERNATIONAL INC.</string>
 	<key>00:E0:13</key>
@@ -21581,7 +24519,7 @@
 	<key>00:E0:24</key>
 	<string>GADZOOX NETWORKS</string>
 	<key>00:E0:25</key>
-	<string>dit CO., LTD.</string>
+	<string>dit Co., Ltd.</string>
 	<key>00:E0:26</key>
 	<string>Redlake MASD LLC</string>
 	<key>00:E0:27</key>
@@ -21613,7 +24551,7 @@
 	<key>00:E0:34</key>
 	<string>CISCO SYSTEMS, INC.</string>
 	<key>00:E0:35</key>
-	<string>LOUGHBOROUGH SOUND IMAGES, PLC</string>
+	<string>Emerson Network Power</string>
 	<key>00:E0:36</key>
 	<string>PIONEER CORPORATION</string>
 	<key>00:E0:37</key>
@@ -21649,7 +24587,7 @@
 	<key>00:E0:46</key>
 	<string>BENTLY NEVADA CORP.</string>
 	<key>00:E0:47</key>
-	<string>INFOCUS SYSTEMS</string>
+	<string>InFocus Corporation</string>
 	<key>00:E0:48</key>
 	<string>SDL COMMUNICATIONS, INC.</string>
 	<key>00:E0:49</key>
@@ -21815,7 +24753,7 @@
 	<key>00:E0:99</key>
 	<string>SAMSON AG</string>
 	<key>00:E0:9A</key>
-	<string>POSITRON INDUSTRIES, INC.</string>
+	<string>Positron Inc.</string>
 	<key>00:E0:9B</key>
 	<string>ENGAGE NETWORKS, INC.</string>
 	<key>00:E0:9C</key>
@@ -21933,7 +24871,7 @@
 	<key>00:E0:D4</key>
 	<string>EXCELLENT COMPUTER</string>
 	<key>00:E0:D5</key>
-	<string>ARCXEL TECHNOLOGIES, INC.</string>
+	<string>Emulex Corporation</string>
 	<key>00:E0:D6</key>
 	<string>COMPUTER &amp; COMMUNICATION RESEARCH LAB.</string>
 	<key>00:E0:D7</key>
@@ -21953,7 +24891,7 @@
 	<key>00:E0:DE</key>
 	<string>DATAX NV</string>
 	<key>00:E0:DF</key>
-	<string>KE KOMMUNIKATIONS-ELECTRONIK</string>
+	<string>KEYMILE GmbH</string>
 	<key>00:E0:E0</key>
 	<string>SI ELECTRONICS, LTD.</string>
 	<key>00:E0:E1</key>
@@ -22063,7 +25001,7 @@
 	<key>08:00:06</key>
 	<string>SIEMENS AG</string>
 	<key>08:00:07</key>
-	<string>APPLE COMPUTER INC.</string>
+	<string>APPLE, INC.</string>
 	<key>08:00:08</key>
 	<string>BOLT BERANEK AND NEWMAN INC.</string>
 	<key>08:00:09</key>
@@ -22187,7 +25125,7 @@
 	<key>08:00:45</key>
 	<string>CONCURRENT COMPUTER CORP.</string>
 	<key>08:00:46</key>
-	<string>SONY CORPORATION LTD.</string>
+	<string>Sony Corporation</string>
 	<key>08:00:47</key>
 	<string>SEQUENT COMPUTER SYSTEMS INC.</string>
 	<key>08:00:48</key>

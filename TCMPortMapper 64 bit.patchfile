@@ -1,0 +1,32 @@
+Index: Port Map.xcodeproj/project.pbxproj
+===================================================================
+--- Port Map.xcodeproj/project.pbxproj	(revision 46)
++++ Port Map.xcodeproj/project.pbxproj	(working copy)
+@@ -1018,22 +1018,20 @@
+ 				GCC_WARN_UNUSED_VARIABLE = YES;
+ 				MACOSX_DEPLOYMENT_TARGET = 10.4;
+ 				PREBINDING = NO;
+-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
++				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+ 			};
+ 			name = Debug;
+ 		};
+ 		C01FCF5008A954540054247B /* Release */ = {
+ 			isa = XCBuildConfiguration;
+ 			buildSettings = {
+-				ARCHS = (
+-					ppc,
+-					i386,
+-				);
++				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
++				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "ppc i386 ppc64 x86_64";
+ 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+ 				GCC_WARN_UNUSED_VARIABLE = YES;
+-				MACOSX_DEPLOYMENT_TARGET = 10.4;
++				MACOSX_DEPLOYMENT_TARGET = 10.5;
+ 				PREBINDING = NO;
+-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
++				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+ 			};
+ 			name = Release;
+ 		};
