@@ -4,6 +4,8 @@
 #import <SystemConfiguration/SCSchemaDefinitions.h>
 #import "NSNotificationCenterThreadingAdditions.h"
 
+#define PREFIX_MATCH_MIN_LENGTH 6
+
 //static void PrintHeader(void)
 //    // Prints an explanation of the flag coding.
 //{
@@ -97,6 +99,7 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
 		NSString *appComponent = [descriptionComponents componentsJoinedByString:@"."];
 		[descriptionComponents removeAllObjects];
 		// there seems to be a hard limit of 40 characters at in the vigor routers - so length is of essence
+		// however since there seems to be a hard limit of 11 at at least one other router we need to take further action
 		int maxLength = 40;
 		maxLength -= [prefix length];
 		maxLength -= [userID length];
@@ -112,11 +115,24 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
         }
 
 		if (!description) {
+			// hash all that stuff again and put it up in front (at least 6 characters) so wen can rely on prefix matches for routers that are bad bad boys and support only very few characters as description. but keep the rest to stay descriptive for debugging.
+			NSString *preliminaryDescription = [descriptionComponents componentsJoinedByString:@"."];
+			NSString *hashString = [TCMPortMapper sizereducableHashOfString:preliminaryDescription];
+			if ([hashString length] > PREFIX_MATCH_MIN_LENGTH) hashString = [hashString substringToIndex:PREFIX_MATCH_MIN_LENGTH];
+			[descriptionComponents insertObject:hashString atIndex:0];
 	        description = [[descriptionComponents componentsJoinedByString:@"."] retain];
 //			NSLog(@"%s description: %@",__FUNCTION__,description);
 		}
     }
     return description;
+}
+
+- (BOOL)doesPortMappingDescriptionBelongToMe:(NSString *)inDescription {
+	NSString *myDescription = [self portMappingDescription];
+	BOOL result = ([inDescription length] >= PREFIX_MATCH_MIN_LENGTH && 
+			([myDescription hasPrefix:inDescription] || [inDescription isEqualToString:[myDescription substringFromIndex:PREFIX_MATCH_MIN_LENGTH +1]])); // second part of the OR is for backwards compatibility only
+//	NSLog(@"%s %@ vs %@ : %@ (%@)",__FUNCTION__,myDescription,inDescription,result?@"YES":@"NO",[myDescription substringFromIndex:PREFIX_MATCH_MIN_LENGTH +1]);
+	return result;
 }
 
 - (void)postDidEndWorkingNotification {
@@ -390,7 +406,7 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
                     portMappingDescription,@"description",
                 nil]
             ];
-            if ([portMappingDescription isEqualToString:[self portMappingDescription]] && 
+            if ([self doesPortMappingDescriptionBelongToMe:portMappingDescription] && 
                 [ipAddress isEqualToString:[pm localIPAddress]]) {
                 NSString *transportProtocol = [NSString stringWithUTF8String:protocol];
                 // check if we want this mapping, if not remove it, if yes set mapping status
@@ -413,6 +429,7 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
                         }
                     }
                 }
+//                NSLog(@"%s -------------> about to %@ port mapping %@",__FUNCTION__,isWanted?@"KEEP":@"DELETE",portMappingDescription);
                 if (!isWanted) {
                      r=UPNP_DeletePortMapping(_urls.controlURL, _igddata.servicetype,extPort,protocol,NULL);
                      if (r==UPNPCOMMAND_SUCCESS) i--;

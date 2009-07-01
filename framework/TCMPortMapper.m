@@ -306,17 +306,22 @@ enum {
     return [[_userID retain] autorelease];
 }
 
-- (void)hashUserID:(NSString *)aUserIDToHash {
-    // md5 has the username and take the first 8 bytes as hex
++ (NSString *)sizereducableHashOfString:(NSString *)inString {
     unsigned char digest[16];
-    char hashstring[32];
+    char hashstring[16*2+1];
     int i;
-    NSData *userNameData = [aUserIDToHash dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
-    MD5([userNameData bytes],[userNameData length],digest);
-    for(i=0;i<8;i++) sprintf(hashstring+i*2,"%02x",digest[i]);
+    NSData *dataToHash = [inString dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
+    MD5([dataToHash bytes],[dataToHash length],digest);
+    for(i=0;i<16;i++) sprintf(hashstring+i*2,"%02x",digest[i]);
     hashstring[i*2]=0;
     
-    [self setUserID:[NSString stringWithUTF8String:hashstring]];
+    return [NSString stringWithUTF8String:hashstring];
+}
+
+- (void)hashUserID:(NSString *)aUserIDToHash {
+	NSString *hashString = [TCMPortMapper sizereducableHashOfString:aUserIDToHash];
+	if ([hashString length] > 16) hashString = [hashString substringToIndex:16];
+    [self setUserID:hashString];
 }
 
 - (void)setUserID:(NSString *)aUserID {
