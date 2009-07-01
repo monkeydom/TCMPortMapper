@@ -272,10 +272,10 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
     [aPortMapping setMappingStatus:TCMPortMappingStatusTrying];
     if (shouldRemove) {
         if ([aPortMapping transportProtocol] & TCMPortMappingTransportProtocolTCP) {
-            UPNP_DeletePortMapping(aURLs->controlURL, aIGDData->servicetype,[[NSString stringWithFormat:@"%d",[aPortMapping externalPort]] UTF8String], "TCP");
+            UPNP_DeletePortMapping(aURLs->controlURL, aIGDData->servicetype,[[NSString stringWithFormat:@"%d",[aPortMapping externalPort]] UTF8String], "TCP",NULL);
         }
         if ([aPortMapping transportProtocol] & TCMPortMappingTransportProtocolUDP) {
-            UPNP_DeletePortMapping(aURLs->controlURL, aIGDData->servicetype,[[NSString stringWithFormat:@"%d",[aPortMapping externalPort]] UTF8String], "UDP");
+            UPNP_DeletePortMapping(aURLs->controlURL, aIGDData->servicetype,[[NSString stringWithFormat:@"%d",[aPortMapping externalPort]] UTF8String], "UDP",NULL);
         }
         [aPortMapping setMappingStatus:TCMPortMappingStatusUnmapped];
         return YES;
@@ -289,7 +289,7 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
                     while ([aExternalPortSet containsIndex:mappedPort] && mappedPort<[aPortMapping desiredExternalPort]+40) {
                         mappedPort++;
                     }
-                    r = UPNP_AddPortMapping(aURLs->controlURL, aIGDData->servicetype,[[NSString stringWithFormat:@"%d",mappedPort] UTF8String],[[NSString stringWithFormat:@"%d",[aPortMapping localPort]] UTF8String], [[[TCMPortMapper sharedInstance] localIPAddress] UTF8String], [[self portMappingDescription] UTF8String], protocol==TCMPortMappingTransportProtocolUDP?"UDP":"TCP");
+                    r = UPNP_AddPortMapping(aURLs->controlURL, aIGDData->servicetype,[[NSString stringWithFormat:@"%d",mappedPort] UTF8String],[[NSString stringWithFormat:@"%d",[aPortMapping localPort]] UTF8String], [[[TCMPortMapper sharedInstance] localIPAddress] UTF8String], [[self portMappingDescription] UTF8String], protocol==TCMPortMappingTransportProtocolUDP?"UDP":"TCP",NULL);
                     if (r!=UPNPCOMMAND_SUCCESS) {
                         NSString *errorString = [NSString stringWithFormat:@"%d",r];
                         switch (r) {
@@ -299,7 +299,7 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
                                 NSLog(@"%s mapping of external port %d failed, trying %d next",__FUNCTION__,mappedPort,mappedPort+1);
 #endif
                                 if (protocol == TCMPortMappingTransportProtocolTCP && ([aPortMapping transportProtocol] & TCMPortMappingTransportProtocolUDP)) {
-                                    UPNP_DeletePortMapping(aURLs->controlURL, aIGDData->servicetype,[[NSString stringWithFormat:@"%d",mappedPort] UTF8String], "UDP");
+                                    UPNP_DeletePortMapping(aURLs->controlURL, aIGDData->servicetype,[[NSString stringWithFormat:@"%d",mappedPort] UTF8String], "UDP",NULL);
                                     protocol = TCMPortMappingTransportProtocolUDP;
                                 }
                                 mappedPort++;
@@ -414,7 +414,7 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
                     }
                 }
                 if (!isWanted) {
-                     r=UPNP_DeletePortMapping(_urls.controlURL, _igddata.servicetype,extPort,protocol);
+                     r=UPNP_DeletePortMapping(_urls.controlURL, _igddata.servicetype,extPort,protocol,NULL);
                      if (r==UPNPCOMMAND_SUCCESS) i--;
                 }
             } else {
@@ -465,7 +465,7 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
         
         char *publicPort = (char *)[[NSString stringWithFormat:@"%d",[[mappingToRemove objectForKey:@"publicPort"] intValue]] UTF8String];
         char *protocol = (char *)[[mappingToRemove objectForKey:@"protocol"] UTF8String];
-        UPNP_DeletePortMapping(_urls.controlURL,_igddata.servicetype,publicPort,protocol);
+        UPNP_DeletePortMapping(_urls.controlURL,_igddata.servicetype,publicPort,protocol,NULL);
         
         @synchronized (upnpRemoveSet) {
             [upnpRemoveSet removeObject:mappingToRemove];
@@ -533,7 +533,7 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
 		        	if (protocol & [mapping transportProtocol]) {
 						UPNP_DeletePortMapping(_urls.controlURL, _igddata.servicetype, 
 											   [[NSString stringWithFormat:@"%d",[mapping externalPort]] UTF8String], 
-											   (protocol==TCMPortMappingTransportProtocolUDP)?"UDP":"TCP");
+											   (protocol==TCMPortMappingTransportProtocolUDP)?"UDP":"TCP",NULL);
 					}
 				}
 				[mapping setMappingStatus:TCMPortMappingStatusUnmapped];

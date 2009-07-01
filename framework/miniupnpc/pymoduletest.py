@@ -6,6 +6,7 @@
 
 # import the python miniupnpc module
 import miniupnpc
+import sys
 
 # create the object
 u = miniupnpc.UPnP()
@@ -24,13 +25,14 @@ try:
   u.selectigd()
 except Exception, e:
   print 'Exception :', e
+  sys.exit(1)
 # display information about the IGD and the internet connection
 print 'local ip address :', u.lanaddr
 print 'external ip address :', u.externalipaddress()
 print u.statusinfo(), u.connectiontype()
 
 #print u.addportmapping(64000, 'TCP',
-#                       '192.168.1.166', 63000, 'port mapping test')
+#                       '192.168.1.166', 63000, 'port mapping test', '')
 #print u.deleteportmapping(64000, 'TCP')
 
 port = 0

@@ -1,4 +1,4 @@
-/* $Id: miniupnpcmodule.c,v 1.10 2008/09/25 18:02:50 nanard Exp $*/
+/* $Id: miniupnpcmodule.c,v 1.13 2009/04/17 20:59:42 nanard Exp $*/
 /* Project : miniupnp
  * Author : Thomas BERNARD
  * website : http://miniupnp.tuxfamily.org/
@@ -188,7 +188,8 @@ UPnP_externalipaddress(UPnPObject *self)
 	}
 }
 
-/* AddPortMapping(externalPort, protocol, internalHost, internalPort, desc) 
+/* AddPortMapping(externalPort, protocol, internalHost, internalPort, desc,
+ *                remoteHost) 
  * protocol is 'UDP' or 'TCP' */
 static PyObject *
 UPnP_addportmapping(UPnPObject *self, PyObject *args)
@@ -200,14 +201,15 @@ UPnP_addportmapping(UPnPObject *self, PyObject *args)
 	const char * proto;
 	const char * host;
 	const char * desc;
+	const char * remoteHost;
 	int r;
-	if (!PyArg_ParseTuple(args, "HssHs", &ePort, &proto,
-	                                     &host, &iPort, &desc))
+	if (!PyArg_ParseTuple(args, "HssHss", &ePort, &proto,
+	                                     &host, &iPort, &desc, &remoteHost))
         return NULL;
 	sprintf(extPort, "%hu", ePort);
 	sprintf(inPort, "%hu", iPort);
 	r = UPNP_AddPortMapping(self->urls.controlURL, self->data.servicetype,
-	                        extPort, inPort, host, desc, proto);
+	                        extPort, inPort, host, desc, proto, remoteHost);
 	if(r==UPNPCOMMAND_SUCCESS)
 	{
 		Py_RETURN_TRUE;
@@ -223,7 +225,7 @@ UPnP_addportmapping(UPnPObject *self, PyObject *args)
 	}
 }
 
-/* DeletePortMapping(extPort, proto)
+/* DeletePortMapping(extPort, proto, removeHost='')
  * proto = 'UDP', 'TCP' */
 static PyObject *
 UPnP_deleteportmapping(UPnPObject *self, PyObject *args)
@@ -231,12 +233,13 @@ UPnP_deleteportmapping(UPnPObject *self, PyObject *args)
 	char extPort[6];
 	unsigned short ePort;
 	const char * proto;
+	const char * remoteHost = "";
 	int r;
-	if(!PyArg_ParseTuple(args, "Hs", &ePort, &proto))
+	if(!PyArg_ParseTuple(args, "Hs|z", &ePort, &proto, &remoteHost))
 		return NULL;
 	sprintf(extPort, "%hu", ePort);
 	r = UPNP_DeletePortMapping(self->urls.controlURL, self->data.servicetype,
-	                           extPort, proto);
+	                           extPort, proto, remoteHost);
 	if(r==UPNPCOMMAND_SUCCESS) {
 		Py_RETURN_TRUE;
 	} else {

@@ -1,4 +1,4 @@
-/* $Id: upnpcommands.h,v 1.14 2008/09/25 18:02:50 nanard Exp $ */
+/* $Id: upnpcommands.h,v 1.17 2009/04/17 21:21:19 nanard Exp $ */
 /* Miniupnp project : http://miniupnp.free.fr/
  * Author : Thomas Bernard
  * Copyright (c) 2005-2008 Thomas Bernard
@@ -19,19 +19,27 @@
 extern "C" {
 #endif
 
-LIBSPEC unsigned int
+#if (defined __STDC_VERSION__ && __STDC_VERSION__ >= 199901L)
+#define UNSIGNED_INTEGER unsigned long long
+#define STRTOUI	strtoull
+#else
+#define UNSIGNED_INTEGER unsigned int
+#define STRTOUI	strtoul
+#endif
+
+LIBSPEC UNSIGNED_INTEGER
 UPNP_GetTotalBytesSent(const char * controlURL,
 					const char * servicetype);
 
-LIBSPEC unsigned int
+LIBSPEC UNSIGNED_INTEGER
 UPNP_GetTotalBytesReceived(const char * controlURL,
 						const char * servicetype);
 
-LIBSPEC unsigned int
+LIBSPEC UNSIGNED_INTEGER
 UPNP_GetTotalPacketsSent(const char * controlURL,
 					const char * servicetype);
 
-LIBSPEC unsigned int
+LIBSPEC UNSIGNED_INTEGER
 UPNP_GetTotalPacketsReceived(const char * controlURL,
 					const char * servicetype);
 
@@ -86,6 +94,8 @@ UPNP_GetLinkLayerMaxBitRates(const char* controlURL,
 							unsigned int * bitrateUp);
 
 /* UPNP_AddPortMapping()
+ * if desc is NULL, it will be defaulted to "libminiupnpc"
+ * remoteHost is usually NULL because IGD don't support it.
  *
  * Return values :
  * 0 : SUCCESS
@@ -114,9 +124,12 @@ UPNP_AddPortMapping(const char * controlURL, const char * servicetype,
 				    const char * inPort,
 					const char * inClient,
 					const char * desc,
-                    const char * proto);
+                    const char * proto,
+                    const char * remoteHost);
 
 /* UPNP_DeletePortMapping()
+ * Use same argument values as what was used for AddPortMapping().
+ * remoteHost is usually NULL because IGD don't support it.
  * Return Values :
  * 0 : SUCCESS
  * NON ZERO : error. Either an UPnP error code or an undefined error.
@@ -126,7 +139,8 @@ UPNP_AddPortMapping(const char * controlURL, const char * servicetype,
  * 714 NoSuchEntryInArray - The specified value does not exist in the array */
 LIBSPEC int
 UPNP_DeletePortMapping(const char * controlURL, const char * servicetype,
-                       const char * extPort, const char * proto);
+                       const char * extPort, const char * proto,
+                       const char * remoteHost);
 
 /* UPNP_GetPortMappingNumberOfEntries()
  * not supported by all routers */

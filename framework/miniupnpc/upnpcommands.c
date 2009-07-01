@@ -1,7 +1,7 @@
-/* $Id: upnpcommands.c,v 1.19 2008/02/18 13:27:23 nanard Exp $ */
+/* $Id: upnpcommands.c,v 1.24 2009/04/17 21:21:19 nanard Exp $ */
 /* Project : miniupnp
  * Author : Thomas Bernard
- * Copyright (c) 2005 Thomas Bernard
+ * Copyright (c) 2005-2009 Thomas Bernard
  * This software is subject to the conditions detailed in the
  * LICENCE file provided in this distribution.
  * */
@@ -11,15 +11,15 @@
 #include "upnpcommands.h"
 #include "miniupnpc.h"
 
-static unsigned int
+static UNSIGNED_INTEGER
 my_atoui(const char * s)
 {
-	return s ? ((unsigned int)strtoul(s, NULL, 0)) : 0;
+	return s ? ((UNSIGNED_INTEGER)STRTOUI(s, NULL, 0)) : 0;
 }
 
 /*
  * */
-unsigned int
+UNSIGNED_INTEGER
 UPNP_GetTotalBytesSent(const char * controlURL,
 					const char * servicetype)
 {
@@ -39,7 +39,7 @@ UPNP_GetTotalBytesSent(const char * controlURL,
 
 /*
  * */
-unsigned int
+UNSIGNED_INTEGER
 UPNP_GetTotalBytesReceived(const char * controlURL,
 						const char * servicetype)
 {
@@ -59,7 +59,7 @@ UPNP_GetTotalBytesReceived(const char * controlURL,
 
 /*
  * */
-unsigned int
+UNSIGNED_INTEGER
 UPNP_GetTotalPacketsSent(const char * controlURL,
 						const char * servicetype)
 {
@@ -79,7 +79,7 @@ UPNP_GetTotalPacketsSent(const char * controlURL,
 
 /*
  * */
-unsigned int
+UNSIGNED_INTEGER
 UPNP_GetTotalPacketsReceived(const char * controlURL,
 						const char * servicetype)
 {
@@ -303,7 +303,8 @@ UPNP_AddPortMapping(const char * controlURL, const char * servicetype,
 					const char * inPort,
 					const char * inClient,
 					const char * desc,
-					const char * proto)
+					const char * proto,
+                    const char * remoteHost)
 {
 	struct UPNParg * AddPortMappingArgs;
 	char buffer[4096];
@@ -317,6 +318,7 @@ UPNP_AddPortMapping(const char * controlURL, const char * servicetype,
 
 	AddPortMappingArgs = calloc(9, sizeof(struct UPNParg));
 	AddPortMappingArgs[0].elt = "NewRemoteHost";
+	AddPortMappingArgs[0].val = remoteHost;
 	AddPortMappingArgs[1].elt = "NewExternalPort";
 	AddPortMappingArgs[1].val = extPort;
 	AddPortMappingArgs[2].elt = "NewProtocol";
@@ -351,7 +353,8 @@ UPNP_AddPortMapping(const char * controlURL, const char * servicetype,
 
 int
 UPNP_DeletePortMapping(const char * controlURL, const char * servicetype,
-                       const char * extPort, const char * proto)
+                       const char * extPort, const char * proto,
+                       const char * remoteHost)
 {
 	/*struct NameValueParserData pdata;*/
 	struct UPNParg * DeletePortMappingArgs;
@@ -366,6 +369,7 @@ UPNP_DeletePortMapping(const char * controlURL, const char * servicetype,
 
 	DeletePortMappingArgs = calloc(4, sizeof(struct UPNParg));
 	DeletePortMappingArgs[0].elt = "NewRemoteHost";
+	DeletePortMappingArgs[0].val = remoteHost;
 	DeletePortMappingArgs[1].elt = "NewExternalPort";
 	DeletePortMappingArgs[1].val = extPort;
 	DeletePortMappingArgs[2].elt = "NewProtocol";
@@ -484,7 +488,7 @@ int UPNP_GetPortMappingNumberOfEntries(const char * controlURL, const char * ser
  	char* p;
 	int ret = UPNPCOMMAND_UNKNOWN_ERROR;
  	simpleUPnPcommand(-1, controlURL, servicetype, "GetPortMappingNumberOfEntries", 0, buffer, &bufsize);
-#ifndef NDEBUG
+#ifdef DEBUG
 	DisplayNameValueList(buffer, bufsize);
 #endif
  	ParseNameValue(buffer, bufsize, &pdata);

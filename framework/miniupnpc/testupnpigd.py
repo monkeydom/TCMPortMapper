@@ -1,5 +1,5 @@
 #! /usr/bin/python
-# $Id: testupnpigd.py,v 1.2 2008/04/27 17:25:20 nanard Exp $
+# $Id: testupnpigd.py,v 1.4 2008/10/11 10:27:20 nanard Exp $
 # MiniUPnP project
 # Author : Thomas Bernard
 # This Sample code is public domain.
@@ -61,17 +61,24 @@ try:
 
 	print 'trying to redirect %s port %u TCP => %s port %u TCP' % (externalipaddress, eport, u.lanaddr, httpd.server_port)
 
-	print u.addportmapping(eport, 'TCP', u.lanaddr, httpd.server_port,
-	                       'UPnP IGD Tester port %u' % eport)
-
-	try:
-		httpd.handle_request()
-		httpd.server_close()
-	except KeyboardInterrupt, details:
-		print "CTRL-C exception!", details
+	b = u.addportmapping(eport, 'TCP', u.lanaddr, httpd.server_port,
+	                    'UPnP IGD Tester port %u' % eport, '')
+	if b:
+		print 'Success. Now waiting for some HTTP request on http://%s:%u' % (externalipaddress ,eport)
+		try:
+			httpd.handle_request()
+			httpd.server_close()
+		except KeyboardInterrupt, details:
+			print "CTRL-C exception!", details
+		b = u.deleteportmapping(eport, 'TCP')
+		if b:
+			print 'Successfully deleted port mapping'
+		else:
+			print 'Failed to remove port mapping'
+	else:
+		print 'Failed'
 
 	httpd.server_close()
-	print u.deleteportmapping(eport, 'TCP')
 
 except Exception, e:
 	print 'Exception :', e

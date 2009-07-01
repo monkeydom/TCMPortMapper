@@ -1,4 +1,4 @@
-/* $Id: upnpc.c,v 1.63 2008/09/25 18:02:50 nanard Exp $ */
+/* $Id: upnpc.c,v 1.65 2008/10/14 18:05:27 nanard Exp $ */
 /* Project : miniupnp
  * Author : Thomas Bernard
  * Copyright (c) 2005-2008 Thomas Bernard
@@ -168,7 +168,7 @@ static void SetRedirectAndTest(struct UPNPUrls * urls,
 		printf("GetExternalIPAddress failed.\n");
 	
 	r = UPNP_AddPortMapping(urls->controlURL, data->servicetype,
-	                        eport, iport, iaddr, 0, proto);
+	                        eport, iport, iaddr, 0, proto, 0);
 	if(r!=UPNPCOMMAND_SUCCESS)
 		printf("AddPortMapping(%s, %s, %s) failed with code %d\n",
 		       eport, iport, iaddr, r);
@@ -205,7 +205,7 @@ RemoveRedirect(struct UPNPUrls * urls,
 		fprintf(stderr, "protocol invalid\n");
 		return;
 	}
-	r = UPNP_DeletePortMapping(urls->controlURL, data->servicetype, eport, proto);
+	r = UPNP_DeletePortMapping(urls->controlURL, data->servicetype, eport, proto, 0);
 	printf("UPNP_DeletePortMapping() returned : %d\n", r);
 }
 

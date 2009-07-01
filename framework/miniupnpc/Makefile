@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.45 2008/10/06 22:05:26 nanard Exp $
+# $Id: Makefile,v 1.48 2008/12/18 17:46:13 nanard Exp $
 # MiniUPnP Project
 # http://miniupnp.free.fr/
 # (c) 2005-2007 Thomas Bernard
@@ -8,16 +8,16 @@
 # $ INSTALLPREFIX=/usr/local make install
 # or 
 # make install (will go to /usr/bin, /usr/lib, etc...)
-CC = gcc
+CC ?= gcc
 #AR = gar
 #CFLAGS = -fPIC -O -Wall -g -DDEBUG
-CFLAGS = -fPIC -O -Wall -DNDEBUG
+CFLAGS ?= -fPIC -O -Wall -DNDEBUG
 INSTALL = install
 #following libs are needed on Solaris
 #LDLIBS=-lsocket -lnsl -lresolv
 
 # APIVERSION is used to build SONAME
-APIVERSION = 3
+APIVERSION = 4
 
 SRCS = igd_desc_parse.c miniupnpc.c minixml.c minisoap.c miniwget.c \
        upnpc.c upnpcommands.c upnpreplyparse.c testminixml.c \
@@ -112,8 +112,8 @@ igd_desc_parse.o: igd_desc_parse.h
 miniupnpc.o: miniupnpc.h declspec.h igd_desc_parse.h minissdpc.h miniwget.h
 miniupnpc.o: minisoap.h minixml.h upnpcommands.h upnpreplyparse.h
 minixml.o: minixml.h
-minisoap.o: minisoap.h
-miniwget.o: miniupnpc.h declspec.h igd_desc_parse.h
+minisoap.o: minisoap.h miniupnpcstrings.h
+miniwget.o: miniupnpc.h declspec.h igd_desc_parse.h miniupnpcstrings.h
 upnpc.o: miniwget.h declspec.h miniupnpc.h igd_desc_parse.h upnpcommands.h
 upnpc.o: upnpreplyparse.h upnperrors.h
 upnpcommands.o: upnpcommands.h upnpreplyparse.h declspec.h miniupnpc.h

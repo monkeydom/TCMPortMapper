@@ -1,5 +1,27 @@
-$Id: Changelog.txt,v 1.73 2008/10/07 13:51:50 nanard Exp $
+$Id: Changelog.txt,v 1.80 2009/04/17 21:21:19 nanard Exp $
 miniUPnP client Changelog.
+
+2009/04/17:
+  updating python module
+  Use strtoull() when using C99
+
+2009/02/28:
+  Fixed miniwget.c for compiling under sun
+
+2008/12/18:
+  cleanup in Makefile (thanks to Paul de Weerd)
+  minissdpc.c : win32 compatibility
+  miniupnpc.c : changed xmlns prefix from 'm' to 'u'
+  Removed NDEBUG (using DEBUG)
+
+2008/10/14:
+  Added the ExternalHost argument to DeletePortMapping()
+
+2008/10/11:
+  Added the ExternalHost argument to AddPortMapping()
+  Put a correct User-Agent: header in HTTP requests.
+
+VERSION 1.2 :
 
 2008/10/07:
   Update docs
