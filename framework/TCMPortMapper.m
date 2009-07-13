@@ -815,7 +815,7 @@ enum {
         // we have to check if the sender is actually our router - if not disregard
         if ([senderIPAddress isEqualToString:[self routerIPAddress]]) {
             if (![[self externalIPAddress] isEqualToString:[userInfo objectForKey:@"externalIPAddress"]]) {
-                NSLog(@"Refreshing because of  NAT-PMP-Device external IP broadcast:%@",userInfo);
+//                NSLog(@"Refreshing because of  NAT-PMP-Device external IP broadcast:%@",userInfo);
                 [self refresh];
             }
         } else {
