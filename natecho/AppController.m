@@ -113,21 +113,23 @@
 }
 
 - (void)stream:(NSStream *)theStream handleEvent:(NSStreamEvent)streamEvent {
-    NSLog(@"%s %@ %d",__FUNCTION__,theStream,streamEvent);
+    NSLog(@"%s %@ %ld",__FUNCTION__, theStream, (long)streamEvent);
     NSInputStream *inputStream = (NSInputStream *)theStream;
     switch(streamEvent) {
-    case NSStreamEventHasBytesAvailable:
-        if ([inputStream hasBytesAvailable]) {
-            unsigned char buffer[4097];
-            int length = [inputStream read:buffer maxLength:4096];
-            if (length) {
-                buffer[length]=0;
-                NSLog(@"%s %s",__FUNCTION__,buffer);
-                NSOutputStream *outputStream = [I_streamsArray objectAtIndex:[I_streamsArray indexOfObjectIdenticalTo:inputStream]+1];
-                [outputStream write:buffer maxLength:length];
+        case NSStreamEventHasBytesAvailable:
+            if ([inputStream hasBytesAvailable]) {
+                unsigned char buffer[4097];
+                int length = [inputStream read:buffer maxLength:4096];
+                if (length) {
+                    buffer[length]=0;
+                    NSLog(@"%s %s",__FUNCTION__,buffer);
+                    NSOutputStream *outputStream = [I_streamsArray objectAtIndex:[I_streamsArray indexOfObjectIdenticalTo:inputStream]+1];
+                    [outputStream write:buffer maxLength:length];
+                }
             }
-        }
-        break;
+            break;
+        default:
+            break;
     }
 }
 

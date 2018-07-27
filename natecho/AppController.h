@@ -8,7 +8,7 @@
 #import <Cocoa/Cocoa.h>
 #import "TCPServer.h"
 
-@interface AppController : NSObject {
+@interface AppController : NSObject <NSStreamDelegate> {
     IBOutlet NSTextField *O_portTextField;
     IBOutlet NSButton    *O_startStopButton;
     IBOutlet NSImageView *O_serverStatusImageView;
