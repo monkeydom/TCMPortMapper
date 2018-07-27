@@ -69,7 +69,9 @@ void IGDdata(void * d, const char * data, int l)
            datas->level, datas->cureltname, l, data);	*/
 	if( !strcmp(datas->cureltname, "URLBase") )
 		dstmember = datas->urlbase;
-	else if( !strcmp(datas->cureltname, "presentationURL") )
+    else if (!strcmp(datas->cureltname, "modelDescription") && datas->level <= 3)
+        dstmember = datas->tmp.modeldescription;
+    else if( !strcmp(datas->cureltname, "presentationURL") )
 		dstmember = datas->presentationurl;
 	else if( !strcmp(datas->cureltname, "serviceType") )
 		dstmember = datas->tmp.servicetype;

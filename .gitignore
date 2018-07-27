@@ -41,3 +41,7 @@ fastlane/report.xml
 
 # Rbenv
 .ruby-version
+
+# built stuff
+*.o
+*.a

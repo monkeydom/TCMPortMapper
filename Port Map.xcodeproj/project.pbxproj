@@ -95,6 +95,11 @@
 		F2D731D10D5B607D00CBD1D8 /* TCMPortMappingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D731D00D5B607D00CBD1D8 /* TCMPortMappingAdditions.m */; };
 		F2D731EA0D5B768300CBD1D8 /* Presets.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2D731E90D5B768300CBD1D8 /* Presets.plist */; };
 		F2DF5518210B6BDA0071DF2D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F2DF5517210B6BDA0071DF2D /* LICENSE */; };
+		F2DF551A210B76240071DF2D /* portlistingparse.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5519210B76240071DF2D /* portlistingparse.c */; };
+		F2DF551D210B76FD0071DF2D /* listdevices.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF551C210B76FD0071DF2D /* listdevices.c */; };
+		F2DF551F210B77440071DF2D /* upnpdev.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF551E210B77440071DF2D /* upnpdev.c */; };
+		F2DF5521210B776B0071DF2D /* receivedata.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5520210B776B0071DF2D /* receivedata.c */; };
+		F2DF5523210B780D0071DF2D /* connecthostport.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5522210B780D0071DF2D /* connecthostport.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,16 +194,9 @@
 		F217EF200D6082B40028E112 /* TCPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCPServer.h; path = natecho/TCPServer.h; sourceTree = "<group>"; };
 		F217EF210D6082B40028E112 /* TCPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCPServer.m; path = natecho/TCPServer.m; sourceTree = "<group>"; };
 		F21B76970DB73CFC00942BC0 /* upnpc-static */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "upnpc-static"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2301B010D685C1B00728699 /* bsdqueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bsdqueue.h; sourceTree = "<group>"; };
 		F2301B020D685C1B00728699 /* Changelog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Changelog.txt; sourceTree = "<group>"; };
-		F2301B030D685C1B00728699 /* declspec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = declspec.h; sourceTree = "<group>"; };
 		F2301B040D685C1B00728699 /* igd_desc_parse.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = igd_desc_parse.c; sourceTree = "<group>"; };
 		F2301B050D685C1B00728699 /* igd_desc_parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = igd_desc_parse.h; sourceTree = "<group>"; };
-		F2301B070D685C1B00728699 /* libminiupnpc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libminiupnpc.a; sourceTree = "<group>"; };
-		F2301B080D685C1B00728699 /* LICENCE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE; sourceTree = "<group>"; };
-		F2301B090D685C1B00728699 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		F2301B0A0D685C1B00728699 /* Makefile.mingw */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.mingw; sourceTree = "<group>"; };
-		F2301B0C0D685C1B00728699 /* miniupnpc.3 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = miniupnpc.3; sourceTree = "<group>"; };
 		F2301B0E0D685C1B00728699 /* minisoap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = minisoap.c; sourceTree = "<group>"; };
 		F2301B0F0D685C1B00728699 /* minisoap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = minisoap.h; sourceTree = "<group>"; };
 		F2301B110D685C1B00728699 /* minissdpc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = minissdpc.c; sourceTree = "<group>"; };
@@ -211,10 +209,7 @@
 		F2301B1B0D685C1B00728699 /* minixml.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = minixml.c; sourceTree = "<group>"; };
 		F2301B1C0D685C1B00728699 /* minixml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = minixml.h; sourceTree = "<group>"; };
 		F2301B1F0D685C1B00728699 /* minixmlvalid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = minixmlvalid.c; sourceTree = "<group>"; };
-		F2301B210D685C1B00728699 /* pymoduletest.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = pymoduletest.py; sourceTree = "<group>"; };
 		F2301B220D685C1B00728699 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
-		F2301B230D685C1B00728699 /* setup.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = setup.py; sourceTree = "<group>"; };
-		F2301B240D685C1B00728699 /* setupmingw32.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = setupmingw32.py; sourceTree = "<group>"; };
 		F2301B250D685C1B00728699 /* testminixml.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = testminixml.c; sourceTree = "<group>"; };
 		F2301B260D685C1B00728699 /* testupnpreplyparse.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = testupnpreplyparse.c; sourceTree = "<group>"; };
 		F2301B280D685C1B00728699 /* upnpc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = upnpc.c; sourceTree = "<group>"; };
@@ -282,6 +277,12 @@
 		F2D731E90D5B768300CBD1D8 /* Presets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Presets.plist; path = portmap/Presets.plist; sourceTree = "<group>"; };
 		F2DF5511210B55EB0071DF2D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F2DF5517210B6BDA0071DF2D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F2DF5519210B76240071DF2D /* portlistingparse.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = portlistingparse.c; sourceTree = "<group>"; };
+		F2DF551B210B76910071DF2D /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F2DF551C210B76FD0071DF2D /* listdevices.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = listdevices.c; sourceTree = "<group>"; };
+		F2DF551E210B77440071DF2D /* upnpdev.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = upnpdev.c; sourceTree = "<group>"; };
+		F2DF5520210B776B0071DF2D /* receivedata.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = receivedata.c; sourceTree = "<group>"; };
+		F2DF5522210B780D0071DF2D /* connecthostport.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = connecthostport.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -419,16 +420,12 @@
 		F2301B000D685C1B00728699 /* miniupnpc */ = {
 			isa = PBXGroup;
 			children = (
-				F2301B010D685C1B00728699 /* bsdqueue.h */,
 				F2301B020D685C1B00728699 /* Changelog.txt */,
-				F2301B030D685C1B00728699 /* declspec.h */,
+				F2DF551B210B76910071DF2D /* LICENSE */,
+				F2DF5522210B780D0071DF2D /* connecthostport.c */,
 				F2301B040D685C1B00728699 /* igd_desc_parse.c */,
 				F2301B050D685C1B00728699 /* igd_desc_parse.h */,
-				F2301B070D685C1B00728699 /* libminiupnpc.a */,
-				F2301B080D685C1B00728699 /* LICENCE */,
-				F2301B090D685C1B00728699 /* Makefile */,
-				F2301B0A0D685C1B00728699 /* Makefile.mingw */,
-				F2301B0B0D685C1B00728699 /* man3 */,
+				F2DF551C210B76FD0071DF2D /* listdevices.c */,
 				F2301B0E0D685C1B00728699 /* minisoap.c */,
 				F2301B0F0D685C1B00728699 /* minisoap.h */,
 				F2301B110D685C1B00728699 /* minissdpc.c */,
@@ -441,15 +438,15 @@
 				F2301B1B0D685C1B00728699 /* minixml.c */,
 				F2301B1C0D685C1B00728699 /* minixml.h */,
 				F2301B1F0D685C1B00728699 /* minixmlvalid.c */,
-				F2301B210D685C1B00728699 /* pymoduletest.py */,
+				F2DF5519210B76240071DF2D /* portlistingparse.c */,
 				F2301B220D685C1B00728699 /* README */,
-				F2301B230D685C1B00728699 /* setup.py */,
-				F2301B240D685C1B00728699 /* setupmingw32.py */,
+				F2DF5520210B776B0071DF2D /* receivedata.c */,
 				F2301B250D685C1B00728699 /* testminixml.c */,
 				F2301B260D685C1B00728699 /* testupnpreplyparse.c */,
 				F2301B280D685C1B00728699 /* upnpc.c */,
 				F2301B2A0D685C1B00728699 /* upnpcommands.c */,
 				F2301B2B0D685C1B00728699 /* upnpcommands.h */,
+				F2DF551E210B77440071DF2D /* upnpdev.c */,
 				F2301B2D0D685C1B00728699 /* upnperrors.c */,
 				F2301B2E0D685C1B00728699 /* upnperrors.h */,
 				F2301B300D685C1B00728699 /* upnpreplyparse.c */,
@@ -457,14 +454,6 @@
 			);
 			name = miniupnpc;
 			path = framework/miniupnpc;
-			sourceTree = "<group>";
-		};
-		F2301B0B0D685C1B00728699 /* man3 */ = {
-			isa = PBXGroup;
-			children = (
-				F2301B0C0D685C1B00728699 /* miniupnpc.3 */,
-			);
-			path = man3;
 			sourceTree = "<group>";
 		};
 		F24603880DB4B63A00C509E9 /* Artwork */ = {
@@ -791,11 +780,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2DF551F210B77440071DF2D /* upnpdev.c in Sources */,
 				F2C65C2E0D50B2D900820CAE /* IXSCNotificationManager.m in Sources */,
+				F2DF551D210B76FD0071DF2D /* listdevices.c in Sources */,
 				F2C65C2F0D50B2E000820CAE /* TCMNATPMPPortMapper.m in Sources */,
 				F2C65C320D50B2E500820CAE /* TCMPortMapper.m in Sources */,
+				F2DF551A210B76240071DF2D /* portlistingparse.c in Sources */,
 				F2C65C330D50B2E900820CAE /* TCMUPNPPortMapper.m in Sources */,
 				F2C65C360D50B2F800820CAE /* NSNotificationCenterThreadingAdditions.m in Sources */,
+				F2DF5523210B780D0071DF2D /* connecthostport.c in Sources */,
 				F2301B5B0D685C2700728699 /* igd_desc_parse.c in Sources */,
 				F2301B5C0D685C2A00728699 /* minisoap.c in Sources */,
 				F2301B5D0D685C3300728699 /* minissdpc.c in Sources */,
@@ -807,6 +800,7 @@
 				F2301B650D685C5300728699 /* upnpreplyparse.c in Sources */,
 				F29472930ED3091500DEBA97 /* getgateway.c in Sources */,
 				F29472940ED3091800DEBA97 /* natpmp.c in Sources */,
+				F2DF5521210B776B0071DF2D /* receivedata.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
