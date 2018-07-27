@@ -1,5 +1,6 @@
 LIBRARY
 ; miniupnpc library
+   miniupnpc
 
 EXPORTS
 ; miniupnpc
@@ -23,9 +24,22 @@ EXPORTS
    UPNP_GetExternalIPAddress
    UPNP_GetLinkLayerMaxBitRates
    UPNP_AddPortMapping
+   UPNP_AddAnyPortMapping
    UPNP_DeletePortMapping
+   UPNP_DeletePortMappingRange
    UPNP_GetPortMappingNumberOfEntries
    UPNP_GetSpecificPortMappingEntry
-   UPNP_GetGenericPortMappingEntry 
+   UPNP_GetGenericPortMappingEntry
+   UPNP_GetListOfPortMappings
+   UPNP_AddPinhole
+   UPNP_CheckPinholeWorking
+   UPNP_UpdatePinhole
+   UPNP_GetPinholePackets
+   UPNP_DeletePinhole
+   UPNP_GetFirewallStatus
+   UPNP_GetOutboundPinholeTimeout
 ; upnperrors
    strupnperror
+; portlistingparse
+   ParsePortListing
+   FreePortListing

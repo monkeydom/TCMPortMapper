@@ -1,15 +1,17 @@
-/* $Id: minisoap.h,v 1.3 2006/11/19 22:32:34 nanard Exp $ */
+/* $Id: minisoap.h,v 1.6 2018/04/06 10:53:13 nanard Exp $ */
 /* Project : miniupnp
  * Author : Thomas Bernard
- * Copyright (c) 2005 Thomas Bernard
+ * Copyright (c) 2005-2018 Thomas Bernard
  * This software is subject to the conditions detailed in the
  * LICENCE file provided in this distribution. */
-#ifndef __MINISOAP_H__
-#define __MINISOAP_H__
+#ifndef MINISOAP_H_INCLUDED
+#define MINISOAP_H_INCLUDED
+
+#include "miniupnpc_socketdef.h"
 
 /*int httpWrite(int, const char *, int, const char *);*/
-int soapPostSubmit(int, const char *, const char *, unsigned short,
-				   const char *, const char *);
+int soapPostSubmit(SOCKET, const char *, const char *, unsigned short,
+		   const char *, const char *, const char *);
 
 #endif
 

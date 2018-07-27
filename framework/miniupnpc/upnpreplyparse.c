@@ -1,7 +1,8 @@
-/* $Id: upnpreplyparse.c,v 1.10 2008/02/21 13:05:27 nanard Exp $ */
-/* MiniUPnP project
+/* $Id: upnpreplyparse.c,v 1.20 2017/12/12 11:26:25 nanard Exp $ */
+/* vim: tabstop=4 shiftwidth=4 noexpandtab
+ * MiniUPnP project
  * http://miniupnp.free.fr/ or http://miniupnp.tuxfamily.org/
- * (c) 2006 Thomas Bernard 
+ * (c) 2006-2017 Thomas Bernard
  * This software is subject to the conditions detailed
  * in the LICENCE file provided within the distribution */
 
@@ -15,65 +16,133 @@
 static void
 NameValueParserStartElt(void * d, const char * name, int l)
 {
-    struct NameValueParserData * data = (struct NameValueParserData *)d;
+	struct NameValueParserData * data = (struct NameValueParserData *)d;
+	data->topelt = 1;
     if(l>63)
         l = 63;
     memcpy(data->curelt, name, l);
     data->curelt[l] = '\0';
+	data->cdata = NULL;
+	data->cdatalen = 0;
+}
+
+static void
+NameValueParserEndElt(void * d, const char * name, int namelen)
+{
+    struct NameValueParserData * data = (struct NameValueParserData *)d;
+    struct NameValue * nv;
+	(void)name;
+	(void)namelen;
+	if(!data->topelt)
+		return;
+	if(strcmp(data->curelt, "NewPortListing") != 0)
+	{
+		int l;
+		/* standard case. Limited to n chars strings */
+		l = data->cdatalen;
+	    nv = malloc(sizeof(struct NameValue));
+		if(nv == NULL)
+		{
+			/* malloc error */
+#ifdef DEBUG
+			fprintf(stderr, "%s: error allocating memory",
+			        "NameValueParserEndElt");
+#endif /* DEBUG */
+			return;
+		}
+	    if(l>=(int)sizeof(nv->value))
+	        l = sizeof(nv->value) - 1;
+	    strncpy(nv->name, data->curelt, 64);
+		nv->name[63] = '\0';
+		if(data->cdata != NULL)
+		{
+			memcpy(nv->value, data->cdata, l);
+			nv->value[l] = '\0';
+		}
+		else
+		{
+			nv->value[0] = '\0';
+		}
+		nv->l_next = data->l_head;	/* insert in list */
+		data->l_head = nv;
+	}
+	data->cdata = NULL;
+	data->cdatalen = 0;
+	data->topelt = 0;
 }
 
 static void
 NameValueParserGetData(void * d, const char * datas, int l)
 {
     struct NameValueParserData * data = (struct NameValueParserData *)d;
-    struct NameValue * nv;
-    nv = malloc(sizeof(struct NameValue));
-    if(l>63)
-        l = 63;
-    strncpy(nv->name, data->curelt, 64);
-	nv->name[63] = '\0';
-    memcpy(nv->value, datas, l);
-    nv->value[l] = '\0';
-    LIST_INSERT_HEAD( &(data->head), nv, entries);
+	if(strcmp(data->curelt, "NewPortListing") == 0)
+	{
+		/* specific case for NewPortListing which is a XML Document */
+		data->portListing = malloc(l + 1);
+		if(!data->portListing)
+		{
+			/* malloc error */
+#ifdef DEBUG
+			fprintf(stderr, "%s: error allocating memory",
+			        "NameValueParserGetData");
+#endif /* DEBUG */
+			return;
+		}
+		memcpy(data->portListing, datas, l);
+		data->portListing[l] = '\0';
+		data->portListingLength = l;
+	}
+	else
+	{
+		/* standard case. */
+		data->cdata = datas;
+		data->cdatalen = l;
+	}
 }
 
 void
 ParseNameValue(const char * buffer, int bufsize,
-                    struct NameValueParserData * data)
+               struct NameValueParserData * data)
 {
-    struct xmlparser parser;
-    LIST_INIT(&(data->head));
-    /* init xmlparser object */
-    parser.xmlstart = buffer;
-    parser.xmlsize = bufsize;
-    parser.data = data;
-    parser.starteltfunc = NameValueParserStartElt;
-    parser.endeltfunc = 0;
-    parser.datafunc = NameValueParserGetData;
+	struct xmlparser parser;
+	memset(data, 0, sizeof(struct NameValueParserData));
+	/* init xmlparser object */
+	parser.xmlstart = buffer;
+	parser.xmlsize = bufsize;
+	parser.data = data;
+	parser.starteltfunc = NameValueParserStartElt;
+	parser.endeltfunc = NameValueParserEndElt;
+	parser.datafunc = NameValueParserGetData;
 	parser.attfunc = 0;
-    parsexml(&parser);
+	parsexml(&parser);
 }
 
 void
 ClearNameValueList(struct NameValueParserData * pdata)
 {
     struct NameValue * nv;
-    while((nv = pdata->head.lh_first) != NULL)
+	if(pdata->portListing)
+	{
+		free(pdata->portListing);
+		pdata->portListing = NULL;
+		pdata->portListingLength = 0;
+	}
+    while((nv = pdata->l_head) != NULL)
     {
-        LIST_REMOVE(nv, entries);
+		pdata->l_head = nv->l_next;
         free(nv);
     }
 }
 
-char * 
+char *
 GetValueFromNameValueList(struct NameValueParserData * pdata,
                           const char * Name)
 {
     struct NameValue * nv;
     char * p = NULL;
-    for(nv = pdata->head.lh_first;
+    for(nv = pdata->l_head;
         (nv != NULL) && (p == NULL);
-        nv = nv->entries.le_next)
+        nv = nv->l_next)
     {
         if(strcmp(nv->name, Name) == 0)
             p = nv->value;
@@ -106,7 +175,7 @@ GetValueFromNameValueListIgnoreNS(struct NameValueParserData * pdata,
 }
 #endif
 
-/* debug all-in-one function 
+/* debug all-in-one function
  * do parsing then display to stdout */
 #ifdef DEBUG
 void
@@ -115,13 +184,13 @@ DisplayNameValueList(char * buffer, int bufsize)
     struct NameValueParserData pdata;
     struct NameValue * nv;
     ParseNameValue(buffer, bufsize, &pdata);
-    for(nv = pdata.head.lh_first;
+    for(nv = pdata.l_head;
         nv != NULL;
-        nv = nv->entries.le_next)
+        nv = nv->l_next)
     {
         printf("%s = %s\n", nv->name, nv->value);
     }
     ClearNameValueList(&pdata);
 }
-#endif
+#endif /* DEBUG */
 

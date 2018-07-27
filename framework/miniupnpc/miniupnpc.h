@@ -1,15 +1,33 @@
-/* $Id: miniupnpc.h,v 1.18 2008/09/25 18:02:50 nanard Exp $ */
-/* Project: miniupnp
+/* $Id: miniupnpc.h,v 1.53 2018/05/07 11:05:16 nanard Exp $ */
+/* vim: tabstop=4 shiftwidth=4 noexpandtab
+ * Project: miniupnp
  * http://miniupnp.free.fr/
  * Author: Thomas Bernard
- * Copyright (c) 2005-2006 Thomas Bernard
+ * Copyright (c) 2005-2018 Thomas Bernard
  * This software is subjects to the conditions detailed
  * in the LICENCE file provided within this distribution */
-#ifndef __MINIUPNPC_H__
-#define __MINIUPNPC_H__
+#ifndef MINIUPNPC_H_INCLUDED
+#define MINIUPNPC_H_INCLUDED
 
-#include "declspec.h"
+#include "miniupnpc_declspec.h"
 #include "igd_desc_parse.h"
+#include "upnpdev.h"
+
+/* error codes : */
+#define UPNPDISCOVER_SUCCESS (0)
+#define UPNPDISCOVER_UNKNOWN_ERROR (-1)
+#define UPNPDISCOVER_SOCKET_ERROR (-101)
+#define UPNPDISCOVER_MEMORY_ERROR (-102)
+
+/* versions : */
+#define MINIUPNPC_VERSION	"2.1"
+#define MINIUPNPC_API_VERSION	17
+
+/* Source port:
+   Using "1" as an alias for 1900 for backwards compatibility
+   (presuming one would have used that for the "sameport" parameter) */
+#define UPNP_LOCAL_PORT_ANY     0
+#define UPNP_LOCAL_PORT_SAME    1
 
 #ifdef __cplusplus
 extern "C" {
@@ -18,16 +36,10 @@ extern "C" {
 /* Structures definitions : */
 struct UPNParg { const char * elt; const char * val; };
 
-int simpleUPnPcommand(int, const char *, const char *,
-                      const char *, struct UPNParg *,
-                      char *, int *);
-
-struct UPNPDev {
-	struct UPNPDev * pNext;
-	char * descURL;
-	char * st;
-	char buffer[2];
-};
+char *
+simpleUPnPcommand(int, const char *, const char *,
+                  const char *, struct UPNParg *,
+                  int *);
 
 /* upnpDiscover()
  * discover UPnP devices on the network.
@@ -40,28 +52,56 @@ struct UPNPDev {
  * is NULL.
  * If multicastif is not NULL, it will be used instead of the default
  * multicast interface for sending SSDP discover packets.
- * If sameport is not null, SSDP packets will be sent from the source port
- * 1900 (same as destination port) otherwise system assign a source port. */
-LIBSPEC struct UPNPDev * upnpDiscover(int delay, const char * multicastif,
-                                      const char * minissdpdsock, int sameport);
-/* freeUPNPDevlist()
- * free list returned by upnpDiscover() */
-LIBSPEC void freeUPNPDevlist(struct UPNPDev * devlist);
+ * If localport is set to UPNP_LOCAL_PORT_SAME(1) SSDP packets will be sent
+ * from the source port 1900 (same as destination port), if set to
+ * UPNP_LOCAL_PORT_ANY(0) system assign a source port, any other value will
+ * be attempted as the source port.
+ * "searchalltypes" parameter is useful when searching several types,
+ * if 0, the discovery will stop with the first type returning results.
+ * TTL should default to 2. */
+MINIUPNP_LIBSPEC struct UPNPDev *
+upnpDiscover(int delay, const char * multicastif,
+             const char * minissdpdsock, int localport,
+             int ipv6, unsigned char ttl,
+             int * error);
+
+MINIUPNP_LIBSPEC struct UPNPDev *
+upnpDiscoverAll(int delay, const char * multicastif,
+                const char * minissdpdsock, int localport,
+                int ipv6, unsigned char ttl,
+                int * error);
+
+MINIUPNP_LIBSPEC struct UPNPDev *
+upnpDiscoverDevice(const char * device, int delay, const char * multicastif,
+                const char * minissdpdsock, int localport,
+                int ipv6, unsigned char ttl,
+                int * error);
+
+MINIUPNP_LIBSPEC struct UPNPDev *
+upnpDiscoverDevices(const char * const deviceTypes[],
+                    int delay, const char * multicastif,
+                    const char * minissdpdsock, int localport,
+                    int ipv6, unsigned char ttl,
+                    int * error,
+                    int searchalltypes);
 
 /* parserootdesc() :
  * parse root XML description of a UPnP device and fill the IGDdatas
  * structure. */
-LIBSPEC void parserootdesc(const char *, int, struct IGDdatas *);
+MINIUPNP_LIBSPEC void parserootdesc(const char *, int, struct IGDdatas *);
 
 /* structure used to get fast access to urls
  * controlURL: controlURL of the WANIPConnection
  * ipcondescURL: url of the description of the WANIPConnection
  * controlURL_CIF: controlURL of the WANCommonInterfaceConfig
+ * controlURL_6FC: controlURL of the WANIPv6FirewallControl
  */
 struct UPNPUrls {
 	char * controlURL;
 	char * ipcondescURL;
 	char * controlURL_CIF;
+	char * controlURL_6FC;
+	char * rootdescURL;
 };
 
 /* UPNP_GetValidIGD() :
@@ -76,7 +116,7 @@ struct UPNPUrls {
  * passed as parameters are set. Donc forget to call FreeUPNPUrls(urls) to
  * free allocated memory.
  */
-LIBSPEC int
+MINIUPNP_LIBSPEC int
 UPNP_GetValidIGD(struct UPNPDev * devlist,
                  struct UPNPUrls * urls,
 				 struct IGDdatas * data,
@@ -84,23 +124,26 @@ UPNP_GetValidIGD(struct UPNPDev * devlist,
 
 /* UPNP_GetIGDFromUrl()
  * Used when skipping the discovery process.
+ * When succeding, urls, data, and lanaddr arguments are set.
  * return value :
  *   0 - Not ok
  *   1 - OK */
-LIBSPEC int
+MINIUPNP_LIBSPEC int
 UPNP_GetIGDFromUrl(const char * rootdescurl,
                    struct UPNPUrls * urls,
                    struct IGDdatas * data,
                    char * lanaddr, int lanaddrlen);
 
-LIBSPEC void GetUPNPUrls(struct UPNPUrls *, struct IGDdatas *, const char *);
+MINIUPNP_LIBSPEC void
+GetUPNPUrls(struct UPNPUrls *, struct IGDdatas *,
+            const char *, unsigned int);
 
-LIBSPEC void FreeUPNPUrls(struct UPNPUrls *);
+MINIUPNP_LIBSPEC void
+FreeUPNPUrls(struct UPNPUrls *);
 
-/* Reads data from the specified socket. 
- * Returns the number of bytes read if successful, zero if no bytes were 
- * read or if we timed out. Returns negative if there was an error. */
-int ReceiveData(int socket, char * data, int length, int timeout);
+/* return 0 or 1 */
+MINIUPNP_LIBSPEC int UPNPIGD_IsConnected(struct UPNPUrls *, struct IGDdatas *);
+
 
 #ifdef __cplusplus
 }

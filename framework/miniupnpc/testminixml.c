@@ -1,7 +1,11 @@
-/* $Id: testminixml.c,v 1.6 2006/11/19 22:32:35 nanard Exp $
+/* $Id: testminixml.c,v 1.10 2014/11/17 17:19:13 nanard Exp $
+ * MiniUPnP project
+ * Website : http://miniupnp.free.fr/ or http://miniupnp.tuxfamily.org/
+ * Author : Thomas Bernard.
+ * Copyright (c) 2005-2014 Thomas Bernard
+ *
  * testminixml.c
  * test program for the "minixml" functions.
- * Author : Thomas Bernard.
  */
 #include <stdlib.h>
 #include <stdio.h>
@@ -9,18 +13,11 @@
 #include "minixml.h"
 #include "igd_desc_parse.h"
 
-#ifdef WIN32
-#define NO_BZERO
-#endif
-
-#ifdef NO_BZERO
-#define bzero(p, n) memset(p, 0, n)
-#endif
-
 /* ---------------------------------------------------------------------- */
 void printeltname1(void * d, const char * name, int l)
 {
 	int i;
+	(void)d;
 	printf("element ");
 	for(i=0;i<l;i++)
 		putchar(name[i]);
@@ -28,6 +25,7 @@ void printeltname1(void * d, const char * name, int l)
 void printeltname2(void * d, const char * name, int l)
 {
 	int i;
+	(void)d;
 	putchar('/');
 	for(i=0;i<l;i++)
 		putchar(name[i]);
@@ -36,6 +34,7 @@ void printeltname2(void * d, const char * name, int l)
 void printdata(void *d, const char * data, int l)
 {
 	int i;
+	(void)d;
 	printf("data : ");
 	for(i=0;i<l;i++)
 		putchar(data[i]);
@@ -47,7 +46,7 @@ void burptest(const char * buffer, int bufsize)
 	struct IGDdatas data;
 	struct xmlparser parser;
 	/*objet IGDdatas */
-	bzero(&data, sizeof(struct IGDdatas));
+	memset(&data, 0, sizeof(struct IGDdatas));
 	/* objet xmlparser */
 	parser.xmlstart = buffer;
 	parser.xmlsize = bufsize;
@@ -57,9 +56,11 @@ void burptest(const char * buffer, int bufsize)
 	parser.datafunc = printdata; */
 	parser.starteltfunc = IGDstartelt;
 	parser.endeltfunc = IGDendelt;
-	parser.datafunc = IGDdata; 
+	parser.datafunc = IGDdata;
 	parsexml(&parser);
+#ifdef DEBUG
 	printIGD(&data);
+#endif /* DEBUG */
 }
 
 /* ----- main ---- */
