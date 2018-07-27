@@ -310,7 +310,7 @@ Standardablauf:
         [[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:TCMNATPMPPortMapperDidBeginWorkingNotification object:self];
         
         natpmp_t natpmp;
-        initnatpmp(&natpmp);
+        initnatpmp(&natpmp, 0, NULL);
         
         NSMutableSet *mappingsSet = [[TCMPortMapper sharedInstance] removeMappingQueue];
         
@@ -409,7 +409,7 @@ Standardablauf:
         struct timeval timeout;
         fd_set fds;
         BOOL didFail=NO;
-        r = initnatpmp(&natpmp);
+        r = initnatpmp(&natpmp, 0, NULL);
         if(r<0) {
             didFail = YES;
         } else {
@@ -495,7 +495,7 @@ Standardablauf:
     [natPMPThreadIsRunningLock lock];
     NSSet *mappingsToStop = [[TCMPortMapper sharedInstance] portMappings];
     natpmp_t natpmp;
-    initnatpmp(&natpmp);
+    initnatpmp(&natpmp, 0, NULL);
     @synchronized (mappingsToStop) {
         NSEnumerator *mappings = [mappingsToStop objectEnumerator];
         TCMPortMapping *mapping = nil;

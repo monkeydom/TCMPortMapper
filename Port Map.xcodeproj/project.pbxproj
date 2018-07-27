@@ -94,6 +94,7 @@
 		F2CDB8FB0D65D82900B6A4E7 /* OUItoCompany.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2CDB8FA0D65D82900B6A4E7 /* OUItoCompany.plist */; };
 		F2D731D10D5B607D00CBD1D8 /* TCMPortMappingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D731D00D5B607D00CBD1D8 /* TCMPortMappingAdditions.m */; };
 		F2D731EA0D5B768300CBD1D8 /* Presets.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2D731E90D5B768300CBD1D8 /* Presets.plist */; };
+		F2DF5518210B6BDA0071DF2D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F2DF5517210B6BDA0071DF2D /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -241,7 +242,6 @@
 		F29472880ED3091000DEBA97 /* declspec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = declspec.h; sourceTree = "<group>"; };
 		F29472890ED3091000DEBA97 /* getgateway.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = getgateway.c; sourceTree = "<group>"; };
 		F294728A0ED3091000DEBA97 /* getgateway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getgateway.h; sourceTree = "<group>"; };
-		F294728B0ED3091000DEBA97 /* LICENCE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE; sourceTree = "<group>"; };
 		F294728C0ED3091000DEBA97 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		F294728D0ED3091000DEBA97 /* natpmp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = natpmp.c; sourceTree = "<group>"; };
 		F294728E0ED3091000DEBA97 /* natpmp.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = natpmp.def; sourceTree = "<group>"; };
@@ -281,6 +281,7 @@
 		F2D731D00D5B607D00CBD1D8 /* TCMPortMappingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCMPortMappingAdditions.m; path = portmap/TCMPortMappingAdditions.m; sourceTree = "<group>"; };
 		F2D731E90D5B768300CBD1D8 /* Presets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Presets.plist; path = portmap/Presets.plist; sourceTree = "<group>"; };
 		F2DF5511210B55EB0071DF2D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F2DF5517210B6BDA0071DF2D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -490,8 +491,8 @@
 				F29472880ED3091000DEBA97 /* declspec.h */,
 				F29472890ED3091000DEBA97 /* getgateway.c */,
 				F294728A0ED3091000DEBA97 /* getgateway.h */,
-				F294728B0ED3091000DEBA97 /* LICENCE */,
 				F294728C0ED3091000DEBA97 /* Makefile */,
+				F2DF5517210B6BDA0071DF2D /* LICENSE */,
 				F294728D0ED3091000DEBA97 /* natpmp.c */,
 				F294728E0ED3091000DEBA97 /* natpmp.def */,
 				F294728F0ED3091000DEBA97 /* natpmp.h */,
@@ -738,6 +739,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2DF5518210B6BDA0071DF2D /* LICENSE in Resources */,
 				F24602F70DB4AFE300C509E9 /* OUItoCompany.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

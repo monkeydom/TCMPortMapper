@@ -1,4 +1,6 @@
-Copyright (c) 2007-2008, Thomas BERNARD 
+/* $Id: wingettimeofday.h,v 1.5 2013/09/11 07:22:25 nanard Exp $ */
+/* libnatpmp
+Copyright (c) 2007-2013, Thomas BERNARD
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -23,4 +25,15 @@ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
 CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
-
+*/
+#ifndef __WINGETTIMEOFDAY_H__
+#define __WINGETTIMEOFDAY_H__
+#ifdef WIN32
+#if defined(_MSC_VER)
+#include <time.h>
+#else
+#include <sys/time.h>
+#endif
+int natpmp_gettimeofday(struct timeval* p, void* tz /* IGNORED */);
+#endif
+#endif
