@@ -12,7 +12,7 @@
 #import <net/route.h>
 #import <netinet/if_ether.h>
 #import <net/if_dl.h>
-#import <openssl/md5.h>
+#import <CommonCrypto/CommonDigest.h>
 
 // update port mappings all 30 minutes as a default
 #define UPNP_REFRESH_INTERVAL (30.*60.)
@@ -311,7 +311,7 @@ enum {
     char hashstring[16*2+1];
     int i;
     NSData *dataToHash = [inString dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
-    MD5([dataToHash bytes],[dataToHash length],digest);
+    CC_MD5([dataToHash bytes],[dataToHash length],digest);
     for(i=0;i<16;i++) sprintf(hashstring+i*2,"%02x",digest[i]);
     hashstring[i*2]=0;
     
