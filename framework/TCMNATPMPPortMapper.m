@@ -306,187 +306,186 @@ Standardablauf:
 
 - (void)updatePortMappingsInThread {
     [natPMPThreadIsRunningLock lock];
-    NSAutoreleasePool *pool = [NSAutoreleasePool new];
-    [[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:TCMNATPMPPortMapperDidBeginWorkingNotification object:self];
-    
-    natpmp_t natpmp;
-    initnatpmp(&natpmp);
-    
-    NSMutableSet *mappingsSet = [[TCMPortMapper sharedInstance] removeMappingQueue];
-    
-    while (!UpdatePortMappingsThreadShouldQuit && !UpdatePortMappingsThreadShouldRestart) {
-        TCMPortMapping *mappingToRemove=nil;
+    @autoreleasepool {
+        [[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:TCMNATPMPPortMapperDidBeginWorkingNotification object:self];
         
-        @synchronized (mappingsSet) {
-            mappingToRemove = [mappingsSet anyObject];
-        }
+        natpmp_t natpmp;
+        initnatpmp(&natpmp);
         
-        if (!mappingToRemove) break;
+        NSMutableSet *mappingsSet = [[TCMPortMapper sharedInstance] removeMappingQueue];
         
-        if ([mappingToRemove mappingStatus] == TCMPortMappingStatusMapped) {
-            [self applyPortMapping:mappingToRemove remove:YES natpmp:&natpmp];
-        }
-        
-        @synchronized (mappingsSet) {
-            [mappingsSet removeObject:mappingToRemove];
-        }
-        
-    }    
-
-    TCMPortMapper *pm=[TCMPortMapper sharedInstance];
-    NSSet *mappingsToAdd = [pm portMappings];
-
-    // Refresh exisiting mappings
-    
-    NSSet *existingMappings;
-    @synchronized (mappingsToAdd) {
-        existingMappings = [[mappingsToAdd copy] autorelease];
-    }
-    
-    NSEnumerator *existingMappingsEnumerator = [existingMappings objectEnumerator];
-    TCMPortMapping *mappingToRefresh;
-    while ((mappingToRefresh = [existingMappingsEnumerator nextObject])) {
-        if ([mappingToRefresh mappingStatus] == TCMPortMappingStatusMapped && [pm isRunning]) {
-            if (![self applyPortMapping:mappingToRefresh remove:NO natpmp:&natpmp]) {
-                [[NSNotificationCenter defaultCenter] postNotificationOnMainThread:[NSNotification notificationWithName:TCMNATPMPPortMapperDidFailNotification object:self]];
-                break;
+        while (!UpdatePortMappingsThreadShouldQuit && !UpdatePortMappingsThreadShouldRestart) {
+            TCMPortMapping *mappingToRemove=nil;
+            
+            @synchronized (mappingsSet) {
+                mappingToRemove = [mappingsSet anyObject];
             }
-        }
-        if (UpdatePortMappingsThreadShouldQuit || UpdatePortMappingsThreadShouldRestart) break;
-    }
-
-
-    // Add new mapping or remove existing mappings when not running.
-    
-    while (!UpdatePortMappingsThreadShouldQuit && !UpdatePortMappingsThreadShouldRestart) {
-        TCMPortMapping *mappingToApply;
+            
+            if (!mappingToRemove) break;
+            
+            if ([mappingToRemove mappingStatus] == TCMPortMappingStatusMapped) {
+                [self applyPortMapping:mappingToRemove remove:YES natpmp:&natpmp];
+            }
+            
+            @synchronized (mappingsSet) {
+                [mappingsSet removeObject:mappingToRemove];
+            }
+            
+        }    
+        
+        TCMPortMapper *pm=[TCMPortMapper sharedInstance];
+        NSSet *mappingsToAdd = [pm portMappings];
+        
+        // Refresh exisiting mappings
+        
+        NSSet *existingMappings;
         @synchronized (mappingsToAdd) {
-            mappingToApply = nil;
-            NSEnumerator *mappings = [mappingsToAdd objectEnumerator];
-            TCMPortMapping *mapping = nil;
-            BOOL isRunning = [pm isRunning];
-            while ((mapping = [mappings nextObject])) {
-                if ([mapping mappingStatus] == TCMPortMappingStatusUnmapped && isRunning) {
-                    mappingToApply = mapping;
-                    break;
-                } else if ([mapping mappingStatus] == TCMPortMappingStatusMapped && !isRunning) {
-                    mappingToApply = mapping;
+            existingMappings = [[mappingsToAdd copy] autorelease];
+        }
+        
+        NSEnumerator *existingMappingsEnumerator = [existingMappings objectEnumerator];
+        TCMPortMapping *mappingToRefresh;
+        while ((mappingToRefresh = [existingMappingsEnumerator nextObject])) {
+            if ([mappingToRefresh mappingStatus] == TCMPortMappingStatusMapped && [pm isRunning]) {
+                if (![self applyPortMapping:mappingToRefresh remove:NO natpmp:&natpmp]) {
+                    [[NSNotificationCenter defaultCenter] postNotificationOnMainThread:[NSNotification notificationWithName:TCMNATPMPPortMapperDidFailNotification object:self]];
                     break;
                 }
             }
+            if (UpdatePortMappingsThreadShouldQuit || UpdatePortMappingsThreadShouldRestart) break;
         }
         
-        if (!mappingToApply) break;
         
-        if (![self applyPortMapping:mappingToApply remove:[pm isRunning]?NO:YES natpmp:&natpmp]) {
-            [[NSNotificationCenter defaultCenter] postNotificationOnMainThread:[NSNotification notificationWithName:TCMNATPMPPortMapperDidFailNotification object:self]];
-            break;
-        };
-    }
-    closenatpmp(&natpmp);
-
-    [natPMPThreadIsRunningLock unlock];
-    if (UpdatePortMappingsThreadShouldQuit) {
-        [self performSelectorOnMainThread:@selector(refresh) withObject:nil waitUntilDone:NO];
-    } else if (UpdatePortMappingsThreadShouldRestart) {
-        [self performSelectorOnMainThread:@selector(updatePortMappings) withObject:nil waitUntilDone:NO];
-    } else {
-        if ([pm isRunning]) {
-            [self performSelectorOnMainThread:@selector(adjustUpdateTimer) withObject:nil waitUntilDone:NO];
+        // Add new mapping or remove existing mappings when not running.
+        
+        while (!UpdatePortMappingsThreadShouldQuit && !UpdatePortMappingsThreadShouldRestart) {
+            TCMPortMapping *mappingToApply;
+            @synchronized (mappingsToAdd) {
+                mappingToApply = nil;
+                NSEnumerator *mappings = [mappingsToAdd objectEnumerator];
+                TCMPortMapping *mapping = nil;
+                BOOL isRunning = [pm isRunning];
+                while ((mapping = [mappings nextObject])) {
+                    if ([mapping mappingStatus] == TCMPortMappingStatusUnmapped && isRunning) {
+                        mappingToApply = mapping;
+                        break;
+                    } else if ([mapping mappingStatus] == TCMPortMappingStatusMapped && !isRunning) {
+                        mappingToApply = mapping;
+                        break;
+                    }
+                }
+            }
+            
+            if (!mappingToApply) break;
+            
+            if (![self applyPortMapping:mappingToApply remove:[pm isRunning]?NO:YES natpmp:&natpmp]) {
+                [[NSNotificationCenter defaultCenter] postNotificationOnMainThread:[NSNotification notificationWithName:TCMNATPMPPortMapperDidFailNotification object:self]];
+                break;
+            };
         }
+        closenatpmp(&natpmp);
+        
+        [natPMPThreadIsRunningLock unlock];
+        if (UpdatePortMappingsThreadShouldQuit) {
+            [self performSelectorOnMainThread:@selector(refresh) withObject:nil waitUntilDone:NO];
+        } else if (UpdatePortMappingsThreadShouldRestart) {
+            [self performSelectorOnMainThread:@selector(updatePortMappings) withObject:nil waitUntilDone:NO];
+        } else {
+            if ([pm isRunning]) {
+                [self performSelectorOnMainThread:@selector(adjustUpdateTimer) withObject:nil waitUntilDone:NO];
+            }
+        }
+        [[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:TCMNATPMPPortMapperDidEndWorkingNotification object:self];
     }
-    [[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:TCMNATPMPPortMapperDidEndWorkingNotification object:self];
-    [pool release];
 }
 
 - (void)refreshExternalIPInThread {
     [natPMPThreadIsRunningLock lock];
-    NSAutoreleasePool *pool = [NSAutoreleasePool new];
-    [[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:TCMNATPMPPortMapperDidBeginWorkingNotification object:self];
-    natpmp_t natpmp;
-    natpmpresp_t response;
-    int r;
-    struct timeval timeout;
-    fd_set fds;
-    BOOL didFail=NO;
-    r = initnatpmp(&natpmp);
-    if(r<0) {
-       didFail = YES;
-    } else {
-        r = sendpublicaddressrequest(&natpmp);
+    @autoreleasepool {
+        [[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:TCMNATPMPPortMapperDidBeginWorkingNotification object:self];
+        natpmp_t natpmp;
+        natpmpresp_t response;
+        int r;
+        struct timeval timeout;
+        fd_set fds;
+        BOOL didFail=NO;
+        r = initnatpmp(&natpmp);
         if(r<0) {
             didFail = YES;
         } else {
-#ifdef DEBUG
-            int count = 0;
-#endif
-            do {
-                FD_ZERO(&fds);
-                FD_SET(natpmp.s, &fds);
-                getnatpmprequesttimeout(&natpmp, &timeout);
-#ifdef DEBUG
-                NSLog(@"NATPMP refreshExternalIP try #%d",++count);
-#endif
-                select(FD_SETSIZE, &fds, NULL, NULL, &timeout);
-                r = readnatpmpresponseorretry(&natpmp, &response);
-                if (IPAddressThreadShouldQuitAndRestart) {
-#ifdef DEBUG
-                    NSLog(@"%s ----------------- thread quit prematurely",__FUNCTION__);
-#endif
-                    [natPMPThreadIsRunningLock unlock];
-                    if (IPAddressThreadShouldQuitAndRestart != PORTMAPREFRESHSHOULDNOTRESTART) {
-                        [self performSelectorOnMainThread:@selector(refresh) withObject:nil waitUntilDone:0];
-                    }
-                    closenatpmp(&natpmp);
-                    [[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:TCMNATPMPPortMapperDidEndWorkingNotification object:self];
-                    [pool release];
-                    return;
-                }
-            } while(r==NATPMP_TRYAGAIN);
-        
-            if(r<0 && r != NATPMP_ERR_NETWORKFAILURE) {
-               didFail = YES;
-#ifndef NDEBUG
-               NSLog(@"%s NAT-PMP: IP refresh did fail: %d",__FUNCTION__,r);
-#endif
+            r = sendpublicaddressrequest(&natpmp);
+            if(r<0) {
+                didFail = YES;
             } else {
-                NSString *ipString = [NSString stringWithFormat:@"%s", inet_ntoa(response.pnu.publicaddress.addr)];
-            	if (r == NATPMP_ERR_NETWORKFAILURE) {
-            		ipString = @"0.0.0.0"; // citing the RFC:
-//   If the result code is non-zero, the value of External IP
-//   Address is undefined (MUST be set to zero on transmission, and MUST
-//   be ignored on reception).
-					// so we use 0.0.0.0 at this stage. also because that is what the airport is broadcasting.
-					// we externally can savely display 0.0.0.0 as not having an external ip
-            	}
-                /* TODO : check that response.type == 0 */
-            
-#ifndef NDEBUG
-                NSLog(@"NAT-PMP:  found IP:%@",ipString);
+#ifdef DEBUG
+                int count = 0;
 #endif
-                [[NSNotificationCenter defaultCenter] postNotificationOnMainThread:[NSNotification notificationWithName:TCMNATPMPPortMapperDidGetExternalIPAddressNotification object:self userInfo:[NSDictionary dictionaryWithObject:ipString forKey:@"externalIPAddress"]]];
+                do {
+                    FD_ZERO(&fds);
+                    FD_SET(natpmp.s, &fds);
+                    getnatpmprequesttimeout(&natpmp, &timeout);
+#ifdef DEBUG
+                    NSLog(@"NATPMP refreshExternalIP try #%d",++count);
+#endif
+                    select(FD_SETSIZE, &fds, NULL, NULL, &timeout);
+                    r = readnatpmpresponseorretry(&natpmp, &response);
+                    if (IPAddressThreadShouldQuitAndRestart) {
+#ifdef DEBUG
+                        NSLog(@"%s ----------------- thread quit prematurely",__FUNCTION__);
+#endif
+                        [natPMPThreadIsRunningLock unlock];
+                        if (IPAddressThreadShouldQuitAndRestart != PORTMAPREFRESHSHOULDNOTRESTART) {
+                            [self performSelectorOnMainThread:@selector(refresh) withObject:nil waitUntilDone:0];
+                        }
+                        closenatpmp(&natpmp);
+                        [[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:TCMNATPMPPortMapperDidEndWorkingNotification object:self];
+                        return;
+                    }
+                } while(r==NATPMP_TRYAGAIN);
+                
+                if(r<0 && r != NATPMP_ERR_NETWORKFAILURE) {
+                    didFail = YES;
+#ifndef NDEBUG
+                    NSLog(@"%s NAT-PMP: IP refresh did fail: %d",__FUNCTION__,r);
+#endif
+                } else {
+                    NSString *ipString = [NSString stringWithFormat:@"%s", inet_ntoa(response.pnu.publicaddress.addr)];
+                    if (r == NATPMP_ERR_NETWORKFAILURE) {
+                        ipString = @"0.0.0.0"; // citing the RFC:
+                        //   If the result code is non-zero, the value of External IP
+                        //   Address is undefined (MUST be set to zero on transmission, and MUST
+                        //   be ignored on reception).
+                        // so we use 0.0.0.0 at this stage. also because that is what the airport is broadcasting.
+                        // we externally can savely display 0.0.0.0 as not having an external ip
+                    }
+                    /* TODO : check that response.type == 0 */
+                    
+#ifndef NDEBUG
+                    NSLog(@"NAT-PMP:  found IP:%@",ipString);
+#endif
+                    [[NSNotificationCenter defaultCenter] postNotificationOnMainThread:[NSNotification notificationWithName:TCMNATPMPPortMapperDidGetExternalIPAddressNotification object:self userInfo:[NSDictionary dictionaryWithObject:ipString forKey:@"externalIPAddress"]]];
+                }
             }
         }
-    }
-    closenatpmp(&natpmp);
-    [natPMPThreadIsRunningLock unlock];
-    if (IPAddressThreadShouldQuitAndRestart) {
+        closenatpmp(&natpmp);
+        [natPMPThreadIsRunningLock unlock];
+        if (IPAddressThreadShouldQuitAndRestart) {
 #ifndef DEBUG
-        NSLog(@"%s thread quit prematurely",__FUNCTION__);
+            NSLog(@"%s thread quit prematurely",__FUNCTION__);
 #endif
-        if (IPAddressThreadShouldQuitAndRestart != PORTMAPREFRESHSHOULDNOTRESTART) {
-            [self performSelectorOnMainThread:@selector(refresh) withObject:nil waitUntilDone:0];
-        }
-    } else {
-        if (didFail) {
-            [self performSelectorOnMainThread:@selector(stopListeningToExternalIPAddressChanges) withObject:nil waitUntilDone:NO];
-            [[NSNotificationCenter defaultCenter] postNotificationOnMainThread:[NSNotification notificationWithName:TCMNATPMPPortMapperDidFailNotification object:self]];
+            if (IPAddressThreadShouldQuitAndRestart != PORTMAPREFRESHSHOULDNOTRESTART) {
+                [self performSelectorOnMainThread:@selector(refresh) withObject:nil waitUntilDone:0];
+            }
         } else {
-            [self performSelectorOnMainThread:@selector(updatePortMappings) withObject:nil waitUntilDone:0];
+            if (didFail) {
+                [self performSelectorOnMainThread:@selector(stopListeningToExternalIPAddressChanges) withObject:nil waitUntilDone:NO];
+                [[NSNotificationCenter defaultCenter] postNotificationOnMainThread:[NSNotification notificationWithName:TCMNATPMPPortMapperDidFailNotification object:self]];
+            } else {
+                [self performSelectorOnMainThread:@selector(updatePortMappings) withObject:nil waitUntilDone:0];
+            }
         }
+        [[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:TCMNATPMPPortMapperDidEndWorkingNotification object:self];
     }
-    [[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:TCMNATPMPPortMapperDidEndWorkingNotification object:self];
-    [pool release];
 }
 
 - (void)stopBlocking {
