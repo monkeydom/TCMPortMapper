@@ -12,6 +12,7 @@
 #import <net/route.h>
 #import <netinet/if_ether.h>
 #import <net/if_dl.h>
+#import <err.h>
 #import <CommonCrypto/CommonDigest.h>
 
 // update port mappings all 30 minutes as a default
@@ -215,13 +216,14 @@ enum {
 }
 
 - (BOOL)networkReachable {
-    Boolean success; 
-    BOOL okay; 
-    SCNetworkConnectionFlags status;
-    success = SCNetworkCheckReachabilityByName("www.apple.com", &status); 
-    okay = success && (status & kSCNetworkFlagsReachable) && !(status & kSCNetworkFlagsConnectionRequired); 
+    SCNetworkConnectionFlags flags;
+    SCNetworkReachabilityRef target = SCNetworkReachabilityCreateWithName(NULL, "www.apple.com");
+    Boolean success = SCNetworkReachabilityGetFlags(target, &flags);
+    CFRelease(target);
     
-    return okay;
+    BOOL result = success && (flags & kSCNetworkFlagsReachable) && !(flags & kSCNetworkFlagsConnectionRequired);
+    
+    return result;
 }
 
 - (void)networkDidChange:(NSNotification *)aNotification {
