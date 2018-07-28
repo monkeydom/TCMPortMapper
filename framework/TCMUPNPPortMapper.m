@@ -154,12 +154,20 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
         struct UPNPDev * devlist = 0;
         const char * multicastif = 0;
         const char * minissdpdpath = 0;
-        char lanaddr[16];   /* my ip address on the LAN */
-        char externalIPAddress[16];
+        // IPv4
+        // 15 "192.168.167.199"
+        // IPv6
+        // 39 "ABCD:ABCD:ABCD:ABCD:ABCD:ABCD:ABCD:ABCD"
+        // 45 "ABCD:ABCD:ABCD:ABCD:ABCD:ABCD:192.168.158.190"
+        // 35 "fe80::ec5a:d7ff:fe00:e197%enp0s51f6"
+#define IPV6_MAX_STRING_LENGTH 46
+        
+        char lanaddr[IPV6_MAX_STRING_LENGTH];   /* my ip address on the LAN */
+        char externalIPAddress[IPV6_MAX_STRING_LENGTH];
         BOOL didFail=NO;
         NSString *errorString = nil;
         int error;
-        if (( devlist = upnpDiscover(2000, NULL, NULL, UPNP_LOCAL_PORT_ANY, 1, 2, &error) )) {
+        if (( devlist = upnpDiscover(2000, NULL, NULL, UPNP_LOCAL_PORT_ANY, false, 2, &error) )) {
             if(devlist) {
                 
                 // let us check all of the devices for reachability
@@ -213,7 +221,7 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
                     // get the new control URLs - this call mallocs the control URLs
                     if (UPNP_GetIGDFromUrl([[descURL absoluteString] UTF8String],&_urls,&_igddata,lanaddr,sizeof(lanaddr))) {
                         int r = UPNP_GetExternalIPAddress(_urls.controlURL,
-                                                          _igddata.tmp.servicetype,
+                                                          _igddata.first.servicetype,
                                                           externalIPAddress);
                         if(r != UPNPCOMMAND_SUCCESS) {
                             didFail = YES;
@@ -222,7 +230,7 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
                             if(externalIPAddress[0]) {
                                 NSString *ipString = [NSString stringWithUTF8String:externalIPAddress];
                                 NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithObject:ipString forKey:@"externalIPAddress"];
-                                NSString *routerName = [NSString stringWithUTF8String:_igddata.tmp.modeldescription];
+                                NSString *routerName = [NSString stringWithUTF8String:_igddata.first.modeldescription];
                                 if (routerName) [userInfo setObject:routerName forKey:@"routerName"];
                                 [[NSNotificationCenter defaultCenter] postNotificationOnMainThread:[NSNotification notificationWithName:TCMUPNPPortMapperDidGetExternalIPAddressNotification object:self userInfo:userInfo]];
                                 foundIDGDevice = YES;
@@ -233,6 +241,8 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
                                 errorString = @"No external IP address!";
                             }
                         }
+                    } else {
+                        NSLog(@"%s No IDG device for URL:%@",__FUNCTION__,descURL);
                     }
                 }
                 if (!foundIDGDevice) {
@@ -386,7 +396,7 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
                 rHost[0] = '\0'; enabled[0] = '\0';
                 duration[0] = '\0'; desc[0] = '\0';
                 extPort[0] = '\0'; intPort[0] = '\0'; intClient[0] = '\0';
-                r = UPNP_GetGenericPortMappingEntry(_urls.controlURL, _igddata.tmp.servicetype,
+                r = UPNP_GetGenericPortMappingEntry(_urls.controlURL, _igddata.first.servicetype,
                                                     index,
                                                     extPort, intClient, intPort,
                                                     protocol, desc, enabled,
@@ -434,7 +444,7 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
                         }
                         //                NSLog(@"%s -------------> about to %@ port mapping %@",__FUNCTION__,isWanted?@"KEEP":@"DELETE",portMappingDescription);
                         if (!isWanted) {
-                            r=UPNP_DeletePortMapping(_urls.controlURL, _igddata.tmp.servicetype,extPort,protocol,NULL);
+                            r=UPNP_DeletePortMapping(_urls.controlURL, _igddata.first.servicetype,extPort,protocol,NULL);
                             if (r==UPNPCOMMAND_SUCCESS) i--;
                         }
                     } else {
@@ -485,7 +495,7 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
             
             char *publicPort = (char *)[[NSString stringWithFormat:@"%d",[[mappingToRemove objectForKey:@"publicPort"] intValue]] UTF8String];
             char *protocol = (char *)[[mappingToRemove objectForKey:@"protocol"] UTF8String];
-            UPNP_DeletePortMapping(_urls.controlURL,_igddata.tmp.servicetype,publicPort,protocol,NULL);
+            UPNP_DeletePortMapping(_urls.controlURL,_igddata.first.servicetype,publicPort,protocol,NULL);
             
             @synchronized (upnpRemoveSet) {
                 [upnpRemoveSet removeObject:mappingToRemove];
@@ -551,7 +561,7 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
             	int protocol = TCMPortMappingTransportProtocolUDP;
 		        for (protocol = TCMPortMappingTransportProtocolUDP; protocol <= TCMPortMappingTransportProtocolTCP; protocol++) {
 		        	if (protocol & [mapping transportProtocol]) {
-						UPNP_DeletePortMapping(_urls.controlURL, _igddata.tmp.servicetype,
+						UPNP_DeletePortMapping(_urls.controlURL, _igddata.first.servicetype,
 											   [[NSString stringWithFormat:@"%d",[mapping externalPort]] UTF8String], 
 											   (protocol==TCMPortMappingTransportProtocolUDP)?"UDP":"TCP",NULL);
 					}
