@@ -67,7 +67,6 @@
 		F29472940ED3091800DEBA97 /* natpmp.c in Sources */ = {isa = PBXBuildFile; fileRef = F294728D0ED3091000DEBA97 /* natpmp.c */; };
 		F2C30DD1210DFB28008653EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2C30DD0210DFB28008653EE /* Assets.xcassets */; };
 		F2C30DDC210DFC8C008653EE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2C30DD6210DFC8C008653EE /* Localizable.strings */; };
-		F2C30DDD210DFC8C008653EE /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = F2C30DD8210DFC8C008653EE /* MainMenu.nib */; };
 		F2C30DDE210DFC8C008653EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2C30DDA210DFC8C008653EE /* InfoPlist.strings */; };
 		F2C65C2D0D50B2D800820CAE /* IXSCNotificationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F2C65BE70D50B17B00820CAE /* IXSCNotificationManager.h */; };
 		F2C65C2E0D50B2D900820CAE /* IXSCNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C65BE60D50B17B00820CAE /* IXSCNotificationManager.m */; };
@@ -100,6 +99,7 @@
 		F2DF551F210B77440071DF2D /* upnpdev.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF551E210B77440071DF2D /* upnpdev.c */; };
 		F2DF5521210B776B0071DF2D /* receivedata.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5520210B776B0071DF2D /* receivedata.c */; };
 		F2DF5523210B780D0071DF2D /* connecthostport.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5522210B780D0071DF2D /* connecthostport.c */; };
+		F2F3C3A0210E0D57009367E2 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = F2C30DD8210DFC8C008653EE /* MainMenu.nib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,7 +186,6 @@
 		F214E5F50D5F626800A06962 /* DotGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DotGreen.png; path = general_artwork/DotGreen.png; sourceTree = "<group>"; };
 		F214E5F60D5F626800A06962 /* DotRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DotRed.png; path = general_artwork/DotRed.png; sourceTree = "<group>"; };
 		F214E5F70D5F626800A06962 /* DotYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DotYellow.png; path = general_artwork/DotYellow.png; sourceTree = "<group>"; };
-		F214E5FC0D5F62F700A06962 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = natecho/English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		F214E6060D5F646E00A06962 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = natecho/main.m; sourceTree = "<group>"; };
 		F214E6070D5F646E00A06962 /* natecho_prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = natecho_prefix.pch; path = natecho/natecho_prefix.pch; sourceTree = "<group>"; };
 		F214E60A0D5F64BF00A06962 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = natecho/AppController.h; sourceTree = "<group>"; };
@@ -245,7 +244,6 @@
 		F29472920ED3091000DEBA97 /* wingettimeofday.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wingettimeofday.c; sourceTree = "<group>"; };
 		F2C30DD0210DFB28008653EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2C30DD7210DFC8C008653EE /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = Localizable.strings; sourceTree = "<group>"; };
-		F2C30DD9210DFC8C008653EE /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = MainMenu.nib; sourceTree = "<group>"; };
 		F2C30DDB210DFC8C008653EE /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
 		F2C65BDE0D50B17B00820CAE /* TCMUPNPPortMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCMUPNPPortMapper.m; path = framework/TCMUPNPPortMapper.m; sourceTree = "<group>"; };
 		F2C65BDF0D50B17B00820CAE /* TCMUPNPPortMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCMUPNPPortMapper.h; path = framework/TCMUPNPPortMapper.h; sourceTree = "<group>"; };
@@ -283,6 +281,8 @@
 		F2DF551E210B77440071DF2D /* upnpdev.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = upnpdev.c; sourceTree = "<group>"; };
 		F2DF5520210B776B0071DF2D /* receivedata.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = receivedata.c; sourceTree = "<group>"; };
 		F2DF5522210B780D0071DF2D /* connecthostport.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = connecthostport.c; sourceTree = "<group>"; };
+		F2F3C39E210E0CE1009367E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = natecho/Base.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		F2F3C39F210E0CE2009367E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = ../Base.lproj/MainMenu.nib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -716,8 +716,7 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
-				en,
-				English,
+				Base,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* PortMapper */;
 			projectDirPath = "";
@@ -766,13 +765,13 @@
 				F2C660350D50C59B00820CAE /* On20.png in Resources */,
 				F2C660360D50C59B00820CAE /* Off20.png in Resources */,
 				F2C660370D50C59B00820CAE /* DotRed.png in Resources */,
+				F2F3C3A0210E0D57009367E2 /* MainMenu.nib in Resources */,
 				F2C660390D50C59B00820CAE /* DotGreen.png in Resources */,
 				F2C6603A0D50C59B00820CAE /* DotYellow.png in Resources */,
 				F2482BAC0D58A415002DF811 /* GenericQuestionMarkIcon.icns in Resources */,
 				F2D731EA0D5B768300CBD1D8 /* Presets.plist in Resources */,
 				F2C30DDE210DFC8C008653EE /* InfoPlist.strings in Resources */,
 				F2CDB8CF0D65C0AF00B6A4E7 /* NSRemoveTemplate.tiff in Resources */,
-				F2C30DDD210DFC8C008653EE /* MainMenu.nib in Resources */,
 				F2C30DD1210DFB28008653EE /* Assets.xcassets in Resources */,
 				F2CDB8D00D65C0B000B6A4E7 /* NSRefreshTemplate.tiff in Resources */,
 				F2CDB8D10D65C0B100B6A4E7 /* NSAddTemplate.tiff in Resources */,
@@ -894,7 +893,7 @@
 		F214E5FB0D5F62F700A06962 /* MainMenu.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F214E5FC0D5F62F700A06962 /* English */,
+				F2F3C39E210E0CE1009367E2 /* Base */,
 			);
 			name = MainMenu.nib;
 			sourceTree = "<group>";
@@ -910,7 +909,7 @@
 		F2C30DD8210DFC8C008653EE /* MainMenu.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F2C30DD9210DFC8C008653EE /* English */,
+				F2F3C39F210E0CE2009367E2 /* Base */,
 			);
 			name = MainMenu.nib;
 			sourceTree = "<group>";
@@ -995,6 +994,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1011,6 +1011,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;

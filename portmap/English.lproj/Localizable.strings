@@ -2,7 +2,6 @@
 "Port Map" = "Port Map";
 "Port Map on %@" = "Port Map on %@";
 
-
 "NAT-PMP Howto URL" = "http://support.apple.com/kb/HT1552";
 "Port Map URL" = "http://www.codingmonkeys.de/portmap/";
 "TCMPortMapper URL" = "http://code.google.com/p/tcmportmapper/";
@@ -15,4 +14,3 @@
 "Stopped" = "Stopped";
 "No Router" = "No Router";
 "No external Address." = "No external Address.";
-
