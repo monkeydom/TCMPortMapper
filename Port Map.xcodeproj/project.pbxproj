@@ -53,6 +53,10 @@
 		F2301B630D685C4B00728699 /* upnpcommands.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B2A0D685C1B00728699 /* upnpcommands.c */; };
 		F2301B640D685C4F00728699 /* upnperrors.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B2D0D685C1B00728699 /* upnperrors.c */; };
 		F2301B650D685C5300728699 /* upnpreplyparse.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B300D685C1B00728699 /* upnpreplyparse.c */; };
+		F241D078210E1158002B6A69 /* connecthostport.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5522210B780D0071DF2D /* connecthostport.c */; };
+		F241D07A210E1169002B6A69 /* upnpdev.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF551E210B77440071DF2D /* upnpdev.c */; };
+		F241D07D210E117A002B6A69 /* receivedata.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5520210B776B0071DF2D /* receivedata.c */; };
+		F241D07E210E117F002B6A69 /* portlistingparse.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5519210B76240071DF2D /* portlistingparse.c */; };
 		F24602F70DB4AFE300C509E9 /* OUItoCompany.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2CDB8FA0D65D82900B6A4E7 /* OUItoCompany.plist */; };
 		F2482BA50D589FD0002DF811 /* RSVerticallyCenteredTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2482BA40D589FD0002DF811 /* RSVerticallyCenteredTextFieldCell.m */; };
 		F2482BA90D58A15F002DF811 /* TCMStatusImageFromMappingStatusValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F2482BA80D58A15F002DF811 /* TCMStatusImageFromMappingStatusValueTransformer.m */; };
@@ -95,7 +99,6 @@
 		F2D731EA0D5B768300CBD1D8 /* Presets.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2D731E90D5B768300CBD1D8 /* Presets.plist */; };
 		F2DF5518210B6BDA0071DF2D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F2DF5517210B6BDA0071DF2D /* LICENSE */; };
 		F2DF551A210B76240071DF2D /* portlistingparse.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5519210B76240071DF2D /* portlistingparse.c */; };
-		F2DF551D210B76FD0071DF2D /* listdevices.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF551C210B76FD0071DF2D /* listdevices.c */; };
 		F2DF551F210B77440071DF2D /* upnpdev.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF551E210B77440071DF2D /* upnpdev.c */; };
 		F2DF5521210B776B0071DF2D /* receivedata.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5520210B776B0071DF2D /* receivedata.c */; };
 		F2DF5523210B780D0071DF2D /* connecthostport.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5522210B780D0071DF2D /* connecthostport.c */; };
@@ -202,15 +205,11 @@
 		F2301B120D685C1B00728699 /* minissdpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = minissdpc.h; sourceTree = "<group>"; };
 		F2301B140D685C1B00728699 /* miniupnpc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = miniupnpc.c; sourceTree = "<group>"; };
 		F2301B150D685C1B00728699 /* miniupnpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = miniupnpc.h; sourceTree = "<group>"; };
-		F2301B170D685C1B00728699 /* miniupnpcmodule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = miniupnpcmodule.c; sourceTree = "<group>"; };
 		F2301B180D685C1B00728699 /* miniwget.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = miniwget.c; sourceTree = "<group>"; };
 		F2301B190D685C1B00728699 /* miniwget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = miniwget.h; sourceTree = "<group>"; };
 		F2301B1B0D685C1B00728699 /* minixml.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = minixml.c; sourceTree = "<group>"; };
 		F2301B1C0D685C1B00728699 /* minixml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = minixml.h; sourceTree = "<group>"; };
-		F2301B1F0D685C1B00728699 /* minixmlvalid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = minixmlvalid.c; sourceTree = "<group>"; };
 		F2301B220D685C1B00728699 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
-		F2301B250D685C1B00728699 /* testminixml.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = testminixml.c; sourceTree = "<group>"; };
-		F2301B260D685C1B00728699 /* testupnpreplyparse.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = testupnpreplyparse.c; sourceTree = "<group>"; };
 		F2301B280D685C1B00728699 /* upnpc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = upnpc.c; sourceTree = "<group>"; };
 		F2301B2A0D685C1B00728699 /* upnpcommands.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = upnpcommands.c; sourceTree = "<group>"; };
 		F2301B2B0D685C1B00728699 /* upnpcommands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = upnpcommands.h; sourceTree = "<group>"; };
@@ -432,17 +431,13 @@
 				F2301B120D685C1B00728699 /* minissdpc.h */,
 				F2301B140D685C1B00728699 /* miniupnpc.c */,
 				F2301B150D685C1B00728699 /* miniupnpc.h */,
-				F2301B170D685C1B00728699 /* miniupnpcmodule.c */,
 				F2301B180D685C1B00728699 /* miniwget.c */,
 				F2301B190D685C1B00728699 /* miniwget.h */,
 				F2301B1B0D685C1B00728699 /* minixml.c */,
 				F2301B1C0D685C1B00728699 /* minixml.h */,
-				F2301B1F0D685C1B00728699 /* minixmlvalid.c */,
 				F2DF5519210B76240071DF2D /* portlistingparse.c */,
 				F2301B220D685C1B00728699 /* README */,
 				F2DF5520210B776B0071DF2D /* receivedata.c */,
-				F2301B250D685C1B00728699 /* testminixml.c */,
-				F2301B260D685C1B00728699 /* testupnpreplyparse.c */,
 				F2301B280D685C1B00728699 /* upnpc.c */,
 				F2301B2A0D685C1B00728699 /* upnpcommands.c */,
 				F2301B2B0D685C1B00728699 /* upnpcommands.h */,
@@ -792,7 +787,6 @@
 			files = (
 				F2DF551F210B77440071DF2D /* upnpdev.c in Sources */,
 				F2C65C2E0D50B2D900820CAE /* IXSCNotificationManager.m in Sources */,
-				F2DF551D210B76FD0071DF2D /* listdevices.c in Sources */,
 				F2C65C2F0D50B2E000820CAE /* TCMNATPMPPortMapper.m in Sources */,
 				F2C65C320D50B2E500820CAE /* TCMPortMapper.m in Sources */,
 				F2DF551A210B76240071DF2D /* portlistingparse.c in Sources */,
@@ -829,6 +823,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F21B76B20DB73D6700942BC0 /* upnpc.c in Sources */,
+				F241D07A210E1169002B6A69 /* upnpdev.c in Sources */,
+				F241D07E210E117F002B6A69 /* portlistingparse.c in Sources */,
 				F21B769B0DB73D2C00942BC0 /* miniwget.c in Sources */,
 				F21B769C0DB73D2C00942BC0 /* minixml.c in Sources */,
 				F21B769D0DB73D2C00942BC0 /* upnpcommands.c in Sources */,
@@ -836,8 +832,10 @@
 				F21B769F0DB73D2C00942BC0 /* upnpreplyparse.c in Sources */,
 				F21B76A00DB73D2C00942BC0 /* miniupnpc.c in Sources */,
 				F21B76A10DB73D2C00942BC0 /* minissdpc.c in Sources */,
+				F241D07D210E117A002B6A69 /* receivedata.c in Sources */,
 				F21B76A30DB73D2C00942BC0 /* minisoap.c in Sources */,
 				F21B76A40DB73D2C00942BC0 /* igd_desc_parse.c in Sources */,
+				F241D078210E1158002B6A69 /* connecthostport.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1084,7 +1082,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -1101,7 +1098,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
