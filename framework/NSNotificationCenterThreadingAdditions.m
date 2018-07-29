@@ -13,7 +13,6 @@
     [[self defaultCenter] postNotificationName:name 
                                         object:object 
                                       userInfo:nil];
-    [anInfoDictionary release];
 }
 
 

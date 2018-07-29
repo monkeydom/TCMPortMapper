@@ -25,10 +25,11 @@ extern NSString * const TCMUPNPPortMapperDidEndWorkingNotification;
     BOOL UpdatePortMappingsThreadShouldQuit;
     BOOL UpdatePortMappingsThreadShouldRestart;
     TCMPortMappingThreadID runningThreadID;
-    NSArray *_latestUPNPPortMappingsList;
     struct UPNPUrls _urls;
     struct IGDdatas _igddata;
 }
+
+@property (atomic, strong) NSArray *latestUPNPPortMappingsList;
 
 - (void)refresh;
 - (void)updatePortMappings;

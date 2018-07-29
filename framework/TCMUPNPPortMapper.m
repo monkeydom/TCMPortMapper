@@ -37,25 +37,6 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
     return self;
 }
 
-- (void)dealloc {
-    [_threadIsRunningLock release];
-    [_latestUPNPPortMappingsList release];
-    [super dealloc];
-}
-
-- (void)setLatestUPNPPortMappingsList:(NSArray *)aLatestList {
-    if (aLatestList != _latestUPNPPortMappingsList) {
-        id tmp = _latestUPNPPortMappingsList;
-        _latestUPNPPortMappingsList = [aLatestList retain];
-        [tmp autorelease];
-    }
-}
-
-- (NSArray *)latestUPNPPortMappingsList {
-    return [[_latestUPNPPortMappingsList retain] autorelease];
-}
-
-
 - (void)refresh {
     if ([_threadIsRunningLock tryLock]) {
         refreshThreadShouldQuit=NO;
@@ -120,7 +101,7 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
 			NSString *hashString = [TCMPortMapper sizereducableHashOfString:preliminaryDescription];
 			if ([hashString length] > PREFIX_MATCH_MIN_LENGTH) hashString = [hashString substringToIndex:PREFIX_MATCH_MIN_LENGTH];
 			[descriptionComponents insertObject:hashString atIndex:0];
-	        description = [[descriptionComponents componentsJoinedByString:@"."] retain];
+	        description = [descriptionComponents componentsJoinedByString:@"."];
 //			NSLog(@"%s description: %@",__FUNCTION__,description);
 		}
     }
@@ -371,7 +352,7 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
         // we need to safeguard mappings that others might have made
         // (upnp is quite generous in giving us what we want, even if
         //  other mappings are there, especially when from the same local IP)
-        NSMutableIndexSet *reservedPortNumbers = [[NSMutableIndexSet new] autorelease];
+        NSMutableIndexSet *reservedPortNumbers = [NSMutableIndexSet new];
         // get port mapping list as reference first
         NSMutableArray *latestUPNPPortMappingsList = [NSMutableArray array];
         {

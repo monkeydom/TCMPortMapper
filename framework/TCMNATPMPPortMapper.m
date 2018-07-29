@@ -71,7 +71,7 @@ static void readData (
         addressAsString = @"neither IPv6 nor IPv4";
     }
     
-    return [[addressAsString copy] autorelease];
+    return [addressAsString copy];
 }
 @end
 
@@ -86,7 +86,7 @@ static void readData (
 
 - (id)init {
     if (S_sharedInstance) {
-        [self dealloc];
+        self = nil;
         return S_sharedInstance;
     }
     if ((self=[super init])) {
@@ -95,11 +95,6 @@ static void readData (
             [(id)natPMPThreadIsRunningLock performSelector:@selector(setName:) withObject:@"NATPMPThreadRunningLock"];
     }
     return self;
-}
-
-- (void)dealloc {
-    [natPMPThreadIsRunningLock release];
-    [super dealloc];
 }
 
 - (void)ensureListeningToExternalIPAddressChanges {
@@ -116,7 +111,7 @@ static void readData (
         //   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
         CFSocketContext socketContext;
         bzero(&socketContext, sizeof(CFSocketContext));
-        socketContext.info = self;
+        socketContext.info = (__bridge void *)self;
         _externalAddressChangeListeningSocket = CFSocketCreate(kCFAllocatorDefault, PF_INET, SOCK_DGRAM, IPPROTO_UDP, 
                                            kCFSocketDataCallBack, readData, &socketContext);
         if (_externalAddressChangeListeningSocket) {
@@ -180,7 +175,6 @@ static void readData (
 - (void)stop {
     if ([_updateTimer isValid]) {
         [_updateTimer invalidate];
-        [_updateTimer release];
         _updateTimer = nil;
     }
 
@@ -222,8 +216,7 @@ static void readData (
     if ([_updateTimer isValid]) {
         [_updateTimer invalidate];
     }
-    [_updateTimer autorelease];
-    _updateTimer = [[NSTimer scheduledTimerWithTimeInterval:_updateInterval target:self selector:@selector(updatePortMappings) userInfo:nil repeats:NO] retain];
+    _updateTimer = [NSTimer scheduledTimerWithTimeInterval:_updateInterval target:self selector:@selector(updatePortMappings) userInfo:nil repeats:NO];
 }
 
 /*
@@ -340,7 +333,7 @@ Standardablauf:
         
         NSSet *existingMappings;
         @synchronized (mappingsToAdd) {
-            existingMappings = [[mappingsToAdd copy] autorelease];
+            existingMappings = [mappingsToAdd copy];
         }
         
         NSEnumerator *existingMappingsEnumerator = [existingMappings objectEnumerator];
@@ -513,9 +506,7 @@ Standardablauf:
     if (anExternalIPAddress!=nil && aSenderAddressString!=nil && 
         (![_lastBroadcastedExternalIP isEqualToString:anExternalIPAddress] || 
          ![_lastExternalIPSenderAddress isEqualToString:aSenderAddressString])) {
-        [_lastBroadcastedExternalIP release];
          _lastBroadcastedExternalIP = [anExternalIPAddress copy];
-        [_lastExternalIPSenderAddress release];
          _lastExternalIPSenderAddress = [aSenderAddressString copy];
         [[NSNotificationCenter defaultCenter] 
             postNotificationName:TCMNATPMPPortMapperDidReceiveBroadcastedExternalIPChangeNotification 
@@ -539,10 +530,10 @@ static void readData (
    const void *aData,
    void *anInfo
 ) {
-    NSData *data = (NSData *)aData;
-    TCMNATPMPPortMapper *natpmpMapper = (TCMNATPMPPortMapper *)anInfo;
+    NSData *data = (__bridge NSData *)aData;
+    TCMNATPMPPortMapper *natpmpMapper = (__bridge TCMNATPMPPortMapper *)anInfo;
     if ([data length]==12) {
-        NSString *senderAddressAndPort = [NSString stringWithAddressData:(NSData *)anAddress];
+        NSString *senderAddressAndPort = [NSString stringWithAddressData:(__bridge NSData *)anAddress];
         NSString *senderAddress = [[senderAddressAndPort componentsSeparatedByString:@":"] objectAtIndex:0];
         // add UDP listener for public ip update packets
         //    0                   1                   2                   3

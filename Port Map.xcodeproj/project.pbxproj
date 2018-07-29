@@ -929,6 +929,7 @@
 		318011A10D4DEC8500BE3B28 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -953,13 +954,13 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = TCMPortMapper;
-				USER_HEADER_SEARCH_PATHS = framework;
 			};
 			name = Debug;
 		};
 		318011A20D4DEC8500BE3B28 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -987,7 +988,6 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = TCMPortMapper;
-				USER_HEADER_SEARCH_PATHS = framework;
 				ZERO_LINK = NO;
 			};
 			name = Release;
