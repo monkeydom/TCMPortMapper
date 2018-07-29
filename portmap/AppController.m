@@ -46,7 +46,7 @@
 
     [center addObserver:self selector:@selector(portMapperDidReceiveUPNPMappingTable:) name:TCMPortMapperDidReceiveUPNPMappingTableNotification object:pm];
 
-    NSArray *array = [[[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Presets" ofType:@"plist"]] autorelease];
+    NSArray *array = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Presets" ofType:@"plist"]];
     NSEnumerator *presets = [array objectEnumerator];
     NSDictionary *preset = nil;
     while ((preset = [presets nextObject])) {
@@ -113,19 +113,19 @@
 }
 
 - (NSString *)externalIPAddressString {
-	NSString *externalIPAddress = [[TCMPortMapper sharedInstance] externalIPAddress];
-	if (!externalIPAddress || [externalIPAddress isEqualToString:@"0.0.0.0"]) {
-		externalIPAddress = NSLocalizedString(@"No external Address.",@"");
-	}
-	return externalIPAddress;
+    NSString *externalIPAddress = [[TCMPortMapper sharedInstance] externalIPAddress];
+    if (!externalIPAddress || [externalIPAddress isEqualToString:@"0.0.0.0"]) {
+        externalIPAddress = NSLocalizedString(@"No external Address.",@"");
+    }
+    return externalIPAddress;
 }
 
 - (void)portMapperExternalIPAddressDidChange:(NSNotification *)aNotification {
     TCMPortMapper *pm=[TCMPortMapper sharedInstance];
     if ([pm isRunning]) {
-    	if ([pm externalIPAddress]) {
-			[O_currentIPTextField setObjectValue:[self externalIPAddressString]];
-		}
+        if ([pm externalIPAddress]) {
+            [O_currentIPTextField setObjectValue:[self externalIPAddressString]];
+        }
     } else {
         [O_currentIPTextField setStringValue:NSLocalizedString(@"Stopped",@"")];
     }
@@ -150,14 +150,14 @@
     [O_refreshButton setEnabled:YES];
     TCMPortMapper *pm=[TCMPortMapper sharedInstance];
     if ([pm externalIPAddress]) {
-		[O_currentIPTextField setObjectValue:[self externalIPAddressString]];
+        [O_currentIPTextField setObjectValue:[self externalIPAddressString]];
     } else {
-		if ([pm routerIPAddress]) {
-			[O_currentIPTextField setStringValue:NSLocalizedString(@"Router incompatible.",@"")];
-			[self showInstructionalPanel:self];
-		} else {
-			[O_currentIPTextField setStringValue:NSLocalizedString(@"Can't find router.",@"")];
-		}
+        if ([pm routerIPAddress]) {
+            [O_currentIPTextField setStringValue:NSLocalizedString(@"Router incompatible.",@"")];
+            [self showInstructionalPanel:self];
+        } else {
+            [O_currentIPTextField setStringValue:NSLocalizedString(@"Can't find router.",@"")];
+        }
     }
     [self updateTagLine];
 }
@@ -191,13 +191,13 @@
     [O_UPNPTabItemProgressIndicator stopAnimation:self];
     [O_showUPNPMappingTableButton setEnabled:[[TCMPortMapper sharedInstance] mappingProtocol] == TCMUPNPPortMapProtocol];
     NSString *localIPAddress = [[TCMPortMapper sharedInstance] localIPAddress];
- 	if (!localIPAddress) {
-		[[O_currentIPTextField window] setTitle:@"Port Map"];
-	    [O_localIPAddressTextField setStringValue:@""];
- 	} else {
-	    [O_localIPAddressTextField setStringValue:localIPAddress];
-	    [[O_currentIPTextField window] setTitle:[NSString stringWithFormat:NSLocalizedString(@"Port Map on %@",@""), localIPAddress]];
- 	}
+     if (!localIPAddress) {
+        [[O_currentIPTextField window] setTitle:@"Port Map"];
+        [O_localIPAddressTextField setStringValue:@""];
+     } else {
+        [O_localIPAddressTextField setStringValue:localIPAddress];
+        [[O_currentIPTextField window] setTitle:[NSString stringWithFormat:NSLocalizedString(@"Port Map on %@",@""), localIPAddress]];
+     }
 }
 
 #pragma mark -
@@ -224,19 +224,19 @@
 }
 
 - (IBAction)showInstructionalPanel:(id)aSender {
-	if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"DontShowInstructionsAgain"] boolValue])
-		[NSApp beginSheet:O_instructionalSheetPanel modalForWindow:[O_currentIPTextField window] modalDelegate:self didEndSelector:@selector(genericSheetDidEnd:returnCode:contextInfo:) contextInfo:nil];	
+    if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"DontShowInstructionsAgain"] boolValue])
+        [NSApp beginSheet:O_instructionalSheetPanel modalForWindow:[O_currentIPTextField window] modalDelegate:self didEndSelector:@selector(genericSheetDidEnd:returnCode:contextInfo:) contextInfo:nil];    
 }
 
 - (IBAction)endInstructionalSheet:(id)aSender {
-	if ([aSender tag] == 42) {
-		[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:NSLocalizedString(@"NAT-PMP Howto URL",@"")]];
-	}
-	
-	if ([O_dontShowInstructionsAgainButton state] == NSOnState) {
-	    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:@"DontShowInstructionsAgain"];	
-	}
-	
+    if ([aSender tag] == 42) {
+        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:NSLocalizedString(@"NAT-PMP Howto URL",@"")]];
+    }
+    
+    if ([O_dontShowInstructionsAgainButton state] == NSOnState) {
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:@"DontShowInstructionsAgain"];    
+    }
+    
     [NSApp endSheet:O_instructionalSheetPanel];
 }
 
@@ -281,7 +281,7 @@
 }
 
 - (IBAction)showReleaseNotes:(id)aSender {
-	NSURL *releaseNotesURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"portmap_releasenotes" ofType:@"html"]];
+    NSURL *releaseNotesURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"portmap_releasenotes" ofType:@"html"]];
     [[NSWorkspace sharedWorkspace] openURL:releaseNotesURL];
 }
 

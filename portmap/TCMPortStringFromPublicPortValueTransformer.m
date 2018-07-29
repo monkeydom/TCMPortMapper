@@ -31,7 +31,7 @@
     if ([value respondsToSelector:@selector(mappingStatus)] &&
         [value mappingStatus]==TCMPortMappingStatusMapped &&
         [[TCMPortMapper sharedInstance] externalIPAddress]) {
-        NSMutableString *string = [[[[value userInfo] objectForKey:@"referenceString"] mutableCopy] autorelease];
+        NSMutableString *string = [[[value userInfo] objectForKey:@"referenceString"] mutableCopy];
 //        NSLog(@"%s %@",__FUNCTION__,string);
         if (string) {
             if ([string rangeOfString:@"[IP]"].location!=NSNotFound)
