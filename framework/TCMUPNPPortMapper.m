@@ -152,8 +152,6 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
     @autoreleasepool {
         [[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:TCMUPNPPortMapperDidBeginWorkingNotification object:self];
         struct UPNPDev * devlist = 0;
-        const char * multicastif = 0;
-        const char * minissdpdpath = 0;
         // IPv4
         // 15 "192.168.167.199"
         // IPv6
