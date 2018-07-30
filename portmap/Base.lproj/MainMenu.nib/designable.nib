@@ -282,7 +282,7 @@ CA
                     </menu>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="65" y="-112"/>
+            <point key="canvasLocation" x="26" y="-52"/>
         </menu>
         <window title="Port Map" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="371">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
@@ -301,21 +301,21 @@ CA
                             <rect key="frame" x="1" y="23" width="491" height="153"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="sequential" alternatingRowBackgroundColors="YES" columnReordering="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" rowHeight="42" headerView="379" id="378">
-                                    <rect key="frame" x="0.0" y="0.0" width="491" height="153"/>
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="sequential" columnReordering="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" rowHeight="42" headerView="379" id="378">
+                                    <rect key="frame" x="0.0" y="0.0" width="492" height="153"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn width="86" minWidth="86" maxWidth="86" id="380">
+                                        <tableColumn width="44" minWidth="44" maxWidth="44" id="380">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Active">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                                             </tableHeaderCell>
-                                            <buttonCell key="dataCell" type="square" title="Check" bezelStyle="shadowlessSquare" image="Off20" imagePosition="only" alignment="left" alternateImage="On20" inset="2" id="388">
-                                                <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                            <buttonCell key="dataCell" type="check" bezelStyle="regularSquare" imagePosition="only" alignment="center" inset="2" id="388">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
@@ -336,7 +336,7 @@ CA
                                                 </binding>
                                             </connections>
                                         </tableColumn>
-                                        <tableColumn width="140" minWidth="40" maxWidth="1000" id="381">
+                                        <tableColumn width="183" minWidth="40" maxWidth="1000" id="381">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Description">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -454,7 +454,7 @@ CA
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <tableHeaderView key="headerView" id="379">
-                            <rect key="frame" x="0.0" y="0.0" width="491" height="23"/>
+                            <rect key="frame" x="0.0" y="0.0" width="492" height="23"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
@@ -476,17 +476,6 @@ CA
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button verticalHuggingPriority="750" imageHugsTitle="YES" id="403">
-                        <rect key="frame" x="32" y="250" width="31" height="25"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="roundTextured" title="Round Textured" bezelStyle="texturedRounded" image="NSRefreshTemplate" imagePosition="only" alignment="center" state="on" borderStyle="border" inset="2" id="404">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="refresh:" target="405" id="409"/>
-                        </connections>
-                    </button>
                     <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" minValue="16" maxValue="100" doubleValue="16" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" style="spinning" id="418">
                         <rect key="frame" x="437" y="233" width="32" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
@@ -515,10 +504,10 @@ CA
                         </connections>
                     </button>
                     <button imageHugsTitle="YES" id="529">
-                        <rect key="frame" x="9" y="219" width="72" height="24"/>
+                        <rect key="frame" x="6" y="219" width="33" height="24"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Off20" imagePosition="only" alignment="center" alternateImage="On20" state="on" inset="2" id="530">
-                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                        <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="only" state="on" inset="2" id="530">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
@@ -552,8 +541,20 @@ CA
                             </binding>
                         </connections>
                     </textField>
+                    <button verticalHuggingPriority="750" imageHugsTitle="YES" id="403">
+                        <rect key="frame" x="52" y="219" width="31" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="roundTextured" title="Round Textured" bezelStyle="texturedRounded" image="NSRefreshTemplate" imagePosition="only" alignment="center" state="on" borderStyle="border" inset="2" id="404">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="refresh:" target="405" id="409"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
+            <point key="canvasLocation" x="119" y="164.5"/>
         </window>
         <customObject id="405" customClass="AppController">
             <connections>
@@ -1200,8 +1201,6 @@ Uses libnatpmp and miniupnpc.</string>
         <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSRefreshTemplate" width="11" height="15"/>
         <image name="NSRemoveTemplate" width="11" height="11"/>
-        <image name="Off20" width="69" height="20"/>
-        <image name="On20" width="69" height="20"/>
         <image name="PortMap" width="128" height="128"/>
         <image name="imageCell:489:image" width="42" height="42">
             <mutableData key="keyedArchiveRepresentation">

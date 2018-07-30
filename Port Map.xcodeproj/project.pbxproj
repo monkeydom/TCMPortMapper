@@ -25,9 +25,6 @@
 		318011AC0D4DEE9500BE3B28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
 		3180159D0D4E1B9200BE3B28 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3180154D0D4E08D900BE3B28 /* SystemConfiguration.framework */; };
 		31FAE7D40D672D410085867F /* miniupnpc-LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 31FAE7D30D672D410085867F /* miniupnpc-LICENSE.txt */; };
-		F214E5F80D5F626800A06962 /* DotGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = F214E5F50D5F626800A06962 /* DotGreen.png */; };
-		F214E5F90D5F626800A06962 /* DotRed.png in Resources */ = {isa = PBXBuildFile; fileRef = F214E5F60D5F626800A06962 /* DotRed.png */; };
-		F214E5FA0D5F626800A06962 /* DotYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = F214E5F70D5F626800A06962 /* DotYellow.png */; };
 		F214E5FD0D5F62F700A06962 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = F214E5FB0D5F62F700A06962 /* MainMenu.nib */; };
 		F214E6080D5F646E00A06962 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F214E6060D5F646E00A06962 /* main.m */; };
 		F214E60C0D5F64BF00A06962 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = F214E60B0D5F64BF00A06962 /* AppController.m */; };
@@ -57,6 +54,8 @@
 		F241D07A210E1169002B6A69 /* upnpdev.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF551E210B77440071DF2D /* upnpdev.c */; };
 		F241D07D210E117A002B6A69 /* receivedata.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5520210B776B0071DF2D /* receivedata.c */; };
 		F241D07E210E117F002B6A69 /* portlistingparse.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5519210B76240071DF2D /* portlistingparse.c */; };
+		F241D084210F030C002B6A69 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F241D083210F030C002B6A69 /* Icons.xcassets */; };
+		F241D085210F036D002B6A69 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F241D083210F030C002B6A69 /* Icons.xcassets */; };
 		F24602F70DB4AFE300C509E9 /* OUItoCompany.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2CDB8FA0D65D82900B6A4E7 /* OUItoCompany.plist */; };
 		F2482BA50D589FD0002DF811 /* RSVerticallyCenteredTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2482BA40D589FD0002DF811 /* RSVerticallyCenteredTextFieldCell.m */; };
 		F2482BA90D58A15F002DF811 /* TCMStatusImageFromMappingStatusValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F2482BA80D58A15F002DF811 /* TCMStatusImageFromMappingStatusValueTransformer.m */; };
@@ -78,19 +77,8 @@
 		F2C65C360D50B2F800820CAE /* NSNotificationCenterThreadingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C65BE50D50B17B00820CAE /* NSNotificationCenterThreadingAdditions.m */; };
 		F2C6602B0D50C58800820CAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C6602A0D50C58800820CAE /* main.m */; };
 		F2C6602E0D50C58F00820CAE /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C6602C0D50C58F00820CAE /* AppController.m */; };
-		F2C660350D50C59B00820CAE /* On20.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C6602F0D50C59B00820CAE /* On20.png */; };
-		F2C660360D50C59B00820CAE /* Off20.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C660300D50C59B00820CAE /* Off20.png */; };
-		F2C660370D50C59B00820CAE /* DotRed.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C660310D50C59B00820CAE /* DotRed.png */; };
-		F2C660390D50C59B00820CAE /* DotGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C660330D50C59B00820CAE /* DotGreen.png */; };
-		F2C6603A0D50C59B00820CAE /* DotYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C660340D50C59B00820CAE /* DotYellow.png */; };
 		F2C660480D50C68400820CAE /* TCMPortMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */; };
 		F2C660510D50C69A00820CAE /* TCMPortMapper.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */; };
-		F2CDB8C80D65BF2200B6A4E7 /* NSAddTemplate.tiff in Resources */ = {isa = PBXBuildFile; fileRef = F2CDB8C50D65BF2200B6A4E7 /* NSAddTemplate.tiff */; };
-		F2CDB8C90D65BF2200B6A4E7 /* NSRefreshTemplate.tiff in Resources */ = {isa = PBXBuildFile; fileRef = F2CDB8C60D65BF2200B6A4E7 /* NSRefreshTemplate.tiff */; };
-		F2CDB8CA0D65BF2200B6A4E7 /* NSRemoveTemplate.tiff in Resources */ = {isa = PBXBuildFile; fileRef = F2CDB8C70D65BF2200B6A4E7 /* NSRemoveTemplate.tiff */; };
-		F2CDB8CF0D65C0AF00B6A4E7 /* NSRemoveTemplate.tiff in Resources */ = {isa = PBXBuildFile; fileRef = F2CDB8C70D65BF2200B6A4E7 /* NSRemoveTemplate.tiff */; };
-		F2CDB8D00D65C0B000B6A4E7 /* NSRefreshTemplate.tiff in Resources */ = {isa = PBXBuildFile; fileRef = F2CDB8C60D65BF2200B6A4E7 /* NSRefreshTemplate.tiff */; };
-		F2CDB8D10D65C0B100B6A4E7 /* NSAddTemplate.tiff in Resources */ = {isa = PBXBuildFile; fileRef = F2CDB8C50D65BF2200B6A4E7 /* NSAddTemplate.tiff */; };
 		F2CDB8FB0D65D82900B6A4E7 /* OUItoCompany.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2CDB8FA0D65D82900B6A4E7 /* OUItoCompany.plist */; };
 		F2D731D10D5B607D00CBD1D8 /* TCMPortMappingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D731D00D5B607D00CBD1D8 /* TCMPortMappingAdditions.m */; };
 		F2D731EA0D5B768300CBD1D8 /* Presets.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2D731E90D5B768300CBD1D8 /* Presets.plist */; };
@@ -182,9 +170,6 @@
 		31FAE7D30D672D410085867F /* miniupnpc-LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "miniupnpc-LICENSE.txt"; sourceTree = "<group>"; };
 		F214E5DB0D5F5FE600A06962 /* NATEcho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NATEcho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F214E5DD0D5F5FE600A06962 /* NATEcho-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "NATEcho-Info.plist"; path = "natecho/NATEcho-Info.plist"; sourceTree = "<group>"; };
-		F214E5F50D5F626800A06962 /* DotGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DotGreen.png; path = general_artwork/DotGreen.png; sourceTree = "<group>"; };
-		F214E5F60D5F626800A06962 /* DotRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DotRed.png; path = general_artwork/DotRed.png; sourceTree = "<group>"; };
-		F214E5F70D5F626800A06962 /* DotYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DotYellow.png; path = general_artwork/DotYellow.png; sourceTree = "<group>"; };
 		F214E6060D5F646E00A06962 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = natecho/main.m; sourceTree = "<group>"; };
 		F214E6070D5F646E00A06962 /* natecho_prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = natecho_prefix.pch; path = natecho/natecho_prefix.pch; sourceTree = "<group>"; };
 		F214E60A0D5F64BF00A06962 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = natecho/AppController.h; sourceTree = "<group>"; };
@@ -213,6 +198,7 @@
 		F2301B2E0D685C1B00728699 /* upnperrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = upnperrors.h; sourceTree = "<group>"; };
 		F2301B300D685C1B00728699 /* upnpreplyparse.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = upnpreplyparse.c; sourceTree = "<group>"; };
 		F2301B310D685C1B00728699 /* upnpreplyparse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = upnpreplyparse.h; sourceTree = "<group>"; };
+		F241D083210F030C002B6A69 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		F24603850DB4B61E00C509E9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2482BA30D589FD0002DF811 /* RSVerticallyCenteredTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSVerticallyCenteredTextFieldCell.h; path = RSVerticallyCenteredTextFieldCell/RSVerticallyCenteredTextFieldCell.h; sourceTree = "<group>"; };
 		F2482BA40D589FD0002DF811 /* RSVerticallyCenteredTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSVerticallyCenteredTextFieldCell.m; path = RSVerticallyCenteredTextFieldCell/RSVerticallyCenteredTextFieldCell.m; sourceTree = "<group>"; };
@@ -254,14 +240,6 @@
 		F2C6602A0D50C58800820CAE /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = portmap/main.m; sourceTree = "<group>"; };
 		F2C6602C0D50C58F00820CAE /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppController.m; path = portmap/AppController.m; sourceTree = "<group>"; };
 		F2C6602D0D50C58F00820CAE /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = portmap/AppController.h; sourceTree = "<group>"; };
-		F2C6602F0D50C59B00820CAE /* On20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = On20.png; sourceTree = "<group>"; };
-		F2C660300D50C59B00820CAE /* Off20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Off20.png; sourceTree = "<group>"; };
-		F2C660310D50C59B00820CAE /* DotRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DotRed.png; path = ../../general_artwork/DotRed.png; sourceTree = "<group>"; };
-		F2C660330D50C59B00820CAE /* DotGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DotGreen.png; path = ../../general_artwork/DotGreen.png; sourceTree = "<group>"; };
-		F2C660340D50C59B00820CAE /* DotYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DotYellow.png; path = ../../general_artwork/DotYellow.png; sourceTree = "<group>"; };
-		F2CDB8C50D65BF2200B6A4E7 /* NSAddTemplate.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = NSAddTemplate.tiff; sourceTree = "<group>"; };
-		F2CDB8C60D65BF2200B6A4E7 /* NSRefreshTemplate.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = NSRefreshTemplate.tiff; sourceTree = "<group>"; };
-		F2CDB8C70D65BF2200B6A4E7 /* NSRemoveTemplate.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = NSRemoveTemplate.tiff; sourceTree = "<group>"; };
 		F2CDB8FA0D65D82900B6A4E7 /* OUItoCompany.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = OUItoCompany.plist; path = framework/OUItoCompany.plist; sourceTree = "<group>"; };
 		F2D731CF0D5B607D00CBD1D8 /* TCMPortMappingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCMPortMappingAdditions.h; path = portmap/TCMPortMappingAdditions.h; sourceTree = "<group>"; };
 		F2D731D00D5B607D00CBD1D8 /* TCMPortMappingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCMPortMappingAdditions.m; path = portmap/TCMPortMappingAdditions.m; sourceTree = "<group>"; };
@@ -383,9 +361,6 @@
 		F214E5F40D5F625700A06962 /* artwork */ = {
 			isa = PBXGroup;
 			children = (
-				F214E5F50D5F626800A06962 /* DotGreen.png */,
-				F214E5F60D5F626800A06962 /* DotRed.png */,
-				F214E5F70D5F626800A06962 /* DotYellow.png */,
 			);
 			name = artwork;
 			sourceTree = "<group>";
@@ -446,16 +421,9 @@
 		F24603880DB4B63A00C509E9 /* Artwork */ = {
 			isa = PBXGroup;
 			children = (
+				F241D083210F030C002B6A69 /* Icons.xcassets */,
 				F2C30DD0210DFB28008653EE /* Assets.xcassets */,
 				F2482BAB0D58A415002DF811 /* GenericQuestionMarkIcon.icns */,
-				F2CDB8C50D65BF2200B6A4E7 /* NSAddTemplate.tiff */,
-				F2CDB8C60D65BF2200B6A4E7 /* NSRefreshTemplate.tiff */,
-				F2CDB8C70D65BF2200B6A4E7 /* NSRemoveTemplate.tiff */,
-				F2C6602F0D50C59B00820CAE /* On20.png */,
-				F2C660300D50C59B00820CAE /* Off20.png */,
-				F2C660310D50C59B00820CAE /* DotRed.png */,
-				F2C660330D50C59B00820CAE /* DotGreen.png */,
-				F2C660340D50C59B00820CAE /* DotYellow.png */,
 			);
 			name = Artwork;
 			path = artwork;
@@ -733,13 +701,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F214E5F80D5F626800A06962 /* DotGreen.png in Resources */,
-				F214E5F90D5F626800A06962 /* DotRed.png in Resources */,
-				F214E5FA0D5F626800A06962 /* DotYellow.png in Resources */,
 				F214E5FD0D5F62F700A06962 /* MainMenu.nib in Resources */,
-				F2CDB8C80D65BF2200B6A4E7 /* NSAddTemplate.tiff in Resources */,
-				F2CDB8C90D65BF2200B6A4E7 /* NSRefreshTemplate.tiff in Resources */,
-				F2CDB8CA0D65BF2200B6A4E7 /* NSRemoveTemplate.tiff in Resources */,
+				F241D084210F030C002B6A69 /* Icons.xcassets in Resources */,
 				F2CDB8FB0D65D82900B6A4E7 /* OUItoCompany.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -748,19 +711,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2C660350D50C59B00820CAE /* On20.png in Resources */,
-				F2C660360D50C59B00820CAE /* Off20.png in Resources */,
-				F2C660370D50C59B00820CAE /* DotRed.png in Resources */,
 				F2F3C3A0210E0D57009367E2 /* MainMenu.nib in Resources */,
-				F2C660390D50C59B00820CAE /* DotGreen.png in Resources */,
-				F2C6603A0D50C59B00820CAE /* DotYellow.png in Resources */,
 				F2482BAC0D58A415002DF811 /* GenericQuestionMarkIcon.icns in Resources */,
 				F2D731EA0D5B768300CBD1D8 /* Presets.plist in Resources */,
 				F2C30DDE210DFC8C008653EE /* InfoPlist.strings in Resources */,
-				F2CDB8CF0D65C0AF00B6A4E7 /* NSRemoveTemplate.tiff in Resources */,
+				F241D085210F036D002B6A69 /* Icons.xcassets in Resources */,
 				F2C30DD1210DFB28008653EE /* Assets.xcassets in Resources */,
-				F2CDB8D00D65C0B000B6A4E7 /* NSRefreshTemplate.tiff in Resources */,
-				F2CDB8D10D65C0B100B6A4E7 /* NSAddTemplate.tiff in Resources */,
 				F2C30DDC210DFC8C008653EE /* Localizable.strings in Resources */,
 				31FAE7D40D672D410085867F /* miniupnpc-LICENSE.txt in Resources */,
 				F290D63E0EDAEBFB00E643C0 /* portmap_releasenotes.css in Resources */,
