@@ -62,9 +62,6 @@
 		F2482BA90D58A15F002DF811 /* TCMStatusImageFromMappingStatusValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F2482BA80D58A15F002DF811 /* TCMStatusImageFromMappingStatusValueTransformer.m */; };
 		F2482BAC0D58A415002DF811 /* GenericQuestionMarkIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = F2482BAB0D58A415002DF811 /* GenericQuestionMarkIcon.icns */; };
 		F2482BBB0D58ABFA002DF811 /* TCMPortStringFromPublicPortValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F2482BBA0D58ABFA002DF811 /* TCMPortStringFromPublicPortValueTransformer.m */; };
-		F290D6160EDAC1B200E643C0 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F290D6150EDAC1B200E643C0 /* Sparkle.framework */; };
-		F290D6210EDAC1C800E643C0 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = F290D6150EDAC1B200E643C0 /* Sparkle.framework */; };
-		F290D6340EDAC44000E643C0 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = F290D6330EDAC44000E643C0 /* dsa_pub.pem */; };
 		F290D63E0EDAEBFB00E643C0 /* portmap_releasenotes.css in Resources */ = {isa = PBXBuildFile; fileRef = F290D63C0EDAEBFB00E643C0 /* portmap_releasenotes.css */; };
 		F290D63F0EDAEBFB00E643C0 /* portmap_releasenotes.html in Resources */ = {isa = PBXBuildFile; fileRef = F290D63D0EDAEBFB00E643C0 /* portmap_releasenotes.html */; };
 		F29472930ED3091500DEBA97 /* getgateway.c in Sources */ = {isa = PBXBuildFile; fileRef = F29472890ED3091000DEBA97 /* getgateway.c */; };
@@ -168,7 +165,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F290D6210EDAC1C800E643C0 /* Sparkle.framework in Copy Frameworks */,
 				F2C660510D50C69A00820CAE /* TCMPortMapper.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
@@ -225,8 +221,6 @@
 		F2482BAB0D58A415002DF811 /* GenericQuestionMarkIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = GenericQuestionMarkIcon.icns; sourceTree = "<group>"; };
 		F2482BB90D58ABFA002DF811 /* TCMPortStringFromPublicPortValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCMPortStringFromPublicPortValueTransformer.h; path = portmap/TCMPortStringFromPublicPortValueTransformer.h; sourceTree = "<group>"; };
 		F2482BBA0D58ABFA002DF811 /* TCMPortStringFromPublicPortValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCMPortStringFromPublicPortValueTransformer.m; path = portmap/TCMPortStringFromPublicPortValueTransformer.m; sourceTree = "<group>"; };
-		F290D6150EDAC1B200E643C0 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = frameworks/Sparkle.framework; sourceTree = "<group>"; };
-		F290D6330EDAC44000E643C0 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		F290D63C0EDAEBFB00E643C0 /* portmap_releasenotes.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = portmap_releasenotes.css; path = htdocs/portmap_releasenotes.css; sourceTree = "<group>"; };
 		F290D63D0EDAEBFB00E643C0 /* portmap_releasenotes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = portmap_releasenotes.html; path = htdocs/portmap_releasenotes.html; sourceTree = "<group>"; };
 		F29472860ED3091000DEBA97 /* build.bat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = build.bat; sourceTree = "<group>"; };
@@ -314,7 +308,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2C660480D50C68400820CAE /* TCMPortMapper.framework in Frameworks */,
-				F290D6160EDAC1B200E643C0 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +318,6 @@
 			isa = PBXGroup;
 			children = (
 				F2DF5511210B55EB0071DF2D /* Security.framework */,
-				F290D6150EDAC1B200E643C0 /* Sparkle.framework */,
 				3180154D0D4E08D900BE3B28 /* SystemConfiguration.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
@@ -554,7 +546,6 @@
 				F290D63C0EDAEBFB00E643C0 /* portmap_releasenotes.css */,
 				F290D63D0EDAEBFB00E643C0 /* portmap_releasenotes.html */,
 				F24603880DB4B63A00C509E9 /* Artwork */,
-				F290D6330EDAC44000E643C0 /* dsa_pub.pem */,
 				F24603850DB4B61E00C509E9 /* Info.plist */,
 				F2C30DD5210DFC8C008653EE /* English.lproj */,
 				F2D731E90D5B768300CBD1D8 /* Presets.plist */,
@@ -772,7 +763,6 @@
 				F2CDB8D10D65C0B100B6A4E7 /* NSAddTemplate.tiff in Resources */,
 				F2C30DDC210DFC8C008653EE /* Localizable.strings in Resources */,
 				31FAE7D40D672D410085867F /* miniupnpc-LICENSE.txt in Resources */,
-				F290D6340EDAC44000E643C0 /* dsa_pub.pem in Resources */,
 				F290D63E0EDAEBFB00E643C0 /* portmap_releasenotes.css in Resources */,
 				F290D63F0EDAEBFB00E643C0 /* portmap_releasenotes.html in Resources */,
 			);
@@ -926,6 +916,9 @@
 		318011A10D4DEC8500BE3B28 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZTRT8S69HR;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -949,14 +942,19 @@
 					AppKit,
 				);
 				PREBINDING = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = de.monkeydom.TCMPortMapper;
 				PRODUCT_NAME = TCMPortMapper;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		318011A20D4DEC8500BE3B28 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = ZTRT8S69HR;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -982,7 +980,9 @@
 					AppKit,
 				);
 				PREBINDING = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = de.monkeydom.TCMPortMapper;
 				PRODUCT_NAME = TCMPortMapper;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1181,6 +1181,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = PortMap;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZTRT8S69HR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/frameworks\"",
@@ -1200,7 +1203,9 @@
 					AppKit,
 				);
 				PREBINDING = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = de.monkeydom.TCMPortMapper.PortMap;
 				PRODUCT_NAME = "Port Map";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
@@ -1210,7 +1215,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = PortMap;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = ZTRT8S69HR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/frameworks\"",
@@ -1228,7 +1236,9 @@
 					AppKit,
 				);
 				PREBINDING = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = de.monkeydom.TCMPortMapper.PortMap;
 				PRODUCT_NAME = "Port Map";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};

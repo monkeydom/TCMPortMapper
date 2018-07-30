@@ -4,11 +4,6 @@
 #import "TCMPortStringFromPublicPortValueTransformer.h"
 #import "TCMPortMappingAdditions.h"
 
-@interface NSWindow (privateLeopardAdditions)
-- (void)setAutorecalculatesContentBorderThickness:(BOOL)autorecalculateContentBorderThickness forEdge:(NSRectEdge)edge;
-- (void)setContentBorderThickness:(float)borderThickness forEdge:(NSRectEdge)edge;
-@end
-
 @implementation AppController
 
 + (void)initialize {
