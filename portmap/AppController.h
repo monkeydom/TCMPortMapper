@@ -1,15 +1,9 @@
-//
 //  AppController.h
-//
-//  Copyright (c) 2007-2008 TheCodingMonkeys: 
-//  Martin Pittenauer, Dominik Wagner, <http://codingmonkeys.de>
-//  Some rights reserved: <http://opensource.org/licenses/mit-license.php> 
-//
+//  Port Map.app
 
-#import <Cocoa/Cocoa.h>
+@import Cocoa;
 
-
-@interface AppController : NSObject {
+@interface AppController : NSObject <NSApplicationDelegate> {
     IBOutlet NSTextField *O_currentIPTextField;
     IBOutlet NSTextField *O_taglineTextField;
     IBOutlet NSTableView *O_portMappingsTableView;
