@@ -19,7 +19,7 @@ The two classes you are confronted with are `TCMPortMapper` and `TCMPortMapping`
 ### Code you need to put in
 When you providing a Network service, you need to put this code at the point where you know the ports your app is using:
 
-```obj-c
+```objectivec
 TCMPortMapper *pm = [TCMPortMapper sharedInstance];
 [pm addPortMapping:
 [TCMPortMapping portMappingWithLocalPort:myListeningPort 
@@ -31,7 +31,7 @@ TCMPortMapper *pm = [TCMPortMapper sharedInstance];
 
 After these calls the TCMPortMapper will try to map this port, and as long as it is running, will adapt to changed network environments. If you want to provide User Feedback (which I hope you want ;) ) the simplest way of doing this is to register for these two notifications, as well as sending you a call when initializing:
 
-```obj-c
+```objectivec
 TCMPortMapper *pm = [TCMPortMapper sharedInstance];
 NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
 [center addObserver:self selector:@selector(portMapperDidStartWork:) 
@@ -40,46 +40,46 @@ NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
                name:TCMPortMapperDidFinishWorkNotification object:pm];
 [O_portStatusImageView setDelegate:self];
 if ([pm isAtWork]) {
-	[self portMapperDidStartWork:nil];
+    [self portMapperDidStartWork:nil];
 } else {
-	[self portMapperDidFinishWork:nil];
+    [self portMapperDidFinishWork:nil];
 }
 ```
 
 What you probably want to do in the start variant is to start your progress indicator, update your status text line. When you put the progress indicator over your status Image, you'd probably want to hide that:
 
-```obj-c
+```objectivec
 - (void)portMapperDidStartWork:(NSNotification *)notification {
-	[portStatusProgressIndicator startAnimation:self];
-	[portStatusImageView setHidden:YES];
-	[portStatusTextField setStringValue:@"Checking port status..."];
+    [portStatusProgressIndicator startAnimation:self];
+    [portStatusImageView setHidden:YES];
+    [portStatusTextField setStringValue:@"Checking port status..."];
 }
 ```
 
 In the portMapperDidFinishWork: method you obviously need to figure out if the port mapping has taken place (in case of a fixed public IP port mappings will also be set to mapped), and show that. The easiest way is to check all your port mappings for their mapping status. If you only have one, then the code used here should be fine:
 
-```obj-c
+```objectivec
 - (void)portMapperDidFinishWork:(NSNotification *)aNotification {
-	[O_portStatusProgressIndicator stopAnimation:self];
-	TCMPortMapper *pm = [TCMPortMapper sharedInstance];
-	// since we only have one mapping this is fine
-	TCMPortMapping *mapping = [[pm portMappings] anyObject];
-	if ([mapping mappingStatus]==TCMPortMappingStatusMapped) {
-    	[O_portStatusImageView setImage:[NSImage imageNamed:@"URLIconOK"]];
-    	[O_portStatusTextField setStringValue:
-        	[NSString stringWithFormat:@"see://%@:%d",
+    [O_portStatusProgressIndicator stopAnimation:self];
+    TCMPortMapper *pm = [TCMPortMapper sharedInstance];
+    // since we only have one mapping this is fine
+    TCMPortMapping *mapping = [[pm portMappings] anyObject];
+    if ([mapping mappingStatus]==TCMPortMappingStatusMapped) {
+        [O_portStatusImageView setImage:[NSImage imageNamed:@"URLIconOK"]];
+        [O_portStatusTextField setStringValue:
+            [NSString stringWithFormat:@"see://%@:%d",
                   [pm externalIPAddress],[mapping externalPort]]];
-	} else {
-    	[O_portStatusImageView setImage:[NSImage imageNamed:@"URLIconNotOK"]];
-    	[O_portStatusTextField setStringValue:@"No public mapping."];
-	}
-	[O_portStatusImageView setHidden:NO];
+    } else {
+        [O_portStatusImageView setImage:[NSImage imageNamed:@"URLIconNotOK"]];
+        [O_portStatusTextField setStringValue:@"No public mapping."];
+    }
+    [O_portStatusImageView setHidden:NO];
 }
 ```
 
 In addition to that - to be a good citizen and remove the port mappings on termination of your application - you need to put this line into your applicationWillTerminate:
 
-```obj-c
+```objectivec
 [[TCMPortMapper sharedInstance] stopBlocking];
 ```
 
@@ -89,12 +89,13 @@ If you want to provide your users with an option wether to automatically forward
 
 Currently the TCMPortMapping objects are immutable objects. If you want to change a port number for an existing mapping then you have to remove it first and readd a different one like this:
 
-	TCMPortMapper *pm = [TCMPortMapper sharedInstance];
-	[[TCMPortMapper sharedInstance] removePortMapping:oldMapping];
-	TCMPortMapping *newMapping = [TCMPortMapping portMappingWithLocalPort:port desiredExternalPort:port transportProtocol:TCMPortMappingTransportProtocolTCP userInfo:nil];
-	[pm addPortMapping:newMapping];
-
-Note that the above code will not reliably change just the public port for an existing mapping. When the mapping is removed a thread updates the port mapper. When the new mapping is added the previous update thread is cancelled and a new update thread is started. This thread sees that a private port matching the new mapping already exists and updates the desired external port to match the existing value. So the effect is zero change. To successfully change just the public port value call `- removePortMapping`, allow the mapper to finish working and then call `- addPortMapping`
+```objectivec
+TCMPortMapper *pm = [TCMPortMapper sharedInstance];
+[[TCMPortMapper sharedInstance] removePortMapping:oldMapping];
+TCMPortMapping *newMapping = [TCMPortMapping portMappingWithLocalPort:port desiredExternalPort:port transportProtocol:TCMPortMappingTransportProtocolTCP userInfo:nil];
+[pm addPortMapping:newMapping];
+```
+Note that the above code will not reliably change just the public port for an existing mapping. When the mapping is removed a thread updates the port mapper. When the new mapping is added the previous update thread is cancelled and a new update thread is started. This thread sees that a private port matching the new mapping already exists and updates the desired external port to match the existing value. So the effect is zero change. To successfully change just the public port value call `-removePortMapping`, allow the mapper to finish working and then call `- addPortMapping`
 
 If you manage more than one mapping and want to remove/change them individually then you have to either hold on to them in your code, mark them with a corresponding userInfo or be able to identify them using the port numbers alone.
 
