@@ -16,7 +16,7 @@
     NSWindow *mainWindow = [O_refreshButton window];
     if ([mainWindow respondsToSelector:@selector(setContentBorderThickness:forEdge:)]) {
         [mainWindow setAutorecalculatesContentBorderThickness:NO forEdge:NSMaxYEdge];
-        [mainWindow setContentBorderThickness:73.0 forEdge:NSMaxYEdge];
+        [mainWindow setContentBorderThickness:90.0 forEdge:NSMaxYEdge];
     }
 
     TCMPortMapper *pm=[TCMPortMapper sharedInstance];
@@ -77,8 +77,12 @@
     [[TCMPortMapper sharedInstance] refresh];
 }
 
+- (NSWindow *)mainWindow {
+    return [O_currentIPTextField window];
+}
+
 - (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)aSender {
-    [[O_currentIPTextField window] orderFront:self];
+    [self.mainWindow orderFront:self];
     return NO;
 }
 
@@ -157,10 +161,6 @@
     [self updateTagLine];
 }
 
-- (void)genericSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo {
-    [sheet orderOut:self];
-}
-
 - (void)controlTextDidChange:(NSNotification *)aNotification {
     NSTextView *fieldEditor = [[aNotification userInfo] objectForKey:@"NSFieldEditor"];
     if (fieldEditor == [O_addLocalPortField currentEditor]) {
@@ -187,11 +187,11 @@
     [O_showUPNPMappingTableButton setEnabled:[[TCMPortMapper sharedInstance] mappingProtocol] == TCMUPNPPortMapProtocol];
     NSString *localIPAddress = [[TCMPortMapper sharedInstance] localIPAddress];
      if (!localIPAddress) {
-        [[O_currentIPTextField window] setTitle:@"Port Map"];
+        [self.mainWindow setTitle:@"Port Map"];
         [O_localIPAddressTextField setStringValue:@""];
      } else {
         [O_localIPAddressTextField setStringValue:localIPAddress];
-        [[O_currentIPTextField window] setTitle:[NSString stringWithFormat:NSLocalizedString(@"Port Map on %@",@""), localIPAddress]];
+        [self.mainWindow setTitle:[NSString stringWithFormat:NSLocalizedString(@"Port Map on %@",@""), localIPAddress]];
      }
 }
 
@@ -208,31 +208,34 @@
     [mapping addObserver:self forKeyPath:@"userInfo.active" options:0 context:nil];
     [O_mappingsArrayController addObject:mapping];
     [[TCMPortMapper sharedInstance] addPortMapping:mapping];
-    [NSApp endSheet:O_addSheetPanel];
-//    [O_addSheetPanel orderOut:self];
+    [self.mainWindow endSheet:O_addSheetPanel returnCode:NSModalResponseOK];
     [self writeMappingDefaults];
 }
 
 - (IBAction)addMappingCancelSheet:(id)aSender {
-    [NSApp endSheet:O_addSheetPanel];
-//    [O_addSheetPanel orderOut:self];
+    [self.mainWindow endSheet:O_addSheetPanel returnCode:NSModalResponseCancel];
 }
 
 - (IBAction)showInstructionalPanel:(id)aSender {
-    if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"DontShowInstructionsAgain"] boolValue])
-        [NSApp beginSheet:O_instructionalSheetPanel modalForWindow:[O_currentIPTextField window] modalDelegate:self didEndSelector:@selector(genericSheetDidEnd:returnCode:contextInfo:) contextInfo:nil];    
+    if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"DontShowInstructionsAgain"] boolValue]) {
+        [self.mainWindow beginSheet:O_instructionalSheetPanel completionHandler:^(NSModalResponse returnCode) {
+            if (returnCode == NSModalResponseContinue) {
+                [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:NSLocalizedString(@"NAT-PMP Howto URL",@"")]];
+            }
+        }];
+    }
 }
 
 - (IBAction)endInstructionalSheet:(id)aSender {
+    NSModalResponse response = NSModalResponseOK;
     if ([aSender tag] == 42) {
-        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:NSLocalizedString(@"NAT-PMP Howto URL",@"")]];
+        response = NSModalResponseContinue;
     }
     
     if ([O_dontShowInstructionsAgainButton state] == NSOnState) {
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:@"DontShowInstructionsAgain"];    
     }
-    
-    [NSApp endSheet:O_instructionalSheetPanel];
+    [self.mainWindow endSheet:O_instructionalSheetPanel returnCode:response];
 }
 
 - (IBAction)choosePreset:(id)aSender {
@@ -248,7 +251,8 @@
 
 
 - (IBAction)addMapping:(id)aSender {
-    [NSApp beginSheet:O_addSheetPanel modalForWindow:[O_currentIPTextField window] modalDelegate:self didEndSelector:@selector(genericSheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
+    [self.mainWindow beginSheet:O_addSheetPanel completionHandler:^(NSModalResponse returnCode) {
+    }];
 }
 
 - (IBAction)removeMapping:(id)aSender {
@@ -289,7 +293,8 @@
 - (IBAction)requestUPNPMappingTable:(id)aSender {
     [[O_progressIndictatorTabItem tabView] selectTabViewItem:O_progressIndictatorTabItem];
     [[TCMPortMapper sharedInstance] requestUPNPMappingTable];
-    [NSApp beginSheet:O_showUPNPMappingListWindow modalForWindow:[O_currentIPTextField window] modalDelegate:self didEndSelector:@selector(genericSheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
+    [self.mainWindow beginSheet:O_showUPNPMappingListWindow completionHandler:^(NSModalResponse returnCode) {
+    }];
 }
 
 - (void)portMapperDidReceiveUPNPMappingTable:(NSNotification *)aNotification {

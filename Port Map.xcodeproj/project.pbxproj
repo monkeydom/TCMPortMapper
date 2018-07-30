@@ -78,7 +78,7 @@
 		F2C6602B0D50C58800820CAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C6602A0D50C58800820CAE /* main.m */; };
 		F2C6602E0D50C58F00820CAE /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C6602C0D50C58F00820CAE /* AppController.m */; };
 		F2C660480D50C68400820CAE /* TCMPortMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */; };
-		F2C660510D50C69A00820CAE /* TCMPortMapper.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */; };
+		F2C660510D50C69A00820CAE /* TCMPortMapper.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F2CDB8FB0D65D82900B6A4E7 /* OUItoCompany.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2CDB8FA0D65D82900B6A4E7 /* OUItoCompany.plist */; };
 		F2D731D10D5B607D00CBD1D8 /* TCMPortMappingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D731D00D5B607D00CBD1D8 /* TCMPortMappingAdditions.m */; };
 		F2D731EA0D5B768300CBD1D8 /* Presets.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2D731E90D5B768300CBD1D8 /* Presets.plist */; };
