@@ -14,6 +14,8 @@
 #import <err.h>
 #import <CommonCrypto/CommonDigest.h>
 
+#import <zlib.h>
+
 // update port mappings all 30 minutes as a default
 #define UPNP_REFRESH_INTERVAL (30.*60.)
 
@@ -468,18 +470,61 @@ static TCMPortMapper *S_sharedInstance;
     return nil;
 }
 
-+ (NSString *)manufacturerForHardwareAddress:(NSString *)aMACAddress {
-    static NSDictionary *hardwareManufacturerDictionary = nil;
+/**
+ Returns the manufacturer name specified in the IEEE OUI.txt file as preprocessed at https://linuxnet.ca/ieee/oui/
+
+ @param MACAddress MAC address as string of the form @"e0:28:6d:54:d6:50"
+ @return Manufacturer name if we know it for the prefix of this MAC Address
+ */
++ (NSString *)manufacturerForHardwareAddress:(NSString *)MACAddress {
+    if ([MACAddress length]<8) {
+        return nil;
+    }
+
+    
+    static NSDictionary<NSString *, NSDictionary<NSString *, NSString *> *> *hardwareManufacturerDictionary = nil;
     if (hardwareManufacturerDictionary==nil) {
-        NSString *plistPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"OUItoCompany" ofType:@"plist"];
-        if (plistPath) {
-            hardwareManufacturerDictionary = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+        NSURL *fileURL = [[NSBundle bundleForClass:[self class]] URLForResource:@"OUItoCompany2Level" withExtension:@"json.gz"];
+        NSLog(@"%s fileURL: %@",__FUNCTION__,fileURL);
+        if (fileURL) {
+            NSData *gzippedData = [NSData dataWithContentsOfURL:fileURL options:NSDataReadingMappedAlways error:nil];
+            // unzip the data
+            z_stream stream;
+            stream.zalloc = Z_NULL;
+            stream.zfree = Z_NULL;
+            stream.avail_in = (uint)gzippedData.length;
+            stream.next_in = (Bytef *)gzippedData.bytes;
+            stream.total_out = 0;
+            stream.avail_out = 0;
+            
+            if (inflateInit2(&stream, 47) == Z_OK) {
+                NSMutableData *data = [NSMutableData dataWithLength:gzippedData.length * 2];
+                int status = Z_OK;
+                while (status == Z_OK) {
+                    if (stream.total_out >= data.length) {
+                        data.length += data.length / 2;
+                    }
+                    stream.next_out = (uint8_t *)data.mutableBytes + stream.total_out;
+                    stream.avail_out = (uInt)(data.length - stream.total_out);
+                    status = inflate(&stream, Z_SYNC_FLUSH);
+                }
+                if (inflateEnd(&stream) == Z_OK) {
+                    if (status == Z_STREAM_END) {
+                        data.length = stream.total_out;
+                    }
+                }
+                
+                hardwareManufacturerDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            }
+            
         } else {
             hardwareManufacturerDictionary = [NSDictionary new];
         }
     }
-    if ([aMACAddress length]<8) return nil;
-    NSString *result = [hardwareManufacturerDictionary objectForKey:[[aMACAddress substringToIndex:8] uppercaseString]];
+    NSString *firstKey = [[MACAddress substringToIndex:2] lowercaseString];
+    NSString *secondKey = [[[MACAddress substringWithRange:NSMakeRange(3,2)] stringByAppendingString:[MACAddress substringWithRange:NSMakeRange(6,2)]] lowercaseString];
+    
+    NSString *result = hardwareManufacturerDictionary[firstKey][secondKey];
     return result;
 }
 
