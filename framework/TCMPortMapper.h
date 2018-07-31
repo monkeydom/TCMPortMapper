@@ -8,6 +8,8 @@
 #import <string.h>
 #import <unistd.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 extern NSString * const TCMPortMapperExternalIPAddressDidChange;
 
 extern NSString * const TCMPortMapperWillStartSearchForRouterNotification;
@@ -50,6 +52,17 @@ typedef NS_ENUM(uint8_t, TCMPortMappingTransportProtocol)  {
 @property (nonatomic, strong) id userInfo;
 @end
 
+@interface NSString (TCMPortMapper_IPAdditions)
+/**
+ @return YES if the string is representing an IPv4 Address.
+ */
+- (BOOL)isIPv4Address;
+/**
+ @return YES if the String represents an IPv4 Address and it is in one of the private or self assigned subnetranges. NO otherwise.
+ */
+- (BOOL)IPv4AddressIsInPrivateSubnet;
+@end
+
 @interface TCMPortMapper : NSObject
 + (instancetype)sharedInstance;
 + (NSString *)manufacturerForHardwareAddress:(NSString *)aMACAddress;
@@ -78,12 +91,14 @@ typedef NS_ENUM(uint8_t, TCMPortMappingTransportProtocol)  {
 // we could use full length but the description field of the routers might be limited
 - (void)hashUserID:(NSString *)aUserIDToHash;
 
-@property (nonatomic, readonly) NSString *externalIPAddress;
+@property (nonatomic, readonly, nullable) NSString *externalIPAddress;
 @property (nonatomic, readonly) NSString *localIPAddress;
-@property (nonatomic, readonly) NSString *localBonjourHostName;
+@property (nonatomic, readonly, nullable) NSString *localBonjourHostName;
 
-@property (nonatomic, strong) NSString *mappingProtocol;
-@property (nonatomic, copy) NSString *routerName;
-@property (nonatomic, readonly) NSString *routerIPAddress;
-@property (nonatomic, readonly) NSString *routerHardwareAddress;
+@property (nonatomic, strong, nullable) NSString *mappingProtocol;
+@property (nonatomic, copy, nullable) NSString *routerName;
+@property (nonatomic, readonly, nullable) NSString *routerIPAddress;
+@property (nonatomic, readonly, nullable) NSString *routerHardwareAddress;
 @end
+
+NS_ASSUME_NONNULL_END

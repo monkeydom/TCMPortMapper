@@ -12,7 +12,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <menu title="AMainMenu" systemMenu="main" id="29" userLabel="MainMenu">
             <items>
                 <menuItem title="Port Map" id="56">
@@ -298,11 +298,11 @@ CA
                         <rect key="frame" x="-1" y="34" width="493" height="177"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" drawsBackground="NO" id="jXN-5S-wnP">
-                            <rect key="frame" x="1" y="23" width="491" height="153"/>
+                            <rect key="frame" x="1" y="0.0" width="491" height="176"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="sequential" selectionHighlightStyle="sourceList" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="42" headerView="379" id="378">
-                                    <rect key="frame" x="0.0" y="0.0" width="492" height="153"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="491" height="153"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -336,7 +336,7 @@ CA
                                                 </binding>
                                             </connections>
                                         </tableColumn>
-                                        <tableColumn width="183" minWidth="40" maxWidth="1000" id="381">
+                                        <tableColumn width="182" minWidth="40" maxWidth="1000" id="381">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Description">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -452,12 +452,12 @@ CA
                             <rect key="frame" x="-100" y="-100" width="358" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="37" horizontal="NO" id="376">
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="376">
                             <rect key="frame" x="359" y="17" width="15" height="186"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <tableHeaderView key="headerView" id="379">
-                            <rect key="frame" x="0.0" y="0.0" width="492" height="23"/>
+                            <rect key="frame" x="0.0" y="0.0" width="491" height="23"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
@@ -820,7 +820,7 @@ Gw
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <popUpButtonCell key="cell" type="push" title="Presets" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" pullsDown="YES" selectedItem="515" id="513">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
+                            <font key="font" metaFont="menu"/>
                             <menu key="menu" title="OtherViews" id="514">
                                 <items>
                                     <menuItem title="Presets" state="on" hidden="YES" id="515"/>
@@ -852,34 +852,27 @@ Gw
                 <rect key="frame" x="0.0" y="0.0" width="486" height="268"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView id="551">
-                        <rect key="frame" x="16" y="145" width="100" height="100"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="PortMap" id="552"/>
-                    </imageView>
                     <textField verticalHuggingPriority="750" id="550">
                         <rect key="frame" x="128" y="231" width="338" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="PortMap could not communicate with your router" id="553">
+                        <textFieldCell key="cell" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Port Map could not communicate with your router" id="553">
                             <font key="font" metaFont="systemBold"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="549">
-                        <rect key="frame" x="128" y="97" width="331" height="126"/>
+                        <rect key="frame" x="126" y="84" width="328" height="139"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="554">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="554">
                             <font key="font" metaFont="smallSystem"/>
-                            <string key="title">It seems like your current router does not respond to either
-UPNP nor NAT-PMP requests.
-
-If you use an Airport Extreme Basestation, an Airport Express
-or a newer Apple Basestation, please enable NAT-PMP as 
-decribed in the instructions you can access below.
+                            <string key="title">It seems like your current router does not respond to neither UPnP nor NAT-PMP requests.
 
 If you use a non-Apple router, please refer to its manual on
-how to enable UPNP or search the web for help.</string>
+how to enable UPnP (Automatic Port Forwarding) or search the web for help.
+
+If you use an Airport Extreme please enable NAT-PMP as 
+described in the instructions you can access below.</string>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -917,6 +910,11 @@ DQ
                             <action selector="endInstructionalSheet:" target="405" id="558"/>
                         </connections>
                     </button>
+                    <imageView id="551">
+                        <rect key="frame" x="20" y="148" width="100" height="100"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="PortMap" id="552"/>
+                    </imageView>
                 </subviews>
             </view>
         </window>
@@ -976,7 +974,7 @@ DQ
                                             <rect key="frame" x="20" y="0.0" width="600" height="325"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <clipView key="contentView" id="aOC-IL-pNM">
-                                                <rect key="frame" x="1" y="23" width="598" height="301"/>
+                                                <rect key="frame" x="1" y="0.0" width="598" height="324"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" autosaveColumns="NO" headerView="586" id="585">
@@ -1193,7 +1191,7 @@ DQ
                         <rect key="frame" x="-2" y="-1" width="256" height="44"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="BI4-wd-acg">
-                            <font key="font" metaFont="system" size="11"/>
+                            <font key="font" metaFont="smallSystem"/>
                             <string key="title">TCMPortMapper.framework v1.4.0
 Uses libnatpmp and miniupnpc.</string>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>

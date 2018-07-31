@@ -40,22 +40,30 @@ enum {
     TCMPortMapProtocolWorks = 2
 };
 
-@interface NSString (IPAdditions)
-- (BOOL)IPv4AddressInPrivateSubnet;
-@end
+@implementation NSString (TCMPortMapper_IPAdditions)
 
-@implementation NSString (IPAdditions)
-
-- (BOOL)IPv4AddressInPrivateSubnet {
+- (BOOL)isIPv4Address {
     in_addr_t myaddr = inet_addr([self UTF8String]);
+    if (myaddr == INADDR_NONE) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
+- (BOOL)IPv4AddressIsInPrivateSubnet {
+    in_addr_t myaddr = inet_addr([self UTF8String]);
+    if (myaddr == INADDR_NONE) {
+        return NO;
+    }
     // private subnets as defined in http://tools.ietf.org/html/rfc1918
     // loopback addresses 127.0.0.1/8 http://tools.ietf.org/html/rfc3330
     // zeroconf/bonjour self assigned addresses 169.254.0.0/16 http://tools.ietf.org/html/rfc3927
     char *ipAddresses[]  = {"192.168.0.0", "10.0.0.0", "172.16.0.0","127.0.0.1","169.254.0.0"};
     char *networkMasks[] = {"255.255.0.0","255.0.0.0","255.240.0.0","255.0.0.0","255.255.0.0"};
-    int countOfAddresses=5;
+    int countOfAddresses = 5;
     int i = 0;
-    for (i=0;i<countOfAddresses;i++) {
+    for (i=0; i<countOfAddresses; i++) {
         in_addr_t subnetmask = inet_addr(networkMasks[i]);
         in_addr_t networkaddress = inet_addr(ipAddresses[i]);
         if ((myaddr & subnetmask) == (networkaddress & subnetmask)) {
@@ -64,7 +72,6 @@ enum {
     }
     return NO;
 }
-
 @end
 
 
@@ -370,7 +377,7 @@ static TCMPortMapper *S_sharedInstance;
         NSString *localIPAddress = [self localIPAddress]; // will always be updated when accessed
         if (localIPAddress && _localIPOnRouterSubnet) {
             [self setExternalIPAddress:nil];
-            if ([routerAddress IPv4AddressInPrivateSubnet]) {
+            if ([routerAddress IPv4AddressIsInPrivateSubnet]) {
                 _NATPMPStatus = TCMPortMapProtocolTrying;
                 _UPNPStatus   = TCMPortMapProtocolTrying;
                 [_NATPMPPortMapper refresh];
@@ -407,6 +414,9 @@ static TCMPortMapper *S_sharedInstance;
 }
 
 - (void)setExternalIPAddress:(NSString *)anIPAddress {
+    if (anIPAddress && [anIPAddress IPv4AddressIsInPrivateSubnet]) {
+        anIPAddress = nil; // prevent non-public addresses to be set this way.
+    }
     if (_externalIPAddress != anIPAddress) {
         _externalIPAddress = anIPAddress;
     }
@@ -538,8 +548,7 @@ static TCMPortMapper *S_sharedInstance;
                 name:@"State:/Network/Global/IPv4" 
                 object:_systemConfigNotificationManager];
                                         
-        
-        [center addObserver:self 
+        [center addObserver:self
                 selector:@selector(NATPMPPortMapperDidGetExternalIPAddress:) 
                 name:TCMNATPMPPortMapperDidGetExternalIPAddressNotification 
                 object:_NATPMPPortMapper];
@@ -578,7 +587,8 @@ static TCMPortMapper *S_sharedInstance;
         [self setMappingProtocol:TCMNATPMPPortMapProtocol];
         shouldNotify = YES;
     }
-    [self setExternalIPAddress:[[aNotification userInfo] objectForKey:@"externalIPAddress"]];
+    NSString *externalIPAddress = [[aNotification userInfo] objectForKey:@"externalIPAddress"];
+    [self setExternalIPAddress:externalIPAddress];
     if (shouldNotify) {
         [[NSNotificationCenter defaultCenter] postNotificationName:TCMPortMapperDidFinishSearchForRouterNotification object:self];
     }
