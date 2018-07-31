@@ -17,7 +17,7 @@
                 return [NSImage imageNamed:@"DotRed"];
         }
     } else {
-        return [NSImage imageNamed:@"GenericQuestionMarkIcon.icns"];
+        return [NSImage imageNamed:NSImageNameStatusNone];
     }
 }
 

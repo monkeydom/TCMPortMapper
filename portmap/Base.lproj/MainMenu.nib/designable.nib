@@ -846,6 +846,8 @@ Gw
             <windowPositionMask key="initialPositionMask" leftStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="242" width="486" height="268"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <value key="minSize" type="size" width="486" height="268"/>
+            <value key="maxSize" type="size" width="486" height="268"/>
             <view key="contentView" id="545">
                 <rect key="frame" x="0.0" y="0.0" width="486" height="268"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -923,6 +925,7 @@ DQ
             <windowPositionMask key="initialPositionMask" leftStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="108" width="640" height="402"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <value key="minSize" type="size" width="600" height="200"/>
             <view key="contentView" id="581">
                 <rect key="frame" x="0.0" y="0.0" width="640" height="402"/>
                 <autoresizingMask key="autoresizingMask"/>
