@@ -148,8 +148,13 @@
 - (void)portMapperDidFindRouter:(NSNotification *)aNotification {
     [O_refreshButton setEnabled:YES];
     TCMPortMapper *pm=[TCMPortMapper sharedInstance];
-    if ([pm externalIPAddress]) {
-        [O_currentIPTextField setObjectValue:[self externalIPAddressString]];
+    NSString *externalIPAddress = pm.externalIPAddress;
+    if (externalIPAddress) {
+        if (externalIPAddress.IPv4AddressIsInPrivateSubnet) {
+            [O_currentIPTextField setObjectValue:@"No external address."];
+        } else {
+            [O_currentIPTextField setObjectValue:[self externalIPAddressString]];
+        }
     } else {
         if ([pm routerIPAddress]) {
             [O_currentIPTextField setStringValue:NSLocalizedString(@"Router incompatible.",@"")];

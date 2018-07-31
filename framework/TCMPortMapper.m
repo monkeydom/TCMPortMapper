@@ -414,9 +414,10 @@ static TCMPortMapper *S_sharedInstance;
 }
 
 - (void)setExternalIPAddress:(NSString *)anIPAddress {
-    if (anIPAddress && [anIPAddress IPv4AddressIsInPrivateSubnet]) {
-        anIPAddress = nil; // prevent non-public addresses to be set this way.
-    }
+    // Maybe too strong: 
+//    if (anIPAddress && [anIPAddress IPv4AddressIsInPrivateSubnet]) {
+//        anIPAddress = nil; // prevent non-public addresses to be set this way.
+//    }
     if (_externalIPAddress != anIPAddress) {
         _externalIPAddress = anIPAddress;
     }
@@ -634,7 +635,10 @@ static TCMPortMapper *S_sharedInstance;
     if (_UPNPStatus==TCMPortMapProtocolTrying) {
         _UPNPStatus =TCMPortMapProtocolFailed;
     } else if (_UPNPStatus==TCMPortMapProtocolWorks) {
-        [self setExternalIPAddress:nil];
+        // only kill the external IP if everything failed, and not just a mapping.
+        if (!(aNotification.userInfo[@"failedMapping"])) {
+            [self setExternalIPAddress:nil];
+        }
     }
     [self cleanupUPNPPortMapperTimer];
     // also mark all port mappings as unmapped if NATPMP failed too
