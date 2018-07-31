@@ -41,7 +41,7 @@
  STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
  POSSIBILITY OF SUCH DAMAGE.
  
- Copyright � 2005 Apple Computer, Inc., All Rights Reserved
+ Copyright (c) 2005 Apple Computer, Inc., All Rights Reserved
  */ 
 
 #import "TCPServer.h"

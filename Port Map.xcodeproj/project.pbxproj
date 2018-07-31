@@ -171,7 +171,6 @@
 		F214E5DB0D5F5FE600A06962 /* NATEcho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NATEcho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F214E5DD0D5F5FE600A06962 /* NATEcho-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "NATEcho-Info.plist"; path = "natecho/NATEcho-Info.plist"; sourceTree = "<group>"; };
 		F214E6060D5F646E00A06962 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = natecho/main.m; sourceTree = "<group>"; };
-		F214E6070D5F646E00A06962 /* natecho_prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = natecho_prefix.pch; path = natecho/natecho_prefix.pch; sourceTree = "<group>"; };
 		F214E60A0D5F64BF00A06962 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = natecho/AppController.h; sourceTree = "<group>"; };
 		F214E60B0D5F64BF00A06962 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppController.m; path = natecho/AppController.m; sourceTree = "<group>"; };
 		F217EF200D6082B40028E112 /* TCPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCPServer.h; path = natecho/TCPServer.h; sourceTree = "<group>"; };
@@ -377,7 +376,6 @@
 			isa = PBXGroup;
 			children = (
 				F214E6060D5F646E00A06962 /* main.m */,
-				F214E6070D5F646E00A06962 /* natecho_prefix.pch */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -981,14 +979,8 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = natecho/natecho_prefix.pch;
 				INFOPLIST_FILE = "natecho/NATEcho-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-				);
-				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/framework/miniupnpc\"";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -1009,14 +1001,8 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = natecho/natecho_prefix.pch;
 				INFOPLIST_FILE = "natecho/NATEcho-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-				);
-				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/framework/miniupnpc\"";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
