@@ -100,7 +100,7 @@ Note that the above code will not reliably change just the public port for an ex
 If you manage more than one mapping and want to remove/change them individually then you have to either hold on to them in your code, mark them with a corresponding userInfo or be able to identify them using the port numbers alone.
 
 ### Reducing File Size
-If you just need the framework for automatic port forwarding inside your app then you probably don't care about the router name. If you don't you can remove the `OUItoCompany.plist` file from the framework and save about 434 KB.
+If you just need the framework for automatic port forwarding inside your app then you probably don't care about the router vendor name by MAC address lookup. If you don't you can remove the `OUItoCompany2Level.json.gz` file from the framework and save about 218 KB.
 
 ### Location Awareness
 If you want to build a location aware Application you can use the -routerHardwareAddress method to take that as a hint for your location. If you want to do so you should register your self to the `TCMPortMapperDidFinishSearchForRouterNotification` to do stuff based on the location change and also too `TCMPortMapperWillStartSearchForRouterNotification` to go into an intermediate state where you don't know about your location.
