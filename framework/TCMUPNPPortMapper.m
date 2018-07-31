@@ -25,6 +25,11 @@ NSString * const TCMUPNPPortMapperDidGetExternalIPAddressNotification = @"TCMNAT
 NSString * const TCMUPNPPortMapperDidBeginWorkingNotification =@"TCMUPNPPortMapperDidBeginWorkingNotification";
 NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapperDidEndWorkingNotification";
 
+
+@interface TCMPortMapper (Private)
+- (NSMutableSet *)_upnpPortMappingsToRemove;
+@end
+
 @implementation TCMUPNPPortMapper
 
 - (id)init {

@@ -1,4 +1,3 @@
-
 #import "TCMPortMapper.h"
 #import "TCMNATPMPPortMapper.h"
 #import "TCMUPNPPortMapper.h"
@@ -32,8 +31,6 @@ NSString * const TCMNATPMPPortMapProtocol = @"NAT-PMP";
 NSString * const TCMUPNPPortMapProtocol   = @"UPnP";
 NSString * const TCMNoPortMapProtocol   = @"None";
 
-
-static TCMPortMapper *S_sharedInstance;
 
 enum {
     TCMPortMapProtocolFailed = 0,
@@ -71,33 +68,20 @@ enum {
 
 @implementation TCMPortMapping 
 
-+ (id)portMappingWithLocalPort:(int)aPrivatePort desiredExternalPort:(int)aPublicPort transportProtocol:(int)aTransportProtocol userInfo:(id)aUserInfo {
-    NSAssert(aPrivatePort<65536 && aPublicPort<65536 && aPrivatePort>0 && aPublicPort>0, @"Port number has to be between 1 and 65535");
-    return [[self alloc] initWithLocalPort:aPrivatePort desiredExternalPort:aPublicPort transportProtocol:aTransportProtocol userInfo:aUserInfo];
++ (instancetype)portMappingWithLocalPort:(uint16_t)privatePort desiredExternalPort:(uint16_t)publicPort transportProtocol:(TCMPortMappingTransportProtocol)transportProtocol userInfo:(id)userInfo {
+
+    NSAssert(privatePort>0 && publicPort>0, @"Port number has to be between 1 and 65535");
+    return [[self alloc] initWithLocalPort:privatePort desiredExternalPort:publicPort transportProtocol:transportProtocol userInfo:userInfo];
 }
 
-- (id)initWithLocalPort:(int)aPrivatePort desiredExternalPort:(int)aPublicPort transportProtocol:(int)aTransportProtocol userInfo:(id)aUserInfo {
+- (instancetype)initWithLocalPort:(uint16_t)privatePort desiredExternalPort:(uint16_t)publicPort transportProtocol:(TCMPortMappingTransportProtocol)transportProtocol userInfo:(id)userInfo {
     if ((self=[super init])) {
-        _desiredExternalPort = aPublicPort;
-        _localPort = aPrivatePort;
-        _userInfo = aUserInfo;
-        _transportProtocol = aTransportProtocol;
+        _desiredExternalPort = publicPort;
+        _localPort = privatePort;
+        _userInfo = userInfo;
+        _transportProtocol = transportProtocol;
     }
     return self;
-}
-
-
-- (int)desiredExternalPort {
-    return _desiredExternalPort;
-}
-
-
-- (id)userInfo {
-    return _userInfo;
-}
-
-- (TCMPortMappingStatus)mappingStatus {
-    return _mappingStatus;
 }
 
 - (void)setMappingStatus:(TCMPortMappingStatus)aStatus {
@@ -110,50 +94,45 @@ enum {
     }
 }
 
-- (TCMPortMappingTransportProtocol)transportProtocol {
-    return _transportProtocol;
-}
-
-
-- (void)setTransportProtocol:(TCMPortMappingTransportProtocol)aProtocol {
-    if (_transportProtocol != aProtocol) {
-        _transportProtocol = aProtocol;
-    }
-}
-
-
-- (int)externalPort {
-    return _externalPort;
-}
-
-- (void)setExternalPort:(int)aPublicPort {
-    _externalPort=aPublicPort;
-}
-
-
-- (int)localPort {
-    return _localPort;
-}
-
 - (NSString *)description {
     return [NSString stringWithFormat:@"%@ privatePort:%u desiredPublicPort:%u publicPort:%u mappingStatus:%@ transportProtocol:%d",[super description], _localPort, _desiredExternalPort, _externalPort, _mappingStatus == TCMPortMappingStatusUnmapped ? @"unmapped" : (_mappingStatus == TCMPortMappingStatusMapped ? @"mapped" : @"trying"),_transportProtocol];
 }
 
 @end
 
-@interface TCMPortMapper (Private) 
+@interface TCMPortMapper () {
+    TCMNATPMPPortMapper *_NATPMPPortMapper;
+    TCMUPNPPortMapper *_UPNPPortMapper;
+    NSMutableSet *_portMappings;
+    NSMutableSet *_removeMappingQueue;
+    IXSCNotificationManager *_systemConfigNotificationManager;
+    BOOL _isRunning;
+    int _NATPMPStatus;
+    int _UPNPStatus;
+    int _workCount;
+    BOOL _localIPOnRouterSubnet;
+    BOOL _sendUPNPMappingTableNotification;
+    NSMutableSet *_upnpPortMappingsToRemove;
+    NSTimer *_upnpPortMapperTimer;
+    BOOL _ignoreNetworkChanges;
+    BOOL _refreshIsScheduled;
+}
+
+@property (nonatomic, strong, readwrite) NSString *externalIPAddress;
+@property (nonatomic, strong, readwrite) NSString *localIPAddress;
+
 - (void)cleanupUPNPPortMapperTimer;
-- (void)setExternalIPAddress:(NSString *)anAddress;
-- (void)setLocalIPAddress:(NSString *)anAddress;
 - (void)increaseWorkCount:(NSNotification *)aNotification;
 - (void)decreaseWorkCount:(NSNotification *)aNotification;
 - (void)scheduleRefresh;
 @end
 
 @implementation TCMPortMapper
+@synthesize localIPAddress=_localIPAddress;
 
-+ (TCMPortMapper *)sharedInstance
-{
+static TCMPortMapper *S_sharedInstance;
+
++ (instancetype)sharedInstance {
     if (!S_sharedInstance) {
         S_sharedInstance = [self new];
     }
@@ -223,10 +202,6 @@ enum {
     }
 }
 
-- (NSString *)externalIPAddress {
-    return _externalIPAddress;
-}
-
 - (NSString *)localBonjourHostName {
     SCDynamicStoreRef dynRef = SCDynamicStoreCreate(kCFAllocatorSystemDefault, (CFStringRef)@"TCMPortMapper", NULL, NULL); 
     NSString *hostname = (NSString *)CFBridgingRelease(SCDynamicStoreCopyLocalHostName(dynRef));
@@ -288,10 +263,6 @@ enum {
     // make sure it is up to date
     [self updateLocalIPAddress];
     return _localIPAddress;
-}
-
-- (NSString *)userID {
-    return _userID;
 }
 
 + (NSString *)sizereducableHashOfString:(NSString *)inString {
@@ -689,19 +660,6 @@ enum {
     _mappingProtocol = [aProtocol copy];
 }
 
-- (NSString *)mappingProtocol {
-    return _mappingProtocol;
-}
-
-- (void)setRouterName:(NSString *)aRouterName {
-//    NSLog(@"%s %@->%@",__FUNCTION__,_routerName,aRouterName);
-    _routerName = [aRouterName copy];
-}
-
-- (NSString *)routerName {
-    return _routerName;
-}
-
 - (BOOL)isRunning {
     return _isRunning;
 }
@@ -803,4 +761,3 @@ enum {
 }
 
 @end
-

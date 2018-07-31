@@ -11,9 +11,9 @@
 - (NSDictionary *)dictionaryRepresentation {
     return @{
              @"userInfo": [self userInfo],
-             @"privatePort" : @(_localPort) ,
-             @"desiredPublicPort" : @(_desiredExternalPort),
-             @"transportProtocol" : @(_transportProtocol),
+             @"privatePort" : @(self.localPort) ,
+             @"desiredPublicPort" : @(self.desiredExternalPort),
+             @"transportProtocol" : @(self.transportProtocol),
              };
 }
 

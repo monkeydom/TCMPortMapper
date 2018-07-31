@@ -236,7 +236,6 @@
 		F2C65BE70D50B17B00820CAE /* IXSCNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IXSCNotificationManager.h; path = framework/IXSCNotificationManager.h; sourceTree = "<group>"; };
 		F2C65BE80D50B17B00820CAE /* NSNotificationCenterThreadingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSNotificationCenterThreadingAdditions.h; path = framework/NSNotificationCenterThreadingAdditions.h; sourceTree = "<group>"; };
 		F2C65FFF0D50C2D100820CAE /* Port Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Port Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2C660290D50C58800820CAE /* PortMapper_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PortMapper_Prefix.pch; path = portmap/PortMapper_Prefix.pch; sourceTree = "<group>"; };
 		F2C6602A0D50C58800820CAE /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = portmap/main.m; sourceTree = "<group>"; };
 		F2C6602C0D50C58F00820CAE /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppController.m; path = portmap/AppController.m; sourceTree = "<group>"; };
 		F2C6602D0D50C58F00820CAE /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = portmap/AppController.h; sourceTree = "<group>"; };
@@ -502,7 +501,6 @@
 		F2C660100D50C35D00820CAE /* Other sources */ = {
 			isa = PBXGroup;
 			children = (
-				F2C660290D50C58800820CAE /* PortMapper_Prefix.pch */,
 				F2C6602A0D50C58800820CAE /* main.m */,
 			);
 			name = "Other sources";
@@ -882,7 +880,6 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = framework/TCMPortMapper_Prefix.pch;
 				HEADER_SEARCH_PATHS = framework;
 				INFOPLIST_FILE = "framework/TCMPortMapper-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
@@ -917,7 +914,6 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = framework/TCMPortMapper_Prefix.pch;
 				HEADER_SEARCH_PATHS = framework;
 				INFOPLIST_FILE = "framework/TCMPortMapper-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
@@ -1149,7 +1145,6 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = portmap/PortMapper_Prefix.pch;
 				INFOPLIST_FILE = portmap/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -1182,7 +1177,6 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = portmap/PortMapper_Prefix.pch;
 				INFOPLIST_FILE = portmap/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (

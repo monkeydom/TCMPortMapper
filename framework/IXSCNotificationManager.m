@@ -6,7 +6,6 @@
 
 #import "IXSCNotificationManager.h"
 
-
 /*!
  * @function       _IXSCNotificationCallback
  * @abstract       Callback for the dynamic store, just calls keysChanged: on 
@@ -23,7 +22,6 @@ void _IXSCNotificationCallback( SCDynamicStoreRef store, CFArrayRef changedKeys,
     }
 }
 
-
 @implementation IXSCNotificationManager
 
 - (void)setObservedKeys:(NSArray *)inKeyArray regExes:(NSArray *)inRegExeArray {
@@ -34,7 +32,6 @@ void _IXSCNotificationCallback( SCDynamicStoreRef store, CFArrayRef changedKeys,
     );
     if (!success) NSLog(@"%s desired keys could not be observed.",__FUNCTION__);
 }
-
 
 - (id)init {
     self = [super init];
@@ -61,7 +58,6 @@ void _IXSCNotificationCallback( SCDynamicStoreRef store, CFArrayRef changedKeys,
     CFRunLoopRemoveSource([[NSRunLoop currentRunLoop] getCFRunLoop], rlSrc, kCFRunLoopCommonModes);
     CFRelease(rlSrc);
     CFRelease(dynStore);
-
 }
 
 @end
