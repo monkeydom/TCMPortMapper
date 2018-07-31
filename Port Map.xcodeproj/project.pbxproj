@@ -53,7 +53,6 @@
 		F241D07A210E1169002B6A69 /* upnpdev.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF551E210B77440071DF2D /* upnpdev.c */; };
 		F241D07D210E117A002B6A69 /* receivedata.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5520210B776B0071DF2D /* receivedata.c */; };
 		F241D07E210E117F002B6A69 /* portlistingparse.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5519210B76240071DF2D /* portlistingparse.c */; };
-		F241D084210F030C002B6A69 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F241D083210F030C002B6A69 /* Icons.xcassets */; };
 		F241D085210F036D002B6A69 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F241D083210F030C002B6A69 /* Icons.xcassets */; };
 		F241D0872110839D002B6A69 /* OUItoCompany2Level.json.gz in Resources */ = {isa = PBXBuildFile; fileRef = F241D0862110839D002B6A69 /* OUItoCompany2Level.json.gz */; };
 		F241D08821108F50002B6A69 /* miniupnpc-LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 31FAE7D30D672D410085867F /* miniupnpc-LICENSE.txt */; };
@@ -694,7 +693,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F214E5FD0D5F62F700A06962 /* MainMenu.nib in Resources */,
-				F241D084210F030C002B6A69 /* Icons.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

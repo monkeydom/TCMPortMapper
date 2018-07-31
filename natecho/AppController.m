@@ -18,10 +18,10 @@
     // since we only have one mapping this is fine
     TCMPortMapping *mapping = [[pm portMappings] anyObject];
     if ([mapping mappingStatus]==TCMPortMappingStatusMapped) {
-        [O_publicStatusImageView setImage:[NSImage imageNamed:@"DotGreen"]];
+        [O_publicStatusImageView setImage:[NSImage imageNamed:NSImageNameStatusAvailable]];
         [O_publicStatusTextField setStringValue:[NSString stringWithFormat:NSLocalizedString(@"telnet %@ %d",@"Public echo server availability string"), [pm externalIPAddress],[mapping externalPort]]];
     } else {
-        [O_publicStatusImageView setImage:[NSImage imageNamed:@"DotRed"]];
+        [O_publicStatusImageView setImage:[NSImage imageNamed:NSImageNameStatusUnavailable]];
         [O_publicStatusTextField setStringValue:NSLocalizedString(@"No public mapping.",@"Connection Browser Display when not reachable")];
     }
     [O_publicStatusImageView setHidden:NO];
@@ -56,7 +56,7 @@
     [I_server setPort:port];
     NSError *error = nil;
     if ([I_server start:&error]) {
-        [O_serverStatusImageView setImage:[NSImage imageNamed:@"DotGreen"]];
+        [O_serverStatusImageView setImage:[NSImage imageNamed:NSImageNameStatusAvailable]];
         [O_serverStatusTextField setStringValue:@"Running"];
         [O_serverReachabilityTextField setStringValue:[NSString stringWithFormat:@"telnet %@ %d",[[TCMPortMapper sharedInstance] localIPAddress],port]];
     
@@ -73,7 +73,7 @@
 
 - (void)stop {
     [I_server stop];
-    [O_serverStatusImageView setImage:[NSImage imageNamed:@"DotRed"]];
+    [O_serverStatusImageView setImage:[NSImage imageNamed:NSImageNameStatusUnavailable]];
     [O_serverStatusTextField setStringValue:@"Stopped"];
     [O_serverReachabilityTextField setStringValue:@"Not running"];
 
