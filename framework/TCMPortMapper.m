@@ -618,11 +618,12 @@ static TCMPortMapper *S_sharedInstance;
             _NATPMPStatus =TCMPortMapProtocolFailed;
         }
     }
-    NSString *routerName = [[aNotification userInfo] objectForKey:@"routerName"];
+    NSDictionary *userInfo = [aNotification userInfo];
+    NSString *routerName = userInfo[@"routerName"];
     if (routerName) {
         [self setRouterName:routerName];
     }
-    [self setExternalIPAddress:[[aNotification userInfo] objectForKey:@"externalIPAddress"]];
+    [self setExternalIPAddress:userInfo[@"externalIPAddress"]];
     if (shouldNotify) {
         [[NSNotificationCenter defaultCenter] postNotificationName:TCMPortMapperDidFinishSearchForRouterNotification object:self];
     }
@@ -806,10 +807,10 @@ static TCMPortMapper *S_sharedInstance;
     if (_isRunning) {
         NSDictionary *userInfo = [aNotification userInfo];
         // senderAddress is of the format <ipv4address>:<port>
-        NSString *senderIPAddress = [userInfo objectForKey:@"senderAddress"];
+        NSString *senderIPAddress = userInfo[@"senderAddress"];
         // we have to check if the sender is actually our router - if not disregard
         if ([senderIPAddress isEqualToString:[self routerIPAddress]]) {
-            if (![[self externalIPAddress] isEqualToString:[userInfo objectForKey:@"externalIPAddress"]]) {
+            if (![[self externalIPAddress] isEqualToString:userInfo[@"externalIPAddress"]]) {
 //                NSLog(@"Refreshing because of  NAT-PMP-Device external IP broadcast:%@",userInfo);
                 [self refresh];
             }
