@@ -26,6 +26,10 @@ NSString * const TCMUPNPPortMapperDidBeginWorkingNotification =@"TCMUPNPPortMapp
 NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapperDidEndWorkingNotification";
 
 
+static const char *_UPNP_CStringForProtocol(TCMPortMappingTransportProtocol protocol) {
+    return (protocol==TCMPortMappingTransportProtocolUDP) ? "UDP" : "TCP";
+}
+
 @interface TCMPortMapper (Private)
 - (NSMutableSet *)_upnpPortMappingsToRemove;
 @end
@@ -282,28 +286,32 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
 - (BOOL)applyPortMapping:(TCMPortMapping *)aPortMapping remove:(BOOL)shouldRemove UPNPURLs:(struct UPNPUrls *)aURLs IGDDatas:(struct IGDdatas *)aIGDData reservedExternalPortNumbers:(NSIndexSet *)aExternalPortSet {
     BOOL didFail = NO;
     //NSLog(@"%s %@",__FUNCTION__,aPortMapping);
+    char *serviceType = aIGDData->first.servicetype;
+    char *controlURL = aURLs->controlURL;
     [aPortMapping setMappingStatus:TCMPortMappingStatusTrying];
     if (shouldRemove) {
-        if ([aPortMapping transportProtocol] & TCMPortMappingTransportProtocolTCP) {
-            UPNP_DeletePortMapping(aURLs->controlURL, aIGDData->tmp.servicetype,[[NSString stringWithFormat:@"%d",[aPortMapping externalPort]] UTF8String], "TCP",NULL);
+        char *externalPortString = (char *)[[NSString stringWithFormat:@"%d",[aPortMapping externalPort]] UTF8String];
+        for (TCMPortMappingTransportProtocol protocol = TCMPortMappingTransportProtocolUDP; protocol <= TCMPortMappingTransportProtocolTCP; protocol++) {
+            if ([aPortMapping transportProtocol] & protocol) {
+                UPNP_DeletePortMapping(controlURL, serviceType, externalPortString, _UPNP_CStringForProtocol(protocol), NULL);
+            }
         }
-        if ([aPortMapping transportProtocol] & TCMPortMappingTransportProtocolUDP) {
-            UPNP_DeletePortMapping(aURLs->controlURL, aIGDData->tmp.servicetype,[[NSString stringWithFormat:@"%d",[aPortMapping externalPort]] UTF8String], "UDP",NULL);
-        }
-        [aPortMapping setMappingStatus:TCMPortMappingStatusUnmapped];
         return YES;
     } else { // We should add it
         int mappedPort = [aPortMapping desiredExternalPort];
-        int protocol = TCMPortMappingTransportProtocolUDP;
-        for (protocol = TCMPortMappingTransportProtocolUDP; protocol <= TCMPortMappingTransportProtocolTCP; protocol++) {
+        char *localPortString = (char *)[[NSString stringWithFormat:@"%d",[aPortMapping localPort]] UTF8String];
+        char *localIPAddressString = (char *)[[[TCMPortMapper sharedInstance] localIPAddress] UTF8String];
+        
+        for (TCMPortMappingTransportProtocol protocol = TCMPortMappingTransportProtocolUDP; protocol <= TCMPortMappingTransportProtocolTCP; protocol++) {
             if ([aPortMapping transportProtocol] & protocol) {
                 int r = 0;
                 do {
                     while ([aExternalPortSet containsIndex:mappedPort] && mappedPort<[aPortMapping desiredExternalPort]+40) {
                         mappedPort++;
                     }
-                    r = UPNP_AddPortMapping(aURLs->controlURL, aIGDData->tmp.servicetype,[[NSString stringWithFormat:@"%d",mappedPort] UTF8String],[[NSString stringWithFormat:@"%d",[aPortMapping localPort]] UTF8String], [[[TCMPortMapper sharedInstance] localIPAddress] UTF8String], [[self portMappingDescription] UTF8String], protocol==TCMPortMappingTransportProtocolUDP?"UDP":"TCP",NULL, NULL);
-                    if (r!=UPNPCOMMAND_SUCCESS) {
+                    char *mappedPortString = (char *)[[NSString stringWithFormat:@"%d",mappedPort] UTF8String];
+                    r = UPNP_AddPortMapping(controlURL, serviceType, mappedPortString, localPortString, localIPAddressString, [[self portMappingDescription] UTF8String], _UPNP_CStringForProtocol(protocol), NULL, NULL);
+                    if (r != UPNPCOMMAND_SUCCESS) {
                         NSString *errorString = [NSString stringWithFormat:@"%d",r];
                         switch (r) {
                             case 718: 
@@ -311,8 +319,10 @@ NSString * const TCMUPNPPortMapperDidEndWorkingNotification   =@"TCMUPNPPortMapp
 #ifdef DEBUG
                                 NSLog(@"%s mapping of external port %d failed, trying %d next",__FUNCTION__,mappedPort,mappedPort+1);
 #endif
-                                if (protocol == TCMPortMappingTransportProtocolTCP && ([aPortMapping transportProtocol] & TCMPortMappingTransportProtocolUDP)) {
-                                    UPNP_DeletePortMapping(aURLs->controlURL, aIGDData->tmp.servicetype,[[NSString stringWithFormat:@"%d",mappedPort] UTF8String], "UDP",NULL);
+                                if (protocol == TCMPortMappingTransportProtocolTCP &&
+                                    ([aPortMapping transportProtocol] & TCMPortMappingTransportProtocolUDP)) {
+                                    // remove the successfully established UDP mapping
+                                    UPNP_DeletePortMapping(controlURL, serviceType, mappedPortString, _UPNP_CStringForProtocol(TCMPortMappingTransportProtocolUDP), NULL);
                                     protocol = TCMPortMappingTransportProtocolUDP;
                                 }
                                 mappedPort++;
