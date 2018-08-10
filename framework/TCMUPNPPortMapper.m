@@ -296,6 +296,7 @@ static const char *_UPNP_CStringForProtocol(TCMPortMappingTransportProtocol prot
                 UPNP_DeletePortMapping(controlURL, serviceType, externalPortString, _UPNP_CStringForProtocol(protocol), NULL);
             }
         }
+        [aPortMapping setMappingStatus:TCMPortMappingStatusUnmapped];
         return YES;
     } else { // We should add it
         int mappedPort = [aPortMapping desiredExternalPort];

@@ -1,7 +1,7 @@
 #import "TCMPortMapper.h"
 #import "TCMNATPMPPortMapper.h"
 #import "TCMUPNPPortMapper.h"
-#import "IXSCNotificationManager.h"
+#import "TCMSystemConfiguration.h"
 #import "NSNotificationCenterThreadingAdditions.h"
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <SystemConfiguration/SCSchemaDefinitions.h>
@@ -114,7 +114,6 @@ enum {
     TCMUPNPPortMapper *_UPNPPortMapper;
     NSMutableSet *_portMappings;
     NSMutableSet *_removeMappingQueue;
-    IXSCNotificationManager *_systemConfigNotificationManager;
     BOOL _isRunning;
     int _NATPMPStatus;
     int _UPNPStatus;
@@ -125,6 +124,8 @@ enum {
     NSTimer *_upnpPortMapperTimer;
     BOOL _ignoreNetworkChanges;
     BOOL _refreshIsScheduled;
+    
+    NSMutableSet *_systemConfigurationObservations;
 }
 
 @property (nonatomic, strong, readwrite) NSString *externalIPAddress;
@@ -142,20 +143,16 @@ enum {
 static TCMPortMapper *S_sharedInstance;
 
 + (instancetype)sharedInstance {
-    if (!S_sharedInstance) {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
         S_sharedInstance = [self new];
-    }
+    });
     return S_sharedInstance;
 }
 
-- (id)init {
-    if (S_sharedInstance) {
-        return S_sharedInstance;
-    }
-    if ((self=[super init])) {
-        _systemConfigNotificationManager = [IXSCNotificationManager new];
-        // since we are only interested in this specific key, let us configure it so.
-        [_systemConfigNotificationManager setObservedKeys:[NSArray arrayWithObject:@"State:/Network/Global/IPv4"] regExes:nil];
+- (instancetype)init {
+    self = [super init];
+    if (self) {
         _isRunning = NO;
         _ignoreNetworkChanges = NO;
         _refreshIsScheduled = NO;
@@ -183,6 +180,8 @@ static TCMPortMapper *S_sharedInstance;
         
         [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(didWake:) name:NSWorkspaceDidWakeNotification object:nil];
         [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(willSleep:) name:NSWorkspaceWillSleepNotification object:nil];
+
+        [self startObservingSystemConfiguration];
     }
     return self;
 }
@@ -202,10 +201,7 @@ static TCMPortMapper *S_sharedInstance;
     return result;
 }
 
-- (void)networkDidChange:(NSNotification *)aNotification {
-#ifndef NDEBUG
-    NSLog(@"%s %@",__FUNCTION__,aNotification);
-#endif
+- (void)handleNetworkChange {
     if (!_ignoreNetworkChanges) {
         [self scheduleRefresh];
     }
@@ -321,6 +317,10 @@ static TCMPortMapper *S_sharedInstance;
 
 - (void)addPortMapping:(TCMPortMapping *)aMapping {
     @synchronized(_portMappings) {
+        if (aMapping.mappingStatus != TCMPortMappingStatusUnmapped &&
+            ![_portMappings containsObject:aMapping]) {
+            [aMapping setMappingStatus:TCMPortMappingStatusUnmapped];
+        }
         [_portMappings addObject:aMapping];
     }
     [self updatePortMappings];
@@ -360,8 +360,9 @@ static TCMPortMapper *S_sharedInstance;
        NSEnumerator *portMappings = [_portMappings objectEnumerator];
        TCMPortMapping *portMapping = nil;
        while ((portMapping = [portMappings nextObject])) {
-           if ([portMapping mappingStatus]==TCMPortMappingStatusMapped)
+           if (portMapping.mappingStatus != TCMPortMappingStatusUnmapped) {
                [portMapping setMappingStatus:TCMPortMappingStatusUnmapped];
+           }
        }
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:TCMPortMapperWillStartSearchForRouterNotification object:self];   
@@ -542,13 +543,10 @@ static TCMPortMapper *S_sharedInstance;
 
 - (void)start {
     if (!_isRunning) {
+        [self startObservingSystemConfiguration];
+
         NSNotificationCenter *center=[NSNotificationCenter defaultCenter];
-        
-        [center addObserver:self 
-                selector:@selector(networkDidChange:) 
-                name:@"State:/Network/Global/IPv4" 
-                object:_systemConfigNotificationManager];
-                                        
+
         [center addObserver:self
                 selector:@selector(NATPMPPortMapperDidGetExternalIPAddress:) 
                 name:TCMNATPMPPortMapperDidGetExternalIPAddressNotification 
@@ -659,18 +657,32 @@ static TCMPortMapper *S_sharedInstance;
     }
 }
 
+- (void)startObservingSystemConfiguration {
+    _systemConfigurationObservations = [NSMutableSet new];
+    id observation = [[TCMSystemConfiguration sharedConfiguration] observeConfigurationKeys:@[@"State:/Network/Global/IPv4"/*, @"State:/Network/Global/IPv6" */] observationBlock:^(TCMSystemConfiguration *config, NSArray<NSString *> *changedKeys) {
+        [self handleNetworkChange];
+    }];
+    [_systemConfigurationObservations addObject:observation];
+}
+
+- (void)stopObservingSystemConfiguration {
+    for (id observation in _systemConfigurationObservations) {
+        [[TCMSystemConfiguration sharedConfiguration] removeConfigurationKeyObservation:observation];
+    }
+    [_systemConfigurationObservations removeAllObjects];
+}
+
 - (void)internalStop {
-    NSNotificationCenter *center=[NSNotificationCenter defaultCenter];
-    [center removeObserver:self name:@"State:/Network/Global/IPv4" object:_systemConfigNotificationManager];
+    [self stopObservingSystemConfiguration];
+
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center removeObserver:self name:TCMNATPMPPortMapperDidGetExternalIPAddressNotification object:_NATPMPPortMapper];
     [center removeObserver:self name:TCMNATPMPPortMapperDidFailNotification object:_NATPMPPortMapper];
     [center removeObserver:self name:TCMNATPMPPortMapperDidReceiveBroadcastedExternalIPChangeNotification object:_NATPMPPortMapper];
     
     [center removeObserver:self name:TCMUPNPPortMapperDidGetExternalIPAddressNotification object:_UPNPPortMapper];
     [center removeObserver:self name:TCMUPNPPortMapperDidFailNotification object:_UPNPPortMapper];
-    
     [self cleanupUPNPPortMapperTimer];
-
 }
 
 - (void)stop {
