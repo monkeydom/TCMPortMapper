@@ -65,7 +65,7 @@ typedef NS_ENUM(uint8_t, TCMPortMappingTransportProtocol)  {
 
 @interface TCMPortMapper : NSObject
 + (instancetype)sharedInstance;
-+ (NSString *)manufacturerForHardwareAddress:(NSString *)aMACAddress;
++ (nullable NSString *)manufacturerForHardwareAddress:(NSString *)aMACAddress;
 + (NSString *)sizereducableHashOfString:(NSString *)inString;
 
 - (NSSet *)portMappings;
