@@ -275,7 +275,7 @@ static TCMPortMapper *S_sharedInstance;
     char hashstring[16*2+1];
     int i;
     NSData *dataToHash = [inString dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
-    CC_MD5([dataToHash bytes],[dataToHash length],digest);
+    CC_MD5([dataToHash bytes], (CC_LONG)[dataToHash length], digest);
     for(i=0;i<16;i++) sprintf(hashstring+i*2,"%02x",digest[i]);
     hashstring[i*2]=0;
     

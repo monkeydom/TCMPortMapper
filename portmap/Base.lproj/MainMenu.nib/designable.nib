@@ -730,7 +730,7 @@ Gw
                     <button imageHugsTitle="YES" id="452">
                         <rect key="frame" x="145" y="133" width="63" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="check" title="TCP" bezelStyle="regularSquare" imagePosition="leading" alignment="left" state="on" inset="2" id="453">
+                        <buttonCell key="cell" type="check" title="TCP" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="453">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -741,7 +741,7 @@ Gw
                     <button imageHugsTitle="YES" id="454">
                         <rect key="frame" x="212" y="133" width="63" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="check" title="UDP" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="455">
+                        <buttonCell key="cell" type="check" title="UDP" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="455">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -871,7 +871,7 @@ described in the instructions you can access below.</string>
                     <button imageHugsTitle="YES" id="548">
                         <rect key="frame" x="293" y="61" width="169" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="check" title="Don't show this alert again." bezelStyle="regularSquare" imagePosition="leading" alignment="left" controlSize="small" inset="2" id="555">
+                        <buttonCell key="cell" type="check" title="Don't show this alert again." bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="555">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="smallSystem"/>
                         </buttonCell>
