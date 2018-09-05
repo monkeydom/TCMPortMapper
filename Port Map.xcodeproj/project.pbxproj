@@ -28,7 +28,7 @@
 		F214E6080D5F646E00A06962 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F214E6060D5F646E00A06962 /* main.m */; };
 		F214E60C0D5F64BF00A06962 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = F214E60B0D5F64BF00A06962 /* AppController.m */; };
 		F214E6170D5F660100A06962 /* TCMPortMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */; };
-		F214E6200D5F661400A06962 /* TCMPortMapper.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */; };
+		F214E6200D5F661400A06962 /* TCMPortMapper.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F217EF220D6082B40028E112 /* TCPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = F217EF210D6082B40028E112 /* TCPServer.m */; };
 		F21B769B0DB73D2C00942BC0 /* miniwget.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B180D685C1B00728699 /* miniwget.c */; };
 		F21B769C0DB73D2C00942BC0 /* minixml.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B1B0D685C1B00728699 /* minixml.c */; };
@@ -655,6 +655,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 1000;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Port Map" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -860,7 +861,7 @@
 		318011A10D4DEC8500BE3B28 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZTRT8S69HR;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -884,7 +885,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = de.monkeydom.TCMPortMapper;
 				PRODUCT_NAME = TCMPortMapper;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -894,14 +894,13 @@
 		318011A20D4DEC8500BE3B28 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = ZTRT8S69HR;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				HEADER_SEARCH_PATHS = framework;
@@ -921,7 +920,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = de.monkeydom.TCMPortMapper;
 				PRODUCT_NAME = TCMPortMapper;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -933,14 +931,37 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PREBINDING = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
 			};
@@ -950,14 +971,35 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PREBINDING = NO;
 				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
 			};
@@ -967,7 +1009,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -979,7 +1020,7 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = de.codingmonkeys.TCMPortMapper.NATEcho;
 				PRODUCT_NAME = NATEcho;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
@@ -990,7 +1031,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "natecho/NATEcho-Info.plist";
@@ -1001,7 +1041,7 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = de.codingmonkeys.TCMPortMapper.NATEcho;
 				PRODUCT_NAME = NATEcho;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
@@ -1014,12 +1054,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INSTALL_PATH = /usr/local/bin;
 				OTHER_CFLAGS = "-DDEBUG";
-				PREBINDING = NO;
 				PRODUCT_NAME = "upnpc-static";
 			};
 			name = Debug;
@@ -1030,11 +1068,9 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				INSTALL_PATH = /usr/local/bin;
 				OTHER_CFLAGS = "-DNDEBUG";
-				PREBINDING = NO;
 				PRODUCT_NAME = "upnpc-static";
 				ZERO_LINK = NO;
 			};
@@ -1055,7 +1091,6 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = "Create Port Map Release Zip";
 				ZERO_LINK = NO;
 				ZipName = PortMap;
@@ -1078,7 +1113,6 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = "Create TCMPortMapper Release Zip";
 				ZERO_LINK = NO;
 				ZipName = TCMPortMapper;
@@ -1101,7 +1135,6 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = "Create Release Zips";
 				ZERO_LINK = NO;
 			};
@@ -1119,7 +1152,6 @@
 					"\"$(SRCROOT)/frameworks\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1131,7 +1163,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = de.monkeydom.TCMPortMapper.PortMap;
 				PRODUCT_NAME = "Port Map";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1152,7 +1183,6 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/frameworks\"",
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = portmap/Info.plist;
@@ -1163,7 +1193,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = de.monkeydom.TCMPortMapper.PortMap;
 				PRODUCT_NAME = "Port Map";
 				PROVISIONING_PROFILE_SPECIFIER = "";
