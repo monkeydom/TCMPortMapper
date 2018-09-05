@@ -585,6 +585,7 @@
 				3180119B0D4DEC8400BE3B28 /* Resources */,
 				3180119C0D4DEC8400BE3B28 /* Sources */,
 				3180119D0D4DEC8400BE3B28 /* Frameworks */,
+				F29A391521400F4E00D70A50 /* Set Build Version Number */,
 			);
 			buildRules = (
 			);
@@ -638,6 +639,7 @@
 				F2C65FFB0D50C2D100820CAE /* Resources */,
 				F2C65FFC0D50C2D100820CAE /* Sources */,
 				F2C65FFD0D50C2D100820CAE /* Frameworks */,
+				F29A3917214010B900D70A50 /* Set Build Version Number */,
 			);
 			buildRules = (
 			);
@@ -714,6 +716,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F29A391521400F4E00D70A50 /* Set Build Version Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Set Build Version Number";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${SRCROOT}/set_build_number.sh\n";
+		};
+		F29A3917214010B900D70A50 /* Set Build Version Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Set Build Version Number";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${SRCROOT}/set_build_number.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3180119C0D4DEC8400BE3B28 /* Sources */ = {
