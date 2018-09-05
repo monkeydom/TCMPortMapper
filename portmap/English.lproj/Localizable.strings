@@ -3,9 +3,9 @@
 "Port Map on %@" = "Port Map on %@";
 
 "NAT-PMP Howto URL" = "http://support.apple.com/kb/HT1552";
-"Port Map URL" = "http://www.codingmonkeys.de/portmap/";
-"TCMPortMapper URL" = "http://code.google.com/p/tcmportmapper/";
-"Bugtracker URL" = "http://code.google.com/p/tcmportmapper/issues/entry";
+"Port Map URL" = "https://github.com/monkeydom/TCMPortMapper";
+"TCMPortMapper URL" = "https://github.com/monkeydom/TCMPortMapper";
+"Bugtracker URL" = "https://github.com/monkeydom/TCMPortMapper/issues";
 
 /* status messages */
 "Router incompatible." = "Router incompatible.";
