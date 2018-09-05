@@ -217,6 +217,7 @@
 		F29472900ED3091000DEBA97 /* natpmpc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = natpmpc.c; sourceTree = "<group>"; };
 		F29472910ED3091000DEBA97 /* testgetgateway.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = testgetgateway.c; sourceTree = "<group>"; };
 		F29472920ED3091000DEBA97 /* wingettimeofday.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wingettimeofday.c; sourceTree = "<group>"; };
+		F29A3918214018FC00D70A50 /* Port Map.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Port Map.entitlements"; sourceTree = "<group>"; };
 		F2B94C27211D7DC300A9EFC1 /* TCMSystemConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TCMSystemConfiguration.h; path = framework/TCMSystemConfiguration.h; sourceTree = "<group>"; };
 		F2B94C28211D7DC300A9EFC1 /* TCMSystemConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TCMSystemConfiguration.m; path = framework/TCMSystemConfiguration.m; sourceTree = "<group>"; };
 		F2C30DD0210DFB28008653EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -484,6 +485,7 @@
 		F2C6600B0D50C34500820CAE /* Port Map */ = {
 			isa = PBXGroup;
 			children = (
+				F29A3918214018FC00D70A50 /* Port Map.entitlements */,
 				F2C660100D50C35D00820CAE /* Other sources */,
 				F2C660160D50C36D00820CAE /* Classes */,
 				F2C660130D50C36700820CAE /* Resources */,
@@ -658,6 +660,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1000;
+				TargetAttributes = {
+					F2C65FFE0D50C2D100820CAE = {
+						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 1;
+							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Port Map" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -929,6 +943,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.monkeydom.TCMPortMapper;
 				PRODUCT_NAME = TCMPortMapper;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -964,6 +979,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.monkeydom.TCMPortMapper;
 				PRODUCT_NAME = TCMPortMapper;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1187,12 +1203,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = PortMap;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = portmap/Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -1214,10 +1230,10 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = portmap/Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
