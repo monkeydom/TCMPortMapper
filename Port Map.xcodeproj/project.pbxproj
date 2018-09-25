@@ -170,6 +170,7 @@
 		F214E6060D5F646E00A06962 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = natecho/main.m; sourceTree = "<group>"; };
 		F214E60A0D5F64BF00A06962 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = natecho/AppController.h; sourceTree = "<group>"; };
 		F214E60B0D5F64BF00A06962 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppController.m; path = natecho/AppController.m; sourceTree = "<group>"; };
+		F2170211215A8A14007A2C35 /* BaseTeam.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BaseTeam.xcconfig; sourceTree = "<group>"; };
 		F217EF200D6082B40028E112 /* TCPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCPServer.h; path = natecho/TCPServer.h; sourceTree = "<group>"; };
 		F217EF210D6082B40028E112 /* TCPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCPServer.m; path = natecho/TCPServer.m; sourceTree = "<group>"; };
 		F21B76970DB73CFC00942BC0 /* upnpc-static */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "upnpc-static"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -321,6 +322,7 @@
 		29B97314FDCFA39411CA2CEA /* PortMapper */ = {
 			isa = PBXGroup;
 			children = (
+				F2170210215A89DE007A2C35 /* Configs */,
 				F214E5F10D5F600B00A06962 /* NATEcho.app */,
 				F2C6600B0D50C34500820CAE /* Port Map */,
 				F2C65BDD0D50B16100820CAE /* TCMPortMapper.framework */,
@@ -375,6 +377,14 @@
 				F214E6060D5F646E00A06962 /* main.m */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		F2170210215A89DE007A2C35 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				F2170211215A8A14007A2C35 /* BaseTeam.xcconfig */,
+			);
+			path = Configs;
 			sourceTree = "<group>";
 		};
 		F2301B000D685C1B00728699 /* miniupnpc */ = {
@@ -916,9 +926,8 @@
 		318011A10D4DEC8500BE3B28 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -950,10 +959,9 @@
 		318011A20D4DEC8500BE3B28 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -986,6 +994,7 @@
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2170211215A8A14007A2C35 /* BaseTeam.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
@@ -1026,6 +1035,7 @@
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2170211215A8A14007A2C35 /* BaseTeam.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
@@ -1203,7 +1213,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = PortMap;
 				CODE_SIGN_ENTITLEMENTS = "Port Map.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -1218,7 +1228,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.monkeydom.TCMPortMapper.PortMap;
 				PRODUCT_NAME = "Port Map";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
@@ -1229,8 +1238,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = PortMap;
 				CODE_SIGN_ENTITLEMENTS = "Port Map.entitlements";
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_MODEL_TUNING = G5;
@@ -1244,7 +1253,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.monkeydom.TCMPortMapper.PortMap;
 				PRODUCT_NAME = "Port Map";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};

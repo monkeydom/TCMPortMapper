@@ -1,0 +1,13 @@
+//
+//  BaseTeam.xcconfig
+//  Port Map
+//
+//  Created by dom on 25.09.18.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+DEVELOPMENT_TEAM = <YOURTEAMHERE>
+// CODE_SIGN_IDENTITY = Developer ID Application
+// PROVISIONING_PROFILE_SPECIFIER = PortMapDeveloperID
