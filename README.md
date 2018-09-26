@@ -115,7 +115,7 @@ The framework (now) uses [SemVer](http://semver.org/) for versioning. For the ve
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+Distributed under the MIT License - see [LICENSE.txt](LICENSE.txt) file for details
 
 ## Acknowledgments
 
