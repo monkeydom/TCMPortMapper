@@ -31,7 +31,7 @@ NSString * const TCMPortMapperDidReceiveUPNPMappingTableNotification = @"TCMPort
 
 NSString * const TCMNATPMPPortMapProtocol = @"NAT-PMP";
 NSString * const TCMUPNPPortMapProtocol   = @"UPnP";
-NSString * const TCMNoPortMapProtocol   = @"None";
+NSString * const TCMNoPortMapProtocol     = @"None";
 
 
 enum {
@@ -497,7 +497,6 @@ static TCMPortMapper *S_sharedInstance;
     static NSDictionary<NSString *, NSDictionary<NSString *, NSString *> *> *hardwareManufacturerDictionary = nil;
     if (hardwareManufacturerDictionary==nil) {
         NSURL *fileURL = [[NSBundle bundleForClass:[self class]] URLForResource:@"OUItoCompany2Level" withExtension:@"json.gz"];
-        NSLog(@"%s fileURL: %@",__FUNCTION__,fileURL);
         if (fileURL) {
             NSData *gzippedData = [NSData dataWithContentsOfURL:fileURL options:NSDataReadingMappedAlways error:nil];
             // unzip the data
@@ -644,10 +643,6 @@ static TCMPortMapper *S_sharedInstance;
     if (_NATPMPStatus == TCMPortMapProtocolFailed) {
         [[NSNotificationCenter defaultCenter] postNotificationName:TCMPortMapperDidFinishSearchForRouterNotification object:self];
     }
-}
-
-- (void)printNotification:(NSNotification *)aNotification {
-    NSLog(@"TCMPortMapper received notification: %@", aNotification);
 }
 
 - (void)cleanupUPNPPortMapperTimer {
