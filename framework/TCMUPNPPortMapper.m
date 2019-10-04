@@ -169,31 +169,33 @@ static const char *_UPNP_CStringForProtocol(TCMPortMappingTransportProtocol prot
                 for(device = devlist; device && !foundIDGDevice; device = device->pNext) {
                     NSURL *descURL = [NSURL URLWithString:[NSString stringWithUTF8String:device->descURL]];
                     SCNetworkConnectionFlags status;
-                    SCNetworkReachabilityRef target  = SCNetworkReachabilityCreateWithName(NULL, [[descURL host] UTF8String]);
-                    Boolean success = SCNetworkReachabilityGetFlags(target, &status);
-                    CFRelease(target);
+                    SCNetworkReachabilityRef target = SCNetworkReachabilityCreateWithName(NULL, [[descURL host] UTF8String]);
+                    if (target) {
+                        Boolean success = SCNetworkReachabilityGetFlags(target, &status);
+                        CFRelease(target);
 #ifndef NDEBUG
-                    NSLog(@"UPnP: %@ %c%c%c%c%c%c%c host:%s st:%s",
-                          success ? @"YES" : @" NO",
-                          (status & kSCNetworkFlagsTransientConnection)  ? 't' : '-',
-                          (status & kSCNetworkFlagsReachable)            ? 'r' : '-',
-                          (status & kSCNetworkFlagsConnectionRequired)   ? 'c' : '-',
-                          (status & kSCNetworkFlagsConnectionAutomatic)  ? 'C' : '-',
-                          (status & kSCNetworkFlagsInterventionRequired) ? 'i' : '-',
-                          (status & kSCNetworkFlagsIsLocalAddress)       ? 'l' : '-',
-                          (status & kSCNetworkFlagsIsDirect)             ? 'd' : '-',
-                          device->descURL,
-                          device->st
-                          );
+                        NSLog(@"UPnP: %@ %c%c%c%c%c%c%c host:%s st:%s",
+                              success ? @"YES" : @" NO",
+                              (status & kSCNetworkFlagsTransientConnection)  ? 't' : '-',
+                              (status & kSCNetworkFlagsReachable)            ? 'r' : '-',
+                              (status & kSCNetworkFlagsConnectionRequired)   ? 'c' : '-',
+                              (status & kSCNetworkFlagsConnectionAutomatic)  ? 'C' : '-',
+                              (status & kSCNetworkFlagsInterventionRequired) ? 'i' : '-',
+                              (status & kSCNetworkFlagsIsLocalAddress)       ? 'l' : '-',
+                              (status & kSCNetworkFlagsIsDirect)             ? 'd' : '-',
+                              device->descURL,
+                              device->st
+                              );
 #endif
-                    // only connect to directly reachable hosts which we haven't tried yet (if you are multihoming then you get all of the announcement twice
-                    if (success && (status & kSCNetworkFlagsIsDirect)) {
-                        if (![triedURLSet containsObject:descURL]) {
-                            [triedURLSet addObject:descURL];
-                            if ([[descURL host] isEqualToString:[[TCMPortMapper sharedInstance] routerIPAddress]]) {
-                                [URLsToTry insertObject:descURL atIndex:0];
-                            } else {
-                                [URLsToTry addObject:descURL];
+                        // only connect to directly reachable hosts which we haven't tried yet (if you are multihoming then you get all of the announcement twice
+                        if (success && (status & kSCNetworkFlagsIsDirect)) {
+                            if (![triedURLSet containsObject:descURL]) {
+                                [triedURLSet addObject:descURL];
+                                if ([[descURL host] isEqualToString:[[TCMPortMapper sharedInstance] routerIPAddress]]) {
+                                    [URLsToTry insertObject:descURL atIndex:0];
+                                } else {
+                                    [URLsToTry addObject:descURL];
+                                }
                             }
                         }
                     }
