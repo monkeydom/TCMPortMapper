@@ -67,8 +67,6 @@
 		F2B94C29211D7DC300A9EFC1 /* TCMSystemConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = F2B94C27211D7DC300A9EFC1 /* TCMSystemConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F2B94C2A211D7DC300A9EFC1 /* TCMSystemConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B94C28211D7DC300A9EFC1 /* TCMSystemConfiguration.m */; };
 		F2C30DD1210DFB28008653EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2C30DD0210DFB28008653EE /* Assets.xcassets */; };
-		F2C30DDC210DFC8C008653EE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2C30DD6210DFC8C008653EE /* Localizable.strings */; };
-		F2C30DDE210DFC8C008653EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2C30DDA210DFC8C008653EE /* InfoPlist.strings */; };
 		F2C65C2F0D50B2E000820CAE /* TCMNATPMPPortMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C65BE30D50B17B00820CAE /* TCMNATPMPPortMapper.m */; };
 		F2C65C310D50B2E400820CAE /* TCMPortMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = F2C65BE10D50B17B00820CAE /* TCMPortMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F2C65C320D50B2E500820CAE /* TCMPortMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C65BE00D50B17B00820CAE /* TCMPortMapper.m */; };
@@ -78,13 +76,15 @@
 		F2C6602E0D50C58F00820CAE /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C6602C0D50C58F00820CAE /* AppController.m */; };
 		F2C660480D50C68400820CAE /* TCMPortMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */; };
 		F2C660510D50C69A00820CAE /* TCMPortMapper.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		F2C6C62A24A75B6600F6FC93 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = F2C6C62824A75B6500F6FC93 /* MainMenu.nib */; };
+		F2C6C63724A75B8A00F6FC93 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2C6C63324A75B8A00F6FC93 /* Localizable.strings */; };
+		F2C6C63824A75B8A00F6FC93 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2C6C63524A75B8A00F6FC93 /* InfoPlist.strings */; };
 		F2D731D10D5B607D00CBD1D8 /* TCMPortMappingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D731D00D5B607D00CBD1D8 /* TCMPortMappingAdditions.m */; };
 		F2D731EA0D5B768300CBD1D8 /* Presets.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2D731E90D5B768300CBD1D8 /* Presets.plist */; };
 		F2DF551A210B76240071DF2D /* portlistingparse.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5519210B76240071DF2D /* portlistingparse.c */; };
 		F2DF551F210B77440071DF2D /* upnpdev.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF551E210B77440071DF2D /* upnpdev.c */; };
 		F2DF5521210B776B0071DF2D /* receivedata.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5520210B776B0071DF2D /* receivedata.c */; };
 		F2DF5523210B780D0071DF2D /* connecthostport.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5522210B780D0071DF2D /* connecthostport.c */; };
-		F2F3C3A0210E0D57009367E2 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = F2C30DD8210DFC8C008653EE /* MainMenu.nib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,8 +222,6 @@
 		F2B94C27211D7DC300A9EFC1 /* TCMSystemConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TCMSystemConfiguration.h; path = framework/TCMSystemConfiguration.h; sourceTree = "<group>"; };
 		F2B94C28211D7DC300A9EFC1 /* TCMSystemConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TCMSystemConfiguration.m; path = framework/TCMSystemConfiguration.m; sourceTree = "<group>"; };
 		F2C30DD0210DFB28008653EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F2C30DD7210DFC8C008653EE /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = Localizable.strings; sourceTree = "<group>"; };
-		F2C30DDB210DFC8C008653EE /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
 		F2C65BDE0D50B17B00820CAE /* TCMUPNPPortMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCMUPNPPortMapper.m; path = framework/TCMUPNPPortMapper.m; sourceTree = "<group>"; };
 		F2C65BDF0D50B17B00820CAE /* TCMUPNPPortMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCMUPNPPortMapper.h; path = framework/TCMUPNPPortMapper.h; sourceTree = "<group>"; };
 		F2C65BE00D50B17B00820CAE /* TCMPortMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCMPortMapper.m; path = framework/TCMPortMapper.m; sourceTree = "<group>"; };
@@ -237,6 +235,9 @@
 		F2C6602A0D50C58800820CAE /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = portmap/main.m; sourceTree = "<group>"; };
 		F2C6602C0D50C58F00820CAE /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppController.m; path = portmap/AppController.m; sourceTree = "<group>"; };
 		F2C6602D0D50C58F00820CAE /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = portmap/AppController.h; sourceTree = "<group>"; };
+		F2C6C62924A75B6500F6FC93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = MainMenu.nib; sourceTree = "<group>"; };
+		F2C6C63424A75B8A00F6FC93 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		F2C6C63624A75B8A00F6FC93 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		F2D731CF0D5B607D00CBD1D8 /* TCMPortMappingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCMPortMappingAdditions.h; path = portmap/TCMPortMappingAdditions.h; sourceTree = "<group>"; };
 		F2D731D00D5B607D00CBD1D8 /* TCMPortMappingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCMPortMappingAdditions.m; path = portmap/TCMPortMappingAdditions.m; sourceTree = "<group>"; };
 		F2D731E90D5B768300CBD1D8 /* Presets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Presets.plist; sourceTree = "<group>"; };
@@ -249,7 +250,6 @@
 		F2DF5520210B776B0071DF2D /* receivedata.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = receivedata.c; sourceTree = "<group>"; };
 		F2DF5522210B780D0071DF2D /* connecthostport.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = connecthostport.c; sourceTree = "<group>"; };
 		F2F3C39E210E0CE1009367E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = natecho/Base.lproj/MainMenu.nib; sourceTree = "<group>"; };
-		F2F3C39F210E0CE2009367E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = ../Base.lproj/MainMenu.nib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -453,16 +453,6 @@
 			path = framework/libnatpmp;
 			sourceTree = "<group>";
 		};
-		F2C30DD5210DFC8C008653EE /* English.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				F2C30DD6210DFC8C008653EE /* Localizable.strings */,
-				F2C30DD8210DFC8C008653EE /* MainMenu.nib */,
-				F2C30DDA210DFC8C008653EE /* InfoPlist.strings */,
-			);
-			path = English.lproj;
-			sourceTree = "<group>";
-		};
 		F2C65BDD0D50B16100820CAE /* TCMPortMapper.framework */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,9 +508,10 @@
 				F290D63D0EDAEBFB00E643C0 /* portmap_releasenotes.html */,
 				F24603880DB4B63A00C509E9 /* Artwork */,
 				F24603850DB4B61E00C509E9 /* Info.plist */,
-				F2C30DD5210DFC8C008653EE /* English.lproj */,
 				F2D731E90D5B768300CBD1D8 /* Presets.plist */,
 				31FAE7D30D672D410085867F /* miniupnpc-LICENSE.txt */,
+				F2C6C62724A75B6500F6FC93 /* Base.lproj */,
+				F2C6C63224A75B8A00F6FC93 /* en.lproj */,
 			);
 			name = Resources;
 			path = portmap;
@@ -541,6 +532,23 @@
 				F2D731D00D5B607D00CBD1D8 /* TCMPortMappingAdditions.m */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		F2C6C62724A75B6500F6FC93 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6C62824A75B6500F6FC93 /* MainMenu.nib */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		F2C6C63224A75B8A00F6FC93 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6C63324A75B8A00F6FC93 /* Localizable.strings */,
+				F2C6C63524A75B8A00F6FC93 /* InfoPlist.strings */,
+			);
+			path = en.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -688,6 +696,7 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
+				en,
 				Base,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* PortMapper */;
@@ -727,14 +736,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2F3C3A0210E0D57009367E2 /* MainMenu.nib in Resources */,
 				F2D731EA0D5B768300CBD1D8 /* Presets.plist in Resources */,
-				F2C30DDE210DFC8C008653EE /* InfoPlist.strings in Resources */,
 				F241D085210F036D002B6A69 /* Icons.xcassets in Resources */,
+				F2C6C62A24A75B6600F6FC93 /* MainMenu.nib in Resources */,
 				F2C30DD1210DFB28008653EE /* Assets.xcassets in Resources */,
-				F2C30DDC210DFC8C008653EE /* Localizable.strings in Resources */,
 				F290D63E0EDAEBFB00E643C0 /* portmap_releasenotes.css in Resources */,
+				F2C6C63724A75B8A00F6FC93 /* Localizable.strings in Resources */,
 				F241D08921108F54002B6A69 /* miniupnpc-LICENSE.txt in Resources */,
+				F2C6C63824A75B8A00F6FC93 /* InfoPlist.strings in Resources */,
 				F290D63F0EDAEBFB00E643C0 /* portmap_releasenotes.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -896,26 +905,26 @@
 			name = MainMenu.nib;
 			sourceTree = "<group>";
 		};
-		F2C30DD6210DFC8C008653EE /* Localizable.strings */ = {
+		F2C6C62824A75B6500F6FC93 /* MainMenu.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F2C30DD7210DFC8C008653EE /* English */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		F2C30DD8210DFC8C008653EE /* MainMenu.nib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F2F3C39F210E0CE2009367E2 /* Base */,
+				F2C6C62924A75B6500F6FC93 /* Base */,
 			);
 			name = MainMenu.nib;
 			sourceTree = "<group>";
 		};
-		F2C30DDA210DFC8C008653EE /* InfoPlist.strings */ = {
+		F2C6C63324A75B8A00F6FC93 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F2C30DDB210DFC8C008653EE /* English */,
+				F2C6C63424A75B8A00F6FC93 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		F2C6C63524A75B8A00F6FC93 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F2C6C63624A75B8A00F6FC93 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -928,6 +937,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.4.1;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -961,6 +971,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.4.1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1029,7 +1040,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				VALID_ARCHS = x86_64;
 			};
 			name = Debug;
 		};
@@ -1068,7 +1078,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = macosx;
-				VALID_ARCHS = x86_64;
 			};
 			name = Release;
 		};
@@ -1220,6 +1229,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = portmap/Info.plist;
+				MARKETING_VERSION = 2.0.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -1245,6 +1255,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = portmap/Info.plist;
+				MARKETING_VERSION = 2.0.2;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
