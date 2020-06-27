@@ -150,7 +150,7 @@
 - (NSString *)externalIPAddressString {
     NSString *externalIPAddress = [[TCMPortMapper sharedInstance] externalIPAddress];
     if (!externalIPAddress || [externalIPAddress isEqualToString:@"0.0.0.0"]) {
-        externalIPAddress = NSLocalizedString(@"No external Address.",@"");
+        externalIPAddress = [TCMPortMapper sharedInstance].securedIPv6Address ?: NSLocalizedString(@"No external Address.",@"");
     }
     return externalIPAddress;
 }
@@ -187,7 +187,7 @@
     NSString *externalIPAddress = pm.externalIPAddress;
     if (externalIPAddress) {
         if (externalIPAddress.IPv4AddressIsInPrivateSubnet) {
-            [O_currentIPTextField setObjectValue:@"No external address."];
+            [O_currentIPTextField setObjectValue:pm.securedIPv6Address ?: @"No external address."];
         } else {
             [O_currentIPTextField setObjectValue:[self externalIPAddressString]];
         }

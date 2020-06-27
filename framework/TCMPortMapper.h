@@ -93,6 +93,7 @@ typedef NS_ENUM(uint8_t, TCMPortMappingTransportProtocol)  {
 
 @property (nonatomic, readonly, nullable) NSString *externalIPAddress;
 @property (nonatomic, readonly) NSString *localIPAddress;
+@property (nonatomic, strong, readonly) NSString *securedIPv6Address;
 @property (nonatomic, readonly, nullable) NSString *localBonjourHostName;
 
 @property (nonatomic, strong, nullable) NSString *mappingProtocol;

@@ -9,10 +9,19 @@
 #import <netinet/in.h>
 #import <arpa/inet.h>
 #import <net/route.h>
-#import <netinet/if_ether.h>
+#import <net/if_var.h>        /* for struct ifaddr */
 #import <net/if_dl.h>
+#import <netinet/if_ether.h>
+#import <netinet6/in6_var.h> // ipv6 flags
+
 #import <err.h>
 #import <CommonCrypto/CommonDigest.h>
+
+
+// #import <netinet/in_var.h>
+// #import <arpa/inet.h>
+// #import <netinet6/nd6.h>    /* Define ND6_INFINITE_LIFETIME */
+// #import <netinet6/in6.h> // ipv6 flags
 
 #import <zlib.h>
 
@@ -130,6 +139,7 @@ enum {
 
 @property (nonatomic, strong, readwrite) NSString *externalIPAddress;
 @property (nonatomic, strong, readwrite) NSString *localIPAddress;
+@property (nonatomic, strong, readwrite) NSString *securedIPv6Address;
 
 - (void)cleanupUPNPPortMapperTimer;
 - (void)increaseWorkCount:(NSNotification *)aNotification;
@@ -214,7 +224,49 @@ static TCMPortMapper *S_sharedInstance;
     return [hostname stringByAppendingString:@".local"];
 }
 
+- (void)updateLocalIPV6SecuredAddress {
+    SCDynamicStoreRef dynRef = SCDynamicStoreCreate(kCFAllocatorSystemDefault, (CFStringRef)@"TCMPortMapper", NULL, NULL);
+    NSDictionary *scobjects = (NSDictionary *)CFBridgingRelease(SCDynamicStoreCopyValue(dynRef,(CFStringRef)@"State:/Network/Global/IPv6" ));
+    
+    NSString *ipv4Key = [NSString stringWithFormat:@"State:/Network/Interface/%@/IPv6", [scobjects objectForKey:(NSString *)kSCDynamicStorePropNetPrimaryInterface]];
+    
+    CFRelease(dynRef);
+    
+    dynRef = SCDynamicStoreCreate(kCFAllocatorSystemDefault, (CFStringRef)@"TCMPortMapper", NULL, NULL);
+    scobjects = (NSDictionary *)CFBridgingRelease(SCDynamicStoreCopyValue(dynRef,(CFStringRef)ipv4Key));
+    
+//        NSLog(@"%s scobjects:%@",__FUNCTION__,scobjects);
+    NSArray<NSString *> *IPAddresses = (NSArray *)[scobjects objectForKey:(NSString *)kSCPropNetIPv6Addresses];
+    NSArray<NSNumber *> *IPAddressFlags = (NSArray *)[scobjects objectForKey:(NSString *)kSCPropNetIPv6Flags];
+    
+    NSString *securedLinkLocalAddress;
+    
+    // Only take the secured address, maybe in future also take others, but secured makes the most sense
+    for (int i=0; i<IPAddressFlags.count && i<IPAddresses.count; i++) {
+        NSInteger flags = IPAddressFlags[i].integerValue;
+        NSString *address = IPAddresses[i];
+        if (   !([address hasPrefix:@"fe80::"]) // never use link local addresses
+            && !(flags & IN6_IFF_DEPRECATED) // never use deprecated addressess
+            &&   flags & IN6_IFF_SECURED ) {
+            NSLog(@"%s, Secured Address of main interface is: %@",__FUNCTION__, address);
+            securedLinkLocalAddress = address;
+            break;
+        }
+    }
+    
+//     NSLog(@"%s ipv6 addresses:%@, flags:%@",__FUNCTION__,IPAddresses,IPAddressFlags);
+    {
+//        [self setLocalIPAddress:[IPAddresses lastObject]];
+//       _localIPOnRouterSubnet = NO;
+    }
+    CFRelease(dynRef);
+    
+    self.securedIPv6Address = securedLinkLocalAddress;
+}
+
 - (void)updateLocalIPAddress {
+    [self updateLocalIPV6SecuredAddress];
+    
     NSString *routerAddress = [self routerIPAddress];
     SCDynamicStoreRef dynRef = SCDynamicStoreCreate(kCFAllocatorSystemDefault, (CFStringRef)@"TCMPortMapper", NULL, NULL); 
     NSDictionary *scobjects = (NSDictionary *)CFBridgingRelease(SCDynamicStoreCopyValue(dynRef,(CFStringRef)@"State:/Network/Global/IPv4" )); 
@@ -654,7 +706,7 @@ static TCMPortMapper *S_sharedInstance;
 
 - (void)startObservingSystemConfiguration {
     _systemConfigurationObservations = [NSMutableSet new];
-    id observation = [[TCMSystemConfiguration sharedConfiguration] observeConfigurationKeys:@[@"State:/Network/Global/IPv4"/*, @"State:/Network/Global/IPv6" */] observationBlock:^(TCMSystemConfiguration *config, NSArray<NSString *> *changedKeys) {
+    id observation = [[TCMSystemConfiguration sharedConfiguration] observeConfigurationKeys:@[@"State:/Network/Global/IPv4", @"State:/Network/Global/IPv6"] observationBlock:^(TCMSystemConfiguration *config, NSArray<NSString *> *changedKeys) {
         [self handleNetworkChange];
     }];
     [_systemConfigurationObservations addObject:observation];
