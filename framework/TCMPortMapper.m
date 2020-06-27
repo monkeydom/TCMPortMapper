@@ -84,6 +84,11 @@ enum {
 @end
 
 
+@interface TCMPortMapping ()
+@property (nonatomic, strong) NSString *pinholeUniqueID_UDP;
+@property (nonatomic, strong) NSString *pinholeUniqueID_TCP;
+@end
+
 @implementation TCMPortMapping 
 
 + (instancetype)portMappingWithLocalPort:(uint16_t)privatePort desiredExternalPort:(uint16_t)publicPort transportProtocol:(TCMPortMappingTransportProtocol)transportProtocol userInfo:(id)userInfo {
@@ -116,6 +121,25 @@ enum {
     return [NSString stringWithFormat:@"%@ privatePort:%u desiredPublicPort:%u publicPort:%u mappingStatus:%@ transportProtocol:%d",[super description], _localPort, _desiredExternalPort, _externalPort, _mappingStatus == TCMPortMappingStatusUnmapped ? @"unmapped" : (_mappingStatus == TCMPortMappingStatusMapped ? @"mapped" : @"trying"),_transportProtocol];
 }
 
+- (void)setUniqueID:(char *)uniqueID forProtocol:(TCMPortMappingTransportProtocol)protocol {
+    NSString *value = uniqueID ? [NSString stringWithUTF8String:uniqueID] : nil;
+    if (protocol == TCMPortMappingTransportProtocolTCP) {
+        self.pinholeUniqueID_TCP = value;
+    } else {
+        self.pinholeUniqueID_UDP = value;
+    }
+}
+- (char *)uniqueIDForProtocol:(TCMPortMappingTransportProtocol)protocol {
+    if (protocol == TCMPortMappingTransportProtocolTCP) {
+        return (char *)self.pinholeUniqueID_TCP.UTF8String;
+    } else {
+        return (char *)self.pinholeUniqueID_UDP.UTF8String;
+    }
+}
+
+- (BOOL)isActivePinhole {
+    return _pinholeUniqueID_TCP || _pinholeUniqueID_UDP;
+}
 @end
 
 @interface TCMPortMapper () {

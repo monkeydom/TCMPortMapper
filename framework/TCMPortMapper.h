@@ -102,4 +102,10 @@ typedef NS_ENUM(uint8_t, TCMPortMappingTransportProtocol)  {
 @property (nonatomic, readonly, nullable) NSString *routerHardwareAddress;
 @end
 
+// internal use only
+@interface TCMPortMapping ()
+- (void)setUniqueID:(char *)uniqueID forProtocol:(TCMPortMappingTransportProtocol)protocol;
+- (char *)uniqueIDForProtocol:(TCMPortMappingTransportProtocol)protocol;
+- (BOOL)isActivePinhole;
+@end
 NS_ASSUME_NONNULL_END

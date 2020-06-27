@@ -561,6 +561,8 @@ UPNP_DeletePortMappingRange(const char * controlURL, const char * servicetype,
 	return ret;
 }
 
+#define IPV6_MAX_STRING_LENGTH 46
+
 MINIUPNP_LIBSPEC int
 UPNP_GetGenericPortMappingEntry(const char * controlURL,
                                 const char * servicetype,
@@ -621,8 +623,8 @@ UPNP_GetGenericPortMappingEntry(const char * controlURL,
 	p = GetValueFromNameValueList(&pdata, "NewInternalClient");
 	if(p)
 	{
-		strncpy(intClient, p, 16);
-		intClient[15] = '\0';
+		strncpy(intClient, p, IPV6_MAX_STRING_LENGTH);
+		intClient[IPV6_MAX_STRING_LENGTH-1] = '\0';
 		r = 0;
 	}
 	p = GetValueFromNameValueList(&pdata, "NewInternalPort");
