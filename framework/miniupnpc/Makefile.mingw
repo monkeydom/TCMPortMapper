@@ -1,4 +1,4 @@
-# $Id: Makefile.mingw,v 1.25 2019/05/02 17:30:19 nanard Exp $
+# $Id: Makefile.mingw,v 1.24 2018/05/03 08:17:29 nanard Exp $
 # Miniupnp project.
 # http://miniupnp.free.fr/ or https://miniupnp.tuxfamily.org/
 # (c) 2005-2018 Thomas Bernard
@@ -8,7 +8,6 @@
 # make -f Makefile.mingw DLLWRAP=mingw32-dllwrap CC=mingw32-gcc AR=mingw32-ar
 #
 CC ?= gcc
-SETUP_COMPILER_FLAG?=
 DLLWRAP = dllwrap
 SH = /bin/sh
 ifeq ($(OS),Windows_NT)
@@ -47,9 +46,8 @@ libminiupnpc.a:	$(OBJS)
 	$(AR) cr $@ $?
 
 pythonmodule:	libminiupnpc.a
-	$(PYTHON) setupmingw32.py build $(SETUP_COMPILER_FLAG)
+	$(PYTHON) setupmingw32.py build --compiler=mingw32
 	$(PYTHON) setupmingw32.py install --skip-build
-	$(PYTHON) setupmingw32.py bdist_wheel --skip-build
 
 miniupnpc.dll:	libminiupnpc.a $(OBJSDLL)
 	$(DLLWRAP) -k --driver-name $(CC) \

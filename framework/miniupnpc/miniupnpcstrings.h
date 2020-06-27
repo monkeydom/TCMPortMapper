@@ -8,7 +8,7 @@
 #ifndef MINIUPNPCSTRINGS_H_INCLUDED
 #define MINIUPNPCSTRINGS_H_INCLUDED
 
-#define OS_STRING "Darwin/19.5.0"
+#define OS_STRING "Darwin/17.7.0"
 #define MINIUPNPC_VERSION_STRING "2.1"
 
 #if 0

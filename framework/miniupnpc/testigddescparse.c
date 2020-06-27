@@ -1,4 +1,4 @@
-/* $Id: testigddescparse.c,v 1.11 2019/02/10 12:33:32 nanard Exp $ */
+/* $Id: testigddescparse.c,v 1.10 2015/08/06 09:55:24 nanard Exp $ */
 /* Project : miniupnp
  * http://miniupnp.free.fr/
  * Author : Thomas Bernard
@@ -146,7 +146,7 @@ int main(int argc, char * * argv)
 		fprintf(stderr, "Usage: %s file.xml [file.values]\n", argv[0]);
 		return 1;
 	}
-	f = fopen(argv[1], "rb");
+	f = fopen(argv[1], "r");
 	if(!f) {
 		fprintf(stderr, "Cannot open %s for reading.\n", argv[1]);
 		return 1;
@@ -171,7 +171,7 @@ int main(int argc, char * * argv)
 	fclose(f);
 	f = NULL;
 	if(argc > 2) {
-		f = fopen(argv[2], "rb");
+		f = fopen(argv[2], "r");
 		if(!f) {
 			fprintf(stderr, "Cannot open %s for reading.\n", argv[2]);
 			free(buffer);

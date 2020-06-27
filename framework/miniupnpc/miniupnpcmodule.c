@@ -1,9 +1,8 @@
-/* $Id: miniupnpcmodule.c,v 1.34 2019/05/20 19:07:16 nanard Exp $*/
-/* vim: tabstop=4 shiftwidth=4 noexpandtab
- * Project : miniupnp
+/* $Id: miniupnpcmodule.c,v 1.32 2018/05/03 08:17:48 nanard Exp $*/
+/* Project : miniupnp
  * Author : Thomas BERNARD
  * website : https://miniupnp.tuxfamily.org/
- * copyright (c) 2007-2019 Thomas Bernard
+ * copyright (c) 2007-2018 Thomas Bernard
  * This software is subjet to the conditions detailed in the
  * provided LICENCE file. */
 #include <Python.h>
@@ -293,7 +292,7 @@ Py_END_ALLOW_THREADS
 }
 
 /* AddPortMapping(externalPort, protocol, internalHost, internalPort, desc,
- *                remoteHost, leaseDuration)
+ *                remoteHost)
  * protocol is 'UDP' or 'TCP' */
 static PyObject *
 UPnP_addportmapping(UPnPObject *self, PyObject *args)
@@ -306,24 +305,17 @@ UPnP_addportmapping(UPnPObject *self, PyObject *args)
 	const char * host;
 	const char * desc;
 	const char * remoteHost;
-	unsigned int intLeaseDuration = 0;
-	char strLeaseDuration[12];
+	const char * leaseDuration = "0";
 	int r;
-#if (PY_MAJOR_VERSION >= 3) || (PY_MAJOR_VERSION == 2 && PY_MINOR_VERSION > 3)
-	if (!PyArg_ParseTuple(args, "HssHzz|I", &ePort, &proto,
-	                                     &host, &iPort, &desc, &remoteHost, &intLeaseDuration))
-#else
-	if (!PyArg_ParseTuple(args, "HssHzz|i", &ePort, &proto,
-	                                     &host, &iPort, &desc, &remoteHost, (int *)&intLeaseDuration))
-#endif
+	if (!PyArg_ParseTuple(args, "HssHzz", &ePort, &proto,
+	                                     &host, &iPort, &desc, &remoteHost))
         return NULL;
 Py_BEGIN_ALLOW_THREADS
 	sprintf(extPort, "%hu", ePort);
 	sprintf(inPort, "%hu", iPort);
-	sprintf(strLeaseDuration, "%u", intLeaseDuration);
 	r = UPNP_AddPortMapping(self->urls.controlURL, self->data.first.servicetype,
 	                        extPort, inPort, host, desc, proto,
-	                        remoteHost, strLeaseDuration);
+	                        remoteHost, leaseDuration);
 Py_END_ALLOW_THREADS
 	if(r==UPNPCOMMAND_SUCCESS)
 	{
@@ -684,16 +676,6 @@ initminiupnpc(void)
     /* initialize Winsock. */
     WSADATA wsaData;
     int nResult = WSAStartup(MAKEWORD(2,2), &wsaData);
-	if (nResult != 0)
-	{
-		/* error code could be WSASYSNOTREADY WSASYSNOTREADY
-		 * WSASYSNOTREADY WSASYSNOTREADY WSASYSNOTREADY */
-#if PY_MAJOR_VERSION >= 3
-        return 0;
-#else
-        return;
-#endif
-	}
 
     UPnPType.tp_new = PyType_GenericNew;
 #endif
