@@ -220,7 +220,7 @@ static const char *_UPNP_CStringForProtocol(TCMPortMappingTransportProtocol prot
                             if(externalIPAddress[0]) {
                                 NSString *ipString = [NSString stringWithUTF8String:externalIPAddress];
                                 NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithObject:ipString forKey:@"externalIPAddress"];
-                                NSString *routerName = [NSString stringWithUTF8String:_igddata.first.modeldescription];
+                                NSString *routerName = [NSString stringWithUTF8String:_igddata.first.servicetype];
                                 if (routerName) [userInfo setObject:routerName forKey:@"routerName"];
                                 [[NSNotificationCenter defaultCenter] postNotificationOnMainThread:[NSNotification notificationWithName:TCMUPNPPortMapperDidGetExternalIPAddressNotification object:self userInfo:userInfo]];
                                 foundIDGDevice = YES;

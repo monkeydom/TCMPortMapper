@@ -10,6 +10,7 @@ option (UPNPC_BUILD_SHARED "Build shared library" TRUE)
 option (UPNPC_BUILD_TESTS "Build test executables" TRUE)
 option (UPNPC_BUILD_SAMPLE "Build sample executables" TRUE)
 option (NO_GETADDRINFO "Define NO_GETADDRINFO" FALSE)
+option (UPNPC_NO_INSTALL "Disable installation" FALSE)
 
 if (NOT UPNPC_BUILD_STATIC AND NOT UPNPC_BUILD_SHARED)
     message (FATAL "Both shared and static libraries are disabled!")
@@ -23,7 +24,7 @@ if (NO_GETADDRINFO)
 endif ()
 
 if (NOT WIN32)
-  target_compile_definitions(miniupnpc-private INTERFACE 
+  target_compile_definitions(miniupnpc-private INTERFACE
     MINIUPNPC_SET_SOCKET_TIMEOUT
     _BSD_SOURCE _DEFAULT_SOURCE)
   if (NOT CMAKE_SYSTEM_NAME STREQUAL "Darwin" AND NOT CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
@@ -66,6 +67,7 @@ set (MINIUPNPC_SOURCES
   connecthostport.c
   portlistingparse.c
   receivedata.c
+  listdevices.c
   connecthostport.h
   igd_desc_parse.h
   minisoap.h
@@ -99,15 +101,21 @@ endif ()
 
 if (UPNPC_BUILD_STATIC)
   add_library (libminiupnpc-static STATIC ${MINIUPNPC_SOURCES})
-  set_target_properties (libminiupnpc-static PROPERTIES OUTPUT_NAME "miniupnpc")
+  if (WIN32)
+    set_target_properties (libminiupnpc-static PROPERTIES OUTPUT_NAME "libminiupnpc")
+  else()
+    set_target_properties (libminiupnpc-static PROPERTIES OUTPUT_NAME "miniupnpc")
+  endif()
   target_link_libraries (libminiupnpc-static PRIVATE miniupnpc-private)
   target_include_directories(libminiupnpc-static INTERFACE ../${CMAKE_CURRENT_SOURCE_DIR})
   target_compile_definitions(libminiupnpc-static PUBLIC MINIUPNP_STATICLIB)
 
-  install (TARGETS libminiupnpc-static
-    RUNTIME DESTINATION bin
-    LIBRARY DESTINATION lib${LIB_SUFFIX}
-    ARCHIVE DESTINATION lib${LIB_SUFFIX})
+  if (NOT UPNPC_NO_INSTALL)
+    install (TARGETS libminiupnpc-static
+      RUNTIME DESTINATION bin
+      LIBRARY DESTINATION lib${LIB_SUFFIX}
+      ARCHIVE DESTINATION lib${LIB_SUFFIX})
+  endif()
 
   if (UPNPC_BUILD_SAMPLE)
     add_executable (upnpc-static upnpc.c)
@@ -124,21 +132,27 @@ if (UPNPC_BUILD_SHARED)
   target_link_libraries (libminiupnpc-shared PRIVATE miniupnpc-private)
   target_compile_definitions(libminiupnpc-shared PRIVATE MINIUPNP_EXPORTS)
 
-  target_include_directories(libminiupnpc-static INTERFACE ../${CMAKE_CURRENT_SOURCE_DIR})
+  target_include_directories(libminiupnpc-shared INTERFACE ../${CMAKE_CURRENT_SOURCE_DIR})
   if (WIN32)
     target_link_libraries(libminiupnpc-shared INTERFACE ws2_32 iphlpapi)
   endif()
 
-  install (TARGETS libminiupnpc-shared
-    RUNTIME DESTINATION bin
-    LIBRARY DESTINATION lib${LIB_SUFFIX}
-    ARCHIVE DESTINATION lib${LIB_SUFFIX})
+  if (NOT UPNPC_NO_INSTALL)
+    install (TARGETS libminiupnpc-shared
+      RUNTIME DESTINATION bin
+      LIBRARY DESTINATION lib${LIB_SUFFIX}
+      ARCHIVE DESTINATION lib${LIB_SUFFIX})
+  endif()
 
   if (UPNPC_BUILD_SAMPLE)
     add_executable (upnpc-shared upnpc.c)
     target_link_libraries (upnpc-shared PRIVATE libminiupnpc-shared)
     target_include_directories(upnpc-shared PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
   endif ()
+
+  add_executable (listdevices listdevices.c)
+  target_link_libraries (listdevices PRIVATE libminiupnpc-shared)
+  target_include_directories(listdevices PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
 endif ()
 
 if (UPNPC_BUILD_TESTS)
@@ -173,18 +187,20 @@ if (UPNPC_BUILD_TESTS)
 # set (UPNPC_INSTALL_TARGETS ${UPNPC_INSTALL_TARGETS} testminixml minixmlvalid testupnpreplyparse testigddescparse testminiwget)
 endif ()
 
-install (FILES
-	miniupnpc.h
-  miniwget.h
-  upnpcommands.h
-  igd_desc_parse.h
-  upnpreplyparse.h
-  upnperrors.h
-  upnpdev.h
-  miniupnpctypes.h
-  portlistingparse.h
-  miniupnpc_declspec.h
-  DESTINATION include/miniupnpc
-)
+if (NOT UPNPC_NO_INSTALL)
+  install (FILES
+	  miniupnpc.h
+    miniwget.h
+    upnpcommands.h
+    igd_desc_parse.h
+    upnpreplyparse.h
+    upnperrors.h
+    upnpdev.h
+    miniupnpctypes.h
+    portlistingparse.h
+    miniupnpc_declspec.h
+    DESTINATION include/miniupnpc
+  )
+endif()
 
 # vim: ts=2:sw=2
