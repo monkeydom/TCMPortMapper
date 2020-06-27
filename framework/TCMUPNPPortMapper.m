@@ -315,7 +315,7 @@ static const char *_UPNP_PinholeCStringForProtocol(TCMPortMappingTransportProtoc
             for (TCMPortMappingTransportProtocol protocol = TCMPortMappingTransportProtocolUDP; protocol <= TCMPortMappingTransportProtocolTCP; protocol++) {
                 if ([aPortMapping transportProtocol] & protocol) {
                     char uniqueID[16];
-                    int r = UPNP_AddPinhole(controlURL, serviceType, "", "0", localIPAddressString, portc, _UPNP_PinholeCStringForProtocol(protocol), "3600", uniqueID);
+                    int r = UPNP_AddPinhole(controlURL, serviceType, "", "0", localIPAddressString, portc, _UPNP_PinholeCStringForProtocol(protocol), "300", uniqueID);
                     if (r != UPNPCOMMAND_SUCCESS) {
                         NSLog(@"%s, AddPinhole([%s]:%s -> [%s]:%s) failed with code %d (%s)\n", __FUNCTION__ , "", "0", localIPAddressString, portc, r, strupnperror(r));
                         didFail = YES;
@@ -332,6 +332,9 @@ static const char *_UPNP_PinholeCStringForProtocol(TCMPortMappingTransportProtoc
                 int r = UPNP_DeletePinhole(controlURL, serviceType, [aPortMapping uniqueIDForProtocol:protocol]);
                 if (r != UPNPCOMMAND_SUCCESS) {
                     NSLog(@"%s, UPNP_DeletePinhole failed with code %d (%s)\n", __FUNCTION__, r, strupnperror(r));
+                    // at least Fritz box doesn't even support killing pinholes, so for now let's just update them in a timely manner
+                    [aPortMapping setMappingStatus:TCMPortMappingStatusUnmapped];
+                    [aPortMapping setUniqueID:nil forProtocol:protocol];
                 } else {
                     [aPortMapping setMappingStatus:TCMPortMappingStatusUnmapped];
                     [aPortMapping setUniqueID:nil forProtocol:protocol];
@@ -507,6 +510,8 @@ static const char *_UPNP_PinholeCStringForProtocol(TCMPortMappingTransportProtoc
             [self setLatestUPNPPortMappingsList:latestUPNPPortMappingsList];
         }
         
+        // TODO: check pinhole entries and only refresh them if needed
+        
         
         while (!UpdatePortMappingsThreadShouldQuit && !UpdatePortMappingsThreadShouldRestart) {
             TCMPortMapping *mappingToRemove=nil;
@@ -520,10 +525,11 @@ static const char *_UPNP_PinholeCStringForProtocol(TCMPortMappingTransportProtoc
             if ([mappingToRemove mappingStatus] == TCMPortMappingStatusMapped) {
                 [mappingToRemove setMappingStatus:TCMPortMappingStatusUnmapped];
                 // the actual unmapping took place above already
-                // unless we are ipv6 pinholing
-                if (mappingToRemove.isActivePinhole) {
-                    [self applyPortMapping:mappingToRemove remove:YES UPNPURLs:&_urls IGDDatas:&_igddata reservedExternalPortNumbers:reservedPortNumbers];
-                }
+
+                // unless we are ipv6 pinholing - although that doesn't work on fritz box, so no way to test, letz go the just update route
+//                if (mappingToRemove.isActivePinhole) {
+//                    [self applyPortMapping:mappingToRemove remove:YES UPNPURLs:&_urls IGDDatas:&_igddata reservedExternalPortNumbers:reservedPortNumbers];
+//                }
                 
             }
             
@@ -555,24 +561,42 @@ static const char *_UPNP_PinholeCStringForProtocol(TCMPortMappingTransportProtoc
             
         }
         
+        // do a refresh run first with all active pinholes
+        NSMutableSet<TCMPortMapping *> *refreshSet = [NSMutableSet new];
+        @synchronized (mappingsToAdd) {
+            [mappingsToAdd enumerateObjectsUsingBlock:^(TCMPortMapping *mapping, BOOL *_stop) {
+                            if (mapping.isActivePinhole &&
+                                mapping.mappingStatus == TCMPortMappingStatusMapped) {
+                                [refreshSet addObject:mapping];
+                            }
+            }];
+        }
+        
+        
         while (!UpdatePortMappingsThreadShouldQuit && !UpdatePortMappingsThreadShouldRestart) {
             TCMPortMapping *mappingToApply;
-            @synchronized (mappingsToAdd) {
-                mappingToApply = nil;
-                NSEnumerator *mappings = [mappingsToAdd objectEnumerator];
-                TCMPortMapping *mapping = nil;
-                BOOL isRunning = [pm isRunning];
-                while ((mapping = [mappings nextObject])) {
-                    if ([mapping mappingStatus] == TCMPortMappingStatusUnmapped && isRunning) {
-                        mappingToApply = mapping;
-                        break;
-                    } else if ([mapping mappingStatus] == TCMPortMappingStatusMapped && !isRunning) {
-                        mappingToApply = mapping;
-                        break;
+
+            if (refreshSet.count > 0) {
+                mappingToApply = [refreshSet anyObject];
+                [refreshSet removeObject:mappingToApply];
+            } else {
+                // get a mapping to apply
+                @synchronized (mappingsToAdd) {
+                    mappingToApply = nil;
+                    NSEnumerator *mappings = [mappingsToAdd objectEnumerator];
+                    TCMPortMapping *mapping = nil;
+                    BOOL isRunning = [pm isRunning];
+                    while ((mapping = [mappings nextObject])) {
+                        if ([mapping mappingStatus] == TCMPortMappingStatusUnmapped && isRunning) {
+                            mappingToApply = mapping;
+                            break;
+                        } else if ([mapping mappingStatus] == TCMPortMappingStatusMapped && (!isRunning)) {
+                            mappingToApply = mapping;
+                            break;
+                        }
                     }
                 }
             }
-            
             if (!mappingToApply) break;
             
             if (![self applyPortMapping:mappingToApply remove:[pm isRunning]?NO:YES UPNPURLs:&_urls IGDDatas:&_igddata reservedExternalPortNumbers:reservedPortNumbers]) {
@@ -587,6 +611,16 @@ static const char *_UPNP_PinholeCStringForProtocol(TCMPortMappingTransportProtoc
             [self performSelectorOnMainThread:@selector(refresh) withObject:nil waitUntilDone:YES];
         } else if (UpdatePortMappingsThreadShouldRestart) {
             [self performSelectorOnMainThread:@selector(updatePortMappings) withObject:nil waitUntilDone:YES];
+        } else {
+            for (TCMPortMapping *mapping in [pm portMappings]) {
+                if (mapping.mappingStatus == TCMPortMappingStatusMapped &&
+                    mapping.isActivePinhole) {
+                    // update portmappings again in 290 seconds to extend the pinhole duration
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(290 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [self updatePortMappings];
+                    });
+                }
+            }
         }
         
         // this tiny delay should take account of the cases where we restart the loop (e.g. removing a port mapping and then stopping the portmapper)

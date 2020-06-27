@@ -50,6 +50,8 @@ typedef NS_ENUM(uint8_t, TCMPortMappingTransportProtocol)  {
 @property (nonatomic) TCMPortMappingStatus mappingStatus;
 
 @property (nullable, nonatomic, strong) id userInfo;
+
+@property (nonatomic, nullable, readonly) NSString *externalIPAddress;
 @end
 
 @interface NSString (TCMPortMapper_IPAdditions)
@@ -93,7 +95,7 @@ typedef NS_ENUM(uint8_t, TCMPortMappingTransportProtocol)  {
 
 @property (nonatomic, readonly, nullable) NSString *externalIPAddress;
 @property (nonatomic, readonly) NSString *localIPAddress;
-@property (nonatomic, strong, readonly) NSString *securedIPv6Address;
+@property (nonatomic, strong, readonly, nullable) NSString *securedIPv6Address;
 @property (nonatomic, readonly, nullable) NSString *localBonjourHostName;
 
 @property (nonatomic, strong, nullable) NSString *mappingProtocol;
@@ -104,8 +106,8 @@ typedef NS_ENUM(uint8_t, TCMPortMappingTransportProtocol)  {
 
 // internal use only
 @interface TCMPortMapping ()
-- (void)setUniqueID:(char *)uniqueID forProtocol:(TCMPortMappingTransportProtocol)protocol;
-- (char *)uniqueIDForProtocol:(TCMPortMappingTransportProtocol)protocol;
+- (void)setUniqueID:(char  * _Nullable)uniqueID forProtocol:(TCMPortMappingTransportProtocol)protocol;
+- (char  * _Nullable)uniqueIDForProtocol:(TCMPortMappingTransportProtocol)protocol;
 - (BOOL)isActivePinhole;
 @end
 NS_ASSUME_NONNULL_END

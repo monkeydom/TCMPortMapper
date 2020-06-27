@@ -140,6 +140,14 @@ enum {
 - (BOOL)isActivePinhole {
     return _pinholeUniqueID_TCP || _pinholeUniqueID_UDP;
 }
+
+- (NSString *)externalIPAddress {
+    if (self.isActivePinhole) {
+        return [TCMPortMapper sharedInstance].securedIPv6Address;
+    } else {
+        return [TCMPortMapper sharedInstance].externalIPAddress;
+    }
+}
 @end
 
 @interface TCMPortMapper () {

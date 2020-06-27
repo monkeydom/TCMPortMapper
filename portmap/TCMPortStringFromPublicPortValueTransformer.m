@@ -33,12 +33,11 @@
         value = [value lastObject];
     }
     if ([value respondsToSelector:@selector(mappingStatus)] &&
-        [value mappingStatus]==TCMPortMappingStatusMapped &&
-        [[TCMPortMapper sharedInstance] externalIPAddress]) {
+        [value mappingStatus]==TCMPortMappingStatusMapped) {
         NSMutableString *string = [[[value userInfo] objectForKey:@"referenceString"] mutableCopy];
         if (string) {
             if ([string rangeOfString:@"[IP]"].location!=NSNotFound)
-                [string replaceCharactersInRange:[string rangeOfString:@"[IP]"] withString:[[TCMPortMapper sharedInstance] externalIPAddress]];
+                [string replaceCharactersInRange:[string rangeOfString:@"[IP]"] withString:[value externalIPAddress]];
             if ([string rangeOfString:@"[PORT]"].location!=NSNotFound)
                 [string replaceCharactersInRange:[string rangeOfString:@"[PORT]"] withString:[NSString stringWithFormat:@"%d",[value externalPort]]];
         }
