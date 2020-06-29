@@ -38,6 +38,8 @@
         if (string) {
             if ([string rangeOfString:@"[IP]"].location!=NSNotFound)
                 [string replaceCharactersInRange:[string rangeOfString:@"[IP]"] withString:[value externalIPAddress]];
+            if ([string rangeOfString:@"[IP_URL]"].location!=NSNotFound)
+                [string replaceCharactersInRange:[string rangeOfString:@"[IP_URL]"] withString:[value externalIPAddressForURL]];
             if ([string rangeOfString:@"[PORT]"].location!=NSNotFound)
                 [string replaceCharactersInRange:[string rangeOfString:@"[PORT]"] withString:[NSString stringWithFormat:@"%d",[value externalPort]]];
         }

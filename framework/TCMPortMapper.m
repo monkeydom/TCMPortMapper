@@ -148,6 +148,15 @@ enum {
         return [TCMPortMapper sharedInstance].externalIPAddress;
     }
 }
+
+- (NSString *)externalIPAddressForURL {
+    if (self.isActivePinhole) {
+        return [NSString stringWithFormat:@"[%@]",[TCMPortMapper sharedInstance].securedIPv6Address];
+    } else {
+        return [TCMPortMapper sharedInstance].externalIPAddress;
+    }
+}
+
 @end
 
 @interface TCMPortMapper () {

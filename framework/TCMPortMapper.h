@@ -52,6 +52,7 @@ typedef NS_ENUM(uint8_t, TCMPortMappingTransportProtocol)  {
 @property (nullable, nonatomic, strong) id userInfo;
 
 @property (nonatomic, nullable, readonly) NSString *externalIPAddress;
+@property (nonatomic, nullable, readonly) NSString *externalIPAddressForURL;
 @end
 
 @interface NSString (TCMPortMapper_IPAdditions)
