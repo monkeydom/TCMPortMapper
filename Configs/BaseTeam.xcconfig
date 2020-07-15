@@ -9,5 +9,5 @@
 // Change to yours (you find the id by 'security find-identity -v' it is the one inside the brackets, )
 // and then make git ignore it by
 // git update-index --skip-worktree Configs/BaseTeam.xcconfig
-DEVELOPMENT_TEAM = <SET YOUR TEAM IN BaseTeam.xconfig>
+DEVELOPMENT_TEAM = S76GCAG929
 CODE_SIGN_IDENTITY = Mac Developer

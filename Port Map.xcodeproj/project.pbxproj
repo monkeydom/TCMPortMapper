@@ -775,8 +775,9 @@
 		318011A10D4DEC8500BE3B28 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.4.1;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -799,6 +800,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.monkeydom.TCMPortMapper;
 				PRODUCT_NAME = TCMPortMapper;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -806,9 +808,10 @@
 		318011A20D4DEC8500BE3B28 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.4.1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -833,6 +836,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.monkeydom.TCMPortMapper;
 				PRODUCT_NAME = TCMPortMapper;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				ZERO_LINK = NO;
 			};

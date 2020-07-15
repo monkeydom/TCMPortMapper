@@ -314,7 +314,7 @@
                 <menuItem title="Help" id="103" userLabel="1">
                     <menu key="submenu" title="Help" id="106" userLabel="2">
                         <items>
-                            <menuItem title="NewApplication Help" keyEquivalent="?" id="111">
+                            <menuItem title="NATEcho Help" keyEquivalent="?" id="111">
                                 <connections>
                                     <action selector="showHelp:" target="-1" id="360"/>
                                 </connections>
@@ -325,15 +325,15 @@
             </items>
             <point key="canvasLocation" x="107" y="390"/>
         </menu>
-        <window title="NATEcho" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" animationBehavior="default" titlebarAppearsTransparent="YES" toolbarStyle="expanded" id="367">
+        <window title="NATEcho" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" animationBehavior="default" id="367">
             <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES"/>
             <rect key="contentRect" x="913" y="636" width="490" height="190"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
             <view key="contentView" id="368">
                 <rect key="frame" x="0.0" y="0.0" width="490" height="190"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" id="376">
+                    <textField verticalHuggingPriority="750" id="376">
                         <rect key="frame" x="110" y="149" width="84" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="12333" drawsBackground="YES" id="377">
@@ -342,7 +342,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" id="378">
+                    <textField verticalHuggingPriority="750" id="378">
                         <rect key="frame" x="6" y="153" width="101" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Port:" id="379">
@@ -351,7 +351,7 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" id="380">
+                    <textField verticalHuggingPriority="750" id="380">
                         <rect key="frame" x="6" y="122" width="101" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Server Status:" id="381">
@@ -365,7 +365,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" image="NSStatusUnavailable" id="383"/>
                     </imageView>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" id="384">
+                    <textField verticalHuggingPriority="750" id="384">
                         <rect key="frame" x="127" y="122" width="345" height="17"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Stopped" id="385">
@@ -374,7 +374,7 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" id="386">
+                    <textField verticalHuggingPriority="750" id="386">
                         <rect key="frame" x="127" y="101" width="345" height="17"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" title="Not running" id="391">
@@ -383,7 +383,7 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" id="388">
+                    <textField verticalHuggingPriority="750" id="388">
                         <rect key="frame" x="6" y="101" width="101" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Local:" id="389">
@@ -392,7 +392,7 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" id="392">
+                    <textField verticalHuggingPriority="750" id="392">
                         <rect key="frame" x="128" y="40" width="344" height="17"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="not reachable" id="397">
@@ -406,7 +406,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" image="NSStatusUnavailable" id="396"/>
                     </imageView>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" id="394">
+                    <textField verticalHuggingPriority="750" id="394">
                         <rect key="frame" x="6" y="41" width="102" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Public Status:" id="395">
@@ -419,7 +419,7 @@
                         <rect key="frame" x="110" y="40" width="16" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </progressIndicator>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" id="G9i-pV-pHj">
+                    <textField verticalHuggingPriority="750" id="G9i-pV-pHj">
                         <rect key="frame" x="127" y="76" width="345" height="17"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" title="Not running" id="oRD-fW-vmp">
@@ -428,7 +428,7 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" id="L2P-vN-f4w">
+                    <textField verticalHuggingPriority="750" id="L2P-vN-f4w">
                         <rect key="frame" x="6" y="76" width="101" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="IPV6:" id="2jF-RS-Hib">
@@ -437,7 +437,7 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" id="374">
+                    <button verticalHuggingPriority="750" imageHugsTitle="YES" id="374">
                         <rect key="frame" x="211" y="142" width="91" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="375">
@@ -466,6 +466,7 @@
                 <outlet property="O_startStopButton" destination="374" id="405"/>
                 <outlet property="localIPv4TextField" destination="386" id="1r3-v4-iYa"/>
                 <outlet property="localIPv6TextField" destination="G9i-pV-pHj" id="5Tp-Ys-AdT"/>
+                <outlet property="mainWindow" destination="367" id="xJh-9i-W9E"/>
             </connections>
         </customObject>
     </objects>

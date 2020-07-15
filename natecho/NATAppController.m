@@ -2,9 +2,12 @@
 #import <TCMPortMapper/TCMPortMapper.h>
 #import "NATEchoStreamPair.h"
 
-@interface NATAppController () <NATEchoStreamPairDelegate>
+@interface NATAppController () <NATEchoStreamPairDelegate, NSToolbarDelegate>
+@property (nonatomic, strong) IBOutlet NSWindow *mainWindow;
 @property (nonatomic, strong) NSMutableArray<NATEchoStreamPair *> *activeEchoStreams;
 @end
+
+NSToolbarItemIdentifier playPauseIdentifier = @"PlayPause";
 
 @implementation NATAppController
 
@@ -49,6 +52,31 @@
     [I_server setType:@"_echo._tcp."];
     [I_server setName:@"NATEcho"];
     [I_server setDelegate:self];
+    
+    if (@available(macOS 10.16, *)) {
+        NSToolbar *playPauseToolbar = [[NSToolbar alloc] init];
+        [playPauseToolbar setDelegate:self];
+        _mainWindow.toolbar = playPauseToolbar;
+    }
+}
+
+- (NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSToolbarItemIdentifier)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag {
+    
+    if ([itemIdentifier isEqualToString:playPauseIdentifier]) {
+        NSToolbarItem *item = [[NSToolbarItem alloc] initWithItemIdentifier:playPauseIdentifier];
+        item.target = self;
+        item.action = @selector(startStop:);
+        return item;
+    }
+    return nil;
+}
+
+- (NSArray<NSToolbarItemIdentifier> *)toolbarDefaultItemIdentifiers:(NSToolbar *)toolbar {
+    return @[playPauseIdentifier];
+}
+
+- (NSArray<NSToolbarItemIdentifier> *)toolbarAllowedItemIdentifiers:(NSToolbar *)toolbar {
+    return @[playPauseIdentifier];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -103,15 +131,31 @@
     if ([O_portTextField isEnabled]) {
         [O_portTextField setEnabled:NO];
         [O_startStopButton setTitle:@"Stop"];
+        [_mainWindow.toolbar validateVisibleItems];
         [self start];
     } else {
         [O_portTextField setEnabled:YES];
         [O_startStopButton setTitle:@"Start"];
+        [_mainWindow.toolbar validateVisibleItems];
         [self stop];
     }
 }
 
-// the code below is bad unfinished network code which barely suffices for the echo example, but leaks and does other weird stuff
+- (BOOL)validateToolbarItem:(NSToolbarItem *)item {
+    if (@available(macOS 10.16, *)) {
+        if ([item.itemIdentifier isEqualToString:playPauseIdentifier]) {
+            NSString *label = @"Stop";
+            if ([[TCMPortMapper sharedInstance] isRunning]) {
+                item.image = [NSImage imageWithSystemSymbolName:@"stop.fill" accessibilityDescription:label];
+            } else {
+                label = @"Start";
+                item.image = [NSImage imageWithSystemSymbolName:@"play.fill" accessibilityDescription:label];
+            }
+            item.label = label;
+        }
+    }
+    return YES;
+}
 
 - (void)TCPServer:(TCPServer *)server didReceiveConnectionFromAddress:(NSData *)addr inputStream:(NSInputStream *)istr outputStream:(NSOutputStream *)ostr {
     NATEchoStreamPair *pair = [[NATEchoStreamPair alloc] initWithAddress:addr inputStream:istr outputStream:ostr];
