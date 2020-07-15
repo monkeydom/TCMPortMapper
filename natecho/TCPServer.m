@@ -195,6 +195,7 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
     addr6.sin6_len = sizeof(addr6);
     addr6.sin6_family = AF_INET6;
     addr6.sin6_port = htons(port);
+    addr6.sin6_addr = in6addr_any;
     memcpy(&(addr6.sin6_addr), &in6addr_any, sizeof(addr6.sin6_addr));
     NSData *address6 = [NSData dataWithBytes:&addr6 length:sizeof(addr6)];
 

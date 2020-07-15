@@ -11,7 +11,7 @@
 		3180159D0D4E1B9200BE3B28 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3180154D0D4E08D900BE3B28 /* SystemConfiguration.framework */; };
 		F214E5FD0D5F62F700A06962 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = F214E5FB0D5F62F700A06962 /* MainMenu.nib */; };
 		F214E6080D5F646E00A06962 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F214E6060D5F646E00A06962 /* main.m */; };
-		F214E60C0D5F64BF00A06962 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = F214E60B0D5F64BF00A06962 /* AppController.m */; };
+		F214E60C0D5F64BF00A06962 /* NATAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = F214E60B0D5F64BF00A06962 /* NATAppController.m */; };
 		F214E6170D5F660100A06962 /* TCMPortMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */; };
 		F214E6200D5F661400A06962 /* TCMPortMapper.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F217EF220D6082B40028E112 /* TCPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = F217EF210D6082B40028E112 /* TCPServer.m */; };
@@ -50,6 +50,7 @@
 		F2C6C62A24A75B6600F6FC93 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = F2C6C62824A75B6500F6FC93 /* MainMenu.nib */; };
 		F2C6C63724A75B8A00F6FC93 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2C6C63324A75B8A00F6FC93 /* Localizable.strings */; };
 		F2C6C63824A75B8A00F6FC93 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2C6C63524A75B8A00F6FC93 /* InfoPlist.strings */; };
+		F2D2A40924BEF01400AEEA50 /* NATEchoStreamPair.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D2A40824BEF01400AEEA50 /* NATEchoStreamPair.m */; };
 		F2D731D10D5B607D00CBD1D8 /* TCMPortMappingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D731D00D5B607D00CBD1D8 /* TCMPortMappingAdditions.m */; };
 		F2D731EA0D5B768300CBD1D8 /* Presets.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2D731E90D5B768300CBD1D8 /* Presets.plist */; };
 		F2DF551A210B76240071DF2D /* portlistingparse.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5519210B76240071DF2D /* portlistingparse.c */; };
@@ -111,8 +112,8 @@
 		F214E5DB0D5F5FE600A06962 /* NATEcho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NATEcho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F214E5DD0D5F5FE600A06962 /* NATEcho-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "NATEcho-Info.plist"; path = "natecho/NATEcho-Info.plist"; sourceTree = "<group>"; };
 		F214E6060D5F646E00A06962 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = natecho/main.m; sourceTree = "<group>"; };
-		F214E60A0D5F64BF00A06962 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = natecho/AppController.h; sourceTree = "<group>"; };
-		F214E60B0D5F64BF00A06962 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppController.m; path = natecho/AppController.m; sourceTree = "<group>"; };
+		F214E60A0D5F64BF00A06962 /* NATAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NATAppController.h; path = natecho/NATAppController.h; sourceTree = "<group>"; };
+		F214E60B0D5F64BF00A06962 /* NATAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NATAppController.m; path = natecho/NATAppController.m; sourceTree = "<group>"; };
 		F2170211215A8A14007A2C35 /* BaseTeam.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BaseTeam.xcconfig; sourceTree = "<group>"; };
 		F217EF200D6082B40028E112 /* TCPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCPServer.h; path = natecho/TCPServer.h; sourceTree = "<group>"; };
 		F217EF210D6082B40028E112 /* TCPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCPServer.m; path = natecho/TCPServer.m; sourceTree = "<group>"; };
@@ -180,6 +181,8 @@
 		F2C6C62924A75B6500F6FC93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = MainMenu.nib; sourceTree = "<group>"; };
 		F2C6C63424A75B8A00F6FC93 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		F2C6C63624A75B8A00F6FC93 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		F2D2A40724BEF01400AEEA50 /* NATEchoStreamPair.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NATEchoStreamPair.h; path = natecho/NATEchoStreamPair.h; sourceTree = "<group>"; };
+		F2D2A40824BEF01400AEEA50 /* NATEchoStreamPair.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NATEchoStreamPair.m; path = natecho/NATEchoStreamPair.m; sourceTree = "<group>"; };
 		F2D731CF0D5B607D00CBD1D8 /* TCMPortMappingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCMPortMappingAdditions.h; path = portmap/TCMPortMappingAdditions.h; sourceTree = "<group>"; };
 		F2D731D00D5B607D00CBD1D8 /* TCMPortMappingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCMPortMappingAdditions.m; path = portmap/TCMPortMappingAdditions.m; sourceTree = "<group>"; };
 		F2D731E90D5B768300CBD1D8 /* Presets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Presets.plist; sourceTree = "<group>"; };
@@ -258,7 +261,7 @@
 			children = (
 				F2170210215A89DE007A2C35 /* Configs */,
 				F214E5F10D5F600B00A06962 /* NATEcho.app */,
-				F2C6600B0D50C34500820CAE /* Port Map */,
+				F2C6600B0D50C34500820CAE /* Port Map.app */,
 				F2C65BDD0D50B16100820CAE /* TCMPortMapper.framework */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -280,20 +283,14 @@
 			children = (
 				F214E6040D5F643300A06962 /* Other Sources */,
 				F214E6000D5F630000A06962 /* Resources */,
-				F214E5F40D5F625700A06962 /* artwork */,
-				F214E60A0D5F64BF00A06962 /* AppController.h */,
-				F214E60B0D5F64BF00A06962 /* AppController.m */,
+				F214E60A0D5F64BF00A06962 /* NATAppController.h */,
+				F214E60B0D5F64BF00A06962 /* NATAppController.m */,
+				F2D2A40724BEF01400AEEA50 /* NATEchoStreamPair.h */,
+				F2D2A40824BEF01400AEEA50 /* NATEchoStreamPair.m */,
 				F217EF200D6082B40028E112 /* TCPServer.h */,
 				F217EF210D6082B40028E112 /* TCPServer.m */,
 			);
 			name = NATEcho.app;
-			sourceTree = "<group>";
-		};
-		F214E5F40D5F625700A06962 /* artwork */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = artwork;
 			sourceTree = "<group>";
 		};
 		F214E6000D5F630000A06962 /* Resources */ = {
@@ -416,7 +413,7 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		F2C6600B0D50C34500820CAE /* Port Map */ = {
+		F2C6600B0D50C34500820CAE /* Port Map.app */ = {
 			isa = PBXGroup;
 			children = (
 				F29A3918214018FC00D70A50 /* Port Map.entitlements */,
@@ -424,7 +421,7 @@
 				F2C660160D50C36D00820CAE /* Classes */,
 				F2C660130D50C36700820CAE /* Resources */,
 			);
-			name = "Port Map";
+			name = "Port Map.app";
 			sourceTree = "<group>";
 		};
 		F2C660100D50C35D00820CAE /* Other sources */ = {
@@ -704,8 +701,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2D2A40924BEF01400AEEA50 /* NATEchoStreamPair.m in Sources */,
 				F214E6080D5F646E00A06962 /* main.m in Sources */,
-				F214E60C0D5F64BF00A06962 /* AppController.m in Sources */,
+				F214E60C0D5F64BF00A06962 /* NATAppController.m in Sources */,
 				F217EF220D6082B40028E112 /* TCPServer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

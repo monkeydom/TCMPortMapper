@@ -1,23 +1,24 @@
-//  AppController.h
+//  NATAppController.h
 //
 
 @import Cocoa;
 #import "TCPServer.h"
 
-@interface AppController : NSObject <NSStreamDelegate> {
+@interface NATAppController : NSObject {
     IBOutlet NSTextField *O_portTextField;
     IBOutlet NSButton    *O_startStopButton;
     IBOutlet NSImageView *O_serverStatusImageView;
     IBOutlet NSTextField *O_serverStatusTextField;
-    IBOutlet NSTextField *O_serverReachabilityTextField;
 
     IBOutlet NSProgressIndicator *O_publicIndicator;
     IBOutlet NSImageView *O_publicStatusImageView;
     IBOutlet NSTextField *O_publicStatusTextField;
     
-    NSMutableArray *I_streamsArray;
     TCPServer *I_server;
 }
+
+@property (nonatomic, strong) IBOutlet NSTextField *localIPv6TextField;
+@property (nonatomic, strong) IBOutlet NSTextField *localIPv4TextField;
 
 - (IBAction)startStop:(id)aSender;
 - (void)start;
