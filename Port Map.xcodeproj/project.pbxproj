@@ -6,21 +6,6 @@
 	objectVersion = 50;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		F24603720DB4B4B600C509E9 /* Create Release Zips */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = F24603830DB4B4F400C509E9 /* Build configuration list for PBXAggregateTarget "Create Release Zips" */;
-			buildPhases = (
-			);
-			dependencies = (
-				F24603760DB4B4BD00C509E9 /* PBXTargetDependency */,
-				F24603780DB4B4C000C509E9 /* PBXTargetDependency */,
-			);
-			name = "Create Release Zips";
-			productName = "Create Release Zips";
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		318011AC0D4DEE9500BE3B28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
 		3180159D0D4E1B9200BE3B28 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3180154D0D4E08D900BE3B28 /* SystemConfiguration.framework */; };
@@ -30,16 +15,6 @@
 		F214E6170D5F660100A06962 /* TCMPortMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */; };
 		F214E6200D5F661400A06962 /* TCMPortMapper.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F217EF220D6082B40028E112 /* TCPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = F217EF210D6082B40028E112 /* TCPServer.m */; };
-		F21B769B0DB73D2C00942BC0 /* miniwget.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B180D685C1B00728699 /* miniwget.c */; };
-		F21B769C0DB73D2C00942BC0 /* minixml.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B1B0D685C1B00728699 /* minixml.c */; };
-		F21B769D0DB73D2C00942BC0 /* upnpcommands.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B2A0D685C1B00728699 /* upnpcommands.c */; };
-		F21B769E0DB73D2C00942BC0 /* upnperrors.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B2D0D685C1B00728699 /* upnperrors.c */; };
-		F21B769F0DB73D2C00942BC0 /* upnpreplyparse.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B300D685C1B00728699 /* upnpreplyparse.c */; };
-		F21B76A00DB73D2C00942BC0 /* miniupnpc.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B140D685C1B00728699 /* miniupnpc.c */; };
-		F21B76A10DB73D2C00942BC0 /* minissdpc.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B110D685C1B00728699 /* minissdpc.c */; };
-		F21B76A30DB73D2C00942BC0 /* minisoap.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B0E0D685C1B00728699 /* minisoap.c */; };
-		F21B76A40DB73D2C00942BC0 /* igd_desc_parse.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B040D685C1B00728699 /* igd_desc_parse.c */; };
-		F21B76B20DB73D6700942BC0 /* upnpc.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B280D685C1B00728699 /* upnpc.c */; };
 		F2301B5B0D685C2700728699 /* igd_desc_parse.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B040D685C1B00728699 /* igd_desc_parse.c */; };
 		F2301B5C0D685C2A00728699 /* minisoap.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B0E0D685C1B00728699 /* minisoap.c */; };
 		F2301B5D0D685C3300728699 /* minissdpc.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B110D685C1B00728699 /* minissdpc.c */; };
@@ -49,10 +24,6 @@
 		F2301B630D685C4B00728699 /* upnpcommands.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B2A0D685C1B00728699 /* upnpcommands.c */; };
 		F2301B640D685C4F00728699 /* upnperrors.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B2D0D685C1B00728699 /* upnperrors.c */; };
 		F2301B650D685C5300728699 /* upnpreplyparse.c in Sources */ = {isa = PBXBuildFile; fileRef = F2301B300D685C1B00728699 /* upnpreplyparse.c */; };
-		F241D078210E1158002B6A69 /* connecthostport.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5522210B780D0071DF2D /* connecthostport.c */; };
-		F241D07A210E1169002B6A69 /* upnpdev.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF551E210B77440071DF2D /* upnpdev.c */; };
-		F241D07D210E117A002B6A69 /* receivedata.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5520210B776B0071DF2D /* receivedata.c */; };
-		F241D07E210E117F002B6A69 /* portlistingparse.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5519210B76240071DF2D /* portlistingparse.c */; };
 		F241D085210F036D002B6A69 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F241D083210F030C002B6A69 /* Icons.xcassets */; };
 		F241D0872110839D002B6A69 /* OUItoCompany2Level.json.gz in Resources */ = {isa = PBXBuildFile; fileRef = F241D0862110839D002B6A69 /* OUItoCompany2Level.json.gz */; };
 		F241D08821108F50002B6A69 /* miniupnpc-LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 31FAE7D30D672D410085867F /* miniupnpc-LICENSE.txt */; };
@@ -94,34 +65,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 3180119E0D4DEC8400BE3B28;
 			remoteInfo = TCMPortMapper;
-		};
-		F246035E0DB4B36400C509E9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F2C65FFE0D50C2D100820CAE;
-			remoteInfo = "Port Map";
-		};
-		F246036D0DB4B45E00C509E9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3180119E0D4DEC8400BE3B28;
-			remoteInfo = TCMPortMapper;
-		};
-		F24603750DB4B4BD00C509E9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F246036A0DB4B45900C509E9;
-			remoteInfo = "Create TCMPortMapper Release Zip";
-		};
-		F24603770DB4B4C000C509E9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F24603510DB4B19100C509E9;
-			remoteInfo = "Create Port Map Release Zip";
 		};
 		F2C660410D50C64A00820CAE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -173,7 +116,6 @@
 		F2170211215A8A14007A2C35 /* BaseTeam.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BaseTeam.xcconfig; sourceTree = "<group>"; };
 		F217EF200D6082B40028E112 /* TCPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCPServer.h; path = natecho/TCPServer.h; sourceTree = "<group>"; };
 		F217EF210D6082B40028E112 /* TCPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCPServer.m; path = natecho/TCPServer.m; sourceTree = "<group>"; };
-		F21B76970DB73CFC00942BC0 /* upnpc-static */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "upnpc-static"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2301B020D685C1B00728699 /* Changelog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Changelog.txt; sourceTree = "<group>"; };
 		F2301B040D685C1B00728699 /* igd_desc_parse.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = igd_desc_parse.c; sourceTree = "<group>"; };
 		F2301B050D685C1B00728699 /* igd_desc_parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = igd_desc_parse.h; sourceTree = "<group>"; };
@@ -270,13 +212,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F21B76950DB73CFC00942BC0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F2C65FFD0D50C2D100820CAE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -314,7 +249,6 @@
 				3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */,
 				F2C65FFF0D50C2D100820CAE /* Port Map.app */,
 				F214E5DB0D5F5FE600A06962 /* NATEcho.app */,
-				F21B76970DB73CFC00942BC0 /* upnpc-static */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -565,37 +499,6 @@
 		};
 /* End PBXHeadersBuildPhase section */
 
-/* Begin PBXLegacyTarget section */
-		F24603510DB4B19100C509E9 /* Create Port Map Release Zip */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "-c \"$(SRCROOT)/createZip.sh\" $(ACTION)";
-			buildConfigurationList = F24603540DB4B1C900C509E9 /* Build configuration list for PBXLegacyTarget "Create Port Map Release Zip" */;
-			buildPhases = (
-			);
-			buildToolPath = /bin/sh;
-			dependencies = (
-				F246035F0DB4B36400C509E9 /* PBXTargetDependency */,
-			);
-			name = "Create Port Map Release Zip";
-			passBuildSettingsInEnvironment = 1;
-			productName = "Create Port Map Release Zip";
-		};
-		F246036A0DB4B45900C509E9 /* Create TCMPortMapper Release Zip */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "-c \"$(SRCROOT)/createZip.sh\" $(ACTION)";
-			buildConfigurationList = F24603710DB4B4AB00C509E9 /* Build configuration list for PBXLegacyTarget "Create TCMPortMapper Release Zip" */;
-			buildPhases = (
-			);
-			buildToolPath = /bin/sh;
-			dependencies = (
-				F246036E0DB4B45E00C509E9 /* PBXTargetDependency */,
-			);
-			name = "Create TCMPortMapper Release Zip";
-			passBuildSettingsInEnvironment = 1;
-			productName = "Create TCMPortMapper Release Zip";
-		};
-/* End PBXLegacyTarget section */
-
 /* Begin PBXNativeTarget section */
 		3180119E0D4DEC8400BE3B28 /* TCMPortMapper */ = {
 			isa = PBXNativeTarget;
@@ -634,22 +537,6 @@
 			productName = NATEcho;
 			productReference = F214E5DB0D5F5FE600A06962 /* NATEcho.app */;
 			productType = "com.apple.product-type.application";
-		};
-		F21B76960DB73CFC00942BC0 /* UPnP Command Line Debug Tool */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F21B76B00DB73D4700942BC0 /* Build configuration list for PBXNativeTarget "UPnP Command Line Debug Tool" */;
-			buildPhases = (
-				F21B76940DB73CFC00942BC0 /* Sources */,
-				F21B76950DB73CFC00942BC0 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "UPnP Command Line Debug Tool";
-			productName = "UPnP Command Line Debug Tool";
-			productReference = F21B76970DB73CFC00942BC0 /* upnpc-static */;
-			productType = "com.apple.product-type.tool";
 		};
 		F2C65FFE0D50C2D100820CAE /* Port Map */ = {
 			isa = PBXNativeTarget;
@@ -706,10 +593,6 @@
 				3180119E0D4DEC8400BE3B28 /* TCMPortMapper */,
 				F2C65FFE0D50C2D100820CAE /* Port Map */,
 				F214E5DA0D5F5FE600A06962 /* NATEcho */,
-				F24603510DB4B19100C509E9 /* Create Port Map Release Zip */,
-				F246036A0DB4B45900C509E9 /* Create TCMPortMapper Release Zip */,
-				F24603720DB4B4B600C509E9 /* Create Release Zips */,
-				F21B76960DB73CFC00942BC0 /* UPnP Command Line Debug Tool */,
 			);
 		};
 /* End PBXProject section */
@@ -827,27 +710,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F21B76940DB73CFC00942BC0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F21B76B20DB73D6700942BC0 /* upnpc.c in Sources */,
-				F241D07A210E1169002B6A69 /* upnpdev.c in Sources */,
-				F241D07E210E117F002B6A69 /* portlistingparse.c in Sources */,
-				F21B769B0DB73D2C00942BC0 /* miniwget.c in Sources */,
-				F21B769C0DB73D2C00942BC0 /* minixml.c in Sources */,
-				F21B769D0DB73D2C00942BC0 /* upnpcommands.c in Sources */,
-				F21B769E0DB73D2C00942BC0 /* upnperrors.c in Sources */,
-				F21B769F0DB73D2C00942BC0 /* upnpreplyparse.c in Sources */,
-				F21B76A00DB73D2C00942BC0 /* miniupnpc.c in Sources */,
-				F21B76A10DB73D2C00942BC0 /* minissdpc.c in Sources */,
-				F241D07D210E117A002B6A69 /* receivedata.c in Sources */,
-				F21B76A30DB73D2C00942BC0 /* minisoap.c in Sources */,
-				F21B76A40DB73D2C00942BC0 /* igd_desc_parse.c in Sources */,
-				F241D078210E1158002B6A69 /* connecthostport.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F2C65FFC0D50C2D100820CAE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -868,26 +730,6 @@
 			isa = PBXTargetDependency;
 			target = 3180119E0D4DEC8400BE3B28 /* TCMPortMapper */;
 			targetProxy = F214E60F0D5F65D300A06962 /* PBXContainerItemProxy */;
-		};
-		F246035F0DB4B36400C509E9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F2C65FFE0D50C2D100820CAE /* Port Map */;
-			targetProxy = F246035E0DB4B36400C509E9 /* PBXContainerItemProxy */;
-		};
-		F246036E0DB4B45E00C509E9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3180119E0D4DEC8400BE3B28 /* TCMPortMapper */;
-			targetProxy = F246036D0DB4B45E00C509E9 /* PBXContainerItemProxy */;
-		};
-		F24603760DB4B4BD00C509E9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F246036A0DB4B45900C509E9 /* Create TCMPortMapper Release Zip */;
-			targetProxy = F24603750DB4B4BD00C509E9 /* PBXContainerItemProxy */;
-		};
-		F24603780DB4B4C000C509E9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F24603510DB4B19100C509E9 /* Create Port Map Release Zip */;
-			targetProxy = F24603770DB4B4C000C509E9 /* PBXContainerItemProxy */;
 		};
 		F2C660420D50C64A00820CAE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -942,7 +784,6 @@
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				HEADER_SEARCH_PATHS = framework;
 				INFOPLIST_FILE = "framework/TCMPortMapper-Info.plist";
@@ -960,7 +801,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.monkeydom.TCMPortMapper;
 				PRODUCT_NAME = TCMPortMapper;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -995,7 +835,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.monkeydom.TCMPortMapper;
 				PRODUCT_NAME = TCMPortMapper;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				ZERO_LINK = NO;
 			};
@@ -1036,9 +875,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -1076,8 +914,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				SDKROOT = macosx;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 			};
 			name = Release;
 		};
@@ -1122,100 +959,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.codingmonkeys.TCMPortMapper.NATEcho;
 				PRODUCT_NAME = NATEcho;
 				WRAPPER_EXTENSION = app;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		F21B76990DB73CFD00942BC0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "-";
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				INSTALL_PATH = /usr/local/bin;
-				OTHER_CFLAGS = "-DDEBUG";
-				PRODUCT_NAME = "upnpc-static";
-			};
-			name = Debug;
-		};
-		F21B769A0DB73CFD00942BC0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "-";
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_MODEL_TUNING = G5;
-				INSTALL_PATH = /usr/local/bin;
-				OTHER_CFLAGS = "-DNDEBUG";
-				PRODUCT_NAME = "upnpc-static";
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		F24603520DB4B19100C509E9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = "Create Port Map Release Zip";
-			};
-			name = Debug;
-		};
-		F24603530DB4B19100C509E9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				PRODUCT_NAME = "Create Port Map Release Zip";
-				ZERO_LINK = NO;
-				ZipName = PortMap;
-				ZipProduct = "Port Map.app";
-			};
-			name = Release;
-		};
-		F246036B0DB4B45A00C509E9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = "Create TCMPortMapper Release Zip";
-			};
-			name = Debug;
-		};
-		F246036C0DB4B45A00C509E9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				PRODUCT_NAME = "Create TCMPortMapper Release Zip";
-				ZERO_LINK = NO;
-				ZipName = TCMPortMapper;
-				ZipProduct = TCMPortMapper.framework;
-			};
-			name = Release;
-		};
-		F24603730DB4B4B700C509E9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = "Create Release Zips";
-			};
-			name = Debug;
-		};
-		F24603740DB4B4B700C509E9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				PRODUCT_NAME = "Create Release Zips";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1295,42 +1038,6 @@
 			buildConfigurations = (
 				F214E5DE0D5F5FE800A06962 /* Debug */,
 				F214E5DF0D5F5FE800A06962 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F21B76B00DB73D4700942BC0 /* Build configuration list for PBXNativeTarget "UPnP Command Line Debug Tool" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F21B76990DB73CFD00942BC0 /* Debug */,
-				F21B769A0DB73CFD00942BC0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F24603540DB4B1C900C509E9 /* Build configuration list for PBXLegacyTarget "Create Port Map Release Zip" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F24603520DB4B19100C509E9 /* Debug */,
-				F24603530DB4B19100C509E9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F24603710DB4B4AB00C509E9 /* Build configuration list for PBXLegacyTarget "Create TCMPortMapper Release Zip" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F246036B0DB4B45A00C509E9 /* Debug */,
-				F246036C0DB4B45A00C509E9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F24603830DB4B4F400C509E9 /* Build configuration list for PBXAggregateTarget "Create Release Zips" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F24603730DB4B4B700C509E9 /* Debug */,
-				F24603740DB4B4B700C509E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

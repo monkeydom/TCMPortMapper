@@ -47,7 +47,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreServices/CoreServices.h>
 
-NSString * const TCPServerErrorDomain;
+extern NSString * const TCPServerErrorDomain;
 
 typedef enum {
     kTCPServerCouldNotBindToIPv4Address = 1,
