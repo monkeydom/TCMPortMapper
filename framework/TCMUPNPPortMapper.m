@@ -39,9 +39,9 @@ static const char *_UPNP_CStringForProtocol(TCMPortMappingTransportProtocol prot
 - (instancetype)init {
     if ((self=[super init])) {
         _threadIsRunningLock = [NSLock new];
-        if ([_threadIsRunningLock respondsToSelector:@selector(setName:)])
+        if ([_threadIsRunningLock respondsToSelector:@selector(setName:)]) {
             [_threadIsRunningLock performSelector:@selector(setName:) withObject:@"UPNP-ThreadRunningLock"];
-        
+        }
     }
     return self;
 }
@@ -155,101 +155,97 @@ static const char *_UPNP_CStringForProtocol(TCMPortMappingTransportProtocol prot
         BOOL didFail=NO;
         NSString *errorString = nil;
         int error;
-        
-        for (char ipv6 = 1; ipv6 > 0; ipv6--) {
-            if (( devlist = upnpDiscover(2000, NULL, NULL, UPNP_LOCAL_PORT_ANY, ipv6, 2, &error) )) {
-                if (devlist) {
-                    
-                    // let us check all of the devices for reachability
-                    BOOL foundIDGDevice = NO;
-                    struct UPNPDev *device;
+        if (( devlist = upnpDiscover(2000, NULL, NULL, UPNP_LOCAL_PORT_ANY, false, 2, &error) )) {
+            if (devlist) {
+                // let us check all of the devices for reachability
+                BOOL foundIDGDevice = NO;
+                struct UPNPDev *device;
 #ifdef DEBUG
-                    NSLog(@"List of UPNP devices found on the network :\n");
+                NSLog(@"List of UPNP devices found on the network :\n");
 #endif
-                    NSMutableArray *URLsToTry = [NSMutableArray array];
-                    NSMutableSet *triedURLSet = [NSMutableSet set];
-                    for(device = devlist; device && !foundIDGDevice; device = device->pNext) {
-                        NSURL *descURL = [NSURL URLWithString:[NSString stringWithUTF8String:device->descURL]];
-                        SCNetworkConnectionFlags status;
-                        SCNetworkReachabilityRef target = SCNetworkReachabilityCreateWithName(NULL, [[descURL host] UTF8String]);
-                        if (target) {
-                            Boolean success = SCNetworkReachabilityGetFlags(target, &status);
-                            CFRelease(target);
+                NSMutableArray *URLsToTry = [NSMutableArray array];
+                NSMutableSet *triedURLSet = [NSMutableSet set];
+                for(device = devlist; device && !foundIDGDevice; device = device->pNext) {
+                    NSURL *descURL = [NSURL URLWithString:[NSString stringWithUTF8String:device->descURL]];
+                    SCNetworkConnectionFlags status;
+                    SCNetworkReachabilityRef target = SCNetworkReachabilityCreateWithName(NULL, [[descURL host] UTF8String]);
+                    if (target) {
+                        Boolean success = SCNetworkReachabilityGetFlags(target, &status);
+                        CFRelease(target);
 #ifndef NDEBUG
-                            NSLog(@"UPnP: %@ %c%c%c%c%c%c%c host:%s st:%s",
-                                  success ? @"YES" : @" NO",
-                                  (status & kSCNetworkFlagsTransientConnection)  ? 't' : '-',
-                                  (status & kSCNetworkFlagsReachable)            ? 'r' : '-',
-                                  (status & kSCNetworkFlagsConnectionRequired)   ? 'c' : '-',
-                                  (status & kSCNetworkFlagsConnectionAutomatic)  ? 'C' : '-',
-                                  (status & kSCNetworkFlagsInterventionRequired) ? 'i' : '-',
-                                  (status & kSCNetworkFlagsIsLocalAddress)       ? 'l' : '-',
-                                  (status & kSCNetworkFlagsIsDirect)             ? 'd' : '-',
-                                  device->descURL,
-                                  device->st
-                                  );
+                        NSLog(@"UPnP: %@ %c%c%c%c%c%c%c host:%s st:%s",
+                              success ? @"YES" : @" NO",
+                              (status & kSCNetworkFlagsTransientConnection)  ? 't' : '-',
+                              (status & kSCNetworkFlagsReachable)            ? 'r' : '-',
+                              (status & kSCNetworkFlagsConnectionRequired)   ? 'c' : '-',
+                              (status & kSCNetworkFlagsConnectionAutomatic)  ? 'C' : '-',
+                              (status & kSCNetworkFlagsInterventionRequired) ? 'i' : '-',
+                              (status & kSCNetworkFlagsIsLocalAddress)       ? 'l' : '-',
+                              (status & kSCNetworkFlagsIsDirect)             ? 'd' : '-',
+                              device->descURL,
+                              device->st
+                              );
 #endif
-                            // only connect to directly reachable hosts which we haven't tried yet (if you are multihoming then you get all of the announcement twice
-                            if (success && (status & kSCNetworkFlagsIsDirect)) {
-                                if (![triedURLSet containsObject:descURL]) {
-                                    [triedURLSet addObject:descURL];
-                                    if ([[descURL host] isEqualToString:[[TCMPortMapper sharedInstance] routerIPAddress]]) {
-                                        [URLsToTry insertObject:descURL atIndex:0];
-                                    } else {
-                                        [URLsToTry addObject:descURL];
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    NSEnumerator *URLEnumerator = [URLsToTry objectEnumerator];
-                    NSURL *descURL = nil;
-                    while ((descURL = [URLEnumerator nextObject])) {
-#ifndef NDEBUG
-                        NSLog(@"UPnP: trying URL:%@",descURL);
-#endif
-                        // freeing the url still seems like a good idea - why isn't it?
-                        if (_urls.controlURL) FreeUPNPUrls(&_urls);
-                        // get the new control URLs - this call mallocs the control URLs
-                        if (UPNP_GetIGDFromUrl([[descURL absoluteString] UTF8String],&_urls,&_igddata,lanaddr,sizeof(lanaddr))) {
-                            int r = UPNP_GetExternalIPAddress(_urls.controlURL,
-                                                              _igddata.first.servicetype,
-                                                              externalIPAddress);
-                            if(r != UPNPCOMMAND_SUCCESS) {
-                                didFail = YES;
-                                errorString = [NSString stringWithFormat:@"GetExternalIPAddress() returned %d", r];
-                            } else {
-                                if(externalIPAddress[0]) {
-                                    NSString *ipString = [NSString stringWithUTF8String:externalIPAddress];
-                                    NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithObject:ipString forKey:@"externalIPAddress"];
-                                    NSString *routerName = [NSString stringWithUTF8String:_igddata.first.modeldescription];
-                                    if (routerName) [userInfo setObject:routerName forKey:@"routerName"];
-                                    [[NSNotificationCenter defaultCenter] postNotificationOnMainThread:[NSNotification notificationWithName:TCMUPNPPortMapperDidGetExternalIPAddressNotification object:self userInfo:userInfo]];
-                                    foundIDGDevice = YES;
-                                    didFail = NO;
-                                    break;
+                        // only connect to directly reachable hosts which we haven't tried yet (if you are multihoming then you get all of the announcement twice
+                        if (success && (status & kSCNetworkFlagsIsDirect)) {
+                            if (![triedURLSet containsObject:descURL]) {
+                                [triedURLSet addObject:descURL];
+                                if ([[descURL host] isEqualToString:[[TCMPortMapper sharedInstance] routerIPAddress]]) {
+                                    [URLsToTry insertObject:descURL atIndex:0];
                                 } else {
-                                    didFail = YES;
-                                    errorString = @"No external IP address!";
+                                    [URLsToTry addObject:descURL];
                                 }
                             }
-                        } else {
-                            NSLog(@"%s No IGD for URL:%@",__FUNCTION__,descURL);
                         }
                     }
-                    if (!foundIDGDevice) {
-                        didFail = YES;
-                        errorString = @"No IGD found on the network!";
+                }
+                NSEnumerator *URLEnumerator = [URLsToTry objectEnumerator];
+                NSURL *descURL = nil;
+                while ((descURL = [URLEnumerator nextObject])) {
+#ifndef NDEBUG
+                    NSLog(@"UPnP: trying URL:%@",descURL);
+#endif
+                    // freeing the url still seems like a good idea - why isn't it?
+                    if (_urls.controlURL) FreeUPNPUrls(&_urls);
+                    // get the new control URLs - this call mallocs the control URLs
+                    if (UPNP_GetIGDFromUrl([[descURL absoluteString] UTF8String],&_urls,&_igddata,lanaddr,sizeof(lanaddr))) {
+                        int r = UPNP_GetExternalIPAddress(_urls.controlURL,
+                                                          _igddata.first.servicetype,
+                                                          externalIPAddress);
+                        if(r != UPNPCOMMAND_SUCCESS) {
+                            didFail = YES;
+                            errorString = [NSString stringWithFormat:@"GetExternalIPAddress() returned %d", r];
+                        } else {
+                            if(externalIPAddress[0]) {
+                                NSString *ipString = [NSString stringWithUTF8String:externalIPAddress];
+                                NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithObject:ipString forKey:@"externalIPAddress"];
+                                NSString *routerName = [NSString stringWithUTF8String:_igddata.first.modeldescription];
+                                if (routerName) [userInfo setObject:routerName forKey:@"routerName"];
+                                [[NSNotificationCenter defaultCenter] postNotificationOnMainThread:[NSNotification notificationWithName:TCMUPNPPortMapperDidGetExternalIPAddressNotification object:self userInfo:userInfo]];
+                                foundIDGDevice = YES;
+                                didFail = NO;
+                                break;
+                            } else {
+                                didFail = YES;
+                                errorString = @"No external IP address!";
+                            }
+                        }
+                    } else {
+                        NSLog(@"%s No IGD for URL:%@",__FUNCTION__,descURL);
                     }
-                } else {
+                }
+                if (!foundIDGDevice) {
                     didFail = YES;
                     errorString = @"No IGD found on the network!";
                 }
-                freeUPNPDevlist(devlist); devlist = 0;
             } else {
                 didFail = YES;
                 errorString = @"No IGD found on the network!";
             }
+            freeUPNPDevlist(devlist); devlist = 0;
+        } else {
+            didFail = YES;
+            errorString = @"No IGD found on the network!";
         }
         [_threadIsRunningLock unlock];
         if (refreshThreadShouldQuit) {
@@ -505,42 +501,24 @@ static const char *_UPNP_CStringForProtocol(TCMPortMappingTransportProtocol prot
             
         }
         
-        // do a refresh run first with all active pinholes
-        NSMutableSet<TCMPortMapping *> *refreshSet = [NSMutableSet new];
-        @synchronized (mappingsToAdd) {
-            [mappingsToAdd enumerateObjectsUsingBlock:^(TCMPortMapping *mapping, BOOL *_stop) {
-                if (mapping.isActivePinhole &&
-                    mapping.mappingStatus == TCMPortMappingStatusMapped) {
-                    [refreshSet addObject:mapping];
-                }
-            }];
-        }
-        
-        
         while (!UpdatePortMappingsThreadShouldQuit && !UpdatePortMappingsThreadShouldRestart) {
             TCMPortMapping *mappingToApply;
-            
-            if (refreshSet.count > 0) {
-                mappingToApply = [refreshSet anyObject];
-                [refreshSet removeObject:mappingToApply];
-            } else {
-                // get a mapping to apply
-                @synchronized (mappingsToAdd) {
-                    mappingToApply = nil;
-                    NSEnumerator *mappings = [mappingsToAdd objectEnumerator];
-                    TCMPortMapping *mapping = nil;
-                    BOOL isRunning = [pm isRunning];
-                    while ((mapping = [mappings nextObject])) {
-                        if ([mapping mappingStatus] == TCMPortMappingStatusUnmapped && isRunning) {
-                            mappingToApply = mapping;
-                            break;
-                        } else if ([mapping mappingStatus] == TCMPortMappingStatusMapped && (!isRunning)) {
-                            mappingToApply = mapping;
-                            break;
-                        }
+            @synchronized (mappingsToAdd) {
+                mappingToApply = nil;
+                NSEnumerator *mappings = [mappingsToAdd objectEnumerator];
+                TCMPortMapping *mapping = nil;
+                BOOL isRunning = [pm isRunning];
+                while ((mapping = [mappings nextObject])) {
+                    if ([mapping mappingStatus] == TCMPortMappingStatusUnmapped && isRunning) {
+                        mappingToApply = mapping;
+                        break;
+                    } else if ([mapping mappingStatus] == TCMPortMappingStatusMapped && (!isRunning)) {
+                        mappingToApply = mapping;
+                        break;
                     }
                 }
             }
+            
             if (!mappingToApply) break;
             
             if (![self applyPortMapping:mappingToApply remove:[pm isRunning]?NO:YES UPNPURLs:&_urls IGDDatas:&_igddata reservedExternalPortNumbers:reservedPortNumbers]) {
@@ -555,16 +533,6 @@ static const char *_UPNP_CStringForProtocol(TCMPortMappingTransportProtocol prot
             [self performSelectorOnMainThread:@selector(refresh) withObject:nil waitUntilDone:YES];
         } else if (UpdatePortMappingsThreadShouldRestart) {
             [self performSelectorOnMainThread:@selector(updatePortMappings) withObject:nil waitUntilDone:YES];
-        } else {
-            for (TCMPortMapping *mapping in [pm portMappings]) {
-                if (mapping.mappingStatus == TCMPortMappingStatusMapped &&
-                    mapping.isActivePinhole) {
-                    // update portmappings again in 290 seconds to extend the pinhole duration
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(290 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                        [self updatePortMappings];
-                    });
-                }
-            }
         }
         
         // this tiny delay should take account of the cases where we restart the loop (e.g. removing a port mapping and then stopping the portmapper)
