@@ -574,6 +574,7 @@ CA
                 <outlet property="O_showUPNPMappingTableButton" destination="610" id="621"/>
                 <outlet property="O_taglineTextField" destination="401" id="408"/>
                 <outlet property="O_upnpMappingListTabItem" destination="623" id="633"/>
+                <outlet property="frameworkVersionTextField" destination="MX4-5M-TGP" id="0rL-Ua-43Z"/>
             </connections>
         </customObject>
         <arrayController id="406" userLabel="PortMappingsController">
@@ -1131,7 +1132,7 @@ DQ
                 <rect key="frame" x="0.0" y="0.0" width="252" height="322"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <userGuides>
-                    <userLayoutGuide location="125" affinity="minY"/>
+                    <userLayoutGuide location="126" affinity="minY"/>
                     <userLayoutGuide location="126" affinity="minX"/>
                 </userGuides>
                 <subviews>

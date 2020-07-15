@@ -38,6 +38,8 @@
     
     IBOutlet NSTextField *O_aboutVersionLineTextField;
 }
+
+@property (nonatomic, strong) IBOutlet NSTextField *frameworkVersionTextField;
 @end
 
 @implementation AppController
@@ -92,6 +94,9 @@
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     NSString *versionString = [NSString stringWithFormat:@"%@ %@ (%@)",[O_aboutVersionLineTextField stringValue],[infoDictionary objectForKey:@"CFBundleShortVersionString"],[infoDictionary objectForKey:@"CFBundleVersion"]];
     [O_aboutVersionLineTextField setStringValue:versionString];
+    
+    NSDictionary *portMapperDictionary = [[NSBundle bundleForClass:[TCMPortMapper class]] infoDictionary];
+    [self.frameworkVersionTextField setStringValue:[NSString stringWithFormat:@"TCMPortMapper.framework v%@\nUses libnatpmp and miniupnpc.", [portMapperDictionary objectForKey:@"CFBundleVersion"]]];
 }
 
 - (void)writeMappingDefaults {

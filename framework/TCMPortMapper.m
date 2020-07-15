@@ -442,7 +442,6 @@ static TCMPortMapper *S_sharedInstance;
 }
 
 - (void)refresh {
-
     [self increaseWorkCount:nil];
     
     [self setRouterName:@"Unknown"];

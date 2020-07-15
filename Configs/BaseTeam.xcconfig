@@ -11,3 +11,5 @@
 // git update-index --skip-worktree Configs/BaseTeam.xcconfig
 DEVELOPMENT_TEAM = S76GCAG929
 CODE_SIGN_IDENTITY = Mac Developer
+
+#include "TCMRevision.xcconfig"

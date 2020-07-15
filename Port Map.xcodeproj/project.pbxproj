@@ -43,14 +43,16 @@
 		F2C65C360D50B2F800820CAE /* NSNotificationCenterThreadingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C65BE50D50B17B00820CAE /* NSNotificationCenterThreadingAdditions.m */; };
 		F2C6602B0D50C58800820CAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C6602A0D50C58800820CAE /* main.m */; };
 		F2C6602E0D50C58F00820CAE /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C6602C0D50C58F00820CAE /* AppController.m */; };
-		F2C660480D50C68400820CAE /* TCMPortMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */; };
-		F2C660510D50C69A00820CAE /* TCMPortMapper.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F2C6C62A24A75B6600F6FC93 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = F2C6C62824A75B6500F6FC93 /* MainMenu.nib */; };
 		F2C6C63724A75B8A00F6FC93 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2C6C63324A75B8A00F6FC93 /* Localizable.strings */; };
 		F2C6C63824A75B8A00F6FC93 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2C6C63524A75B8A00F6FC93 /* InfoPlist.strings */; };
 		F2D2A40924BEF01400AEEA50 /* NATEchoStreamPair.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D2A40824BEF01400AEEA50 /* NATEchoStreamPair.m */; };
 		F2D2A40A24BEFF5600AEEA50 /* TCMPortMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */; };
 		F2D2A40B24BEFF5600AEEA50 /* TCMPortMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F2D2A40F24BF0EEF00AEEA50 /* TCMPortMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */; };
+		F2D2A41024BF0EEF00AEEA50 /* TCMPortMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3180119F0D4DEC8400BE3B28 /* TCMPortMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F2D2A41624BF138E00AEEA50 /* TCMPortPinholer.h in Headers */ = {isa = PBXBuildFile; fileRef = F2D2A41424BF138E00AEEA50 /* TCMPortPinholer.h */; };
+		F2D2A41724BF138E00AEEA50 /* TCMPortPinholer.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D2A41524BF138E00AEEA50 /* TCMPortPinholer.m */; };
 		F2D731D10D5B607D00CBD1D8 /* TCMPortMappingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D731D00D5B607D00CBD1D8 /* TCMPortMappingAdditions.m */; };
 		F2D731EA0D5B768300CBD1D8 /* Presets.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2D731E90D5B768300CBD1D8 /* Presets.plist */; };
 		F2DF551A210B76240071DF2D /* portlistingparse.c in Sources */ = {isa = PBXBuildFile; fileRef = F2DF5519210B76240071DF2D /* portlistingparse.c */; };
@@ -60,14 +62,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F2C660410D50C64A00820CAE /* PBXContainerItemProxy */ = {
+		F2D2A40C24BEFF5600AEEA50 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3180119E0D4DEC8400BE3B28;
 			remoteInfo = TCMPortMapper;
 		};
-		F2D2A40C24BEFF5600AEEA50 /* PBXContainerItemProxy */ = {
+		F2D2A41124BF0EEF00AEEA50 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
@@ -77,17 +79,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F2C6605F0D50C6B000820CAE /* Copy Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				F2C660510D50C69A00820CAE /* TCMPortMapper.framework in Copy Frameworks */,
-			);
-			name = "Copy Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F2D2A40E24BEFF5600AEEA50 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -95,6 +86,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				F2D2A40B24BEFF5600AEEA50 /* TCMPortMapper.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2D2A41324BF0EEF00AEEA50 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F2D2A41024BF0EEF00AEEA50 /* TCMPortMapper.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,6 +185,9 @@
 		F2C6C63624A75B8A00F6FC93 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		F2D2A40724BEF01400AEEA50 /* NATEchoStreamPair.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NATEchoStreamPair.h; path = natecho/NATEchoStreamPair.h; sourceTree = "<group>"; };
 		F2D2A40824BEF01400AEEA50 /* NATEchoStreamPair.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NATEchoStreamPair.m; path = natecho/NATEchoStreamPair.m; sourceTree = "<group>"; };
+		F2D2A41424BF138E00AEEA50 /* TCMPortPinholer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TCMPortPinholer.h; path = framework/TCMPortPinholer.h; sourceTree = "<group>"; };
+		F2D2A41524BF138E00AEEA50 /* TCMPortPinholer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TCMPortPinholer.m; path = framework/TCMPortPinholer.m; sourceTree = "<group>"; };
+		F2D2A41824BF37A300AEEA50 /* TCMRevision.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TCMRevision.xcconfig; sourceTree = "<group>"; };
 		F2D731CF0D5B607D00CBD1D8 /* TCMPortMappingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCMPortMappingAdditions.h; path = portmap/TCMPortMappingAdditions.h; sourceTree = "<group>"; };
 		F2D731D00D5B607D00CBD1D8 /* TCMPortMappingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCMPortMappingAdditions.m; path = portmap/TCMPortMappingAdditions.m; sourceTree = "<group>"; };
 		F2D731E90D5B768300CBD1D8 /* Presets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Presets.plist; sourceTree = "<group>"; };
@@ -219,7 +224,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2C660480D50C68400820CAE /* TCMPortMapper.framework in Frameworks */,
+				F2D2A40F24BF0EEF00AEEA50 /* TCMPortMapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +318,7 @@
 		F2170210215A89DE007A2C35 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
+				F2D2A41824BF37A300AEEA50 /* TCMRevision.xcconfig */,
 				F2170211215A8A14007A2C35 /* BaseTeam.xcconfig */,
 			);
 			path = Configs;
@@ -391,6 +397,8 @@
 				F2301B000D685C1B00728699 /* miniupnpc */,
 				F2C65BE10D50B17B00820CAE /* TCMPortMapper.h */,
 				F2C65BE00D50B17B00820CAE /* TCMPortMapper.m */,
+				F2D2A41424BF138E00AEEA50 /* TCMPortPinholer.h */,
+				F2D2A41524BF138E00AEEA50 /* TCMPortPinholer.m */,
 				F2C65BDF0D50B17B00820CAE /* TCMUPNPPortMapper.h */,
 				F2C65BDE0D50B17B00820CAE /* TCMUPNPPortMapper.m */,
 				F2C65BE40D50B17B00820CAE /* TCMNATPMPPortMapper.h */,
@@ -489,6 +497,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2D2A41624BF138E00AEEA50 /* TCMPortPinholer.h in Headers */,
 				F2B94C29211D7DC300A9EFC1 /* TCMSystemConfiguration.h in Headers */,
 				F2C65C310D50B2E400820CAE /* TCMPortMapper.h in Headers */,
 			);
@@ -505,7 +514,6 @@
 				3180119B0D4DEC8400BE3B28 /* Resources */,
 				3180119C0D4DEC8400BE3B28 /* Sources */,
 				3180119D0D4DEC8400BE3B28 /* Frameworks */,
-				F29A391521400F4E00D70A50 /* Set Build Version Number */,
 			);
 			buildRules = (
 			);
@@ -539,16 +547,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2C660060D50C2D200820CAE /* Build configuration list for PBXNativeTarget "Port Map" */;
 			buildPhases = (
-				F2C6605F0D50C6B000820CAE /* Copy Frameworks */,
 				F2C65FFB0D50C2D100820CAE /* Resources */,
 				F2C65FFC0D50C2D100820CAE /* Sources */,
 				F2C65FFD0D50C2D100820CAE /* Frameworks */,
-				F29A3917214010B900D70A50 /* Set Build Version Number */,
+				F2D2A41324BF0EEF00AEEA50 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F2C660420D50C64A00820CAE /* PBXTargetDependency */,
+				F2D2A41224BF0EEF00AEEA50 /* PBXTargetDependency */,
 			);
 			name = "Port Map";
 			productName = "Port Map (dom)";
@@ -630,45 +637,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		F29A391521400F4E00D70A50 /* Set Build Version Number */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Set Build Version Number";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${SRCROOT}/set_build_number.sh\" BuildRevision\n";
-		};
-		F29A3917214010B900D70A50 /* Set Build Version Number */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Set Build Version Number";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${SRCROOT}/set_build_number.sh\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		3180119C0D4DEC8400BE3B28 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -692,6 +660,7 @@
 				F2301B640D685C4F00728699 /* upnperrors.c in Sources */,
 				F2301B650D685C5300728699 /* upnpreplyparse.c in Sources */,
 				F29472930ED3091500DEBA97 /* getgateway.c in Sources */,
+				F2D2A41724BF138E00AEEA50 /* TCMPortPinholer.m in Sources */,
 				F29472940ED3091800DEBA97 /* natpmp.c in Sources */,
 				F2DF5521210B776B0071DF2D /* receivedata.c in Sources */,
 			);
@@ -724,15 +693,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F2C660420D50C64A00820CAE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3180119E0D4DEC8400BE3B28 /* TCMPortMapper */;
-			targetProxy = F2C660410D50C64A00820CAE /* PBXContainerItemProxy */;
-		};
 		F2D2A40D24BEFF5600AEEA50 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3180119E0D4DEC8400BE3B28 /* TCMPortMapper */;
 			targetProxy = F2D2A40C24BEFF5600AEEA50 /* PBXContainerItemProxy */;
+		};
+		F2D2A41224BF0EEF00AEEA50 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3180119E0D4DEC8400BE3B28 /* TCMPortMapper */;
+			targetProxy = F2D2A41124BF0EEF00AEEA50 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -776,7 +745,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.4.1;
+				CURRENT_PROJECT_VERSION = 1.4.2;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -809,7 +778,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.4.1;
+				CURRENT_PROJECT_VERSION = 1.4.2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -984,6 +953,10 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = portmap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MARKETING_VERSION = 2.0.2;
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -1008,6 +981,10 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = portmap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MARKETING_VERSION = 2.0.2;
 				OTHER_LDFLAGS = (
 					"-framework",

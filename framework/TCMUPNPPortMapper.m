@@ -30,24 +30,18 @@ static const char *_UPNP_CStringForProtocol(TCMPortMappingTransportProtocol prot
     return (protocol==TCMPortMappingTransportProtocolUDP) ? "UDP" : "TCP";
 }
 
-static const char *_UPNP_PinholeCStringForProtocol(TCMPortMappingTransportProtocol protocol) {
-    return (protocol==TCMPortMappingTransportProtocolUDP) ? "17" : "6";
-    // See macros IPPROTO_UDP and IPPROTO_TCP
-}
-
-
 @interface TCMPortMapper (Private)
 - (NSMutableSet *)_upnpPortMappingsToRemove;
 @end
 
 @implementation TCMUPNPPortMapper
 
-- (id)init {
+- (instancetype)init {
     if ((self=[super init])) {
         _threadIsRunningLock = [NSLock new];
-        if ([_threadIsRunningLock respondsToSelector:@selector(setName:)]) 
+        if ([_threadIsRunningLock respondsToSelector:@selector(setName:)])
             [_threadIsRunningLock performSelector:@selector(setName:) withObject:@"UPNP-ThreadRunningLock"];
-
+        
     }
     return self;
 }
@@ -55,7 +49,7 @@ static const char *_UPNP_PinholeCStringForProtocol(TCMPortMappingTransportProtoc
 - (void)refresh {
     if ([_threadIsRunningLock tryLock]) {
         refreshThreadShouldQuit=NO;
-        UpdatePortMappingsThreadShouldQuit = NO;
+        UpdatePortMappingsThreadShouldQuit=NO;
         runningThreadID = TCMExternalIPThreadID;
         [NSThread detachNewThreadSelector:@selector(refreshInThread) toTarget:self withObject:nil];
         [_threadIsRunningLock unlock];
@@ -77,58 +71,58 @@ static const char *_UPNP_PinholeCStringForProtocol(TCMPortMappingTransportProtoc
 - (NSString *)portMappingDescription {
     static NSString *description = nil;
     if (!description) {
-    	NSString *prefix = @"cPM";
+        NSString *prefix = @"cPM";
         NSMutableArray *descriptionComponents=[NSMutableArray array];
         NSString *component = [[[[NSBundle mainBundle] bundlePath] lastPathComponent] stringByDeletingPathExtension];
         NSString *userID = [[TCMPortMapper sharedInstance] userID];
         if (component) {
-        	// make sure _ and . are the only non alphanumeric characters in the name so we don't run into problems with routers which change the description (eg. avm routers)
-        	NSCharacterSet *saveSet = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"];
-        	NSScanner *scanner = [NSScanner scannerWithString:component];
-        	[scanner setCharactersToBeSkipped:[saveSet invertedSet]];
-        	NSString *scannedString = nil;
-        	while ([scanner scanCharactersFromSet:saveSet intoString:&scannedString]) {
-        		[descriptionComponents addObject:scannedString];
-        	}
+            // make sure _ and . are the only non alphanumeric characters in the name so we don't run into problems with routers which change the description (eg. avm routers)
+            NSCharacterSet *saveSet = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"];
+            NSScanner *scanner = [NSScanner scannerWithString:component];
+            [scanner setCharactersToBeSkipped:[saveSet invertedSet]];
+            NSString *scannedString = nil;
+            while ([scanner scanCharactersFromSet:saveSet intoString:&scannedString]) {
+                [descriptionComponents addObject:scannedString];
+            }
         }
-
-		NSString *appComponent = [descriptionComponents componentsJoinedByString:@"."];
-		[descriptionComponents removeAllObjects];
-		// there seems to be a hard limit of 40 characters at in the vigor routers - so length is of essence
-		// however since there seems to be a hard limit of 11 at at least one other router we need to take further action
-		int maxLength = 40;
-		maxLength -= [prefix length];
-		maxLength -= [userID length];
-		maxLength -= 2;
-		if ([appComponent length] > maxLength) {
-			appComponent = [appComponent substringToIndex:maxLength];
-		}
-		
-		[descriptionComponents addObject:prefix];
-		if (appComponent) [descriptionComponents addObject:appComponent];
+        
+        NSString *appComponent = [descriptionComponents componentsJoinedByString:@"."];
+        [descriptionComponents removeAllObjects];
+        // there seems to be a hard limit of 40 characters at in the vigor routers - so length is of essence
+        // however since there seems to be a hard limit of 11 at at least one other router we need to take further action
+        int maxLength = 40;
+        maxLength -= [prefix length];
+        maxLength -= [userID length];
+        maxLength -= 2;
+        if ([appComponent length] > maxLength) {
+            appComponent = [appComponent substringToIndex:maxLength];
+        }
+        
+        [descriptionComponents addObject:prefix];
+        if (appComponent) [descriptionComponents addObject:appComponent];
         if (userID) {
-        	[descriptionComponents addObject:userID];
+            [descriptionComponents addObject:userID];
         }
-
-		if (!description) {
-			// hash all that stuff again and put it up in front (at least 6 characters) so wen can rely on prefix matches for routers that are bad bad boys and support only very few characters as description. but keep the rest to stay descriptive for debugging.
-			NSString *preliminaryDescription = [descriptionComponents componentsJoinedByString:@"."];
-			NSString *hashString = [TCMPortMapper sizereducableHashOfString:preliminaryDescription];
-			if ([hashString length] > PREFIX_MATCH_MIN_LENGTH) hashString = [hashString substringToIndex:PREFIX_MATCH_MIN_LENGTH];
-			[descriptionComponents insertObject:hashString atIndex:0];
-	        description = [descriptionComponents componentsJoinedByString:@"."];
-//			NSLog(@"%s description: %@",__FUNCTION__,description);
-		}
+        
+        if (!description) {
+            // hash all that stuff again and put it up in front (at least 6 characters) so wen can rely on prefix matches for routers that are bad bad boys and support only very few characters as description. but keep the rest to stay descriptive for debugging.
+            NSString *preliminaryDescription = [descriptionComponents componentsJoinedByString:@"."];
+            NSString *hashString = [TCMPortMapper sizereducableHashOfString:preliminaryDescription];
+            if ([hashString length] > PREFIX_MATCH_MIN_LENGTH) hashString = [hashString substringToIndex:PREFIX_MATCH_MIN_LENGTH];
+            [descriptionComponents insertObject:hashString atIndex:0];
+            description = [descriptionComponents componentsJoinedByString:@"."];
+            //			NSLog(@"%s description: %@",__FUNCTION__,description);
+        }
     }
     return description;
 }
 
 - (BOOL)doesPortMappingDescriptionBelongToMe:(NSString *)inDescription {
-	NSString *myDescription = [self portMappingDescription];
-	BOOL result = ([inDescription length] >= PREFIX_MATCH_MIN_LENGTH && 
-			([myDescription hasPrefix:inDescription] || [inDescription isEqualToString:[myDescription substringFromIndex:PREFIX_MATCH_MIN_LENGTH +1]])); // second part of the OR is for backwards compatibility only
-//	NSLog(@"%s %@ vs %@ : %@ (%@)",__FUNCTION__,myDescription,inDescription,result?@"YES":@"NO",[myDescription substringFromIndex:PREFIX_MATCH_MIN_LENGTH +1]);
-	return result;
+    NSString *myDescription = [self portMappingDescription];
+    BOOL result = ([inDescription length] >= PREFIX_MATCH_MIN_LENGTH &&
+                   ([myDescription hasPrefix:inDescription] || [inDescription isEqualToString:[myDescription substringFromIndex:PREFIX_MATCH_MIN_LENGTH +1]])); // second part of the OR is for backwards compatibility only
+    //	NSLog(@"%s %@ vs %@ : %@ (%@)",__FUNCTION__,myDescription,inDescription,result?@"YES":@"NO",[myDescription substringFromIndex:PREFIX_MATCH_MIN_LENGTH +1]);
+    return result;
 }
 
 - (void)postDidEndWorkingNotification {
@@ -240,21 +234,21 @@ static const char *_UPNP_PinholeCStringForProtocol(TCMPortMappingTransportProtoc
                                 }
                             }
                         } else {
-                            NSLog(@"%s No IDG device for URL:%@",__FUNCTION__,descURL);
+                            NSLog(@"%s No IGD for URL:%@",__FUNCTION__,descURL);
                         }
                     }
                     if (!foundIDGDevice) {
                         didFail = YES;
-                        errorString = @"No IDG Device found on the network!";
+                        errorString = @"No IGD found on the network!";
                     }
                 } else {
                     didFail = YES;
-                    errorString = @"No IDG Device found on the network!";
+                    errorString = @"No IGD found on the network!";
                 }
                 freeUPNPDevlist(devlist); devlist = 0;
             } else {
                 didFail = YES;
-                errorString = @"No IDG Device found on the network!";
+                errorString = @"No IGD found on the network!";
             }
         }
         [_threadIsRunningLock unlock];
@@ -300,115 +294,73 @@ static const char *_UPNP_PinholeCStringForProtocol(TCMPortMappingTransportProtoc
     char *serviceType = aIGDData->first.servicetype;
     char *controlURL = aURLs->controlURL;
     
-    // hacky but works for now
-    BOOL isIPV6 = [[NSString stringWithCString:controlURL encoding:NSUTF8StringEncoding] hasPrefix:@"http://["];
-    
     [aPortMapping setMappingStatus:TCMPortMappingStatusTrying];
-    if (isIPV6) {
-        controlURL = aURLs->controlURL_6FC;
-        char *serviceType = aIGDData->IPv6FC.servicetype;
-        if (!shouldRemove) {
-            char *localIPAddressString = (char *)[TCMPortMapper sharedInstance].securedIPv6Address.UTF8String;
-            int port = [aPortMapping localPort];
-            NS_VALID_UNTIL_END_OF_SCOPE NSString *portString = [NSString stringWithFormat:@"%d", port];
-            char *portc = (char *)portString.UTF8String;
-            for (TCMPortMappingTransportProtocol protocol = TCMPortMappingTransportProtocolUDP; protocol <= TCMPortMappingTransportProtocolTCP; protocol++) {
-                if ([aPortMapping transportProtocol] & protocol) {
-                    char uniqueID[16];
-                    int r = UPNP_AddPinhole(controlURL, serviceType, "", "0", localIPAddressString, portc, _UPNP_PinholeCStringForProtocol(protocol), "300", uniqueID);
-                    if (r != UPNPCOMMAND_SUCCESS) {
-                        NSLog(@"%s, AddPinhole([%s]:%s -> [%s]:%s) failed with code %d (%s)\n", __FUNCTION__ , "", "0", localIPAddressString, portc, r, strupnperror(r));
-                        didFail = YES;
-                        [aPortMapping setMappingStatus:TCMPortMappingStatusUnmapped];
-                    } else {
-                        [aPortMapping setUniqueID:uniqueID forProtocol:protocol];
-                        [aPortMapping setExternalPort:port];
-                        [aPortMapping setMappingStatus:TCMPortMappingStatusMapped];
-                    }
-                }
-            }
-        } else {
-            for (TCMPortMappingTransportProtocol protocol = TCMPortMappingTransportProtocolUDP; protocol <= TCMPortMappingTransportProtocolTCP; protocol++) {
-                int r = UPNP_DeletePinhole(controlURL, serviceType, [aPortMapping uniqueIDForProtocol:protocol]);
-                if (r != UPNPCOMMAND_SUCCESS) {
-                    NSLog(@"%s, UPNP_DeletePinhole failed with code %d (%s)\n", __FUNCTION__, r, strupnperror(r));
-                    // at least Fritz box doesn't even support killing pinholes, so for now let's just update them in a timely manner
-                    [aPortMapping setMappingStatus:TCMPortMappingStatusUnmapped];
-                    [aPortMapping setUniqueID:nil forProtocol:protocol];
-                } else {
-                    [aPortMapping setMappingStatus:TCMPortMappingStatusUnmapped];
-                    [aPortMapping setUniqueID:nil forProtocol:protocol];
-                }
+    if (shouldRemove) {
+        char *externalPortString = (char *)[[NSString stringWithFormat:@"%d",[aPortMapping externalPort]] UTF8String];
+        for (TCMPortMappingTransportProtocol protocol = TCMPortMappingTransportProtocolUDP; protocol <= TCMPortMappingTransportProtocolTCP; protocol++) {
+            if ([aPortMapping transportProtocol] & protocol) {
+                UPNP_DeletePortMapping(controlURL, serviceType, externalPortString, _UPNP_CStringForProtocol(protocol), NULL);
             }
         }
-    }
-    else {
-        if (shouldRemove) {
-            char *externalPortString = (char *)[[NSString stringWithFormat:@"%d",[aPortMapping externalPort]] UTF8String];
-            for (TCMPortMappingTransportProtocol protocol = TCMPortMappingTransportProtocolUDP; protocol <= TCMPortMappingTransportProtocolTCP; protocol++) {
-                if ([aPortMapping transportProtocol] & protocol) {
-                    UPNP_DeletePortMapping(controlURL, serviceType, externalPortString, _UPNP_CStringForProtocol(protocol), NULL);
-                }
-            }
-            [aPortMapping setMappingStatus:TCMPortMappingStatusUnmapped];
-            return YES;
-        } else { // We should add it
-            int mappedPort = [aPortMapping desiredExternalPort];
-            char *localPortString = (char *)[[NSString stringWithFormat:@"%d",[aPortMapping localPort]] UTF8String];
-            char *localIPAddressString = (char *)[[[TCMPortMapper sharedInstance] localIPAddress] UTF8String];
-            
-            for (TCMPortMappingTransportProtocol protocol = TCMPortMappingTransportProtocolUDP; protocol <= TCMPortMappingTransportProtocolTCP; protocol++) {
-                if ([aPortMapping transportProtocol] & protocol) {
-                    int r = 0;
-                    do {
-                        while ([aExternalPortSet containsIndex:mappedPort] && mappedPort<[aPortMapping desiredExternalPort]+40) {
-                            mappedPort++;
-                        }
-                        char *mappedPortString = (char *)[[NSString stringWithFormat:@"%d",mappedPort] UTF8String];
-                        r = UPNP_AddPortMapping(controlURL, serviceType, mappedPortString, localPortString, localIPAddressString, [[self portMappingDescription] UTF8String], _UPNP_CStringForProtocol(protocol), NULL, NULL);
-                        if (r != UPNPCOMMAND_SUCCESS) {
-                            NSString *errorString = [NSString stringWithFormat:@"%d",r];
-                            switch (r) {
-                                case 718:
-                                    errorString = [errorString stringByAppendingString:@": ConflictInMappingEntry"];
+        [aPortMapping setMappingStatus:TCMPortMappingStatusUnmapped];
+        return YES;
+    } else { // We should add it
+        int mappedPort = [aPortMapping desiredExternalPort];
+        char *localPortString = (char *)[[NSString stringWithFormat:@"%d",[aPortMapping localPort]] UTF8String];
+        char *localIPAddressString = (char *)[[[TCMPortMapper sharedInstance] localIPAddress] UTF8String];
+        
+        for (TCMPortMappingTransportProtocol protocol = TCMPortMappingTransportProtocolUDP; protocol <= TCMPortMappingTransportProtocolTCP; protocol++) {
+            if ([aPortMapping transportProtocol] & protocol) {
+                int r = 0;
+                do {
+                    while ([aExternalPortSet containsIndex:mappedPort] && mappedPort<[aPortMapping desiredExternalPort]+40) {
+                        mappedPort++;
+                    }
+                    char *mappedPortString = (char *)[[NSString stringWithFormat:@"%d",mappedPort] UTF8String];
+                    r = UPNP_AddPortMapping(controlURL, serviceType, mappedPortString, localPortString, localIPAddressString, [[self portMappingDescription] UTF8String], _UPNP_CStringForProtocol(protocol), NULL, NULL);
+                    if (r != UPNPCOMMAND_SUCCESS) {
+                        NSString *errorString = [NSString stringWithFormat:@"%d",r];
+                        switch (r) {
+                            case 718:
+                                errorString = [errorString stringByAppendingString:@": ConflictInMappingEntry"];
 #ifdef DEBUG
-                                    NSLog(@"%s mapping of external port %d failed, trying %d next",__FUNCTION__,mappedPort,mappedPort+1);
+                                NSLog(@"%s mapping of external port %d failed, trying %d next",__FUNCTION__,mappedPort,mappedPort+1);
 #endif
-                                    if (protocol == TCMPortMappingTransportProtocolTCP &&
-                                        ([aPortMapping transportProtocol] & TCMPortMappingTransportProtocolUDP)) {
-                                        // remove the successfully established UDP mapping
-                                        UPNP_DeletePortMapping(controlURL, serviceType, mappedPortString, _UPNP_CStringForProtocol(TCMPortMappingTransportProtocolUDP), NULL);
-                                        protocol = TCMPortMappingTransportProtocolUDP;
-                                    }
-                                    mappedPort++;
-                                    break;
-                                case 724: errorString = [errorString stringByAppendingString:@": SamePortValuesRequired"]; break;
-                                case 725: errorString = [errorString stringByAppendingString:@": OnlyPermanentLeasesSupported"]; break;
-                                case 727: errorString = [errorString stringByAppendingString:@": ExternalPortOnlySupportsWildcard"]; break;
-                            }
-                            if (r!=718) NSLog(@"%s error occured while mapping: %@",__FUNCTION__, errorString);
+                                if (protocol == TCMPortMappingTransportProtocolTCP &&
+                                    ([aPortMapping transportProtocol] & TCMPortMappingTransportProtocolUDP)) {
+                                    // remove the successfully established UDP mapping
+                                    UPNP_DeletePortMapping(controlURL, serviceType, mappedPortString, _UPNP_CStringForProtocol(TCMPortMappingTransportProtocolUDP), NULL);
+                                    protocol = TCMPortMappingTransportProtocolUDP;
+                                }
+                                mappedPort++;
+                                break;
+                            case 724: errorString = [errorString stringByAppendingString:@": SamePortValuesRequired"]; break;
+                            case 725: errorString = [errorString stringByAppendingString:@": OnlyPermanentLeasesSupported"]; break;
+                            case 727: errorString = [errorString stringByAppendingString:@": ExternalPortOnlySupportsWildcard"]; break;
                         }
-                    } while (r!=UPNPCOMMAND_SUCCESS && r==718 && mappedPort<=[aPortMapping desiredExternalPort]+40);
-                    
-                    if (r!=UPNPCOMMAND_SUCCESS) {
-                        didFail = YES;
-                        [aPortMapping setMappingStatus:TCMPortMappingStatusUnmapped];
-                    } else {
+                        if (r!=718) NSLog(@"%s error occured while mapping: %@",__FUNCTION__, errorString);
+                    }
+                } while (r!=UPNPCOMMAND_SUCCESS && r==718 && mappedPort<=[aPortMapping desiredExternalPort]+40);
+                
+                if (r!=UPNPCOMMAND_SUCCESS) {
+                    didFail = YES;
+                    [aPortMapping setMappingStatus:TCMPortMappingStatusUnmapped];
+                } else {
 #ifndef DEBUG
 #ifndef NDEBUG
-                        NSLog(@"UPnP: mapped local %@ port %d to external port %d",protocol==TCMPortMappingTransportProtocolUDP?@"UDP":@"TCP",[aPortMapping localPort],mappedPort);
+                    NSLog(@"UPnP: mapped local %@ port %d to external port %d",protocol==TCMPortMappingTransportProtocolUDP?@"UDP":@"TCP",[aPortMapping localPort],mappedPort);
 #endif
 #endif
 #ifdef DEBUG
-                        NSLog(@"%s mapping successful: %@ - %d %@",__FUNCTION__,aPortMapping,mappedPort,protocol==TCMPortMappingTransportProtocolUDP?@"UDP":@"TCP");
+                    NSLog(@"%s mapping successful: %@ - %d %@",__FUNCTION__,aPortMapping,mappedPort,protocol==TCMPortMappingTransportProtocolUDP?@"UDP":@"TCP");
 #endif
-                        [aPortMapping setExternalPort:mappedPort];
-                        [aPortMapping setMappingStatus:TCMPortMappingStatusMapped];
-                    }
+                    [aPortMapping setExternalPort:mappedPort];
+                    [aPortMapping setMappingStatus:TCMPortMappingStatusMapped];
                 }
             }
         }
     }
+    
     return !didFail;
 }
 
@@ -510,8 +462,6 @@ static const char *_UPNP_PinholeCStringForProtocol(TCMPortMappingTransportProtoc
             [self setLatestUPNPPortMappingsList:latestUPNPPortMappingsList];
         }
         
-        // TODO: check pinhole entries and only refresh them if needed
-        
         
         while (!UpdatePortMappingsThreadShouldQuit && !UpdatePortMappingsThreadShouldRestart) {
             TCMPortMapping *mappingToRemove=nil;
@@ -525,12 +475,6 @@ static const char *_UPNP_PinholeCStringForProtocol(TCMPortMappingTransportProtoc
             if ([mappingToRemove mappingStatus] == TCMPortMappingStatusMapped) {
                 [mappingToRemove setMappingStatus:TCMPortMappingStatusUnmapped];
                 // the actual unmapping took place above already
-
-                // unless we are ipv6 pinholing - although that doesn't work on fritz box, so no way to test, letz go the just update route
-//                if (mappingToRemove.isActivePinhole) {
-//                    [self applyPortMapping:mappingToRemove remove:YES UPNPURLs:&_urls IGDDatas:&_igddata reservedExternalPortNumbers:reservedPortNumbers];
-//                }
-                
             }
             
             @synchronized (mappingsSet) {
@@ -565,17 +509,17 @@ static const char *_UPNP_PinholeCStringForProtocol(TCMPortMappingTransportProtoc
         NSMutableSet<TCMPortMapping *> *refreshSet = [NSMutableSet new];
         @synchronized (mappingsToAdd) {
             [mappingsToAdd enumerateObjectsUsingBlock:^(TCMPortMapping *mapping, BOOL *_stop) {
-                            if (mapping.isActivePinhole &&
-                                mapping.mappingStatus == TCMPortMappingStatusMapped) {
-                                [refreshSet addObject:mapping];
-                            }
+                if (mapping.isActivePinhole &&
+                    mapping.mappingStatus == TCMPortMappingStatusMapped) {
+                    [refreshSet addObject:mapping];
+                }
             }];
         }
         
         
         while (!UpdatePortMappingsThreadShouldQuit && !UpdatePortMappingsThreadShouldRestart) {
             TCMPortMapping *mappingToApply;
-
+            
             if (refreshSet.count > 0) {
                 mappingToApply = [refreshSet anyObject];
                 [refreshSet removeObject:mappingToApply];
@@ -644,15 +588,15 @@ static const char *_UPNP_PinholeCStringForProtocol(TCMPortMappingTransportProtoc
         TCMPortMapping *mapping = nil;
         while ((mapping = [mappings nextObject])) {
             if ([mapping mappingStatus] == TCMPortMappingStatusMapped) {
-            	int protocol = TCMPortMappingTransportProtocolUDP;
-		        for (protocol = TCMPortMappingTransportProtocolUDP; protocol <= TCMPortMappingTransportProtocolTCP; protocol++) {
-		        	if (protocol & [mapping transportProtocol]) {
-						UPNP_DeletePortMapping(_urls.controlURL, _igddata.first.servicetype,
-											   [[NSString stringWithFormat:@"%d",[mapping externalPort]] UTF8String], 
-											   (protocol==TCMPortMappingTransportProtocolUDP)?"UDP":"TCP",NULL);
-					}
-				}
-				[mapping setMappingStatus:TCMPortMappingStatusUnmapped];
+                int protocol = TCMPortMappingTransportProtocolUDP;
+                for (protocol = TCMPortMappingTransportProtocolUDP; protocol <= TCMPortMappingTransportProtocolTCP; protocol++) {
+                    if (protocol & [mapping transportProtocol]) {
+                        UPNP_DeletePortMapping(_urls.controlURL, _igddata.first.servicetype,
+                                               [[NSString stringWithFormat:@"%d",[mapping externalPort]] UTF8String],
+                                               (protocol==TCMPortMappingTransportProtocolUDP)?"UDP":"TCP",NULL);
+                    }
+                }
+                [mapping setMappingStatus:TCMPortMappingStatusUnmapped];
             }
         }
     }

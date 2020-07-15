@@ -77,8 +77,9 @@ typedef NS_ENUM(uint8_t, TCMPortMappingTransportProtocol)  {
 - (void)removePortMapping:(TCMPortMapping *)aMapping;
 - (void)refresh;
 
-- (BOOL)isAtWork;
-- (BOOL)isRunning;
+@property (nonatomic, readonly) BOOL isAtWork;
+@property (nonatomic, readonly) BOOL isRunning;
+
 - (void)start;
 - (void)stop;
 - (void)stopBlocking;
@@ -108,7 +109,7 @@ typedef NS_ENUM(uint8_t, TCMPortMappingTransportProtocol)  {
 // internal use only
 @interface TCMPortMapping ()
 - (void)setUniqueID:(char  * _Nullable)uniqueID forProtocol:(TCMPortMappingTransportProtocol)protocol;
-- (char  * _Nullable)uniqueIDForProtocol:(TCMPortMappingTransportProtocol)protocol;
+- (char * _Nullable)uniqueIDForProtocol:(TCMPortMappingTransportProtocol)protocol;
 - (BOOL)isActivePinhole;
 @end
 NS_ASSUME_NONNULL_END

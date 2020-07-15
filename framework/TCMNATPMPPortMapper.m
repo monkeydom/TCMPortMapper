@@ -33,8 +33,7 @@ static void readData (
 @end
 
 @implementation NSString (NSStringNATPortMapperAdditions)
-+ (NSString *)stringWithAddressData:(NSData *)aData
-{
++ (NSString *)stringWithAddressData:(NSData *)aData {
     struct sockaddr *socketAddress = (struct sockaddr *)[aData bytes];
     
     // IPv6 Addresses are "FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF" at max, which is 40 bytes (0-terminated)
