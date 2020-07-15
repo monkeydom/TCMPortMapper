@@ -2,7 +2,7 @@
 #import <TCMPortMapper/TCMPortMapper.h>
 #import "NATEchoStreamPair.h"
 
-@interface NATAppController () <NATEchoStreamPairDelegate, NSToolbarDelegate>
+@interface NATAppController () <TCPServerDelegate, NATEchoStreamPairDelegate, NSToolbarDelegate>
 @property (nonatomic, strong) IBOutlet NSWindow *mainWindow;
 @property (nonatomic, strong) NSMutableArray<NATEchoStreamPair *> *activeEchoStreams;
 @end
@@ -58,25 +58,6 @@ NSToolbarItemIdentifier playPauseIdentifier = @"PlayPause";
         [playPauseToolbar setDelegate:self];
         _mainWindow.toolbar = playPauseToolbar;
     }
-}
-
-- (NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSToolbarItemIdentifier)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag {
-    
-    if ([itemIdentifier isEqualToString:playPauseIdentifier]) {
-        NSToolbarItem *item = [[NSToolbarItem alloc] initWithItemIdentifier:playPauseIdentifier];
-        item.target = self;
-        item.action = @selector(startStop:);
-        return item;
-    }
-    return nil;
-}
-
-- (NSArray<NSToolbarItemIdentifier> *)toolbarDefaultItemIdentifiers:(NSToolbar *)toolbar {
-    return @[playPauseIdentifier];
-}
-
-- (NSArray<NSToolbarItemIdentifier> *)toolbarAllowedItemIdentifiers:(NSToolbar *)toolbar {
-    return @[playPauseIdentifier];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -141,6 +122,8 @@ NSToolbarItemIdentifier playPauseIdentifier = @"PlayPause";
     }
 }
 
+#pragma mark - Toolbar Support (Big Sur+)
+
 - (BOOL)validateToolbarItem:(NSToolbarItem *)item {
     if (@available(macOS 10.16, *)) {
         if ([item.itemIdentifier isEqualToString:playPauseIdentifier]) {
@@ -156,6 +139,28 @@ NSToolbarItemIdentifier playPauseIdentifier = @"PlayPause";
     }
     return YES;
 }
+
+- (NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSToolbarItemIdentifier)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag {
+    
+    if ([itemIdentifier isEqualToString:playPauseIdentifier]) {
+        NSToolbarItem *item = [[NSToolbarItem alloc] initWithItemIdentifier:playPauseIdentifier];
+        item.target = self;
+        item.action = @selector(startStop:);
+        return item;
+    }
+    return nil;
+}
+
+- (NSArray<NSToolbarItemIdentifier> *)toolbarDefaultItemIdentifiers:(NSToolbar *)toolbar {
+    return @[playPauseIdentifier];
+}
+
+- (NSArray<NSToolbarItemIdentifier> *)toolbarAllowedItemIdentifiers:(NSToolbar *)toolbar {
+    return @[playPauseIdentifier];
+}
+
+
+#pragma mark - Echo Stream Management
 
 - (void)TCPServer:(TCPServer *)server didReceiveConnectionFromAddress:(NSData *)addr inputStream:(NSInputStream *)istr outputStream:(NSOutputStream *)ostr {
     NATEchoStreamPair *pair = [[NATEchoStreamPair alloc] initWithAddress:addr inputStream:istr outputStream:ostr];

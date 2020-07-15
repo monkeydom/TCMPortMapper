@@ -1,49 +1,3 @@
-/*
- File: TCPServer.m
- 
- Abstract: Interface description for a basic TCP/IP server Foundation class
- 
- Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
- Computer, Inc. ("Apple") in consideration of your agreement to the
- following terms, and your use, installation, modification or
- redistribution of this Apple software constitutes acceptance of these
- terms.  If you do not agree with these terms, please do not use,
- install, modify or redistribute this Apple software.
- 
- In consideration of your agreement to abide by the following terms, and
- subject to these terms, Apple grants you a personal, non-exclusive
- license, under Apple's copyrights in this original Apple software (the
- "Apple Software"), to use, reproduce, modify and redistribute the Apple
- Software, with or without modifications, in source and/or binary forms;
- provided that if you redistribute the Apple Software in its entirety and
- without modifications, you must retain this notice and the following
- text and disclaimers in all such redistributions of the Apple Software. 
- Neither the name, trademarks, service marks or logos of Apple Computer,
- Inc. may be used to endorse or promote products derived from the Apple
- Software without specific prior written permission from Apple.  Except
- as expressly stated in this notice, no other rights or licenses, express
- or implied, are granted by Apple herein, including but not limited to
- any patent rights that may be infringed by your derivative works or by
- other works in which the Apple Software may be incorporated.
- 
- The Apple Software is provided by Apple on an "AS IS" basis.  APPLE
- MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION
- THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS
- FOR A PARTICULAR PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND
- OPERATION ALONE OR IN COMBINATION WITH YOUR PRODUCTS.
- 
- IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL
- OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
- INTERRUPTION) ARISING IN ANY WAY OUT OF THE USE, REPRODUCTION,
- MODIFICATION AND/OR DISTRIBUTION OF THE APPLE SOFTWARE, HOWEVER CAUSED
- AND WHETHER UNDER THEORY OF CONTRACT, TORT (INCLUDING NEGLIGENCE),
- STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
- POSSIBILITY OF SUCH DAMAGE.
- 
- Copyright (c) 2005 Apple Computer, Inc., All Rights Reserved
- */ 
-
 #import "TCPServer.h"
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -53,7 +7,7 @@ NSString * const TCPServerErrorDomain = @"TCPServerErrorDomain";
 
 @implementation TCPServer
 
-- (id)init {
+- (instancetype)init {
     return self;
 }
 
@@ -61,56 +15,10 @@ NSString * const TCPServerErrorDomain = @"TCPServerErrorDomain";
     [self stop];
 }
 
-- (id)delegate {
-    return delegate;
-}
-
-- (void)setDelegate:(id)value {
-    delegate = value;
-}
-
-- (NSString *)domain {
-    return domain;
-}
-
-- (void)setDomain:(NSString *)value {
-    if (domain != value) {
-        domain = [value copy];
-    }
-}
-
-- (NSString *)name {
-    return name;
-}
-
-- (void)setName:(NSString *)value {
-    if (name != value) {
-        name = [value copy];
-    }
-}
-
-- (NSString *)type {
-    return type;
-}
-
-- (void)setType:(NSString *)value {
-    if (type != value) {
-        type = [value copy];
-    }
-}
-
-- (uint16_t)port {
-    return port;
-}
-
-- (void)setPort:(uint16_t)value {
-    port = value;
-}
-
 - (void)handleNewConnectionFromAddress:(NSData *)addr inputStream:(NSInputStream *)istr outputStream:(NSOutputStream *)ostr {
     // if the delegate implements the delegate method, call it  
-    if (delegate && [delegate respondsToSelector:@selector(TCPServer:didReceiveConnectionFromAddress:inputStream:outputStream:)]) { 
-        [delegate TCPServer:self didReceiveConnectionFromAddress:addr inputStream:istr outputStream:ostr];
+    if ([_delegate respondsToSelector:@selector(TCPServer:didReceiveConnectionFromAddress:inputStream:outputStream:)]) {
+        [_delegate TCPServer:self didReceiveConnectionFromAddress:addr inputStream:istr outputStream:ostr];
     }
 }
 
@@ -162,13 +70,13 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
     int yes = 1;
     setsockopt(CFSocketGetNative(ipv4socket), SOL_SOCKET, SO_REUSEADDR, (void *)&yes, sizeof(yes));
     setsockopt(CFSocketGetNative(ipv6socket), SOL_SOCKET, SO_REUSEADDR, (void *)&yes, sizeof(yes));
-
+    
     // set up the IPv4 endpoint; if port is 0, this will cause the kernel to choose a port for us
     struct sockaddr_in addr4;
     memset(&addr4, 0, sizeof(addr4));
     addr4.sin_len = sizeof(addr4);
     addr4.sin_family = AF_INET;
-    addr4.sin_port = htons(port);
+    addr4.sin_port = htons(_port);
     addr4.sin_addr.s_addr = htonl(INADDR_ANY);
     NSData *address4 = [NSData dataWithBytes:&addr4 length:sizeof(addr4)];
 
@@ -181,12 +89,12 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
         return NO;
     }
     
-    if (0 == port) {
+    if (0 == _port) {
         // now that the binding was successful, we get the port number 
         // -- we will need it for the v6 endpoint and for the NSNetService
         NSData *addr = CFBridgingRelease(CFSocketCopyAddress(ipv4socket));
         memcpy(&addr4, [addr bytes], [addr length]);
-        port = ntohs(addr4.sin_port);
+        _port = ntohs(addr4.sin_port);
     }
 
     // set up the IPv6 endpoint
@@ -194,7 +102,7 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
     memset(&addr6, 0, sizeof(addr6));
     addr6.sin6_len = sizeof(addr6);
     addr6.sin6_family = AF_INET6;
-    addr6.sin6_port = htons(port);
+    addr6.sin6_port = htons(_port);
     addr6.sin6_addr = in6addr_any;
     memcpy(&(addr6.sin6_addr), &in6addr_any, sizeof(addr6.sin6_addr));
     NSData *address6 = [NSData dataWithBytes:&addr6 length:sizeof(addr6)];
@@ -219,18 +127,18 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
     CFRelease(source6);
 
     // we can only publish the service if we have a type to publish with
-    if (nil != type) {
-        NSString *publishingDomain = domain ? domain : @"";
+    if (nil != _type) {
+        NSString *publishingDomain = _domain ?: @"";
         NSString *publishingName = nil;
-        if (nil != name) {
-            publishingName = name;
+        if (nil != _name) {
+            publishingName = _name;
         } else {
             NSString * thisHostName = [[NSProcessInfo processInfo] hostName];
             if ([thisHostName hasSuffix:@".local"]) {
                 publishingName = [thisHostName substringToIndex:([thisHostName length] - 6)];
             }
         }
-        netService = [[NSNetService alloc] initWithDomain:publishingDomain type:type name:publishingName port:port];
+        netService = [[NSNetService alloc] initWithDomain:publishingDomain type:_type name:publishingName port:_port];
         [netService publish];
     }
 

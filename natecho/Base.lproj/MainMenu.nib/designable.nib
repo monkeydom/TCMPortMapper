@@ -328,7 +328,7 @@
         <window title="NATEcho" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" animationBehavior="default" id="367">
             <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES"/>
             <rect key="contentRect" x="913" y="636" width="490" height="190"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
             <view key="contentView" id="368">
                 <rect key="frame" x="0.0" y="0.0" width="490" height="190"/>
                 <autoresizingMask key="autoresizingMask"/>
