@@ -45,3 +45,9 @@ fastlane/report.xml
 # built stuff
 *.o
 *.a
+
+# libminiupnp artefacts
+framework/miniupnpc/libminiupnpc.dylib
+framework/miniupnpc/listdevices
+framework/miniupnpc/upnpc-shared
+framework/miniupnpc/upnpc-static
