@@ -156,7 +156,7 @@ static const char *_UPNP_CStringForProtocol(TCMPortMappingTransportProtocol prot
         NSString *errorString = nil;
         int error;
         if (( devlist = upnpDiscover(2000, NULL, NULL, UPNP_LOCAL_PORT_ANY, false, 2, &error) )) {
-            if (devlist) {
+            if (devlist && NO) {
                 // let us check all of the devices for reachability
                 BOOL foundIDGDevice = NO;
                 struct UPNPDev *device;

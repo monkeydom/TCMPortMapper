@@ -68,7 +68,6 @@ static const char *_UPNP_PinholeCStringForProtocol(TCMPortMappingTransportProtoc
 #define IPV6_MAX_STRING_LENGTH 46
         
         char lanaddr[IPV6_MAX_STRING_LENGTH];   /* my ip address on the LAN */
-        char externalIPAddress[IPV6_MAX_STRING_LENGTH];
         BOOL didFail=NO;
         NSString *errorString = nil;
         int error;
@@ -92,7 +91,7 @@ static const char *_UPNP_PinholeCStringForProtocol(TCMPortMappingTransportProtoc
                         Boolean success = SCNetworkReachabilityGetFlags(target, &status);
                         CFRelease(target);
 #ifndef NDEBUG
-                        NSLog(@"UPnP: %@ %c%c%c%c%c%c%c host:%s st:%s",
+                        NSLog(@"IPv6 UPnP: %@ %c%c%c%c%c%c%c host:%s st:%s",
                               success ? @"YES" : @" NO",
                               (status & kSCNetworkFlagsTransientConnection)  ? 't' : '-',
                               (status & kSCNetworkFlagsReachable)            ? 'r' : '-',
@@ -123,7 +122,7 @@ static const char *_UPNP_PinholeCStringForProtocol(TCMPortMappingTransportProtoc
                 NSURL *descURL = nil;
                 while ((descURL = [URLEnumerator nextObject])) {
 #ifndef NDEBUG
-                    NSLog(@"UPnP: trying URL:%@",descURL);
+                    NSLog(@"UPnP Pinholing: trying URL:%@",descURL);
 #endif
                     // freeing the url still seems like a good idea - why isn't it?
                     if (_urls.controlURL) FreeUPNPUrls(&_urls);
@@ -131,7 +130,19 @@ static const char *_UPNP_PinholeCStringForProtocol(TCMPortMappingTransportProtoc
                     // get the new control URLs - this call mallocs the control URLs
                     if (UPNP_GetIGDFromUrl([[descURL absoluteString] UTF8String],&_urls,&_igddata,lanaddr,sizeof(lanaddr))) {
                         NSLog(@"%s Successfully got the IGD urls",__FUNCTION__);
-
+                        int firewallEnabled;
+                        int inboundPinholeAllowed;
+                        int result = UPNP_GetFirewallStatus(_urls.controlURL_6FC, _igddata.IPv6FC.servicetype, &firewallEnabled, &inboundPinholeAllowed);
+                        if (result == UPNPCOMMAND_SUCCESS) {
+                            NSLog(@"%s, Firewall is %@, inpboundPinholes: %@",__FUNCTION__,firewallEnabled?@"Enabled":@"Disabled", inboundPinholeAllowed?@"Allowed":@"Not Allowed");
+                            foundIGDevice = YES;
+                            didFail = NO;
+                        } else {
+                            NSLog(@"%s, UPNP Error: %d",__FUNCTION__,result);
+                            didFail = YES;
+                            foundIGDevice = NO;
+                        }
+                        
                     } else {
                         NSLog(@"%s No IPv6 IGD for URL:%@",__FUNCTION__,descURL);
                     }

@@ -10,4 +10,6 @@ extern NSString * const TCMPortPinholerDidEndWorkingNotification;
 
 @interface TCMPortPinholer : NSObject
 
+- (void)refresh;
+
 @end

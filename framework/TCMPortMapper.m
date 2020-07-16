@@ -1,6 +1,7 @@
 #import "TCMPortMapper.h"
 #import "TCMNATPMPPortMapper.h"
 #import "TCMUPNPPortMapper.h"
+#import "TCMPortPinholer.h"
 #import "TCMSystemConfiguration.h"
 #import "NSNotificationCenterThreadingAdditions.h"
 #import <SystemConfiguration/SystemConfiguration.h>
@@ -162,6 +163,7 @@ enum {
 @interface TCMPortMapper () {
     TCMNATPMPPortMapper *_NATPMPPortMapper;
     TCMUPNPPortMapper *_UPNPPortMapper;
+    TCMPortPinholer *_PortPinholer;
     NSMutableSet *_portMappings;
     NSMutableSet *_removeMappingQueue;
     BOOL _isRunning;
@@ -209,6 +211,7 @@ static TCMPortMapper *S_sharedInstance;
         _refreshIsScheduled = NO;
         _NATPMPPortMapper = [[TCMNATPMPPortMapper alloc] init];
         _UPNPPortMapper = [[TCMUPNPPortMapper alloc] init];
+        _PortPinholer = [[TCMPortPinholer alloc] init];
         _portMappings = [NSMutableSet new];
         _removeMappingQueue = [NSMutableSet new];
         _upnpPortMappingsToRemove = [NSMutableSet new];
@@ -469,6 +472,11 @@ static TCMPortMapper *S_sharedInstance;
         }
         NSString *localIPAddress = [self localIPAddress]; // will always be updated when accessed
         if (localIPAddress && _localIPOnRouterSubnet) {
+            
+            if ([self securedIPv6Address]) {
+                [_PortPinholer refresh];
+            }
+            
             [self setExternalIPAddress:nil];
             if ([routerAddress IPv4AddressIsInPrivateSubnet]) {
                 _NATPMPStatus = TCMPortMapProtocolTrying;
@@ -663,7 +671,7 @@ static TCMPortMapper *S_sharedInstance;
                 selector:@selector(UPNPPortMapperDidFail:) 
                 name:TCMUPNPPortMapperDidFailNotification 
                 object:_UPNPPortMapper];
-    
+        
         _isRunning = YES;
     }
     [self refresh];
